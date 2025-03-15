@@ -1,0 +1,66 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2><?php echo h($details['Department']['name']); ?> </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active"><?php echo h($details['Department']['name']); ?></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Main-container start -->
+<div class="container">
+    <div class="col-md-12"> <br/><br/>
+        <h1 style="margin-left: 30px;"> <?php echo 'Welcome to the Department of' . ' ' . h($details['Department']['name']); ?></h1> <br/>
+        <!--  Page Content start -->
+        <?php echo $this->element('academic_sidebar', array('base' => '/academics/' . strtolower($details['Faculty']['type']) . '/' . $details['Department']['name']));
+        ?>  
+        <div class="col-md-8">
+            <div class="col-md-3">
+                <?php
+                echo $this->Html->image($details['Faculty']['image'] . '_160.jpg');
+                ?>
+            </div>
+            <div class="col-md-8"> <br/> <br/>
+                <?php
+                echo '<b>' . 'Name : ' . h($details['Faculty']['name']);
+                echo '<br/>';
+                echo 'Designation : ' . h($details['Faculty']['designation']);
+                echo '<br/>';
+                echo 'Email id : ' . h($details['Faculty']['email_address']);
+                echo '</b>';
+                ?> 
+            </div>
+        </div>
+        <div class="col-md-8" style="margin-top: 20px;">
+            <ul class="nav nav-pills" style="margin-left: 13px;">
+                <li class="active"><a href="#subject" role="tab"  data-toggle="tab">Subjects Taught</a></li>
+                <li><a href="#specialization" role="tab"  data-toggle="tab">Areas of Specialization</a></li>
+                <li><a href="#paper" role="tab"  data-toggle="tab">Papers Presented</a></li>
+            </ul>
+            <div class="tab-content" style="margin: 20px 0px 0px 30px;">
+                <div class="tab-pane row active" id="subject">
+                    <?php
+                    echo $details['FacultySubject'][0]['description'];
+                    ?>
+                </div>
+                <div class="tab-pane row" id="specialization">
+                    <?php
+                    echo $details['FacultySpecialization'][0]['description'];
+                    ?>
+                </div>
+                <div class="tab-pane row" id="paper">
+                    <?php
+                    echo $details['FacultyPaper'][0]['description'];
+                    ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> <br/> <br/>

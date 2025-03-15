@@ -1,0 +1,118 @@
+<?php
+
+App::uses('AppModel', 'Model');
+
+/**
+ * Faculty Model
+ *
+ * @property Department $Department
+ */
+class Faculty extends AppModel {
+
+    /**
+     * ValidationEngine rules
+     *
+     * @var array
+     */
+    public $validationEngine = array(
+    );
+
+    /**
+     * Validation rules
+     *
+     * @var array
+     */
+    public $validate = array(
+        'department_id' => array(
+            'numeric' => array(
+                'rule' => array('numeric'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'name' => array(
+            'notempty' => array(
+                'rule' => array('notempty'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'designation' => array(
+            'notempty' => array(
+                'rule' => array('notempty'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'email_address' => array(
+            'notempty' => array(
+                'rule' => array('notempty'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+        'created_by' => array(
+            'boolean' => array(
+                'rule' => array('boolean'),
+            //'message' => 'Your custom message here',
+            //'allowEmpty' => false,
+            //'required' => false,
+            //'last' => false, // Stop validation after this rule
+            //'on' => 'create', // Limit validation to 'create' or 'update' operations
+            ),
+        ),
+    );
+
+    //The Associations below have been created with all possible keys, those that are not needed can be removed
+
+    /**
+     * belongsTo associations
+     *
+     * @var array
+     */
+    public $belongsTo = array(
+        'Department' => array(
+            'className' => 'Department',
+            'foreignKey' => 'department_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        )
+    );
+    public $hasMany = array(
+        'FacultySubject' => array(
+            'className' => 'FacultySubject',
+            'foreignKey' => 'faculty_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
+        'FacultySpecialization' => array(
+            'className' => 'FacultySpecialization',
+            'foreignKey' => 'faculty_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        ),
+        'FacultyPaper' => array(
+            'className' => 'FacultyPaper',
+            'foreignKey' => 'faculty_id',
+            'conditions' => '',
+            'fields' => '',
+            'order' => ''
+        )
+    );
+
+}

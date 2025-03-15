@@ -1,0 +1,92 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Notices </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Exam Cell', '/examcells') ?></li>
+                        <li class="active">Notices</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="service" style="padding-bottom: 40px;">
+<div class="container">
+    <h1>Important Notices</h1>
+<!--div id="owl-demo" class="owl-carousel owl-theme"-->
+
+    <?php 
+       
+        foreach ($notice as $note) {
+       
+                    ?>
+                 
+                         <div class="col-md-4">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($note['Notice']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($note['Notice']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/notices/' . $note['Notice']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+      } ?>
+    
+    
+<!--/div-->
+</div>
+</div>
+
+
+<!--div class="main-container"> 
+    <div class="service" style="padding-bottom: 0px; padding-top: 0px;">
+        <div class="container">
+            <h1>Important Notices</h1>
+            <div class=" service-blk">
+                <div class="row">
+                    <?php foreach ($notice as $note) {
+                        ?>
+                        <div class="col-md-4" style="border:2px solid #9BBA6E;border-radius: 2px;">
+                            <div class="ecnews">
+                                <h2> <?php echo String::truncate($note['Notice']['subject'], $length = 22); ?> </h2>
+                                <p><?php echo String::truncate($note['Notice']['description'], $length = 140); ?> </p>
+                                <a href="<?php echo $this->Html->url('/notices/' . $note['Notice']['id']); ?>" class="btn btn-default btn-yellow">read more</a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div-->
+
+<div class="text-center">
+<nav aria-label="Page navigation">
+  <ul class="pagination">
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+        <span class="sr-only">Previous</span>
+      </a>
+    </li>
+    <li class="page-item"><a class="page-link" href="#">1</a></li>
+    <li class="page-item"><a class="page-link" href="#">2</a></li>
+    <li class="page-item"><a class="page-link" href="#">3</a></li>
+    <li class="page-item"><a class="page-link" href="#">4</a></li>
+    <li class="page-item"><a class="page-link" href="#">5</a></li>
+    <li class="page-item">
+      <a class="page-link" href="#" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+        <span class="sr-only">Next</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+</div>

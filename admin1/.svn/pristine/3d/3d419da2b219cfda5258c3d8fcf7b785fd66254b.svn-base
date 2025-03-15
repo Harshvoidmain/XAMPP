@@ -1,0 +1,209 @@
+<!--  page header section -->
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ptn-bg">
+                <h2>Opinion Box</h2>
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo $this->Html->url('/home'); ?>">Home</a></li>
+                    <li class="active">Opinions</li>
+                </ol>  
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+
+<div class="main-container"><!--  Main-container section --> 
+    <!--  faq start -->
+    <div class="container">
+        <div class="">
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1>Feedbacks / Suggestions / Opinions</h1>
+                            <p class="lead-font">Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text.</p>
+                        </div>
+                        <hr>
+                        <div class="col-md-12">
+                            <h2>How Feedbacks / Suggestions / Opinions helps us ?</h2>
+                            <p>Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text </p>
+                        </div>
+                        <div class="col-md-12">
+                            <h2>Some description or Question</h2>
+                            <p>Answer of that question or some description. </p>
+                            <p>Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text. </p>
+                        </div>
+                        <div class="col-md-12">
+                            <h2>Some description or Question </h2>
+                            <p>Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text Dummy text. </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <div class=" sidebar-blk temp-form"> <!-- Form start -->
+                        <h1>What's Your Opinion? Write to us</h1>
+                        <form role="form">
+                            <div class="form-group">
+                                <label for="name">Name*</label>
+                                <input type="text" class="form-control" id="name" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">E-mail*</label>
+                                <input type="email" class="form-control" id="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Ask a Questions</label>
+                                <textarea class="form-control" rows="5"></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-yellow">Submit</button>
+                        </form>
+                    </div>
+                    <!-- Form close --> 
+                </div>
+            </div>
+        </div>
+        <hr>
+    </div>
+    <!-- faq close -->
+    <div class="container"> <!--  accordion start -->
+        <div class="row faq">
+            <div class="col-md-6">
+                <h1>Frequently Asked Questions</h1>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Dummy question number 1?</a> </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Dummy question number 2?</a> </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Dummy question number 3 ? </a> </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Dummy question number 4? </a> </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <p class="panel-body">Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                            <ul>
+                                <li><i class="fa fa-angle-double-right"></i> Mauris suscipit dui rutrum vulputate varius.</li>
+                                <li><i class="fa fa fa-angle-double-right"></i> Aliquam condimentum massa semper libero malesuada posuere.</li>
+                                <li><i class="fa fa fa-angle-double-right"></i> Nullam non enim luctus orci pretium pretium.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"> Dummy question number 5 ?</a> </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"> Dummy question number 6 ? </a> </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Dummy question number 7 ?</a> </h4>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <h1>Valuable Suggestions</h1>
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">Dummy question number 1?</a> </h4>
+                        </div>
+                        <div id="collapseOne" class="panel-collapse collapse in">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseTwo">Dummy question number 2?</a> </h4>
+                        </div>
+                        <div id="collapseTwo" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseThree">Dummy question number 3 ? </a> </h4>
+                        </div>
+                        <div id="collapseThree" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFour">Dummy question number 4? </a> </h4>
+                        </div>
+                        <div id="collapseFour" class="panel-collapse collapse">
+                            <p class="panel-body">Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                            <ul>
+                                <li><i class="fa fa-angle-double-right"></i> Mauris suscipit dui rutrum vulputate varius.</li>
+                                <li><i class="fa fa fa-angle-double-right"></i> Aliquam condimentum massa semper libero malesuada posuere.</li>
+                                <li><i class="fa fa fa-angle-double-right"></i> Nullam non enim luctus orci pretium pretium.</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseFive"> Dummy question number 5 ?</a> </h4>
+                        </div>
+                        <div id="collapseFive" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseSix"> Dummy question number 6 ? </a> </h4>
+                        </div>
+                        <div id="collapseSix" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title"> <a data-toggle="collapse" data-parent="#accordion" href="#collapseSeven">Dummy question number 7 ?</a> </h4>
+                        </div>
+                        <div id="collapseSeven" class="panel-collapse collapse">
+                            <p class="panel-body"> Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer Dummy answer. </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- accordion close --> 
+
+</div>
+<!--  Main-container section ending--> 

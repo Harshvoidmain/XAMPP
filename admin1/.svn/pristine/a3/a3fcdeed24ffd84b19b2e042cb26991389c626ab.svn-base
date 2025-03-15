@@ -1,0 +1,78 @@
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Statistics </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active">Statistics</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container" style="padding-top: 70px;"> 
+    <div class="container">
+        <div id="graph" class="col-md-12" style="height: 350px;"></div> 
+        <table class="table table-hover table-striped table-bordered table-condensed" id="graphTable" style="alignment-adjust: center;">
+            <thead>
+                <tr>
+                    <th style="text-align: center;"></th>
+                    <th style="text-align: center;">Eligible</th>
+                    <th style="text-align: center;">Appeared</th>
+                    <th style="text-align: center;">Passed</th>
+                    <th style="text-align: center;">Selected</th>
+                   
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php 
+                foreach ($placement_statistic as $statistic) {
+                    echo '<tr>
+                            <th>' . $statistic['PlacementStatistic']['branch'] . '</th>
+                            <td>' . $statistic['PlacementStatistic']['eligible'] . '</td>
+                            <td>' . $statistic['PlacementStatistic']['appeared'] . '</td>
+                            <td>' . $statistic['PlacementStatistic']['passed'] . '</td>
+                            <td>' . $statistic['PlacementStatistic']['selected'] . '</td>
+                           
+                        </tr>';
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#graph').highcharts({
+            data: {
+                table: document.getElementById('graphTable')
+            },
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '<h1>Welcome to the Placement Section</h1>'
+            },
+            yAxis: {
+                allowDecimals: false,
+                title: {
+                    text: 'Candidates'
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.point.y + ' ' + this.point.name.toLowerCase();
+                }
+            }
+        });
+    });
+</script>

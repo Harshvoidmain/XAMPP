@@ -1,0 +1,139 @@
+<!--  page header section -->
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ptn-bg">
+                <h2>Placement Home</h2>
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo $this->Html->url('/home'); ?>">Home</a></li>
+                    <li class="active">Placement</li>
+                </ol>  
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+
+
+<div class="main-container  sponsor"><!-- Main-container section --> 
+    <!--  Sponsorship section -->
+    <div class="container">
+        <div class="row sponsorship-detail">
+            <div class="col-md-8">
+                <?php 
+                foreach ($placement_home as $placementHome) {
+                    echo '<h1>' . $placementHome['PlacementHome']['main_head'] . '</h1>';
+                
+                ?>
+           
+                <p class="lead-font"> <?php echo  $placementHome['PlacementHome']['main_desc']; ?> </p>
+                <hr>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2><?php echo  $placementHome['PlacementHome']['column1_head']; ?></h2>
+                            <p><?php echo  $placementHome['PlacementHome']['column1_desc']; ?></p>                       
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2><?php echo  $placementHome['PlacementHome']['column2_head']; ?></h2>
+                            <p><?php echo  $placementHome['PlacementHome']['column2_desc']; ?></p>                  
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2><?php echo  $placementHome['PlacementHome']['column3_head']; ?></h2>
+                            <p><?php echo  $placementHome['PlacementHome']['column3_desc']; ?></p>                                                    
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2><?php echo  $placementHome['PlacementHome']['column4_head']; ?></h2>
+                            <p><?php echo  $placementHome['PlacementHome']['column4_desc']; ?></p>                                                    
+                        </div>
+                    </div>
+                </div>
+                <?php } ?>
+            </div>
+            <div class="col-md-4">
+                <div class="sidebar-blk">
+                    <img src="images/95.jpg"> <br/>
+                    <h3 style="text-align: center; margin-top: 3px;">Placement Cell</h3> <br/> <br/>
+                    <img src="images/95.jpg"> <br/>
+                    <h3 style="text-align: center; margin-top: 3px;">Placement Activities</h3> 
+                </div>
+            </div>
+        </div>
+    </div>
+                
+    <!--  Sponsorship section ending-->
+
+    <div class="work">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 title">
+                    <h1>Objectives of Training & Placement</h1>
+                </div>
+                <div class="row">
+                    <div class="col-md-2">
+                        <div class="blk"> <i class="pe pe-li-users pe-4x pe-icon"></i>
+                            <h2>Counsel</h2>
+                            <p>Counsel Students in developing / clarifying their academic & career interests.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="blk"> <i class="pe pe-li-tool pe-4x pe-icon"></i>
+                            <h2>Assist</h2>
+                            <p>Assist Students in developing & implementing successful job search strategies </p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="blk"> <i class="pe pe-li-unlock pe-4x pe-icon"></i>
+                            <h2>Empower</h2>
+                            <p>Empower the students with resources & activities to facilitate the career planning process.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="blk"> <i class="pe pe-li-shield pe-4x pe-icon"></i>
+                            <h2>Support</h2>
+                            <p>Support Employers to achieve their hiring goals.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-2">
+                        <div class="blk"> <i class="pe pe-li-target pe-4x pe-icon"></i>
+                            <h2>Achieve</h2>
+                            <p>Encourage students in obtaining final placements in reputed Firms.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <div class="">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8 title">
+                    <h1>Companies on our Campus</h1>
+                    <p>Some of the most reputed firms, who have recruited our students.</p>
+                </div>
+                <div class="client">
+                    <div class="row">
+                        <div id="owl-demo" class="client-logo">
+                            <?php 
+                                        foreach ($companies as $company){
+                                            echo '<div class="item col-md-3" style="height:100px;">'.$this->Html->image($company['Company']['image'],array('title'=>$company['Company']['name'],'style'=>'margin-top: -100px;')).'</div>';
+                                        }
+                            ?>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Main-container ending --> 
+

@@ -1,0 +1,565 @@
+<!-- banner start -->
+
+<div class="banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+
+        <div class="carousel-inner">
+            <div class="item active"> 
+                <?php echo $this->Html->image('slider/bnr6.jpg', array('alt' => 'FCRIT')); ?>
+            </div>
+        </div>
+        <!-- Controls --> 
+        <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> </div>
+</div>
+<!-- banner close --> 
+
+<!-- about start -->
+<div class="about"  style="padding-bottom: 0px; margin-bottom: 0px;">
+    <div class="container">
+        <div class="donate-info" style="padding-bottom: 0px; margin-bottom: 0px;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="donate-box"><!-- donate box start-->
+                        <h2>MORE THAN </h2>
+                        <strong>0</strong>
+                        <h2>ENGINEERS</h2>
+                        <h2>HAVE GRADUATED</h2>
+                        <h2>from &nbsp; Fr. CRIT...</h2> </div>
+                    <!-- donate box close--> 
+                </div>
+                <div class="col-md-offset-1 col-md-7"><!-- about info-->
+                    <h2>Welcome to<br> </h2>
+                    <h1>    Fr. C. Rodrigues Institute of Technology <br/>
+                        <h2>  A college with a difference!! </h2>
+                    </h1>
+<!--                <p class="lead-font">Nullam velit metus tristique id purus eget consequat congue loreml orem ipsum dolor sit amet consectetur adipiscing elit. Praesent vestibulum aenean noummy endrerit mauris. </p>-->
+                    <p style="text-align: justify;"> Fr. C.R.I.T. has, within a short span of time, established itself as a leading engineering 
+                        college in Mumbai University. Though its reputation rests mainly on the high quality, 
+                        value-based technical education that it imparts, it has to its credit a verdant, 
+                        well-maintained Campus and extensive facilities. Its location in the vicinity of the 
+                        holy places of various religious denominations underscores its secular credentials and 
+                        its philosophy of "Vasudhaiva Kuttumbakam". The college prides on being one of few that 
+                        as <strong style="color: #576F34;"> accreditation for all five branches vide file no. 28-41/2010-NBA dated 14.11.2012. </strong>
+                    </p> <br/>
+                    <!--<a href="about-us.html" class="btn btn-default btn-yellow">Learn more</a> </div>-->
+                    <!--about info close--> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="blk"> <i class="fa fa-search  icon-size"></i>
+                        <h2 class="item-title">Explore</h2>
+                        <p> Explore the best career opportunities from the global leaders from the world of education.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blk"><i class="fa fa-book icon-size"></i>
+                        <h2 class="item-title">Learn</h2>
+                        <p> Learn from one of the prestigious institutions in this country. </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blk"><i class="fa fa-trophy icon-size"></i>
+                        <h2 class="item-title">Excel</h2>
+                        <p> Learn to be master of your art & become a leader. Excel. </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blk"><i class="fa fa-lightbulb-o icon-size"></i>
+                        <h2 class="item-title">Innovate</h2>
+                        <p>Go out there with your leadership skills & amaze the world. Innovate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- about close --> 
+
+<!-- Service start -->
+<div class="service" style="padding-bottom: 0px;">
+    <div class="container">
+        <h1>Latest News</h1>
+        <div class=" service-blk">
+            <div class="row">
+                <?php foreach ($latest_news as $latest) {
+                    ?>
+                    <div class="col-md-3">
+                        <div class="blk">
+                            <h2> <?php echo String::truncate($latest['LatestNews']['topic'], $length = 22); ?> </h2>
+                            <p><?php echo String::truncate($latest['LatestNews']['description'], $length = 140); ?> </p>
+                            <a href="<?php echo $this->Html->url('/latest_news/' . $latest['LatestNews']['id']); ?>" class="btn btn-default btn-yellow">read more</a> 
+                        </div>
+                    </div>
+                <?php } ?>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Service close --> 
+
+<!-- things section -->
+
+<div class="things">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">World<br>
+                            Class <br>
+                            Amenities.</h2>
+                        <i class="pe pe-li-expand pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">Best <br>
+                            Teaching <br>
+                            Faculty.</h2>
+                        <i class="pe pe-li-atom pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">85% Of Our <br>
+                            Students <br>
+                            Placed.</h2>
+                        <i class="pe pe-li-graph pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">Not Just <br>
+                            Educate <br>
+                            create Leaders.</h2>
+                        <i class="pe pe-li-user pe-4x pe-icon"></i> <i class="pe pe-li-user pe-4x pe-icon"></i> <i class="pe pe-li-user pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- things section close -->
+
+<!--  news section -->
+<div class="news" style="padding-bottom: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Highlights</h1>
+            </div>
+        </div>
+        <ul class="nav nav-pills">
+            <li class="active">
+                <a href="#general" role="tab" data-toggle="tab">General</a>
+            </li>
+            <li>
+                <a href="#computer"role="tab" data-toggle="tab">Computer</a>
+            </li>
+            <li>
+                <a href="#extc" role="tab" data-toggle="tab">EXTC</a>
+            </li>
+            <li>
+                <a href="#electrical" role="tab" data-toggle="tab">Electrical</a>
+            </li>
+            <li>
+                <a href="#mechanical" role="tab" data-toggle="tab">Mechanical</a>
+            </li>
+            <li>
+                <a href="#it" role="tab" data-toggle="tab">IT</a>
+            </li>
+            <li>
+                <a href="#placement" role="tab" data-toggle="tab">Placements</a>
+            </li>
+            <li>
+                <a href="#winner" role="tab" data-toggle="tab">Winners</a>
+            </li>
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active row" id="general"> <br/>
+                <h2 style="margin-left: 15px;"> Congratulations to our students for their performance in GATE 2014. </h2> <br/>
+                <div class="col-md-4">
+                    <h3>Computer Department</h3>
+                    <?php
+                    foreach ($general_topper as $general) {
+                        if ($general['Topper']['department'] == 'Computer') {
+                            echo $general['Topper']['details'];
+                            echo '<br/> <br/>';
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="col-md-4">
+                    <h3>EXTC Department</h3>
+                    <?php
+                    foreach ($general_topper as $general) {
+                        if ($general['Topper']['department'] == 'EXTC') {
+                            echo $general['Topper']['details'];
+                            echo '<br/> <br/>';
+                        }
+                    }
+                    ?>
+                </div>
+                <div class="col-md-4">
+                    <h3>Electrical Department</h3>
+                    <?php
+                    foreach ($general_topper as $general) {
+                        if ($general['Topper']['department'] == 'Electrical') {
+                            echo $general['Topper']['details'];
+                            echo '<br/> <br/>';
+                        }
+                    }
+                    ?>
+                </div>
+            </div>
+            <div class="tab-pane row" id="computer"> <br/>
+                <h2 style="margin-left: 20px;"> Congratulations to our students for their performance in Final Year. </h2>
+                <div class="col-md-8">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="padding:10px 0px 0px 10px;"><h4>Name &nbsp</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Percentile</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Rank</h4></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <td>    
+                            <?php
+                            foreach ($computer_topper as $comp) {
+                                echo $comp['Topper']['details'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($computer_topper as $comp) {
+                                echo $comp['Topper']['percentile'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($computer_topper as $comp) {
+                                echo $comp['Topper']['comments'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane row" id="extc"> <br/>
+                <h2 style="margin-left: 20px;"> Congratulations to our students for their performance in Final Year. </h2>
+                <div class="col-md-8">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="padding:10px 0px 0px 10px;"><h4>Name &nbsp</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Percentile</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Rank</h4></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <td>    
+                            <?php
+                            foreach ($extc_topper as $extc) {
+                                echo $extc['Topper']['details'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($extc_topper as $extc) {
+                                echo $extc['Topper']['percentile'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($extc_topper as $extc) {
+                                echo $extc['Topper']['comments'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane row" id="electrical"> <br/>
+                <h2 style="margin-left: 20px;"> Congratulations to our students for their performance in Final Year. </h2>
+                <div class="col-md-8">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="padding:10px 0px 0px 10px;"><h4>Name &nbsp</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Percentile</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Rank</h4></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <td>    
+                            <?php
+                            foreach ($electrical_topper as $comp) {
+                                echo $comp['Topper']['details'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($electrical_topper as $comp) {
+                                echo $comp['Topper']['percentile'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($electrical_topper as $comp) {
+                                echo $comp['Topper']['comments'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane row" id="mechanical"> <br/>
+                <h2 style="margin-left: 20px;"> Congratulations to our students for their performance in Final Year. </h2>
+                <div class="col-md-8">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="padding:10px 0px 0px 10px;"><h4>Name &nbsp</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Percentile</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Rank</h4></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <td>    
+                            <?php
+                            foreach ($mechanical_topper as $mech) {
+                                echo $mech['Topper']['details'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($mechanical_topper as $mech) {
+                                echo $mech['Topper']['percentile'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($mechanical_topper as $mech) {
+                                echo $mech['Topper']['comments'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane row" id="it"> <br/>
+                <h2 style="margin-left: 20px;"> Congratulations to our students for their performance in Final Year. </h2>
+                <div class="col-md-8">
+                    <table class="table table-bordered table-striped">
+                        <thead>
+                            <tr>
+                                <th style="padding:10px 0px 0px 10px;"><h4>Name &nbsp</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Percentile</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Rank</h4></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <td>    
+                            <?php
+                            foreach ($it_topper as $it) {
+                                echo $it['Topper']['details'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($it_topper as $it) {
+                                echo $it['Topper']['percentile'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($it_topper as $it) {
+                                echo $it['Topper']['comments'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane row" id="placement"> <br/>
+                <h2 style="margin-left: 20px;"> Placement: 2011-2012 </h2>
+                <h3 style="margin-left: 20px;"> The placement procedure for the year 2011-2012 began in 
+                    July 2011. Till date total 226 students have been placed in different companies. </h3>
+                <div class="col-md-10">
+                    <table class="table table-bordered table-striped" id="placementTable">
+                        <thead>
+                            <tr>
+                                <th style="padding:10px 0px 0px 10px;"><h4>Branch &nbsp</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Number of Companies Visited</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Number of Students Placed</h4></th>
+                        <th style="padding:10px 0px 0px 10px;"><h4>Max. Salary</h4></th> 
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <td>    
+                            <?php
+                            foreach ($placement as $place) {
+                                echo $place['Placement']['branch'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($placement as $place) {
+                                echo $place['Placement']['number_of_companies_visited'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($placement as $place) {
+                                echo $place['Placement']['number_of_students_placed'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        <td>    
+                            <?php
+                            foreach ($placement as $place) {
+                                echo $place['Placement']['max_salary'];
+                                echo '<br/>';
+                            }
+                            ?> </td>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            <div class="tab-pane row" id="winner"> <br/>
+                <h3 style="margin-left: 20px;">
+                    <?php
+                    foreach ($winner as $win) {
+                        echo $win['Winner']['Message'];
+                        echo '<br/> <br/>';
+                    }
+                    ?>
+                </h3>
+            </div>
+        </div>
+    </div>
+    <!--  news section choose --> 
+    <br/> <br/>
+    <!--  testimonials section -->
+
+    <div class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div  id="owl-demo-testimonial" class="testimonials-ct">
+                        <div class="item">
+                            <h1>Success  Stories </h1>
+                            <table class="table table-bordered table-condensed" style="alignment-adjust: center;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;"><h4>Name &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Branch &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Percentile</h4></th>
+                                <th style="text-align: center;"><h4>Rank</h4></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['name'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['branch'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['Percentile'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['Rank'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="item">
+                            <h1>Congratulations to our F.E Toppers</h1>
+                            <table class="table table-bordered table-condensed" style="alignment-adjust: center;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;"><h4>Name &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Branch &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Percentile</h4></th>
+                                <th style="text-align: center;"><h4>Rank</h4></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['name'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['branch'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['Percentile'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['Rank'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  testimonials section close --> 

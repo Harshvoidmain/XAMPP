@@ -1,0 +1,194 @@
+<?php
+
+App::uses('AppController', 'Controller');
+
+/**
+ * Departments Controller
+ *
+ * @property Department $Department
+ */
+class DepartmentsController extends AppController {
+
+    /**
+     * admin_index method
+     *
+     * @return void
+     */
+    public function admin_index() {
+        $this->Department->recursive = 0;
+        $this->set('departments', $this->paginate());
+    }
+
+    /**
+     * admin_view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_view($id = null) {
+        if (!$this->Department->exists($id)) {
+            $this->Session->setFlash(__('Invalid department'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
+        $this->set('department', $this->Department->find('first', $options));
+    }
+
+    /**
+     * admin_add method
+     *
+     * @return void
+     */
+    public function admin_add() {
+        if ($this->request->is('post')) {
+            $this->Department->create();
+            if ($this->Department->save($this->request->data)) {
+                $this->Session->setFlash(__('The department has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The department could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+    }
+
+    /**
+     * admin_edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_edit($id = null) {
+        if (!$this->Department->exists($id)) {
+            $this->Session->setFlash(__('Invalid department'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Department->save($this->request->data)) {
+                $this->Session->setFlash(__('The department has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The department could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
+            $this->request->data = $this->Department->find('first', $options);
+        }
+    }
+
+    /**
+     * admin_delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function admin_delete($id = null) {
+        $this->Department->id = $id;
+        if (!$this->Department->exists()) {
+            $this->Session->setFlash(__('Invalid department'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Department->delete()) {
+            $this->Session->setFlash(__('Department deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Department was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    /**
+     * index method
+     *
+     * @return void
+     */
+    public function index() {
+        $this->Department->recursive = 0;
+        $this->set('departments', $this->paginate());
+    }
+
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        if (!$this->Department->exists($id)) {
+            $this->Session->setFlash(__('Invalid department'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
+        $this->set('department', $this->Department->find('first', $options));
+    }
+
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        if ($this->request->is('post')) {
+            $this->Department->create();
+            if ($this->Department->save($this->request->data)) {
+                $this->Session->setFlash(__('The department has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The department could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+    }
+
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        if (!$this->Department->exists($id)) {
+            $this->Session->setFlash(__('Invalid department'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Department->save($this->request->data)) {
+                $this->Session->setFlash(__('The department has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The department could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Department.' . $this->Department->primaryKey => $id));
+            $this->request->data = $this->Department->find('first', $options);
+        }
+    }
+
+    /**
+     * delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        $this->Department->id = $id;
+        if (!$this->Department->exists()) {
+            $this->Session->setFlash(__('Invalid department'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Department->delete()) {
+            $this->Session->setFlash(__('Department deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Department was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+}

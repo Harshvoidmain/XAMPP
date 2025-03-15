@@ -1,0 +1,33 @@
+<?php
+App::uses('AppModel', 'Model');
+/**
+ * Winner Model
+ *
+ */
+class Winner extends AppModel {
+
+/**
+ * ValidationEngine rules
+ *
+ * @var array
+ */
+	public $validationEngine = array(
+	);
+/**
+ * Validation rules
+ *
+ * @var array
+ */
+	public $validate = array(
+		'created_by' => array(
+			'boolean' => array(
+				'rule' => array('boolean'),
+				//'message' => 'Your custom message here',
+				//'allowEmpty' => false,
+				//'required' => false,
+				//'last' => false, // Stop validation after this rule
+				//'on' => 'create', // Limit validation to 'create' or 'update' operations
+			),
+		),
+	);
+}

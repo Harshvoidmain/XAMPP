@@ -1,0 +1,98 @@
+.header
+{
+	background-image:url(back.jpg);
+	height:200px;
+	width:100%;
+	margin-top:0px;
+	
+	display:inline-block;
+	
+}
+.subheader
+{
+	margin-top:50px;
+	display:inline-block;
+	margin-left:150px;
+	margin-top:10px;
+}
+.subheader1
+{
+	display:inline-block;
+	font-weight:normal;
+	font-family:;
+	font-size:40px;
+	margin-left:120px;
+	margin-top:20px;
+	font-weight:100;
+	padding:auto 0px;
+	
+	
+	
+}
+.subheader2
+{
+	margin-left:0px;
+	font-weight:600;
+	font-size:23px;
+	line-height:26px;
+}
+p.small
+{
+	line-height:0.5px;
+	
+}
+.subheader3
+{
+	margin-left:0px;
+	
+	font-size:20px;
+	line-height:23px;
+}
+.form
+{
+	max-width: 800px;
+    margin: 10px auto;
+    padding: 16px;
+    font-size:30px;
+}
+.form td
+{
+    
+    color: #888;
+ 	padding: auto 10px;
+	height:80px;
+	font-size:25px;
+	
+}
+.form td input[type=text], select, input[type=number], input[type=date], input[type=time], input[type=password]
+{
+	width: 100%;
+    padding: 8px;
+    border-radius: 6px;
+    -webkit-border-radius:6px;
+    -moz-border-radius:6px;
+    border: 2px solid #fff;
+    box-shadow: inset 0px 1px 1px rgba(0, 0, 0, 0.33);
+}
+.form td input[type=submit]
+{
+	background: #2A88AD;
+    padding: 8px 20px 8px 20px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    color: #fff;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.12);
+  	box-shadow: inset 0px 2px 2px 0px rgba(255, 255, 255, 0.17);
+    border: 1px solid #257C9E;
+	width:300px;
+}
+.form tr
+{
+	width:500px;
+}	
+.form table
+{
+	width:100%;
+	
+}

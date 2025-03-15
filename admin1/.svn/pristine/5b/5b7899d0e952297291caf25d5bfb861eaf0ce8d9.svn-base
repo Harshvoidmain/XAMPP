@@ -1,0 +1,205 @@
+<?php
+
+App::uses('AppController', 'Controller');
+
+/**
+ * Notices Controller
+ *
+ * @property Notice $Notice
+ */
+class NoticesController extends AppController {
+
+    /**
+     * admin_index method
+     *
+     * @return void
+     */
+    public function admin_index() {
+        $this->Notice->recursive = 0;
+        $this->set('notices', $this->paginate());
+    }
+
+    /**
+     * admin_view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_view($id = null) {
+        if (!$this->Notice->exists($id)) {
+            $this->Session->setFlash(__('Invalid notice'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Notice.' . $this->Notice->primaryKey => $id));
+        $this->set('notice', $this->Notice->find('first', $options));
+    }
+
+    /**
+     * admin_add method
+     *
+     * @return void
+     */
+    public function admin_add() {
+        if ($this->request->is('post')) {
+            $this->Notice->create();
+            if ($this->Notice->save($this->request->data)) {
+                $this->Session->setFlash(__('The notice has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The notice could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+    }
+
+    /**
+     * admin_edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_edit($id = null) {
+        if (!$this->Notice->exists($id)) {
+            $this->Session->setFlash(__('Invalid notice'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Notice->save($this->request->data)) {
+                $this->Session->setFlash(__('The notice has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The notice could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Notice.' . $this->Notice->primaryKey => $id));
+            $this->request->data = $this->Notice->find('first', $options);
+        }
+    }
+
+    /**
+     * admin_delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function admin_delete($id = null) {
+        $this->Notice->id = $id;
+        if (!$this->Notice->exists()) {
+            $this->Session->setFlash(__('Invalid notice'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Notice->delete()) {
+            $this->Session->setFlash(__('Notice deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Notice was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+
+
+   
+    
+    
+    public function index() {
+        $this->Notice->recursive = 0;
+        $this->set('notices', $this->paginate());
+    }
+
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        if (!$this->Notice->exists($id)) {
+            $this->Session->setFlash(__('Invalid notice'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Notice.' . $this->Notice->primaryKey => $id));
+        $this->set('notice', $this->Notice->find('first', $options));
+    }
+
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        if ($this->request->is('post')) {
+            $this->Notice->create();
+            if ($this->Notice->save($this->request->data)) {
+                $this->Session->setFlash(__('The notice has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The notice could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+    }
+
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        if (!$this->Notice->exists($id)) {
+            $this->Session->setFlash(__('Invalid notice'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Notice->save($this->request->data)) {
+                $this->Session->setFlash(__('The notice has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The notice could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Notice.' . $this->Notice->primaryKey => $id));
+            $this->request->data = $this->Notice->find('first', $options);
+        }
+    }
+
+    /**
+     * delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        $this->Notice->id = $id;
+        if (!$this->Notice->exists()) {
+            $this->Session->setFlash(__('Invalid notice'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Notice->delete()) {
+            $this->Session->setFlash(__('Notice deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Notice was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    public function notice_page($id = null) {
+        $this->Notice->id = $id;
+        $this->layout = 'site';
+        
+        $notices = $this->Notice->find('all', array(
+            'order' => 'Notice.id DESC',
+            'conditions' => array('Notice.' . $this->Notice->primaryKey => $id)
+                ));
+        $this->set(compact('notices'));
+    }
+    
+    

@@ -1,0 +1,105 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Swimming Pool</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Amenities', '/amenities') ?></li>
+                        <li class="active">Swimming Pool</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h1>Infrastructure - Swimming Pool.</h1>                            
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">North End of the Swimming Pool. </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post"> <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Dummy text dummy text Dummy text dummy text Dummy text dummy text  
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text. </p> <br/>
+                            <p> Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <p>Dummy text dummy text Dummy text dummy text Dummy text dummy text  
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text. </p> <br/>
+                            <p> Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">South End of the Swimming Pool. </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+    </div>
+    <!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

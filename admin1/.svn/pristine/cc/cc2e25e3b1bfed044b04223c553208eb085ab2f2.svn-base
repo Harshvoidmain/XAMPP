@@ -1,0 +1,23 @@
+<div class="col-md-3">
+    <div class="tabbable">
+        <ul class="nav nav-pills nav-stacked">
+            <?php
+            foreach (array(
+        'About' => '/',
+        'Faculty' => '/faculty',
+        'Infrastructure' => '/infrastructure',
+        'Activities' => '/activities',
+        'Research & Development' => '/Rnd',
+        'Placement' => '/dept-placement',
+        'Student Association' => '/student-association',
+        'Achievements' => '/achievements',
+        'Academic Calendar' => '/academic-calendar',
+            ) as $value => $url) {
+                echo '<li>';
+                echo $this->Html->link($value, $base . $url);
+                echo '</li>';
+            }
+            ?>            
+        </ul>
+    </div>
+</div>

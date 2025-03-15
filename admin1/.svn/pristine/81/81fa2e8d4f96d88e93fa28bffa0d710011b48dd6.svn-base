@@ -1,0 +1,142 @@
+<!--  page header section -->
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ptn-bg">
+                <h2>About The Alumni</h2>
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo $this->Html->url('/home'); ?>">Home</a></li>
+                    <li class="active">Alumni Home</li>
+                </ol>  
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container" style="padding-bottom: 50px;"><!-- Main-container section -->
+    <div class="about-us"> <!--  About section -->
+        <div class="container">
+            <div class="about-blk"><!-- about-blk start -->
+                <div class="row ">
+                    <div class="col-md-8">
+                        <div class="pic"><a href="#"><img src="images/ab_pic-1.jpg" class="img-responsive" alt=""></a></div>
+                    </div>
+                    <div class="col-md-4">
+                        <p>Some content about the alumni. <br> Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content
+                            Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content                          Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content 
+                            Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content 
+                            Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content 
+                            Dummy content Dummy content Dummy content Dummy content Dummy content 
+                        </p>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="blk">
+                            <h2>History of Alumni Meet</h2>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content  </p>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blk">
+                            <h2>Benefits of Alumni Meet</h2>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content  </p>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="blk">
+                            <h2>Achievements</h2>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content  </p>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- about-blk close -->
+        </div>
+        <div class=" core-blk" style="padding-top: 0px; padding-bottom: 0px;"><!-- about-blk start -->
+            <div class="container">
+                <div class="row margin-space">
+                    <div class="col-md-4">
+                        <div class="">
+                            <i class="pe pe-li-help pe-5x pe-icon" style="margin-left: 130px;"></i>
+                            <h2 style="margin-left: 90px;">Alumni Council</h2>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
+                            <i class="pe pe-li-apeaker pe-5x pe-icon" style="margin-left: 110px;"></i>
+                            <h2 style="margin-left: 90px;">Opinion Box</h2>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
+                            <i class="pe pe-li-love pe-5x pe-icon" style="margin-left: 95px;"></i>
+                            <h2 style="margin-left: 90px;">Memories</h2>
+                            <p>Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content Dummy content. </p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- about-blk close -->
+            <hr>
+        </div>
+
+        <div class="container margin-space"><!-- Team start -->
+            <div class="row title">
+                <div class="col-md-offset-2 col-md-8">
+                    <h1>Meet the Alumni Meet Organizing Team</h1>                    
+                </div>
+            </div>
+            <div class="row blk">
+                <div class="col-md-2 team-profile">
+                    <div class="pic" style="margin-left: -15px;">
+                        <img src="images/a_pic-1.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#" style="margin-left: 15px;">Person 1</a></h4>
+                    <span class="positions" style="margin-left: 15px;">Designation</span>
+                    <div class="yellow-line"></div>
+                    <p>Some Description about the person</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic" style="margin-left: -15px;">
+                        <img src="images/a_pic-2.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#" style="margin-left: 15px;">Person 2</a></h4>
+                    <span class="positions" style="margin-left: 15px;">Designation</span>
+                    <div class="yellow-line"></div>
+                    <p>Some Description about the person</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic" style="margin-left: -15px;">
+                        <img src="images/a_pic-3.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#" style="margin-left: 15px;">Person 3</a></h4>
+                    <span class="positions" style="margin-left: 15px;">Designation</span>
+                    <div class="yellow-line"></div>
+                    <p>Some Description about the person</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic" style="margin-left: -15px;">
+                        <img src="images/a_pic-4.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#" style="margin-left: 15px;">Person 4</a></h4>
+                    <span class="positions" style="margin-left: 15px;">Designation</span>
+                    <div class="yellow-line"></div>
+                    <p>Some Description about the person</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic" style="margin-left: -15px;">
+                        <img src="images/a_pic-5.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#" style="margin-left: 15px;">Person 5</a></h4>
+                    <span class="positions" style="margin-left: 15px;">Designationr</span>
+                    <div class="yellow-line"></div>
+                    <p>Some Description about the person</p>
+                </div>
+            </div>
+        </div><!-- Team close -->
+    </div>  <!-- about close -->
+</div><!-- Main-container end -->

@@ -1,0 +1,57 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Notices </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active">News</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container"> 
+    <div class="service" style="padding-bottom: 0px; padding-top: 0px;">
+        <div class="container">
+            <h1>Placement News</h1>
+            <div class=" service-blk">
+                <div class="row">
+                    <?php foreach ($placement_news as $news) {
+                        ?>
+                        <div class="col-md-3">
+                            <div class="blk">
+                                <h2> <?php echo String::truncate($news['PlacementNews']['subject'], $length = 22); ?> </h2>
+                                <p><?php echo String::truncate($news['PlacementNews']['description'], $length = 140); ?> </p>
+                                <a href="<?php echo $this->Html->url('/news/' . $news['PlacementNews']['id']); ?>" class="btn btn-default btn-yellow">read more</a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="service" style="padding-bottom: 0px; padding-top: 0px;">
+        <div class="container">
+            <h1>Placement Announcements</h1>
+            <div class=" service-blk">
+                <div class="row">
+                    <?php foreach ($announcements as $announcement) {
+                        ?>
+                        <div class="col-md-3">
+                            <div class="blk">
+                                <h2> <?php echo String::truncate($announcement['Announcement']['subject'], $length = 22); ?> </h2>
+                                <p><?php echo String::truncate($announcement['Announcement']['description'], $length = 140); ?> </p>
+                                <a href="<?php echo $this->Html->url('/news/announcment/' . $announcement['Announcement']['id']); ?>" class="btn btn-default btn-yellow">read more</a>
+                            </div>
+                        </div>
+                    <?php } ?>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

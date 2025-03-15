@@ -1,0 +1,527 @@
+<!--  page header section -->
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ptn-bg">
+                <h2>Our Team</h2>
+                <ol class="breadcrumb">
+                    <li><?php echo $this->Html->link('Home', '/') ?></li>
+                    <li><?php echo $this->Html->link('About Us', '/about-us') ?></li>
+                    <li class="active">Committees</li>
+                </ol>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"><!-- Main-container section -->
+    <!--  Team start -->
+    <div class="container team">
+        <div class="row title">
+            <div class="col-md-offset-2 col-md-8">
+                <h1>Fr. C. Rodrigues Institute of Technology.</h1>
+                <p class="lead-font">Committees</p>
+            </div>
+        </div>
+        <div class="container team"><!--  Team start -->
+            <div class="row title">
+                <ul class="nav nav-pills">
+                    <li class="active">
+                        <a href="#marathi" role="tab" data-toggle="tab">Agnel Marathi Cultural</a>
+                    </li>
+                    <li>
+                        <a href="#anti-ragging"role="tab" data-toggle="tab">Anti-Ragging</a>
+                    </li>
+                    <li>
+                        <a href="#women" role="tab" data-toggle="tab">Women Grievance</a>
+                    </li>
+                    <li>
+                        <a href="#grievance" role="tab" data-toggle="tab">Grievance Redressal</a>
+                    </li>
+                    <li>
+                        <a href="#harassment" role="tab" data-toggle="tab">Women Harassment</a>
+                    </li>
+                </ul>
+
+                <div class="tab-content">
+                    <div class="tab-pane active row" id="marathi"> <br/>
+                        <h2 style="margin-left: 15px;"> Agnel Marathi Cultural Committee. </h2> <br/>
+                        <h3>Members</h3> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Dr. S.M. Khot </strong></h4>
+                            <span class="positions">Hon. President</span>
+                            <p>HOD- Mech- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Megha Kolhekar </strong></h4>
+                            <span class="positions">Hon. Secretary</span>
+                            <p>Associate Prof.-FCRIT </p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Sujata Chicholikar </strong></h4>
+                            <span class="positions">Treasurer</span>
+                            <p>Associate Prof.-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-4.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Swapna G.</strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Prof.-FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-5.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. R. B. Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-APV</p>
+                            <div class="yellow-line"></div>
+                        </div> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-6.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Neena Biju Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Shrabani Walke </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratik Desai </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>General Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Ms. Shreya Agarwal </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Cultural Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratim Kar </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Cultural Secretary -Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane row" id="anti-ragging"> <br/>
+                        <h2 style="margin-left: 15px;"> Anti-Ragging Committee. </h2> <br/>
+                        <h3>Members</h3> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Dr. S.M. Khot </strong></h4>
+                            <span class="positions">Hon. President</span>
+                            <p>HOD- Mech- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Megha Kolhekar </strong></h4>
+                            <span class="positions">Hon. Secretary</span>
+                            <p>Associate Prof.-FCRIT </p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Sujata Chicholikar </strong></h4>
+                            <span class="positions">Treasurer</span>
+                            <p>Associate Prof.-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-4.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Swapna G.</strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Prof.-FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-5.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. R. B. Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-APV</p>
+                            <div class="yellow-line"></div>
+                        </div> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-6.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Neena Biju Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Shrabani Walke </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratik Desai </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>General Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Ms. Shreya Agarwal </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Cultural Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratim Kar </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Cultural Secretary -Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane row" id="women"> <br/>
+                        <h2 style="margin-left: 15px;"> WOMEN GRIEVANCE REDRESSAL COMMITTEE (WGRC). </h2> <br/>
+                        <h3>Members</h3> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Dr. S.M. Khot </strong></h4>
+                            <span class="positions">Hon. President</span>
+                            <p>HOD- Mech- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Megha Kolhekar </strong></h4>
+                            <span class="positions">Hon. Secretary</span>
+                            <p>Associate Prof.-FCRIT </p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Sujata Chicholikar </strong></h4>
+                            <span class="positions">Treasurer</span>
+                            <p>Associate Prof.-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-4.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Swapna G.</strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Prof.-FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-5.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. R. B. Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-APV</p>
+                            <div class="yellow-line"></div>
+                        </div> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-6.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Neena Biju Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Shrabani Walke </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratik Desai </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>General Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Ms. Shreya Agarwal </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Cultural Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratim Kar </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Cultural Secretary -Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane row" id="grievance"> <br/>
+                        <h2 style="margin-left: 15px;"> GRIEVANCE REDRESSAL COMMITTEE (GRC). </h2> <br/>
+                        <h3>Members</h3> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Dr. S.M. Khot </strong></h4>
+                            <span class="positions">Hon. President</span>
+                            <p>HOD- Mech- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Megha Kolhekar </strong></h4>
+                            <span class="positions">Hon. Secretary</span>
+                            <p>Associate Prof.-FCRIT </p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Sujata Chicholikar </strong></h4>
+                            <span class="positions">Treasurer</span>
+                            <p>Associate Prof.-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-4.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Swapna G.</strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Prof.-FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-5.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. R. B. Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-APV</p>
+                            <div class="yellow-line"></div>
+                        </div> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-6.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Neena Biju Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Shrabani Walke </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratik Desai </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>General Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Ms. Shreya Agarwal </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Cultural Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratim Kar </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Cultural Secretary -Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane row" id="harassment"> <br/>
+                        <h2 style="margin-left: 15px;"> WOMEN HARASSMENT COMMITTEE. </h2> <br/>
+                        <h3>Members</h3> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Dr. S.M. Khot </strong></h4>
+                            <span class="positions">Hon. President</span>
+                            <p>HOD- Mech- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Megha Kolhekar </strong></h4>
+                            <span class="positions">Hon. Secretary</span>
+                            <p>Associate Prof.-FCRIT </p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Sujata Chicholikar </strong></h4>
+                            <span class="positions">Treasurer</span>
+                            <p>Associate Prof.-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-4.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Swapna G.</strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Prof.-FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-5.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. R. B. Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-APV</p>
+                            <div class="yellow-line"></div>
+                        </div> <br/>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-6.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Neena Biju Nair </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar- FCRIT</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mrs. Shrabani Walke </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Registrar-FCRIMS</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-2.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratik Desai </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>General Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-3.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Ms. Shreya Agarwal </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Cultural Secretary - Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                        <div class="col-md-2 team-profile">
+                            <div class="pic">
+                                <?php echo $this->Html->image('a_pic-1.jpg', array('class' => 'img-responsive destaurate')); ?>
+                            </div>
+                            <h4> <strong>Mr. Pratim Kar </strong></h4>
+                            <span class="positions">Member</span>
+                            <p>Asst. Cultural Secretary -Students Council</p>
+                            <div class="yellow-line"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  Team close-->
+</div><!-- Main-container ending -->

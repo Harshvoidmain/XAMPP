@@ -1,0 +1,139 @@
+<!--  page header section -->
+<div class="banner">
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Mission & Vision</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('About Us', '/about-us') ?></li>
+                        <li class="active">Mission & Vision</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"><!--  Main-container section -->
+
+    <div class="container ">
+        <div class="row"> 
+            <div class="col-md-8"> <!-- program detail start -->
+                <h1>Mission</h1>
+                <div class="pic">
+                    <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive')); ?>
+                    <div class="yellow-blk pic-caption visible-lg visible-md"><h2><strong>89%</strong> of our Alumni are LEADERS !!</h2> </div>
+                    <div class="pic-caption-small visible-xs visible-sm" style="background-color: #9bba6e; padding: 10px;"><h4 style="color: white;"><strong>89%</strong> of our Alumni are LEADERS !!</h4> </div>
+                </div>
+                <p class="lead-font">Dummy text dummy text dummy text dummy text</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Mission Title 1</h2>
+                            <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text Dummy text dummy text dummy text dummy text dummy text.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Mission Title 2</h2>
+                            <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text Dummy text dummy text dummy text dummy text dummy text.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Mission Title 3</h2>
+                            <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text Dummy text dummy text dummy text dummy text dummy text.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Mission Title 4</h2>
+                            <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text Dummy text dummy text dummy text dummy text dummy text.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-blk we-do" style="text-align: justify;">
+                    <h2>Vision </h2>
+                    <p>Our vision at Fr. C. Rodrigues Institute of Technology is not only to impart professionally 
+                        sound education to our students, but also to inculcate in them, values of secularism, 
+                        discipline, faith in hard work, truth, honesty and brotherhood. This, we believe, 
+                        will help the students to emerge as respectable citizens, legitimately proud of their 
+                        rich national heritage and to experience with deep feeling, the joy of being a part of 
+                        this large human family. We continuously look for adequate means to provide our students 
+                        with the right skills so that they tune themselves to make the right strides in their pursuit of true success, 
+                        in this era of ‘survival of the fittest’. </p>
+                    <p>It is our firm belief that only sincere love for each other can lead to the fullest 
+                        realization and accomplishment of one’s own self. All this is the progressive unfolding 
+                        of our motto – “Love your Neighbour As Yourself”. This leads us, namely all the members 
+                        of the Agnel Family, to the gradual and full realization of the great truth in 
+                        “VASUDHAIVA KUTUMBAKAM”, meaning - ‘the world is but one family’. </p>
+                </div>
+
+            </div> <!-- program detail close -->
+
+            <div class="col-md-4 right-sidebar"><!--sidebar section -->
+                <div class="row"> <!-- Message From the Head 1-->
+                    <div class="col-md-12"> 
+                        <div class="sidebar-blk">
+                            <h2><?php echo $vision[0]['Vision']['headline']; ?>
+                            </h2> <br/>
+                            <div class="pic">
+                                <?php echo $this->Html->image($vision[0]['Vision']['image']); ?>
+                            </div> <br/>
+                            <p>   
+                                <?php echo $vision[0]['Vision']['name']; ?>
+                            </p>
+                            <p>                                   
+                                <?php echo $vision[0]['Vision']['designation']; ?>
+                            </p> <br/>
+                            <p>   
+                                <?php echo $vision[0]['Vision']['message']; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+                <div class="row"> <!-- Message From the Head 1-->
+                    <div class="col-md-12"> 
+                        <div class="sidebar-blk">
+                            <h2><?php echo $vision[1]['Vision']['headline']; ?>
+                            </h2> <br/>
+                            <div class="pic">
+                                <?php echo $this->Html->image($vision[1]['Vision']['image']); ?>
+                            </div> <br/>
+                            <p>   
+                                <?php echo $vision[1]['Vision']['name']; ?>
+                            </p>
+                            <p>                                   
+                                <?php echo $vision[1]['Vision']['designation']; ?>
+                            </p> <br/>
+                            <p>   
+                                <?php echo $vision[1]['Vision']['message']; ?>
+                            </p>
+                        </div>
+                    </div>
+                </div> 
+<!--                <div class="row"> 
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+                            <h2>Other Page Links</h2>
+                            <ul class="list-style">
+                                <li><i class="fa fa-angle-double-right"></i> <a  href="#">Alumni</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Amenities</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Placements</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Committees</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>  message from the head close -->
+            </div><!-- sidebar section dending -->
+        </div>
+    </div>
+</div>
+<!--  Main-container section ending-->
+

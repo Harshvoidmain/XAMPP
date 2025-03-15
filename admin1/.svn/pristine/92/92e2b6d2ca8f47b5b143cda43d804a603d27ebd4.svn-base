@@ -1,0 +1,162 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2><?php echo h($department['Department']['name']); ?> </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active"><?php echo h($department['Department']['name']); ?></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <h1 style="margin-left: 30px;"> <?php echo 'Welcome to the Department of' . ' ' . h($department['Department']['name']); ?></h1> <br/>
+        <!--  Page Content start -->
+        <?php echo $this->element('academic_sidebar', array('base' => '/academics/' . $type . '/' . $dept)); ?> 
+        <?php if ($model == 'Faculties') { ?>
+            <div class="col-md-9">
+                <div class="tab-pane row" id="faculty" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <?php
+                    foreach ($data as $dat) {
+                        echo '<div class="col-md-4">';
+                        echo '<div class="pic">';
+                        echo $this->Html->image($dat['Faculties']['image'] . '_160.jpg');
+                        echo '<br/> <br/>';
+                        echo '<b>' . $this->Html->link($dat['Faculties']['name'], Inflector::urlified($dat['Faculties']['id'], $dat['Faculties']['name'], 'Faculty')) . '</b>';
+                        echo '<br/>';
+                        echo $dat['Faculties']['designation'];
+                        echo '<br/>';
+                        echo $dat['Faculties']['email_address'];
+                        echo '</div>';
+                        echo '</div>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($model == 'Infrastructures') { ?>
+            <div class="col-md-8">
+                <div class="tab-pane row" id="infrastructure" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <div class="col-md-4">
+                        <div class="pic">
+                            <?php
+                            foreach ($data as $dat) {
+                                echo $this->Html->image($dat['Infrastructures']['image']);
+                                echo '<br/>';
+                            }
+                            ?>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($model == 'Rnds') { ?>
+            <div class="col-md-8">
+                <div class="tab-pane row" id="rnd" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <?php
+                    foreach ($data as $dat) {
+                        echo '<b>' . $dat['Rnds']['heading'] . '</b>';
+                        echo '<br/> <br/>';
+                        echo $dat['Rnds']['description'];
+                        echo '<br/>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($model == 'AcademicCalendars') { ?>
+            <div class="col-md-8">
+                <div class="tab-pane row" id="academic-calendars" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <?php
+                    foreach ($data as $dat) {
+                        echo '<b>' . $dat['AcademicCalendars']['heading'] . '</b>';
+                        echo '<br/> <br/>';
+                        echo $dat['AcademicCalendars']['description'];
+                        echo '<br/>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($model == 'StudentAssociations') { ?>
+            <div class="col-md-8">
+                <div class="tab-pane row" id="student-association" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <?php
+                    foreach ($data as $dat) {
+                        echo '<b>' . $dat['StudentAssociations']['heading'] . '</b>';
+                        echo '<br/> <br/>';
+                        echo $dat['StudentAssociations']['description1'];
+                        echo '<br/> <br/>';
+                        echo $dat['StudentAssociations']['description2'];
+                        echo '<br/>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($model == 'DeptPlacements') { ?>
+            <div class="col-md-8">
+                <div class="tab-pane row" id="dept-placement" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <?php
+                    foreach ($data as $dat) {
+                        echo '<b>' . $dat['DeptPlacements']['heading1'] . '</b>';
+                        echo '<br/> <br/>';
+                        echo $dat['DeptPlacements']['description1'];
+                        echo '<br/> <br/>';
+                        echo '<b>' . $dat['DeptPlacements']['heading2'] . '</b>';
+                        echo '<br/> <br/>';
+                        echo $dat['DeptPlacements']['description2'];
+                        echo '<br/>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($model == 'Achievements') { ?>
+            <div class="col-md-8">
+                <div class="tab-pane row" id="achievement" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <?php
+                    foreach ($data as $dat) {
+                        echo '<b>' . $dat['Achievements']['topic'] . '</b>';
+                        echo '<br/> <br/>';
+                        echo $dat['Achievements']['description'];
+                        echo '<br/> <br/>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php } ?>
+
+        <?php if ($model == 'Activities') { ?>
+            <div class="col-md-8">
+                <div class="tab-pane row" id="achievement" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <?php
+                    foreach ($data as $dat) {
+                        echo '<b>' . $dat['Activities']['heading'] . '</b>';
+                        echo '<br/> <br/>';
+                        echo $dat['Activities']['description'];
+                        echo '<br/> <br/>';
+                    }
+                    ?>
+                </div>
+            </div>
+        <?php } ?>       
+
+
+    </div>
+</div>
+

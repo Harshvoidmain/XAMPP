@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Fr. C. Rodrigues Institute of Technology. In Pursuit of Excellence.">
+        <title>Fr. C. Rodrigues Institute of Technology.</title>
+        <!-- Bootstrap -->
+        <?php echo $this->Html->css(array('bootstrap', 'sstyle', 'helper', 'pe-icon-line', 'font-awesome.min', 'owl.carousel', 'owl.theme')); ?>
+
+        <?php echo $this->Html->script(array('jquery-1.9.1.min', 'bootstrap', 'scripts', 'owl.carousel')); ?>
+
+        <!-- Include js plugin -->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        <!--[if IE 9]>
+       <link href="css/ie.css" rel="stylesheet">
+    <![endif]-->
+        <!--[if IE 10]>
+           <link href="css/ie.css" rel="stylesheet">
+        <![endif]-->
+        <!--[if IE 11]>
+           <link href="css/ie.css" rel="stylesheet">
+        <![endif]-->
+        <link rel="stylesheet" href="owl-carousel/owl.carousel.css">
+        <link rel="stylesheet" href="owl-carousel/owl.theme.css">
+        <link rel="stylesheet" href="owl-carousel/owl.transitions.css">
+        <script src="jquery-1.9.1.min.js"></script>
+        <script src="js/owl.carousel.min.js"></script>
+        <script scr="assets/owl-carousel/owl.carousel.js"></script>
+        <script>
+$(document).ready(function() {
+ 
+  var owl = $("#owl-demo");
+ 
+  owl.owlCarousel({
+      navigation :false,
+      items : 10, //10 items above 1000px browser width
+      itemsDesktop : [1000,5], //5 items between 1000px and 901px
+      itemsDesktopSmall : [900,3], // betweem 900px and 601px
+      itemsTablet: [600,2], //2 items between 600 and 0
+      itemsMobile : false, // itemsMobile disabled - inherit from itemsTablet option
+      autoPlay : false,
+  });
+ 
+  // Custom Navigation Events
+  $(".next").click(function(){
+    owl.trigger('owl.next');
+  })
+  $(".prev").click(function(){
+    owl.trigger('owl.prev');
+  })
+  $(".play").click(function(){
+    owl.trigger('owl.play',1000); //owl.play event accept autoPlay speed as second parameter
+  })
+  $(".stop").click(function(){
+    owl.trigger('owl.stop');
+  })
+ 
+});
+</script>
+        <style>
+            .header-top{
+                width:100%;
+            }
+            .header-top img{
+                width: 70px;
+                margin-left: 20px;
+            }
+            .header-top .title{
+                line-height: 28px;
+                margin-top: 34px;
+                color: #fff;
+                font-size: 30px;
+                word-spacing: 12px;
+                
+                margin-left: 40px;             
+                float: left;
+                font-family: 'Dosis', sans-serif;
+                text-transform: capitalize;
+                text-align: center;
+                
+            }
+            .header-top .title2{
+                line-height: 28px;
+                margin-top: 40px;
+                color: #fff;
+                font-size: 35px;
+                word-spacing: 12px;
+                
+                margin-left: 30px;             
+                float: left;
+                font-family: 'Dosis', sans-serif;
+                text-transform: capitalize;
+                text-align: center;
+                
+            }
+        </style>
+    </head>
+    <!-- header section -->
+
+    <div class="header" style="background: #9bba6e; padding-bottom: 10px;">
+        <div class="container "> 
+            <div class="header-top">
+                <div style="float:left;display: inline-block;padding-left: 9vw">
+                    <a class="navbar-brand visible-lg visible-md visible-xs" href="#" style="height: 92px;">
+                        <?php echo $this->Html->image('fcritlogo.png', array('alt' => 'logo')); ?>
+                    </a>
+                </div>
+                <div class="title visible-lg visible-md" style="float: left; display:inline-block;padding-left: 2px; " >
+                    FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY
+                </div>
+                
+                <div class="title2 visible-xs" style="float: left; display:inline-block " >
+                    F.C.R.I.T
+                </div>
+                <div style="float:left;display: inline-block;padding-left: 1vw">
+                    <a class="navbar-brand visible-sm" href="#" style="height: 92px;">
+                        <?php echo $this->Html->image('fcritlogo.png', array('alt' => 'logo')); ?>
+                    </a>
+                </div>
+                <div class="title visible-sm" style="float: left; display:inline-block;padding-left: 1vw; font-size: 25px;" >
+                    FR. C. RODRIGUES INSTITUTE OF TECHNOLOGY
+                </div>
+                
+            </div>
+        </div>
+    </div>
+    
+    
+ 
+    
+    
+    
+    
+    
+    
+    <div class="header">
+        <div class="container-fluid"> 
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header"  style="width:100%;">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav">
+                    <li><a href="<?php echo $this->Html->url('/'); ?>" class="active">HOME</a></li>
+                    <li class="dropdown"> <a href="<?php echo $this->Html->url('/about-us'); ?>" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->Html->url('/about-us/history'); ?>">History</a></li>
+                            <li><a href="<?php echo $this->Html->url('/about-us/mission_vision'); ?>">Mission & Vision</a></li>
+                            <li><a href="<?php echo $this->Html->url('/about-us/trustee'); ?>">Trustees</a></li>
+                            <li><a href="<?php echo $this->Html->url('/about-us/committee'); ?>">Committees</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu"><a href="<?php echo $this->Html->url('/academics/under_graduate'); ?>">Under Graduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->Html->url('/academics/under-graduate/humanities_&_basic_sciences'); ?>">Humanities & Basic<br/>
+                                            Sciences Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/under-graduate/computer'); ?>">Computer Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/under-graduate/electronics_&_telecommunications'); ?>">Electronics & Telecomm- <br/> unications Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/under-graduate/electrical'); ?>">Electrical Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/under-graduate/mechanical'); ?>">Mechanical Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/under-graduate/information'); ?>">Information Technology</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a href="<?php echo $this->Html->url('/academics/post_graduate'); ?>">Post Graduate</a>
+                                <ul class="dropdown-menu">                                         
+                                    <li><a href="<?php echo $this->Html->url('/academics/post-graduate/mechanical'); ?>">Mechanical Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/post-graduate/electrical'); ?>">Electrical Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/post-graduate/electronics_&_telecommunications'); ?>">Electronics & Telecomm- <br/> unications Engineering</a></li>
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a href="<?php echo $this->Html->url('/academics/phd'); ?>">PhD</a>
+                                <ul class="dropdown-menu">                                         
+                                    <li><a href="<?php echo $this->Html->url('/academics/phd/mechanical'); ?>">Mechanical Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/phd/electrical'); ?>">Electrical Engineering</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/academics/phd/electronics_&_telecommunications'); ?>">Electronics & Telecomm- <br/> unications Engineering</a></li>                                            
+                                </ul>
+                            </li>
+                            <li><a href="<?php echo $this->Html->url('/academics/affiliation'); ?>">Affiliations </a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exam Cell<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu"><a>Under Graduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->Html->url('/examcells/under-graduate/notice'); ?>">Notice</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/examcells/under-graduate/result'); ?>">Result</a></li>
+                                    <li><a href="<?php echo $this->Html->url('http://www.mu.ac.in/Examtt.html'); ?>">Time-table</a></li>                                                                            </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a>Post Graduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->Html->url('/examcells/post-graduate/notice'); ?>">Notice</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/examcells/post-graduate/result'); ?>">Result</a></li>
+                                    <li><a href="<?php echo $this->Html->url('http://www.mu.ac.in/Examtt.html'); ?>">Time-table</a></li>                                        
+                                </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a>PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->Html->url('/examcells/phd/notice'); ?>">Notice</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/examcells/phd/result'); ?>">Result</a></li>
+                                    <li><a href="<?php echo $this->Html->url('http://www.mu.ac.in/Examtt.html'); ?>">Time-table</a></li>                                        
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li class="dropdown-submenu"><a>Under Graduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->Html->url('/admissions/under-graduate/centralize'); ?>">Centralized</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/admissions/under-graduate/minority'); ?>">Minority</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/admissions/under-graduate/institute'); ?>">Institute level</a></li>                                                                            </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a>Post Graduate</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->Html->url('/admissions/post-graduate/centralize'); ?>">Centralized</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/admissions/post-graduate/minority'); ?>">Minority</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/admissions/post-graduate/institute'); ?>">Institute level</a></li>                                                                            </ul>
+                            </li>
+                            <li class="dropdown-submenu"><a>PhD</a>
+                                <ul class="dropdown-menu">
+                                    <li><a href="<?php echo $this->Html->url('/admissions/phd/centralize'); ?>">Centralized</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/admissions/phd/minority'); ?>">Minority</a></li>
+                                    <li><a href="<?php echo $this->Html->url('/admissions/phd/institute'); ?>">Institute level</a></li>                                                                            </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <a href="<?php echo $this->Html->url('/amenities'); ?>" class="dropdown-toggle" data-toggle="dropdown">Amenities<b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->Html->url('/amenities/library'); ?>">Library</a></li>
+                            <li><a href="<?php echo $this->Html->url('/amenities/gymnasium'); ?>">Gymnasium</a></li>
+                            <li><a href="<?php echo $this->Html->url('/amenities/hostel'); ?>">Hostel</a></li>
+                            <li><a href="<?php echo $this->Html->url('/amenities/swimming_pool'); ?>">Swimming Pool</a></li>
+                            <li><a href="<?php echo $this->Html->url('/amenities/medical_centre'); ?>">Medical Centre</a></li>
+                            <li><a href="<?php echo $this->Html->url('/amenities/meditation_centre'); ?>">Meditation Centre</a></li>
+                            <li><a href="<?php echo $this->Html->url('/amenities/playground'); ?>">Playground</a></li>
+                            <li><a href="<?php echo $this->Html->url('/amenities/canteen'); ?>">Canteen</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumni <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->Html->url('https://fcrit.almaconnect.com/'); ?>">Alma Connect</a></li>
+                            <li><a href="<?php echo $this->Html->url('/alumni_home'); ?>">About</a></li>
+                            <li><a href="<?php echo $this->Html->url('/alumni_council'); ?>">Alumni Council</a></li>
+                            <li><a href="<?php echo $this->Html->url('/memories'); ?>">Memories</a></li>
+                            <li><a href="<?php echo $this->Html->url('/registration'); ?>">Registration</a></li>
+                            <li><a href="<?php echo $this->Html->url('/opinion_box'); ?>">Opinion Box</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Placement <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->Html->url('/placement_home'); ?>">Home</a></li>
+                            <li><a href="<?php echo $this->Html->url('/placements/news'); ?>">News / Announcements</a></li>
+                            <li><a href="<?php echo $this->Html->url('/placements/statistics'); ?>">Placement Statistics</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Extra Curricular <b class="caret"></b></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo $this->Html->url('/'); ?>">Professional Bodies</a></li>
+                            <li><a href="<?php echo $this->Html->url('/events'); ?>">Events</a></li>                                
+                        </ul>
+                    </li>
+
+                    <!--                            <li><a href="contact-us.html">Contact us </a></li>-->
+                </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a></li>
+                    <li><a href="#"><span class="glyphicon glyphicon-log-in"></span> Login</a></li>
+                </ul>
+            </div>
+            <!-- /.navbar-collapse --> 
+
+        </div>
+    </nav>
+</div>
+<!-- header section end --> 
+
+<!-- banner start -->
+<?php
+echo $this->Session->flash();
+echo $content_for_layout;
+?>        
+<!-- banner end -->
+
+<!--  footer section -->
+<div class="footer"  style="padding-bottom: 0px !important;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4">
+                <h2>Fr. C. Rodrigues Institute of Technology</h2>
+                <p id="footerf1"> 
+                    Agnel Technical Education Complex <br/>
+                    Sector 9-A, Vashi, Navi Mumbai,<br/> 
+                    Maharashtra, India <br/>
+                    PIN - 400703
+                </p>
+                <ul class="list-style">
+                    <li><i class="fa fa-phone-square"></i> (022) 41611000 , 27661924 <br/> 
+                        &nbsp; &nbsp; (022) 27660618 </li>
+                    <li><i class="fa fa-fax"></i> (022) 41611025</li>
+                    <li><i class="fa fa-envelope"></i> support@fcrit.ac.in</li>
+                </ul>
+            </div>
+            <div class="col-md-4 help"> <!-- help start -->
+                <h2> More Information </h2>
+                <ul class="list-style">
+                    <li><a href="about-us">About Us</a></li>
+                    <li><a href="#">Academics</a></li>
+                    <li><a href="#">Exam Cell</a></li>
+                    <li><a href="#">Admission</a></li>
+                    <li><a href="amenities">Amenities</a></li>
+                    <li><a href="#">Alumni</a></li>
+                    <li><a href="#">Placements</a></li>
+                </ul>
+            </div>
+            <!-- help close -->
+            <div class="col-md-4 help"> <!-- help start -->
+                <h2> Get In Touch </h2>
+                <ul class="list-style">
+                    <li><a href="#">Contact Us</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>                            
+                </ul>
+            </div>
+            <!--                    <div class="col-md-4 news-letter">  news-letter start 
+                                    <h2> Newsletter</h2>
+                                    <p> Nulla facilisi. Vivamus lacus libero, ultrices non ullamcorper ac, tempus sit amet enim. Suspendisse at semper ipsum. </p>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="enter email addess">
+                                        <span class="input-group-btn">
+                                            <button class="btn btn-default btn-yellow" type="button">Go!</button>
+                                        </span> </div>-->
+            <!-- /input-group --> 
+        </div>
+        <!-- news-letter close --> 
+    </div>
+</div>
+<!--  footer section ending --> 
+<!-- sub-footer -->
+<div class="sub-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <p>© 2014 FCRIT, Vashi. All rights reserved.</p>
+            </div>
+            <div class="col-md-1-and-half">
+                <a href="#"><i class="fa fa-facebook-square"></i></a> 
+                <a href="#"><i class="fa fa-twitter-square"></i></a> 
+                <a href="#"><i class="fa fa-flickr"></i></a> 
+                <a href="#"><i class="fa fa-youtube-square"></i></a> 
+            </div>
+        </div>
+    </div>
+</div>
+<!-- sub-footer ending --> 
+<!-- section --> 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<?php echo $this->Html->script(array('jquery-1.9.1.min', 'bootstrap', 'scripts', 'owl.carousel')); ?>
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+</body>
+</html>

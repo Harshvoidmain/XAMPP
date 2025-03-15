@@ -1,0 +1,174 @@
+<!--  page header section -->
+<div class="banner">
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Under Graduate</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Under Graduate</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"><!--  Main-container section -->
+    <!--  Service section -->
+    <div class="container ">
+        <div class="row">
+            <div class="col-md-8"><!-- service details section -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <h1>Helps children around the world</h1>
+                        <p class="lead-font">Nullam velit metus tristique id purus eget consequat congue loreml orem ipsum dolor sit amet consectetur adipiscing elit. Praesent vestibulum aenean noummy endrerit mauris. </p>
+                    </div>
+                </div>                
+                <div class="row">
+                    <div class="col-md-6"><div class="blk">
+                            <div class="pic">
+                                <a href="#"><img src="images/p_pic-5.jpg" class="img-responsive" alt=""></a>
+                            </div>
+
+                            <a href="#"><h2>Adopt a child</h2></a>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                            <a href="#" class="btn btn-yellow">read more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6"><div class="blk">
+                            <div class="pic">
+                                <a href="#"><img src="images/p_pic-2.jpg" class="img-responsive" alt=""></a>
+                            </div>
+
+                            <a href="#"><h2>Children in Care</h2></a>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                            <a href="#" class="btn btn-yellow">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><div class="blk">
+                            <div class="pic">
+                                <a href="#"><img src="images/p_pic-3.jpg" class="img-responsive" alt=""></a>
+                            </div>
+
+                            <a href="#"><h2>Young People</h2></a>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                            <a href="#" class="btn btn-yellow">read more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6"><div class="blk">
+                            <div class="pic">
+                                <a href="#"><img src="images/p_pic-4.jpg" class="img-responsive" alt=""></a>
+                            </div>
+
+                            <a href="#"><h2>Family support</h2></a>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                            <a href="#" class="btn btn-yellow">read more</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6"><div class="blk">
+                            <div class="pic">
+                                <a href="#"><img src="images/p_pic-5.jpg" class="img-responsive" alt=""></a>
+                            </div>
+
+                            <a href="#"><h2>Disabled children</h2></a>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                            <a href="#" class="btn btn-yellow">read more</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6"><div class="blk">
+                            <div class="pic">
+                                <a href="#"><img src="images/p_pic-6.jpg" class="img-responsive" alt=""></a>
+                            </div>
+
+                            <a href="#"><h2>Our schools</h2></a>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                            <a href="#" class="btn btn-yellow">read more</a>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- service detail section ending -->
+            <div class="col-md-4 right-sidebar"><!--sideba section -->
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+
+                            <div class="you-help">
+                                <h2>Give a Donate</h2>
+                                <p>Invest in future cures for some of life’s most devasrating diseases.</p>
+                                <div class=""><label ><input type="radio" name="name" id="radio-0" value="1"> $10 a month</label></div>
+                                <div class=""><label><input type="radio" name="name" id="radio-1" value="2"> One time donation</label></div>
+
+                            </div>
+
+                            <form class="" role="form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="donate" placeholder="$">
+                                    <button type="submit" class="btn btn-default btn-yellow">Donate now</button>
+                                </div>
+                            </form>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+
+                            <div class="you-help">
+                                <h2>How you can help</h2>
+                                <ul class="list-style">
+                                    <li><i class="fa fa-angle-double-right"></i> Gift Catalog</li>
+                                    <li><i class="fa fa-angle-double-right"></i> Birthday gift</li>
+                                    <li><i class="fa fa-angle-double-right"></i> Events</li>
+                                    <li><i class="fa fa-angle-double-right"></i> Sposnorship</li>
+                                    <li><i class="fa fa-angle-double-right"></i> Partnership help</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+                            <div class="you-help">
+                                <h2> Newsletter </h2>
+                                <p> Sollicitudin massa non libero egestas eget blandit simple dummy. </p>
+                                <form class="newsletter" role="form">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" id="newsletter" placeholder="Enter email">
+                                        <button type="submit" class="btn btn-default btn-yellow">submit</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+                            <div class="you-help">
+                                <h2>Want to know our latest  cuase solution?</h2>
+                                <p> Annual reports and accounts <strong>(2013)</strong><br><small> <strong>(pdf, 217kb)</strong> </small> </p>
+                                <form class="newsletter" role="form">
+                                    <div class="form-group">
+
+                                        <button type="submit" class="btn btn-default btn-yellow">Download the PDF</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- sidebar section dending -->
+        </div>
+    </div>
+    <!-- Service section ending-->
+
+
+</div><!--  Main-containre section ending-->

@@ -1,0 +1,105 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Affiliations</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Academics', '/academics') ?></li>
+                        <li class="active">Affiliations</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="col-md-3">
+            <ul class="nav nav-pills nav-stacked"> 
+                <li class="active">
+                    <a href="#mu" role="tab" data-toggle="tab">Mumbai University</a>
+                </li>
+                <li>
+                    <a href="#dte" role="tab" data-toggle="tab">DTE</a>
+                </li>
+                <li>
+                    <a href="#aicte" role="tab" data-toggle="tab">AICTE</a>
+                </li>
+                <li>
+                    <a href="#disclosure" role="tab" data-toggle="tab">Mandatory Disclosure</a>
+                </li>
+            </ul>
+        </div>
+
+        <div class="col-md-9">
+            <div class="tab-content">
+                <div class="tab-pane active" id="mu" style="margin: -20px 0px 0px 20px"> <br/>
+                    <?php
+                    foreach ($affiliation as $aff) {
+                        if (($aff['Affiliation']['type']) == 'Mumbai University') {
+                            echo $aff['Affiliation']['heading'];
+                            echo '<br/> <br/>';
+                            echo $aff['Affiliation']['description'];
+                            echo '<br/>';
+//                    echo $aff['Affiliation']['attachment'];
+//                    echo '<br/>';
+                        }
+                    }
+                    ?>
+                </div>
+
+                <div class="tab-pane" id="dte" style="margin: -20px 0px 0px 20px"> <br/>
+                    <?php
+                    foreach ($affiliation as $aff) {
+                        if (($aff['Affiliation']['type']) == 'DTE') {
+                            echo $aff['Affiliation']['heading'];
+                            echo '<br/> <br/>';
+                            echo $aff['Affiliation']['description'];
+                            echo '<br/>';
+//                    echo $aff['Affiliation']['attachment'];
+//                    echo '<br/>';
+                        }
+                    }
+                    ?>
+                </div>
+
+                <div class="tab-pane" id="aicte" style="margin: -20px 0px 0px 20px"> <br/>
+                    <?php
+                    foreach ($affiliation as $aff) {
+                        if (($aff['Affiliation']['type']) == 'AICTE') {
+                            echo $aff['Affiliation']['heading'];
+                            echo '<br/> <br/>';
+                            echo $aff['Affiliation']['description'];
+                            echo '<br/>';
+//                    echo $aff['Affiliation']['attachment'];
+//                    echo '<br/>';
+                        }
+                    }
+                    ?>
+                </div>
+
+                <div class="tab-pane" id="disclosure" style="margin: -20px 0px 0px 20px"> <br/>
+                    <?php
+                    foreach ($affiliation as $aff) {
+                        if (($aff['Affiliation']['type']) == 'Mandatory Disclosure') {
+                            echo $aff['Affiliation']['heading'];
+                            echo '<br/> <br/>';
+                            echo $aff['Affiliation']['description'];
+                            echo '<br/>';
+//                    echo $aff['Affiliation']['attachment'];
+//                    echo '<br/>';
+                        }
+                    }
+                    ?>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,99 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Meditation Centre</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Amenities', '/amenities') ?></li>
+                        <li class="active">Meditation Centre</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h1>Infrastructure - Meditation Centre</h1>                            
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">BalBhavan Building</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post"> 
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>Need a place to close your eyes and find your true self and connect with your 
+                                spiritual side? Visit the “Meditation Centre”. It is located at the Balbhavan 
+                                ground floor. It has an area of 1570 sq. feet with centralized air conditioning 
+                                and the right ambience for meditation and prayer meets.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <p> It has a state-of–the–art surround sound system with a processor capable of storing up to 
+                                200 thousand bhajans and spiritual songs which the users can select and play through a 
+                                modern computer as per their taste.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Meditation Centre</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+    </div>
+    <!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

@@ -1,0 +1,210 @@
+<!--  page header section -->
+<div class="banner">
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Library</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="<?php echo $this->Html->url('/home'); ?>">Home</a></li>
+                        <li class="active">Library</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Blog start -->
+        <div class="row blog">
+            <div class="col-md-8"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h1><a href="#">Maecenas sitamet justo adiam porta</a></h1>
+                            <div class="meta"> <span class="post-date"><i class="fa fa-calendar"></i> June 27, 2014</span> <span class="category"><i class="fa fa-tag"></i> POSTED IN <a href="#">charity</a></span> <span class="comment"><i class="fa fa-comments "></i><a href="#"> 30  Comments</a></span></div>
+                            <div class="pic"> <a href="#"><img src="images/s_pic-1.jpg" class="img-responsive" alt=""></a> </div>
+                            <p>Sed mattis dui ut ultrices sodales. Integer lacinia lectus quis nisl aliquam, non accumsan dui molestie. Vivamus rutrum, nisl vel consequat sollicitudin, mauris nulla luctus libero, quis feugiat velit lectus nec felis. Aliquam suscipit quis odio a volutpat. Aenean sed sagittis dolor. </p>
+                            <a href="#" class="btn btn-yellow">Read More</a> </div>
+                    </div>
+                </div>
+                <!-- Feature post close -->
+                <hr>
+                <div class="feature-post"> 
+                    <!-- Feature post start -->
+                    <div class="row ">
+                        <div class="col-md-12">
+                            <h1><a href="#">Consectet adipiscing elit</a></h1>
+                            <div class="meta"> <span class="post-date"><i class="fa fa-calendar"></i> June 27, 2014</span> <span class="category"><i class="fa fa-tag"></i> POSTED IN <a href="#">charity</a></span> <span class="comment"><i class="fa fa-comments "></i><a href="#"> 30  Comments</a></span></div>
+                            <div class="pic"> <a href="#"><img src="images/s_pic-1.jpg" class="img-responsive" alt=""></a> </div>
+                            <p>Mattis dui ut ultrices sodales. Integer lacinia lectus quis nisl aliquam, non accumsan dui molestie. Viva mus rutrum, nisl vel consequat sollicitudin, mauris nulla luctus libero, quis feugiat velit lectus nec felis. Aliquam suscipit quis odio a volutpat. Aenean sed sagittis dolor.</p>
+                            <p>Integer lacinia lectus quis nisl aliquam, non accumsan dui molestie. Vivamus rutrum, nisl vel consequat sollicitudin, mauris nulla luctus libero, quis feugiat velit lectus nec felis. Aliquam suscipit quis odio.</p>
+                            <a href="#" class="btn btn-yellow">Read More</a> </div>
+                    </div>
+                </div>
+                <!-- Feature post close -->
+                <hr>
+                <div class="video"> 
+                    <!-- Video start -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="post">
+                                <div class="meta"> <span class="post-date"> March 20,2014 </span> </div>
+                                <div class="video">
+                                    <div class="video-wrapper">
+                                        <iframe src="http://player.vimeo.com/video/25864666" width="500" height="281" ></iframe>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Video close -->
+                <hr>
+                <div class="blockquote"> 
+                    <!-- Blockquote start -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="meta"> <span class="post-date"> March 20,2014 </span> </div>
+                        </div>
+                    </div>
+                    <div class="blockquote-ct">
+                        <div class="row">
+                            <div class="col-md-offset-1 col-md-10">
+                                <h2>“Proin scelerisque fringilla magna,et bibendum temoupor Integer Vivamus rutrum, nisl vel consequat sollicitudin, mauris nulla luctus libero.” </h2>
+                                <span class="name">-- Jhone Carter</span> </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Blockquote close -->
+                <hr>
+                <div class="row"> 
+                    <!-- Pagination start -->
+                    <div class="col-md-12">
+                        <ul class="pagination">
+                            <li><a href="#">«</a></li>
+                            <li><a href="#">1</a></li>
+                            <li><a href="#">2</a></li>
+                            <li><a href="#">3</a></li>
+                            <li><a href="#">4</a></li>
+                            <li><a href="#">5</a></li>
+                            <li><a href="#">»</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <!-- Pagination close --> 
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-4 right-sidebar"> 
+                <!--right sidebar start -->
+                <div class="row"> 
+                    <!--search widget start -->
+                    <div class="col-md-12 search-widget">
+                        <h2>Search</h2>
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="Search here">
+                            <span class="input-group-btn">
+                                <button class="btn btn-default btn-yellow" type="button"><i class="fa fa-search "></i></button>
+                            </span> </div>
+                    </div>
+                </div>
+                <!-- search-widget close -->
+                <div class="recent-post"> 
+                    <!-- Recent-post start -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2> Recent Post </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="pic"> <a href="#"><img src="images/blog_pic-1.jpg" class="img-responsive" alt=""></a> </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3><a href="#">Phasellus auctor lacus sagittis mollis nibhcondimentum</a></h3>
+                            <div class="meta"> <span class="post-date"><i class="fa fa-calendar"></i>March 20,2014</span> <span class="comment"><i class="fa fa-comments"></i><a href="#"> 30  Comments</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="pic"> <a href="#"><img src="images/blog_pic-2.jpg" class="img-responsive" alt=""></a> </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3><a href="#">Vivamus vel elit auctor dignissim massa</a></h3>
+                            <div class="meta"> <span class="post-date"><i class="fa fa-calendar"></i>March 20,2014</span> <span class="comment"><i class="fa fa-comments"></i><a href="#"> 30  Comments</a></span> </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="pic"> <a href="#"><img src="images/blog_pic-3.jpg" class="img-responsive" alt=""></a> </div>
+                        </div>
+                        <div class="col-md-8">
+                            <h3><a href="#">Pellentesque sodales magna vitae arcu tristique</a></h3>
+                            <div class="meta"> <span class="post-date"><i class="fa fa-calendar"></i>March 20,2014</span> <span class="comment"><i class="fa fa-comments"></i><a href="#"> 30  Comments</a></span> </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+                <hr>
+                <div class="post-categories"> 
+                    <!-- Post-categories start -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2> Post Categories </h2>
+                            <ul class="list-style">
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Charity (32)</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Fund Raising (32)</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Events (34)</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Help (32)</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Sposnership (2)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Post-categories close -->
+                <hr>
+                <div class="archives"> 
+                    <!-- Archives start -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2> Archives </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <ul class="list-style">
+                                <li><a href="#">March  2014</a></li>
+                                <li><a href="#">February  2014</a></li>
+                                <li><a href="#">January  2014</a></li>
+                                <li><a href="#">Desember  2013</a></li>
+                                <li><a href="#">November  2013</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <!-- Archives close -->
+                <hr>
+                <div class="tags"> 
+                    <!-- Tag start -->
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h2> Tags </h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12"> <a href="#">accumsan</a> <a href="#">tags two</a> <a href="#">tagsname here</a> <a href="#">tagsname here</a> <a href="#">tags three</a> <a href="#"> massavel</a> <a href="#">accumsansem</a> </div>
+                    </div>
+                </div>
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+    </div>
+    <!-- Blog section close--> 
+</div>
+<!--  Main-container close --> 

@@ -1,0 +1,91 @@
+<?php
+
+/**
+ * Routes configuration
+ *
+ * In this file, you set up routes to your controllers and their actions.
+ * Routes are very important mechanism that allows you to freely connect
+ * different urls to chosen controllers and their actions (functions).
+ *
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.Config
+ * @since         CakePHP(tm) v 0.2.9
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+/**
+ * Here, we are connecting '/' (base path) to controller called 'Pages',
+ * its action called 'display', and we pass a param to select the view file
+ * to use (in this case, /app/View/Pages/home.ctp)...
+ */
+Router::connect('/admin-login', array('controller' => 'admins', 'action' => 'login'));
+Router::connect('/admin/dashboard', array('controller' => 'Dashboard', 'action' => 'index', 'prefix' => 'admin', 'admin' => TRUE));
+Router::connect('/admin-logout', array('controller' => 'admins', 'action' => 'logout', 'prefix' => 'admin', 'admin' => TRUE));
+Router::connect('/', array('controller' => 'pages', 'action' => 'home'));
+Router::connect('/about-us', array('controller' => 'Aboutus', 'action' => 'about_us'));
+Router::connect('/about-us/history', array('controller' => 'Aboutus', 'action' => 'history'));
+Router::connect('/about-us/mission_vision', array('controller' => 'Aboutus', 'action' => 'mission_vision'));
+Router::connect('/about-us/trustee', array('controller' => 'Aboutus', 'action' => 'trustee'));
+Router::connect('/about-us/committee', array('controller' => 'Aboutus', 'action' => 'committee'));
+
+Router::connect('/academics/under-graduate/:dept', array('controller' => 'Academics', 'action' => 'department', 'under-graduate'), array('pass' => array('dept')));
+Router::connect('/academics/under-graduate/:dept/:model', array('controller' => 'Academics', 'action' => 'common', 'under-graduate'), array('pass' => array('dept', 'model')));
+
+Router::connect('/academics/post-graduate/:dept', array('controller' => 'Academics', 'action' => 'department', 'post-graduate'), array('pass' => array('dept')));
+Router::connect('/academics/post-graduate/:dept/:model', array('controller' => 'Academics', 'action' => 'common', 'post-graduate'), array('pass' => array('dept', 'model')));
+
+Router::connect('/academics/phd/:dept', array('controller' => 'Academics', 'action' => 'department', 'phd'), array('pass' => array('dept')));
+Router::connect('/academics/phd/:dept/:model', array('controller' => 'Academics', 'action' => 'common', 'phd'), array('pass' => array('dept', 'model')));
+
+Router::connect('/examcells/:type/notice', array('controller' => 'Examcells', 'action' => 'notice'), array('pass' => array('type')));
+Router::connect('/examcells/:type/result', array('controller' => 'Examcells', 'action' => 'result'), array('pass' => array('type')));
+
+Router::connect('/admissions/:type/centralize', array('controller' => 'Admissions', 'action' => 'centralize'), array('pass' => array('type')));
+Router::connect('/admissions/:type/minority', array('controller' => 'Admissions', 'action' => 'minority'), array('pass' => array('type')));
+Router::connect('/admissions/:type/institute', array('controller' => 'Admissions', 'action' => 'institute'), array('pass' => array('type')));
+
+Router::connect('/faculty/:id/:name', array('controller' => 'Faculties', 'action' => 'faculty_details'), array('pass' => array('id', 'name')));
+
+Router::connect('/academics_post_graduate', array('controller' => 'pages', 'action' => 'academics_post_graduate'));
+Router::connect('/academics_phd', array('controller' => 'pages', 'action' => 'academics_phd'));
+Router::connect('/academics/affiliation', array('controller' => 'Academics', 'action' => 'affiliation'));
+Router::connect('/examcells/notice', array('controller' => 'Examcells', 'action' => 'notice'));
+Router::connect('/amenities', array('controller' => 'Amenities', 'action' => 'amenities'));
+Router::connect('/amenities/library', array('controller' => 'Amenities', 'action' => 'library'));
+Router::connect('/amenities/gymnasium', array('controller' => 'Amenities', 'action' => 'gymnasium'));
+Router::connect('/amenities/hostel', array('controller' => 'Amenities', 'action' => 'hostel'));
+Router::connect('/amenities/swimming_pool', array('controller' => 'Amenities', 'action' => 'swimming_pool'));
+Router::connect('/amenities/medical_centre', array('controller' => 'Amenities', 'action' => 'medical_centre'));
+Router::connect('/amenities/meditation_centre', array('controller' => 'Amenities', 'action' => 'meditation_centre'));
+Router::connect('/amenities/playground', array('controller' => 'Amenities', 'action' => 'playground'));
+Router::connect('/amenities/canteen', array('controller' => 'Amenities', 'action' => 'canteen'));
+Router::connect('/alumni_home', array('controller' => 'pages', 'action' => 'alumni_home'));
+Router::connect('/memories', array('controller' => 'pages', 'action' => 'memory'));
+Router::connect('/registration', array('controller' => 'pages', 'action' => 'registration'));
+Router::connect('/opinion_box', array('controller' => 'pages', 'action' => 'opinion_box'));
+Router::connect('/placement_home', array('controller' => 'pages', 'action' => 'placement_home'));
+Router::connect('/news', array('controller' => 'pages', 'action' => 'news'));
+Router::connect('/statistics', array('controller' => 'pages', 'action' => 'statistics'));
+
+Router::connect('/latest_news/:id', array('controller' => 'LatestNews', 'action' => 'latest_news_page'), array('pass' => array('id')));
+Router::connect('/notices/:id', array('controller' => 'Notices', 'action' => 'notices_page'), array('pass' => array('id')));
+
+/**
+ * Load all plugin routes.  See the CakePlugin documentation on
+ * how to customize the loading of plugin routes.
+ */
+CakePlugin::routes();
+
+/**
+ * Load the CakePHP default routes. Only remove this if you do not want to use
+ * the built-in default routes.
+ */
+require CAKE . 'Config' . DS . 'routes.php';

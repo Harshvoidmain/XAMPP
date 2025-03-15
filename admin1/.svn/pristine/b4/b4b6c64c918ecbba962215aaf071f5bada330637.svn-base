@@ -1,0 +1,112 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Affiliations</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Academics', '/academics') ?></li>
+                        <li class="active">Under-Graduate</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row"> 
+            <div class="col-md-8"> <!-- program detail start -->
+                <h1>Under Graduate Study Programs</h1>
+                <div class="pic">
+                    <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive')); ?>
+                    <div class="yellow-blk pic-caption"><h2><strong>90%</strong> Success Result in Bachelor Courses !!</h2> </div>
+                </div>
+                <p class="lead-font">Dummy text dummy text dummy text dummy text</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text.</p>
+                <p>Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text. Dummy text dummy text dummy text dummy text dummy text dummy text dummy text dummy text </p>                    
+
+                <div class="col-md-6" style="margin: 5px 0px 0px -15px;"><!--sidebar section -->
+                    <div class="row"> <!-- Branch 6-->
+                        <div class="col-md-12"> 
+                            <div class="sidebar-blk">
+                                <div class="pic" style="margin-bottom: 0px;">
+                                    <h3 style="margin-left: 40px;"> Information Technology </h3>
+                                    <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive', 'style' => 'height: 150px', 'url' => '/academics/under-graduate/it')); ?> <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-6" style="margin-top: 5px;"><!--sidebar section -->
+                    <div class="row"> <!-- Branch 5-->
+                        <div class="col-md-12"> 
+                            <div class="sidebar-blk">
+                                <div class="pic" style="margin-bottom: 0px;">
+                                    <h3 style="margin-left: 0px;"> Mechanical </h3>
+                                    <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive', 'style' => 'height: 150px', 'url' => '/academics/under-graduate/mechanical')); ?> <br/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- program detail close -->
+
+            <div class="col-md-4 right-sidebar"><!--sidebar section -->
+                <h2 style="margin: 55px 0px 0px 65px;"> Branches </h2>
+                <div class="row"> <!-- Branch 1-->
+                    <div class="col-md-12"> 
+                        <div class="sidebar-blk">
+                            <div class="pic" style="margin-bottom: 0px;">
+                                <h3 style="margin-left: 25px;"> Humanities & Basic Sciences </h3>
+                                <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive', 'style' => 'height: 150px', 'url' => '/academics/under-graduate/humanities_&_basic_sciences')); ?> <br/>
+                            </div>
+                        </div>
+                    </div> 
+                </div>
+                <div class="row"> <!-- Branch 2-->
+                    <div class="col-md-12"> 
+                        <div class="sidebar-blk">
+                            <div class="pic" style="margin-bottom: 0px;">
+                                <h3 style="margin-left: 95px;"> Computer </h3>
+                                <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive', 'style' => 'height: 150px', 'url' => '/academics/under-graduate/computer')); ?> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> <!-- Branch 3-->
+                    <div class="col-md-12"> 
+                        <div class="sidebar-blk">
+                            <div class="pic" style="margin-bottom: 0px;">
+                                <h3 style="margin-left: 10px;"> Electronics & Telecommunications </h3>
+                                <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive', 'style' => 'height: 150px','url' => '/academics/under-graduate/electronics_&_telecommunications')); ?> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row"> <!-- Branch 4-->
+                    <div class="col-md-12"> 
+                        <div class="sidebar-blk">
+                            <div class="pic" style="margin-bottom: 0px;">
+                                <h3 style="margin-left: 95px;"> Electrical </h3>
+                                <?php echo $this->Html->image('slider/bnr6.jpg', array('class' => 'img-responsive', 'style' => 'height: 150px','url' => '/academics/under-graduate/electrical')); ?> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>

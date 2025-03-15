@@ -1,0 +1,321 @@
+<?php
+$icon = array('Dead' => 'warning-sign', 'Cold' => 'repeat', 'Warm' => 'share-alt', 'Hot' => 'ok', 'Bravo' => 'thumbs-up');
+$color = array('Dead' => 'important', 'Cold' => 'success', 'Warm' => 'turquoise', 'Hot' => 'purple', 'Bravo' => 'warning');
+?>
+<div class="row-fluid" id="dashboard_container">
+    <div class="span12 responsive" data-tablet="span12 fix-offset" data-desktop="span12">
+        <!-- BEGIN EXAMPLE TABLE PORTLET-->
+        <div class="portlet box grey">
+            <div class="portlet-title">
+                <div class="caption"><i class="icon-user"></i><?php echo __('Dashboard'); ?></div>
+                <div class="actions">
+                    <span style="color: #1C6BA0">
+                        <?php
+                        $selectedType = isset($_GET['type']) ? $_GET['type'] : 'All';
+                        echo $this->Form->select('SelectType', array('All' => 'All', 'Flight' => 'Flight', 'Hotel' => 'Hotel', 'Package' => 'Package', 'Car' => 'Car'), array('value' => $selectedType));
+                        ?>
+                    </span>
+                    <span> <input type="button" class="btn blue daterange no-addon" id="no-addon" value="<?php echo isset($_GET['range']) ? $_GET['range'] : 'Daterange' ?>" style="float: left;"/></span>
+                    <span><input type="button" class="btn yellow" value="Go" id="go"/></span>
+                </div>
+            </div>
+            <div class="portlet-body">
+                <div class="row-fluid" id="">
+                    <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                        <a href =" <?php echo $this->Html->url('/admin/enquiries/index/') ?>">
+                            <div class="dashboard-stat blue" style="height: 110px;">
+                                <div class="visual">
+                                    <i class="icon-bar-chart"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <?php echo $total_enquiries;
+                                        ?>
+                                    </div>
+                                    <div class="desc">
+                                        Total Enquiries
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                        <a href =" <?php
+                                        echo $this->Html->url('/admin/enquiries/index/conditions:Enquiry.conversion_status=cold')
+                                        ?>">
+                            <div class="dashboard-stat green" style="height: 110px;">
+                                <div class="visual">
+                                    <i class="icon-repeat"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <?php echo $cold_enquiries; ?>
+                                    </div>
+                                    <div class="desc">
+                                        Cold Enquiries
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                        <a href =" <?php echo $this->Html->url('/admin/enquiries/index/conditions:Enquiry.conversion_status=warm') ?>">
+                            <div class="dashboard-stat turquoise" style="height: 110px;">
+                                <div class="visual">
+                                    <i class="icon-share-alt"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <?php echo $warm_enquiries; ?>
+                                    </div>
+                                    <div class="desc">
+                                        Warm Enquiries
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                        <a href =" <?php echo $this->Html->url('/admin/enquiries/index/conditions:Enquiry.conversion_status=hot') ?>">
+                            <div class="dashboard-stat purple" style="height: 110px;">
+                                <div class="visual">
+                                    <i class="icon-ok"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <?php echo $hot_enquiries; ?>
+                                    </div>
+                                    <div class="desc">
+                                        Hot Enquiries
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="row-fluid" id="">
+                    <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                        <a href =" <?php echo $this->Html->url('/admin/enquiries/index/conditions:Enquiry.conversion_status=bravo') ?>">
+                            <div class="dashboard-stat yellow" style="height: 110px;">
+                                <div class="visual">
+                                    <i class="icon-thumbs-up"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <?php echo $bravo_enquiries; ?>
+                                    </div>
+                                    <div class="desc">
+                                        Bravo Enquiries
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div> 
+                    <div class="span3 responsive" data-tablet="span3" data-desktop="span3">
+                        <a href =" <?php echo $this->Html->url('/admin/enquiries/index/conditions:Enquiry.conversion_status=dead') ?>">
+                            <div class="dashboard-stat red" style="height: 110px;">
+                                <div class="visual">
+                                    <i class="icon-warning-sign"></i>
+                                </div>
+                                <div class="details">
+                                    <div class="number">
+                                        <?php echo $dead_enquiries; ?>
+                                    </div>
+                                    <div class="desc">
+                                        Dead Enquiries
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row-fluid" id="todays_followups">
+    <div class="span6 responsive pull-right" data-tablet="span6" data-desktop="span6">
+        <div class="portlet paddingless">
+            <div class="portlet-title line">
+                <div class="caption"><i class="icon-bell"></i>Clients Followups</div>
+            </div>
+            <div class="portlet-body">
+                <div class="tabbable tabbable-custom">
+                    <ul class="nav nav-tabs">
+                        <li class="active">
+                            <a data-toggle="tab" href="#tab_today">Todays <span class="badge badge-important"><?php echo count($today) ?></span></a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="#tab_missed">Missed <span class="badge badge-important"><?php echo count($missed_followups) ?></span></a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="#tab_hot">Hot <span class="badge badge-important"><?php echo count($hot) ?></span></a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="#tab_bravo">Bravo <span class="badge badge-important"><?php echo count($bravo) ?></span></a>
+                        </li>
+                        <li class="">
+                            <a data-toggle="tab" href="#tab_paid">Paid <span class="badge badge-important"><?php echo count($paid) ?></span></a>
+                        </li>
+                    </ul>
+                    <div class="tab-content">
+                        <div id="tab_today" class="tab-pane active">
+                            <div class="scroller" data-height="290px" data-always-visible="1" data-rail-visible="0">
+                                <ul class="feeds">
+                                    <?php
+                                    foreach ($today as $value) {
+                                        $enquiry = $value['Enquiry'];
+                                        $value = $value['EnquiriesTail'];
+                                        ?>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-<?php echo $color[$value['conversion_status']] ?> tooltips" title="<?php echo $value['conversion_status'] ?>">
+                                                            <i class="icon-<?php echo $icon[$value['conversion_status']] ?>"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc">
+                                                            <?php echo $enquiry['title'] ?> 
+                                                            <span class="label label-important label-mini">
+                                                                <?php echo $this->Html->link('view <i class="icon-share-alt"></i>', '/admin/EnquiriesTails/index/' . $value['enquiry_id'], array('escape' => FALSE)) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tab_missed" class="tab-pane">
+                            <div class="scroller" data-height="290px" data-always-visible="1" data-rail-visible="0">
+                                <ul class="feeds">
+                                    <?php
+                                    foreach ($missed_followups as $value) {
+                                        ?>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-<?php echo $color[$value['EnquiriesTail']['conversion_status']] ?> tooltips" title="<?php echo $value['EnquiriesTail']['conversion_status'] ?>">
+                                                            <i class="icon-<?php echo $icon[$value['EnquiriesTail']['conversion_status']] ?>"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc">
+                                                            <?php echo $value['Enquiry']['title'] ?> 
+                                                            <span class="label label-important label-mini">
+                                                                <?php echo $this->Html->link('view <i class="icon-share-alt"></i>', '/admin/EnquiriesTails/index/' . $value['EnquiriesTail']['enquiry_id'], array('escape' => FALSE)) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div id="tab_hot" class="tab-pane">
+                            <div class="scroller" data-height="290px" data-always-visible="1" data-rail-visible="0">
+                                <ul class="feeds">
+                                    <?php
+                                    foreach ($hot as $value) {
+                                        $value = $value['Enquiry'];
+                                        ?>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-<?php echo $color[$value['conversion_status']] ?> tooltips" title="<?php echo $value['conversion_status'] ?>">
+                                                            <i class="icon-<?php echo $icon[$value['conversion_status']] ?>"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc">
+                                                            <?php echo $value['title'] ?> 
+                                                            <span class="label label-important label-mini">
+                                                                <?php echo $this->Html->link('view <i class="icon-share-alt"></i>', '/admin/EnquiriesTails/index/' . $value['id'], array('escape' => FALSE)) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tab_bravo" class="tab-pane">
+                            <div class="scroller" data-height="290px" data-always-visible="1" data-rail-visible="0">
+                                <ul class="feeds">
+                                    <?php
+                                    foreach ($bravo as $value) {
+                                        $value = $value['Enquiry'];
+                                        ?>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-<?php echo $color[$value['conversion_status']] ?> tooltips" title="<?php echo $value['conversion_status'] ?>">
+                                                            <i class="icon-<?php echo $icon[$value['conversion_status']] ?>"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc">
+                                                            <?php echo $value['title'] ?> 
+                                                            <span class="label label-important label-mini">
+                                                                <?php echo $this->Html->link('view <i class="icon-share-alt"></i>', '/admin/EnquiriesTails/index/' . $value['id'], array('escape' => FALSE)) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="tab_paid" class="tab-pane">
+                            <div class="scroller" data-height="290px" data-always-visible="1" data-rail-visible="0">
+                                <ul class="feeds">
+                                    <?php
+                                    foreach ($paid as $value) {
+                                        $value = $value['Enquiry'];
+                                        ?>
+                                        <li>
+                                            <div class="col1">
+                                                <div class="cont">
+                                                    <div class="cont-col1">
+                                                        <div class="label label-<?php echo $color[$value['conversion_status']] ?> tooltips" title="<?php echo $value['conversion_status'] ?>">
+                                                            <i class="icon-<?php echo $icon[$value['conversion_status']] ?>"></i>
+                                                        </div>
+                                                    </div>
+                                                    <div class="cont-col2">
+                                                        <div class="desc">
+                                                            <?php echo $value['title'] ?> 
+                                                            <span class="label label-important label-mini">
+                                                                <?php echo $this->Html->link('view <i class="icon-share-alt"></i>', '/admin/EnquiriesTails/index/' . $value['id'], array('escape' => FALSE)) ?>
+                                                            </span>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    <?php } ?>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+

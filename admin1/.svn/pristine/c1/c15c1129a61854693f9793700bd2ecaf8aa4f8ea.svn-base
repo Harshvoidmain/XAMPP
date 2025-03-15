@@ -1,0 +1,736 @@
+<!-- banner start -->
+
+<div class="banner">
+    <div id="carousel-example-generic" class="carousel slide" data-ride="carousel"> 
+         <ol class="carousel-indicators">
+    <li data-target="#carousel-example-generic" data-slide-to="0" class="active"></li>
+    <li data-target="#carousel-example-generic" data-slide-to="1"></li>
+    
+        </ol>
+        <div class="carousel-inner">
+            <div class="item active" style="position: relative;"> 
+                <?php echo $this->Html->image('slider/bnr6.jpg', array('alt' => 'FCRIT')); ?>
+
+                <div class="leftbox visible-md visible-lg">
+                    <div><h7 style="color:#333333;font-family:'Dosis', sans-serif;font-size: 30px"><a href="#ln">Latest news</a></h7></div>
+                    <div style="padding-top: 30px;">
+                        <?php foreach ($ln as $lat) {?>
+                        <div style="margin: 5px;padding: 5px;"><a href="<?php echo $this->Html->url('/latest_news/' . $lat['LatestNews']['id']); ?>"><?php echo String::truncate($lat['LatestNews']['topic'], $length = 22); ?></a></div>
+                        <?php } ?>
+                        <div style="margin: 5px;padding: 5px;"><a href="#ln" class="btn btn-default btn-yellow">See All</a></div>
+                    </div>
+                 
+                
+                <!--div class="carousel-caption col-md-6 visible-md">
+                    <h1>Fr. C. Rodrigues Institute of Technology</h1>
+                    <p>Dummy text Dummy text Dummy text Dummy text Dummu text </p>
+                </div-->
+                
+                </div>
+                
+                <div class="leftboxsm visible-sm">
+                    <div><h7 style="color:#333333;font-family:'Dosis', sans-serif;font-size: 25px"><a href="#ln">Latest news</a></h7></div>
+                    <div style="padding-top: 25px;">
+                        <?php foreach ($ln as $lat) {?>
+                        <div style="margin: 5px;padding: 5px;"><a href="<?php echo $this->Html->url('/latest_news/' . $lat['LatestNews']['id']); ?>"><?php echo String::truncate($lat['LatestNews']['topic'], $length = 22); ?></a></div>
+                        <?php } ?>
+                        <div style="margin: 5px;padding: 5px;"><a href="#ln" class="btn btn-default btn-yellow">See All</a></div>
+                    </div>
+                 
+                
+                <!--div class="carousel-caption col-md-6 visible-md">
+                    <h1>Fr. C. Rodrigues Institute of Technology</h1>
+                    <p>Dummy text Dummy text Dummy text Dummy text Dummu text </p>
+                </div-->
+                
+                </div>
+                
+                
+            </div>
+          
+                
+        </div>
+            <!-- Controls --> 
+            <a class="left carousel-control" href="#carousel-example-generic" data-slide="prev"> <span class="glyphicon glyphicon-chevron-left"></span> </a> 
+            <a class="right carousel-control" href="#carousel-example-generic" data-slide="next"> <span class="glyphicon glyphicon-chevron-right"></span> </a> 
+        </div>
+    </div>
+</div>
+<!-- banner close --> 
+
+<div class="leftboxxs visible-xs" style="margin-bottom: 18px;">
+    <div class="rdbtn">
+        <h3>Latest News</h3>
+        <a href="#ln" class="btn btn-default btn-yellow">Click Here</a>
+    </div>
+    <div class="rdbtn">
+        <h3>Circulars</h3>
+        <a href="#cs" class="btn btn-default btn-yellow">Click Here</a>
+    </div>
+    
+    
+    
+    
+    <!--div><b><h7 style="color:#333333;font-family:'Dosis', sans-serif;font-size: 25px"><a href="#ln">Latest news</a></h7></b></div>
+                    <div style="padding-top: 8px;">
+                        <?php foreach ($ln as $lat) {?>
+                        <div style="margin: 2px;padding: 2px;"><a href="<?php echo $this->Html->url('/latest_news/' . $lat['LatestNews']['id']); ?>"><?php echo String::truncate($lat['LatestNews']['topic'], $length = 22); ?></a></div>
+                        <?php } ?>
+                        <div style="margin: 2px;padding: 2px;"><a href="#ln" class="btn btn-default btn-yellow">See All</a></div>
+                    </div--> 
+    </div>
+<!-- about start -->
+<div>
+<div class="about"  style="padding-bottom: 0px; margin-bottom: 0px;">
+    <div class="container-fluid">
+        <div class="donate-info" style="padding-bottom: 0px; margin-bottom: 0px;">
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="donate-box"><!-- donate box start-->
+                        <h2>MORE THAN </h2>
+                        <strong>0</strong>
+                        <h2>ENGINEERS</h2>
+                        <h2>HAVE GRADUATED</h2>
+                        <h2>from &nbsp; Fr. CRIT...</h2> </div>
+                    <!-- donate box close--> 
+                </div>
+                <div class="col-md-offset-1 col-md-7"><!-- about info-->
+                    <h2>Welcome to<br> </h2>
+                    <h1>    Fr. C. Rodrigues Institute of Technology <br/>
+                        <h2>  A college with a difference!! </h2>
+                    </h1>
+<!--                <p class="lead-font">Nullam velit metus tristique id purus eget consequat congue loreml orem ipsum dolor sit amet consectetur adipiscing elit. Praesent vestibulum aenean noummy endrerit mauris. </p>-->
+                    <p style="text-align: justify;"> Fr. C.R.I.T. has, within a short span of time, established itself as a leading engineering 
+                        college in Mumbai University. Though its reputation rests mainly on the high quality, 
+                        value-based technical education that it imparts, it has to its credit a verdant, 
+                        well-maintained Campus and extensive facilities. Its location in the vicinity of the 
+                        holy places of various religious denominations underscores its secular credentials and 
+                        its philosophy of "Vasudhaiva Kuttumbakam". The college prides on being one of few that 
+                        as <strong style="color: #576F34;"> accreditation for all five branches vide file no. 28-41/2010-NBA dated 14.11.2012. </strong>
+                    </p> <br/>
+                    <!--<a href="about-us.html" class="btn btn-default btn-yellow">Learn more</a> </div>-->
+                    <!--about info close--> 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="blk"> <i class="fa fa-search  icon-size"></i>
+                        <h2 class="item-title">Explore</h2>
+                        <p> Explore the best career opportunities from the global leaders from the world of education.</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blk"><i class="fa fa-book icon-size"></i>
+                        <h2 class="item-title">Learn</h2>
+                        <p> Learn from one of the prestigious institutions in this country. </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blk"><i class="fa fa-trophy icon-size"></i>
+                        <h2 class="item-title">Excel</h2>
+                        <p> Learn to be master of your art & become a leader. Excel. </p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blk"><i class="fa fa-lightbulb-o icon-size"></i>
+                        <h2 class="item-title">Innovate</h2>
+                        <p>Go out there with your leadership skills & amaze the world. Innovate.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- about close --> 
+
+<!-- Service start >
+<div class="service" style="padding-bottom: 0px;">
+    <div class="container">
+        <h1>Latest News</h1>
+        <div class=" service-blk">
+            <div class="row"> 
+               
+                <?php foreach ($latest_news as $latest) {
+                    ?>
+                 <div class="col-md-4">
+                        <div class="blk">
+                            
+                            <h2> <?php echo String::truncate($latest['LatestNews']['topic'], $length = 22); ?> </h2>
+                            <p><?php echo String::truncate($latest['LatestNews']['description'], $length = 140); ?> </p>
+                            <a href="<?php echo $this->Html->url('/latest_news/' . $latest['LatestNews']['id']); ?>" class="btn btn-default btn-yellow">read more</a> 
+                         </div>   
+                        </div>
+                   
+                <?php } ?>
+                
+            </div>
+        </div>
+    </div>
+</div>
+< Service close --> 
+
+<!--service trial open-->
+<div class="service" id ="ln" style="padding-bottom: 40px;">
+<div class="container">
+    <h1>Latest News</h1>
+<div id="owl-demo" class="owl-carousel owl-theme">
+  
+    <?php foreach ($latest_news as $latest) {
+                    ?>
+                 
+                        <div class="item">
+                            
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($latest['LatestNews']['topic'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($latest['LatestNews']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/latest_news/' . $latest['LatestNews']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                         </div>   
+                        
+                   
+     <?php } ?>
+    
+    
+</div>
+</div>
+</div>
+<!--buttons for navigation-->
+<!--div class="customNavigation">
+  <a class="btn prev">Previous</a>
+  <a class="btn next">Next</a>
+</div-->
+
+
+<!--service trial close-->
+
+<!-- things section -->
+
+<div class="things">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">World<br>
+                            Class <br>
+                            Amenities.</h2>
+                        <i class="pe pe-li-expand pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">Best <br>
+                            Teaching <br>
+                            Faculty.</h2>
+                        <i class="pe pe-li-atom pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">85% Of Our <br>
+                            Students <br>
+                            Placed.</h2>
+                        <i class="pe pe-li-graph pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="blk text-center">
+                    <div class="yellow-blk">
+                        <h2 class="heading">Not Just <br>
+                            Educate,<br> 
+                            create Leaders.</h2>
+                        <i class="pe pe-li-user pe-4x pe-icon"></i> <i class="pe pe-li-user pe-4x pe-icon"></i> <i class="pe pe-li-user pe-4x pe-icon"></i></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- things section close -->
+
+<!--  news section -->
+<div class="news" style="padding-bottom: 0px;" id="cs">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <h1>Circulars</h1>
+            </div>
+        </div>
+        <ul class="nav nav-pills">
+            <li class="active">
+                <a href="#general" role="tab" data-toggle="tab">General</a>
+            </li>
+            <li>
+                <a href="#computer"role="tab" data-toggle="tab">Computer</a>
+            </li>
+            <li>
+                <a href="#extc" role="tab" data-toggle="tab">EXTC</a>
+            </li>
+            <li>
+                <a href="#electrical" role="tab" data-toggle="tab">Electrical</a>
+            </li>
+            <li>
+                <a href="#mechanical" role="tab" data-toggle="tab">Mechanical</a>
+            </li>
+            <li>
+                <a href="#it" role="tab" data-toggle="tab">IT</a>
+            </li>
+            <li>
+                <a href="#placement" role="tab" data-toggle="tab">Placements</a>
+            </li>
+            <!--li>
+                <a href="#winner" role="tab" data-toggle="tab">Winners</a>
+            </li-->
+        </ul>
+
+        <div class="tab-content">
+            <div class="tab-pane active row" id="general"> <br/>
+                
+                
+                
+                
+               <?php 
+
+            foreach ($circulars as $circular) {
+                if($circular['Circular']['type'] == 'General') {       
+                    ?>
+                 
+                         <div class="col-md-2">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($circular['Circular']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($circular['Circular']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/circulars/' . $circular['Circular']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+                }} ?> 
+                
+                
+                
+            </div>
+            <div class="tab-pane row" id="computer"> <br/>
+                <?php 
+
+            foreach ($circulars as $circular) {
+                if($circular['Circular']['type'] == 'Computer') {       
+                    ?>
+                 
+                         <div class="col-md-2">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($circular['Circular']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($circular['Circular']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/circulars/' . $circular['Circular']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+                }} ?> 
+            </div>
+            <div class="tab-pane row" id="extc"> <br/>
+                <?php 
+
+            foreach ($circulars as $circular) {
+                if($circular['Circular']['type'] == 'Extc') {       
+                    ?>
+                 
+                         <div class="col-md-2">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($circular['Circular']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($circular['Circular']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/circulars/' . $circular['Circular']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+                }} ?> 
+            </div>
+            <div class="tab-pane row" id="electrical"> <br/>
+                <?php 
+
+            foreach ($circulars as $circular) {
+                if($circular['Circular']['type'] == 'Electrical') {       
+                    ?>
+                 
+                         <div class="col-md-2">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($circular['Circular']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($circular['Circular']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/circulars/' . $circular['Circular']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+                }} ?> 
+            </div>
+            <div class="tab-pane row" id="mechanical"> <br/>
+                <?php 
+
+            foreach ($circulars as $circular) {
+                if($circular['Circular']['type'] == 'Mechanical') {       
+                    ?>
+                 
+                         <div class="col-md-2">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($circular['Circular']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($circular['Circular']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/circulars/' . $circular['Circular']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+                }} ?> 
+            </div>
+            <div class="tab-pane row" id="it"> <br/>
+                <?php 
+
+            foreach ($circulars as $circular) {
+                if($circular['Circular']['type'] == 'IT') {       
+                    ?>
+                 
+                         <div class="col-md-2">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($circular['Circular']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($circular['Circular']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/circulars/' . $circular['Circular']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+                }} ?> 
+            </div>
+            <div class="tab-pane row" id="placement"> <br/>
+                <?php 
+
+            foreach ($circulars as $circular) {
+                if($circular['Circular']['type'] == 'Placements') {       
+                    ?>
+                 
+                         <div class="col-md-2">
+                         <div  style="border: 2px solid #9BBA6E;border-radius: 5px;margin-top: 10px;margin-bottom: 10px;padding: 20px">   
+                            <div style="height:28.48px;margin-top: 5px;margin-bottom: 20px;"><h2> <?php echo String::truncate($circular['Circular']['subject'], $length = 22); ?> </h2></div>
+                            <div style="height:76.36px;margin-top: 20px;margin-bottom: 20px;"><p><?php echo String::truncate($circular['Circular']['description'], $length = 140); ?> </p></div>
+                            <div style="height: 36px;margin-bottom: 20px;margin-top: 20px;"><a href="<?php echo $this->Html->url('/circulars/' . $circular['Circular']['id']); ?>" class="btn btn-default btn-yellow">read more</a> </div>
+                        </div>   
+                        </div>
+                        
+                         <?php 
+                   
+                }} ?> 
+            </div>
+            
+        </div>
+    </div>
+    <!--  news section choose --> 
+    <br/> <br/>
+    <!--  testimonials section -->
+
+    <div class="testimonials" id ="ss">
+        <div class="container">
+            <h1 style="text-align: left;margin-bottom: 70px;">Success  Stories </h1>
+            
+            <div class="owl-carousel owl-theme" id="owlsuccess">
+                <div class="owl-item">
+                    <h3 style="text-align: left;">Computer Department</h3>
+                    <table class="table table-striped table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;">Name</th>
+                                <th style="text-align:center;">Percentile</th>
+                                <th style="text-align:center;">Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            foreach($computer_topper as $comp) {
+                            echo"<tr>";
+                                echo"<td>";
+                                    echo $comp['Topper']['details'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $comp['Topper']['percentile'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $comp['Topper']['comments'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"</tr>"; } 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>   
+                <div class="owl-item">
+                    <h3 style="text-align: left;">Electronics & Telecommunication</h3>
+                    <table class="table table-striped table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;">Name</th>
+                                <th style="text-align:center;">Percentile</th>
+                                <th style="text-align:center;">Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            foreach($extc_topper as $extc) {
+                            echo"<tr>";
+                                echo"<td>";
+                                    echo $extc['Topper']['details'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $extc['Topper']['percentile'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $extc['Topper']['comments'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"</tr>"; } 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="owl-item">
+                    <h3 style="text-align: left;">Electrical Department</h3>
+                    <table class="table table-striped table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;">Name</th>
+                                <th style="text-align:center;">Percentile</th>
+                                <th style="text-align:center;">Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            foreach($electrical_topper as $elect) {
+                            echo"<tr>";
+                                echo"<td>";
+                                    echo $elect['Topper']['details'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $elect['Topper']['percentile'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $elect['Topper']['comments'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"</tr>"; } 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="owl-item">
+                    <h3 style="text-align: left;">Mechanical Department</h3>
+                    <table class="table table-striped table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;">Name</th>
+                                <th style="text-align:center;">Percentile</th>
+                                <th style="text-align:center;">Rank</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            foreach($mechanical_topper as $mech) {
+                            echo"<tr>";
+                                echo"<td>";
+                                    echo $mech['Topper']['details'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $mech['Topper']['percentile'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $mech['Topper']['comments'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"</tr>"; } 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="owl-item">
+                    <h3 style="text-align: left;">Information Technology</h3>
+                    <table class="table table-striped table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;">Name</th>
+                                <th style="text-align:center;">Percentile</th>
+                                <th style="text-align:center;">Rank</th>
+                                
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            foreach($it_topper as $it) {
+                            echo"<tr>";
+                                echo"<td>";
+                                    echo $it['Topper']['details'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $it['Topper']['percentile'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $it['Topper']['comments'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"</tr>"; } 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="owl-item">
+                    <h3 style="text-align:left;">Placements</h3>
+                    <table class="table table-striped table-bordered table-condensed">
+                        <thead>
+                            <tr>
+                                <th style="text-align:center;">Branch</th>
+                                <th style="text-align:center;">Number of Companies Visited</th>
+                                <th style="text-align:center;">Number of Students Placed</th>
+                                <th style="text-align: center;">Maximum Salary</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php 
+                            foreach($placement as $place) {
+                            echo"<tr>";
+                                echo"<td>";
+                                    echo $place['Placement']['branch'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $place['Placement']['number_of_companies_visited'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $place['Placement']['number_of_students_placed'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"<td>";
+                                    echo $place['Placement']['max_salary'];
+                                    echo '<br/>';
+                                echo"</td>";
+                                echo"</tr>"; } 
+                            ?>
+                        </tbody>
+                    </table>
+                </div>
+                
+            </div>
+        </div>
+    </div>
+            
+            
+            
+    <!--div class="testimonials">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-offset-2 col-md-8">
+                    <div  id="owl-demo-testimonial" class="testimonials-ct">
+                        <div class="item">
+                            <h1>Success  Stories </h1>
+                            <table class="table table-bordered table-condensed" style="alignment-adjust: center;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;"><h4>Name &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Branch &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Percentile</h4></th>
+                                <th style="text-align: center;"><h4>Rank</h4></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['name'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['branch'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['Percentile'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($success_stories as $ss) {
+                                        echo $ss['SuccessStory']['Rank'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="item">
+                            <h1>Congratulations to our F.E Toppers</h1>
+                            <table class="table table-bordered table-condensed" style="alignment-adjust: center;">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: center;"><h4>Name &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Branch &nbsp</h4></th>
+                                <th style="text-align: center;"><h4>Percentile</h4></th>
+                                <th style="text-align: center;"><h4>Rank</h4></th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['name'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['branch'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['Percentile'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                <td>    
+                                    <?php
+                                    foreach ($fe_topper as $fe) {
+                                        echo $fe['Fetopper']['Rank'];
+                                        echo '<br/>';
+                                    }
+                                    ?> </td>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div-->
+<!--  testimonials section close --> 

@@ -1,0 +1,134 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Hostel</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Amenities', '/amenities') ?></li>
+                        <li class="active">Hostel</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h1>Boys Hostel</h1>                            
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: justify;">
+                            <p> One three-storied block consists of 33 rooms, each accommodating 3 boys. 
+                                The rooms are well furnished with a bed, a table and chair, a cupboard and a fan 
+                                for each hostelite. There is a recreation room consisting of a TV, a TT table 
+                                and a carrom board. There are 3 guests rooms for visiting parents. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <h1>Girls Hostel</h1> <br/>
+                            <p> The girl’s hostel is located on the 2nd & 3rd floor of the block for faculty quarters. 
+                                There are 2 well furnished apartments on each floor with provision for 10 girls in each.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">                         
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;"> <br/>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: justify;">
+                            <h1>Staff Quarters</h1> <br/>
+                            <p> Two separate towers have been built for housing staff. 
+                                They consist of different categories of flats designed specially 
+                                for the core staff members at various levels. The flats are designed with 
+                                great emphasis on natural lighting and ventilation.                                
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>        
+
+    </div>
+    <!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

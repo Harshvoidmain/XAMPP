@@ -1,0 +1,8 @@
+    public function my_bookings($type = '') {
+        $this->layout = 'site';
+        $this->paginate = array(
+            'Enquiry' => array('conditions' => array('Enquiry.type' => $type, 'Enquiry.user_id' => $this->Session->read('Auth.User.id'), 'Enquiry.conversion_status' => 'bravo'))
+        );
+        $this->Enquiry->recursive = 0;
+        $this->set('enquiries', $this->paginate());
+    }

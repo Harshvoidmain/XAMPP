@@ -1,0 +1,138 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Medical Centre </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Amenities', '/amenities') ?></li>
+                        <li class="active">Medical Centre</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">                      
+                            <div class="pic">
+                                <h1> Infrastructure - Medical Centre</h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Bed facility for In-patient. </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post">
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: justify;"> <br/>
+                            <p> A campus with a large population certainly calls for self 
+                                sufficiency in all spheres including medical facilities.</p> <br/>
+                            <p> Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text
+                                Dummy text dummy text Dummy text dummy text Dummy text dummy text.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <p> With this philosophy in mind a Medical Centre has been created 
+                                in the campus with facilities for first aid, pathology, radiology 
+                                in-patient arrangements and a panel of Consulting Doctors from 
+                                various specializations.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Pathology Lab.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">                         
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Radiology In-Patient Arrangements.</h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;"> <br/>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: justify;">
+                            <p> The unique feature of this Medical Centre is the future plan for extending 
+                                these facilities to the poor and needy at a very nominal and concessional 
+                                rate as an expression of the commitment towards the charitable acts.                               
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>        
+
+    </div>
+    <!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

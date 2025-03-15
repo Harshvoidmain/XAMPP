@@ -1,0 +1,122 @@
+<?php
+
+/**
+ * Static content controller.
+ *
+ * This file will render views from views/pages/
+ *
+ * PHP 5
+ *
+ * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
+ * Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ *
+ * Licensed under The MIT License
+ * Redistributions of files must retain the above copyright notice.
+ *
+ * @copyright     Copyright 2005-2012, Cake Software Foundation, Inc. (http://cakefoundation.org)
+ * @link          http://cakephp.org CakePHP(tm) Project
+ * @package       app.Controller
+ * @since         CakePHP(tm) v 0.2.9
+ * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
+ */
+App::uses('AppController', 'Controller');
+
+/**
+ * Static content controller
+ *
+ * Override this controller by placing a copy in controllers directory of an application
+ *
+ * @package       app.Controller
+ * @link http://book.cakephp.org/2.0/en/controllers/pages-controller.html
+ */
+class AcademicsController extends AppController {
+
+    /**
+     * Controller name
+     *
+     * @var string
+     */
+    public $name = 'Academics';
+
+    public function beforeFilter() {
+        $this->Auth->allow(array('department', 'faculty', 'common', 'affiliation', 'under_graduate', 'post_graduate', 'phd'));
+        parent::beforeFilter();
+    }
+
+    /**
+     * This controller does not use a model
+     *
+     * @var array
+     */
+    public $uses = array();
+
+    /**
+     * This function is about the "About" [1st tab] on the Academics page of any Department.
+     */
+    public function department($dept = null, $type = NULL) {
+        $this->layout = 'site';
+        $this->loadModel('Department');
+        $department = $this->Department->find('first', array(
+            'conditions' => array('Department.name LIKE' => '%' . $dept . '%'),
+            'recursive' => -1
+                ));
+        if (empty($department)) {
+            $this->Session->setFlash('Department Not Found', 'flash_error');
+            $this->redirect($this->referer());
+        }
+        $this->loadModel('About');
+        $about = $this->About->find('first', array(
+            'conditions' => array('About.department_id' => $department['Department']['id'], 'About.type LIKE' => '%' . $type . '%'),
+            'recursive' => -1
+                ));
+        if (empty($about)) {
+            $this->Session->setFlash('About page Not Found', 'flash_error');
+            $this->redirect($this->referer());
+        }
+        $this->set(compact('department', 'about', 'dept', 'type'));
+    }
+
+    public function common($dept = NULL, $model = null, $type = NULL) {
+        $this->layout = 'site';
+        $this->loadModel('Department');
+        $department = $this->Department->find('first', array(
+            'conditions' => array('Department.name LIKE' => '%' . $dept . '%'),
+            'recursive' => -1
+                ));
+        if (empty($department)) {
+            $this->Session->setFlash('Department Not Found', 'flash_error');
+            $this->redirect($this->referer());
+        };
+        $model = Inflector::modelized($model);
+        $this->loadModel($model);
+        $data = $this->{$model}->find('all', array(
+            'conditions' => array($model . '.department_id' => $department['Department']['id'], $model . '.type LIKE' => '%' . $type . '%'),
+            'recursive' => -1
+                ));
+        if (empty($model)) {
+            $this->Session->setFlash($model . ' page Not Found', 'flash_error');
+            $this->redirect($this->referer());
+        }
+        $this->set(compact('data', 'department', 'faculties', 'dept', 'type', 'page', 'model'));
+    }
+
+    public function affiliation() {
+        $this->layout = 'site';
+        $this->loadModel('Affiliation');
+        $affiliation = $this->Affiliation->find('all');
+        $this->set(compact('affiliation'));
+    }
+
+    public function under_graduate() {
+        $this->layout = 'site';
+    }
+
+    public function post_graduate() {
+        $this->layout = 'site';
+    }
+
+    public function phd() {
+        $this->layout = 'site';
+    }
+
+}

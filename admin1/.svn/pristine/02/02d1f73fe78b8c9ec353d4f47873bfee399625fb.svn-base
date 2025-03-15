@@ -1,0 +1,39 @@
+<!--  page header section -->
+<div class="page-title">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 ptn-bg">
+                <h2>Memories</h2>
+                <ol class="breadcrumb">
+                    <li><a href="<?php echo $this->Html->url('/home'); ?>">Home</a></li>
+                    <li class="active">Memories</li>
+                </ol>  
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+
+<!-- Service start -->
+<div class="causes-service" style="margin-top: 0px;">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12 title">
+                <h1>Golden Moments</h1>
+            </div>
+        </div>
+        <div class="row service-blk">
+            <?php
+            foreach ($memory as $mem) {
+                echo '<div class="col-md-3 blk">';
+                echo'<div class="pic">';
+                echo $this->Html->image($mem['Memory']['image'], array('class' => 'img-responsive'));
+                echo '<b>';
+                echo h($mem['Memory']['description']);
+                echo '</div>';
+                echo '</div>';
+            }
+            ?>
+        </div>
+    </div>
+</div>

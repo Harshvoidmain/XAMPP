@@ -1,0 +1,199 @@
+<?php
+App::uses('AppController', 'Controller');
+/**
+ * FacultySpecializations Controller
+ *
+ * @property FacultySpecialization $FacultySpecialization
+ */
+class FacultySpecializationsController extends AppController {
+
+/**
+    * admin_index method
+    *
+    * @return void
+    */
+    public function admin_index() {
+    $this->FacultySpecialization->recursive = 0;
+    $this->set('facultySpecializations', $this->paginate());
+    }
+
+    /**
+    * admin_view method
+    *
+    * @throws NotFoundException
+    * @param string $id
+    * @return void
+    */
+    public function admin_view($id = null) {
+    if (!$this->FacultySpecialization->exists($id)) {
+    $this->Session->setFlash(__('Invalid faculty specialization'), 'flash_warning');
+    $this->redirect($this->referer());
+    }
+    $options = array('conditions' => array('FacultySpecialization.' . $this->FacultySpecialization->primaryKey => $id));
+    $this->set('facultySpecialization', $this->FacultySpecialization->find('first', $options));
+    }
+
+        /**
+    * admin_add method
+    *
+    * @return void
+    */
+    public function admin_add() {
+    if ($this->request->is('post')) {
+    $this->FacultySpecialization->create();
+    if ($this->FacultySpecialization->save($this->request->data)) {
+            $this->Session->setFlash(__('The faculty specialization has been saved'),'flash_success');
+        $this->redirect(array('action' => 'index'));
+        } else {
+            $this->Session->setFlash(__('The faculty specialization could not be saved. Please, try again.'),'flash_error');
+        }
+    }
+    		$faculties = $this->FacultySpecialization->Faculty->find('list');
+		$this->set(compact('faculties'));
+    }
+
+        /**
+    * admin_edit method
+    *
+    * @throws NotFoundException
+    * @param string $id
+    * @return void
+    */
+    public function admin_edit($id = null) {
+    if (!$this->FacultySpecialization->exists($id)) {
+    $this->Session->setFlash(__('Invalid faculty specialization'), 'flash_warning');
+    $this->redirect($this->referer());
+    }
+    if ($this->request->is('post') || $this->request->is('put')) {
+    if ($this->FacultySpecialization->save($this->request->data)) {
+            $this->Session->setFlash(__('The faculty specialization has been saved'),'flash_success');
+        $this->redirect(array('action' => 'index'));
+        } else {
+            $this->Session->setFlash(__('The faculty specialization could not be saved. Please, try again.'),'flash_error');
+        }
+    } else {
+    $options = array('conditions' => array('FacultySpecialization.' . $this->FacultySpecialization->primaryKey => $id));
+    $this->request->data = $this->FacultySpecialization->find('first', $options);
+    }
+    		$faculties = $this->FacultySpecialization->Faculty->find('list');
+		$this->set(compact('faculties'));
+    }
+
+    /**
+    * admin_delete method
+    *
+    * @throws NotFoundException
+    * @throws MethodNotAllowedException
+    * @param string $id
+    * @return void
+    */
+    public function admin_delete($id = null) {
+    $this->FacultySpecialization->id = $id;
+    if (!$this->FacultySpecialization->exists()) {
+    $this->Session->setFlash(__('Invalid faculty specialization'), 'flash_warning');
+    $this->redirect($this->referer());
+    }
+    $this->request->onlyAllow('post', 'delete');
+    if ($this->FacultySpecialization->delete()) {
+            $this->Session->setFlash(__('Faculty specialization deleted'),'flash_success');
+        $this->redirect(array('action' => 'index'));
+        }
+            $this->Session->setFlash(__('Faculty specialization was not deleted'),'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    /**
+    * index method
+    *
+    * @return void
+    */
+    public function index() {
+    $this->FacultySpecialization->recursive = 0;
+    $this->set('facultySpecializations', $this->paginate());
+    }
+
+    /**
+    * view method
+    *
+    * @throws NotFoundException
+    * @param string $id
+    * @return void
+    */
+    public function view($id = null) {
+    if (!$this->FacultySpecialization->exists($id)) {
+    $this->Session->setFlash(__('Invalid faculty specialization'), 'flash_warning');
+    $this->redirect($this->referer());
+    }
+    $options = array('conditions' => array('FacultySpecialization.' . $this->FacultySpecialization->primaryKey => $id));
+    $this->set('facultySpecialization', $this->FacultySpecialization->find('first', $options));
+    }
+
+        /**
+    * add method
+    *
+    * @return void
+    */
+    public function add() {
+    if ($this->request->is('post')) {
+    $this->FacultySpecialization->create();
+    if ($this->FacultySpecialization->save($this->request->data)) {
+            $this->Session->setFlash(__('The faculty specialization has been saved'),'flash_success');
+        $this->redirect(array('action' => 'index'));
+        } else {
+            $this->Session->setFlash(__('The faculty specialization could not be saved. Please, try again.'),'flash_error');
+        }
+    }
+    		$faculties = $this->FacultySpecialization->Faculty->find('list');
+		$this->set(compact('faculties'));
+    }
+
+        /**
+    * edit method
+    *
+    * @throws NotFoundException
+    * @param string $id
+    * @return void
+    */
+    public function edit($id = null) {
+    if (!$this->FacultySpecialization->exists($id)) {
+    $this->Session->setFlash(__('Invalid faculty specialization'), 'flash_warning');
+    $this->redirect($this->referer());
+    }
+    if ($this->request->is('post') || $this->request->is('put')) {
+    if ($this->FacultySpecialization->save($this->request->data)) {
+            $this->Session->setFlash(__('The faculty specialization has been saved'),'flash_success');
+        $this->redirect(array('action' => 'index'));
+        } else {
+            $this->Session->setFlash(__('The faculty specialization could not be saved. Please, try again.'),'flash_error');
+        }
+    } else {
+    $options = array('conditions' => array('FacultySpecialization.' . $this->FacultySpecialization->primaryKey => $id));
+    $this->request->data = $this->FacultySpecialization->find('first', $options);
+    }
+    		$faculties = $this->FacultySpecialization->Faculty->find('list');
+		$this->set(compact('faculties'));
+    }
+
+    /**
+    * delete method
+    *
+    * @throws NotFoundException
+    * @throws MethodNotAllowedException
+    * @param string $id
+    * @return void
+    */
+    public function delete($id = null) {
+    $this->FacultySpecialization->id = $id;
+    if (!$this->FacultySpecialization->exists()) {
+    $this->Session->setFlash(__('Invalid faculty specialization'), 'flash_warning');
+    $this->redirect($this->referer());
+    }
+    $this->request->onlyAllow('post', 'delete');
+    if ($this->FacultySpecialization->delete()) {
+            $this->Session->setFlash(__('Faculty specialization deleted'),'flash_success');
+        $this->redirect(array('action' => 'index'));
+        }
+            $this->Session->setFlash(__('Faculty specialization was not deleted'),'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+}

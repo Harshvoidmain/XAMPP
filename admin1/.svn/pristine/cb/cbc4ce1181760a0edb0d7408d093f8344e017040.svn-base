@@ -1,0 +1,67 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Events</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active">Event</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container"><!-- Main-container section --> 
+    <!--  Team section -->
+    <div class="container team">
+        <div class="row title">
+            <div class="col-md-offset-2 col-md-8">
+                <h1>Upcoming Events</h1>
+            </div>
+        </div>
+        <hr>
+        <?php foreach ($events as $event): ?>
+            <div class="row blk">
+                <div class="col-md-offset-1 col-md-10">
+                    <div class="row">
+                        <div class=" col-md-3">
+                            <div class="pic"><img src="<?php echo h($event['Event']['file']); ?>_160.jpg" class="img-responsive" alt=""></div>
+                        </div>
+                        <div class=" col-md-6">
+                            <div class="event-ct">
+                                <h2><a href="#"><?php echo h($event['Event']['title']); ?></a></h2>
+                                <p><?php echo h($event['Event']['description']); ?></p>
+                            </div>
+                        </div>
+                        <div class=" col-md-3">
+                            <div class="event-detail event-info">
+                                <ul class="list-style">
+                                    <li><i class="fa fa-calendar"></i> <?php echo h($event['Event']['date']); ?></li>
+                                    <li><i class="fa fa-clock-o"></i> <?php echo h($event['Event']['time']); ?></li>
+                                    <li><i class="fa fa-map-marker"></i> <?php echo h($event['Event']['venue']); ?></li>
+                                </ul>
+                                <?php echo $this->Html->link('Read More','/events/detail/'.$event["Event"]["id"],array('class'=>'btn btn-yellow')); ?>
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>   
+            </div>
+        <?php endforeach; ?>
+        <div class="span6">
+            <div class="dataTables_paginate paging_full_numbers">
+                <?php
+                echo $this->Paginator->first(__('first'), array(), null, array('class' => 'first btn btn-default paginate_button paginate_button_disabled'));
+                echo $this->Paginator->prev(__('previous'), array(), null, array('class' => 'previous btn btn-default paginate_button paginate_button_disabled disabled'));
+                echo $this->Paginator->numbers(array('separator' => ''));
+                echo $this->Paginator->next(__('next'), array(), null, array('class' => 'next btn btn-default paginate_button paginate_button_disabled disabled'));
+                echo $this->Paginator->last(__('last'), array(), null, array('class' => 'last btn btn-default paginate_button paginate_button_disabled'));
+                ?>                            
+            </div>
+        </div>
+    </div>
+

@@ -1,0 +1,194 @@
+<?php
+
+App::uses('AppController', 'Controller');
+
+/**
+ * Visions Controller
+ *
+ * @property Vision $Vision
+ */
+class VisionsController extends AppController {
+
+    /**
+     * admin_index method
+     *
+     * @return void
+     */
+    public function admin_index() {
+        $this->Vision->recursive = 0;
+        $this->set('visions', $this->paginate());
+    }
+
+    /**
+     * admin_view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_view($id = null) {
+        if (!$this->Vision->exists($id)) {
+            $this->Session->setFlash(__('Invalid vision'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Vision.' . $this->Vision->primaryKey => $id));
+        $this->set('vision', $this->Vision->find('first', $options));
+    }
+
+    /**
+     * admin_add method
+     *
+     * @return void
+     */
+    public function admin_add() {
+        if ($this->request->is('post')) {
+            $this->Vision->create();
+            if ($this->Vision->save($this->request->data)) {
+                $this->Session->setFlash(__('The vision has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The vision could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+    }
+
+    /**
+     * admin_edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_edit($id = null) {
+        if (!$this->Vision->exists($id)) {
+            $this->Session->setFlash(__('Invalid vision'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Vision->save($this->request->data)) {
+                $this->Session->setFlash(__('The vision has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The vision could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Vision.' . $this->Vision->primaryKey => $id));
+            $this->request->data = $this->Vision->find('first', $options);
+        }
+    }
+
+    /**
+     * admin_delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function admin_delete($id = null) {
+        $this->Vision->id = $id;
+        if (!$this->Vision->exists()) {
+            $this->Session->setFlash(__('Invalid vision'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Vision->delete()) {
+            $this->Session->setFlash(__('Vision deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Vision was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    /**
+     * index method
+     *
+     * @return void
+     */
+    public function index() {
+        $this->Vision->recursive = 0;
+        $this->set('visions', $this->paginate());
+    }
+
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        if (!$this->Vision->exists($id)) {
+            $this->Session->setFlash(__('Invalid vision'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Vision.' . $this->Vision->primaryKey => $id));
+        $this->set('vision', $this->Vision->find('first', $options));
+    }
+
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        if ($this->request->is('post')) {
+            $this->Vision->create();
+            if ($this->Vision->save($this->request->data)) {
+                $this->Session->setFlash(__('The vision has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The vision could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+    }
+
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        if (!$this->Vision->exists($id)) {
+            $this->Session->setFlash(__('Invalid vision'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Vision->save($this->request->data)) {
+                $this->Session->setFlash(__('The vision has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The vision could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Vision.' . $this->Vision->primaryKey => $id));
+            $this->request->data = $this->Vision->find('first', $options);
+        }
+    }
+
+    /**
+     * delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        $this->Vision->id = $id;
+        if (!$this->Vision->exists()) {
+            $this->Session->setFlash(__('Invalid vision'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Vision->delete()) {
+            $this->Session->setFlash(__('Vision deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Vision was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+}

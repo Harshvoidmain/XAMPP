@@ -1,0 +1,249 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Library</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Amenities', '/amenities') ?></li>
+                        <li class="active">Library</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row blog">
+            <div class="col-md-7">
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h1>Infrastructure - Central Library</h1>                            
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Reading Section </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post"> <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h3>Central Library is the heart of the institution aimed to support:</h3> <br/>
+                            <p> a. Excellence in teaching </p> 
+                            <p> b. An appropriate learning and research environment </p>
+                            <p> c. Timely response to students on learning and information needs </p>
+                            <p> d. Maximum user satisfaction. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <h3>It is the first library to have Automated Library Resources Management System in Navi Mumbai.</h3> <br/>
+                            <p> It is located at the centre of the main building of Agnel Technical Education Complex 
+                                occupying the area of 750 sq. mtr. divided into two floors. A separate resource centre 
+                                is located on the fourth floor. This location of the Library provides easy as well as speedy access 
+                                to the library services rendered for the users.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Journal Section </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">                         
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Reference Section </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;"> <br/>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: justify;">
+                            <h3>Services of The Library Includes:</h3> <br/>
+                            <p> >> Keeping library resources for reference as well as for home lending. </p> 
+                            <p> >> Reading Halls. </p>
+                            <p> >> Language Laboratory, Multimedia facilities. </p>
+                            <p> >> Photocopying and inter-library loan, Referral Services. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>        
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <p> Central Library acquires, collects, develops, stores and disseminates 
+                                library resources and helps the users in their academic and extra-curricular activities. 
+                                The reference section is comprised of books section, periodical section, project report 
+                                section, Newspaper Section and Indian Standards section with a system of open access to 
+                                all users which can be used by 150 students at a time.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Reference Section for Staff. </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">                         
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Journal Section </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;"> <br/>
+                    <div class="row">
+                        <div class="col-md-12" style="text-align: justify;">
+                            <p> We have a state-of-the-art collection of print as well as 
+                                non-print resources that includes: books over 33000 Volumes, 
+                                132 National and International Journals, 1273 Bound Volumes of 
+                                Journals along with Non-Print media CD-ROMs, DVDs, Floppies, 
+                                Conferences & Seminars proceedings, Synopsis and Project Reports. </p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <p> The Library is a hub of academic activities and remains open 
+                                for 15 hrs. a day. It has embarked in a planned manner for its growth, 
+                                development and modernization in the areas of internet, digitalization, 
+                                resources sharing, website development, online library services, library 
+                                staff training & development and library infrastructure development</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Reading Section. </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+    </div>
+    <!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

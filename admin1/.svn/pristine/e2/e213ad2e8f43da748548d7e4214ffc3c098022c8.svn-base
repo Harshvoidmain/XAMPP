@@ -1,0 +1,185 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Amenities </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active">Amenities</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row blog">
+            <div class="col-md-6"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Library</h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/library'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-6 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Gymnasium </h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/gymnasium'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-6"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Hostel</h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/hostel'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-6 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Swimming Pool </h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/swimming_pool'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-6"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Medical Centre</h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/medical_centre'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-6 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Meditation Centre </h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/meditation_centre'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-6"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Playground</h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/playground'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-6 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-12">                      
+                            <div class="pic">
+                                <h1> Canteen </h1>
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                            </div>
+                            <p>Dummy text dummy text dummy text. Dummy text dummy text dummy text <br/>
+                                Dummy text dummy text dummy text. Dummy text dummy text dummy text 
+                            </p>
+                            <a href="<?php echo $this->Html->url('/amenities/canteen'); ?>" class="btn btn-yellow">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </div>
+    <!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

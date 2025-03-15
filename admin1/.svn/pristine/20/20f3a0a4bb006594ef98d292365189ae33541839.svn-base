@@ -1,0 +1,211 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>About us</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">About us</li>
+                    </ol>  
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container" style="padding-top: 50px;"><!-- Main-container section -->
+    <div class="about-us"> <!--  About section -->
+        <div class="container">
+            <div class="about-blk"><!-- about-blk start -->
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="title">
+                            <h1>In Pursuit of Excellence</h1>                            
+                        </div>
+                        <div class="pic"><img src="images/ab_pic-1.jpg" class="img-responsive" alt=""></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-offset-2 col-md-8">
+                        <div class="blk">
+                            <h2>Fr.CRIT</h2>
+                            <p>Fr. C. Rodrigues Institute of Technology was established in 1994 as an extension of 
+                                the pioneering efforts of the Agnel Ashram fathers in the arena of Technical 
+                                Education with the relentless pursuit of excellence as its guiding force. 
+                                Fr.CRIT in a short span of time established itself as a leading Engineering college 
+                                in Mumbai, bagging at least one university 1st rank every year starting with its 
+                                first graduating batch.</p>
+                            <p>It has also made its mark in sports, extra-curricular and co-curricular activities. 
+                                In recognition of the fact that it imparts high quality value-based technical 
+                                education, made possible by its dedicated staff and extensive facilities, the 
+                                Government of Maharashtra awarded Fr.C.R.I.T. an A grade in its first assessment.
+                                Similarly of the eligible four branches that had applied were awarded accreditation 
+                                by the National Board of Accreditation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- about-blk close -->
+        </div>
+        <div class=" core-blk"><!-- about-blk start -->
+            <div class="container ">
+                <div class="row title">
+                    <div class="col-md-offset-2 col-md-8">
+                        <h1>Our Core Values</h1>
+                        <p class="lead-font">Vivamus sollicitudin massa non liber blandit sem condimentum celerisque massa necere tortor.</p>
+                    </div>
+                </div>
+                <div class="row margin-space">
+                    <div class="col-md-4">
+                        <div class="">
+                            <i class="pe pe-li-help pe-4x pe-icon"></i>
+                            <h2>Heading title</h2>
+                            <p>Vivamus sollicitudin massa non libero egestas, eget blandit sem condimentum. Nulla scelerisque massa nec tellus condimentum sodales. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
+                            <i class="pe pe-li-book pe-4x pe-icon"></i>
+                            <h2>Heading title</h2>
+                            <p>Sed ullamcorper enim vitae erat fermentum sagittis. Mauris in lorem mauris. Nunc placerat mauris in venenatis viverra. </p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="">
+                            <i class="pe pe-li-love pe-4x pe-icon"></i>
+                            <h2>Heading title</h2>
+                            <p>Maecenas scelerisque setis quam sed metus posuere, rper nisl placerat. Donec nisl quam, varius non sem consequat, venenatis eleifend nunc.</p>
+                        </div>
+                    </div>
+                </div>
+            </div><!-- about-blk close -->
+            <hr>
+        </div>
+
+        <div class="container margin-space"><!-- Team start -->
+            <div class="row title">
+                <div class="col-md-offset-2 col-md-8">
+                    <h1>Meet the Virtue Team</h1>
+                    <p class="lead-font">Nullam sapien eros porta non rhoncus ac aliquet at tortor nteger nonlibero idst simple dummy vitae ullamcorper.</p>
+                </div>
+            </div>
+            <div class="row blk">
+                <div class="col-md-2 team-profile">
+                    <div class="pic">
+                        <img src="images/a_pic-1.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#">Bradley Grosh</a></h4>
+                    <span class="positions">Executive Director</span>
+                    <div class="yellow-line"></div>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscin elit .</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic">
+                        <img src="images/a_pic-2.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#">April Smith</a></h4>
+                    <span class="positions">Technical Director</span>
+                    <div class="yellow-line"></div>
+                    <p>Duis pretium est in ipsum euismod mollis am accumsan .</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic">
+                        <img src="images/a_pic-3.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#">Sara Conor</a></h4>
+                    <span class="positions">Program Officer</span>
+                    <div class="yellow-line"></div>
+                    <p>Maecenas bibendum fermentum tortorin tempus sapien auctor .</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic">
+                        <img src="images/a_pic-4.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#">John Nelson</a></h4>
+                    <span class="positions">Director of Development </span>
+                    <div class="yellow-line"></div>
+                    <p>Vestibulum velit purus, dignissim nec ante blandit.</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic">
+                        <img src="images/a_pic-5.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#">Sam Kromstain</a></h4>
+                    <span class="positions">Director of Development </span>
+                    <div class="yellow-line"></div>
+                    <p>Vestibulum velit purus, dignissim nec ante blandit.</p>
+                </div>
+                <div class="col-md-2 team-profile">
+                    <div class="pic">
+                        <img src="images/a_pic-6.jpg" class="img-responsive destaurate" alt="">
+                    </div>
+                    <h4><a href="#">Bradley Grosh</a></h4>
+                    <span class="positions">Director of Development </span>
+                    <div class="yellow-line"></div>
+                    <p>Vestibulum velit purus, dignissim nec ante blandit.</p>
+                </div>
+            </div>
+        </div><!-- Team close -->
+    </div>  <!-- about close -->
+</div><!-- Main-container end -->
+<!--  footer start -->
+<div class="footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 kindness">
+                <h2>Virtue Charity Template</h2>
+                <p> Nulla facilisi. Vivamus lacus libero, ultrices non ullamcorper ac, tempus sit amet enim. Suspendisse at semper ipsum. </p>
+                <ul class="list-style">
+                    <li>169 Nguyen Building,  Ngoc Vu Street, <br>Hanoi, Vietnam .</li>
+                    <li><i class="fa fa-phone-square"></i> +84-123 456 789</li>
+                    <li><i class="fa fa-envelope"></i> virtue@mail.com</li>
+                    <li>Registered charity number 123456.</li>
+                </ul>
+            </div>
+            <div class="col-md-4 help"> <!-- help start -->
+                <h2> How you can help ? </h2>
+                <ul class="list-style">
+                    <li><a href="#">Donate</a></li>
+                    <li><a href="#">Become a Volunteer</a></li>
+                    <li><a href="#">Join our programm</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Gift for child</a></li>
+                </ul>
+            </div><!-- help close -->
+            <div class="col-md-4 news-letter"> <!-- news-letter start -->
+                <h2> Newsletter</h2>
+                <p> Nulla facilisi. Vivamus lacus libero, ultrices non ullamcorper ac, tempus sit amet enim. Suspendisse at semper ipsum. </p>
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="enter email addess">
+                    <span class="input-group-btn">
+                        <button class="btn btn-default btn-yellow" type="button">Go!</button>
+                    </span>
+                </div><!-- /input-group -->
+            </div><!-- news-letter close -->
+        </div>
+    </div>
+</div>
+<!--  footer section close -->
+<!-- sub-footer -->
+<div class="sub-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <p>© 2014 virtue. All rights reserved.  |  Terms and conditions </p>
+            </div>
+            <div class="col-md-2"> <a href="#"><i class="fa fa-facebook-square"></i></a> <a href="#"><i class="fa fa-twitter-square"></i></a> <a href="#"><i class="fa fa-flickr"></i></a> <a href="#"><i class="fa fa-youtube-square"></i></a> </div>
+        </div>
+    </div>
+</div>
+<!-- sub-footer close -->
+<!-- section -->
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<script src="js/jquery-1.9.1.min.js"></script>
+<script src="js/script.js"></script> 
+
+<!-- Include all compiled plugins (below), or include individual files as needed -->
+<script src="js/bootstrap.js"></script>
+
+
+</body>

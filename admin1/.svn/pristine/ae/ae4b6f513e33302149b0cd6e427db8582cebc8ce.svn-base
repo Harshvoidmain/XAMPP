@@ -1,0 +1,197 @@
+<?php
+
+App::uses('AppController', 'Controller');
+
+/**
+ * AcademicCalendars Controller
+ *
+ * @property AcademicCalendar $AcademicCalendar
+ */
+class AcademicCalendarsController extends AppController {
+
+    public function admin_index() {
+        $this->AcademicCalendar->recursive = 0;
+        $this->set('academicCalendars', $this->paginate());
+    }
+
+    /**
+     * admin_view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_view($id = null) {
+        if (!$this->AcademicCalendar->exists($id)) {
+            $this->Session->setFlash(__('Invalid academic calendar'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('AcademicCalendar.' . $this->AcademicCalendar->primaryKey => $id));
+        $this->set('academicCalendar', $this->AcademicCalendar->find('first', $options));
+    }
+
+    /**
+     * admin_add method
+     *
+     * @return void
+     */
+    public function admin_add() {
+        if ($this->request->is('post')) {
+            $this->AcademicCalendar->create();
+            if ($this->AcademicCalendar->save($this->request->data)) {
+                $this->Session->setFlash(__('The academic calendar has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The academic calendar could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+        $departments = $this->AcademicCalendar->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * admin_edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_edit($id = null) {
+        if (!$this->AcademicCalendar->exists($id)) {
+            $this->Session->setFlash(__('Invalid academic calendar'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->AcademicCalendar->save($this->request->data)) {
+                $this->Session->setFlash(__('The academic calendar has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The academic calendar could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('AcademicCalendar.' . $this->AcademicCalendar->primaryKey => $id));
+            $this->request->data = $this->AcademicCalendar->find('first', $options);
+        }
+        $departments = $this->AcademicCalendar->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * admin_delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function admin_delete($id = null) {
+        $this->AcademicCalendar->id = $id;
+        if (!$this->AcademicCalendar->exists()) {
+            $this->Session->setFlash(__('Invalid academic calendar'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->AcademicCalendar->delete()) {
+            $this->Session->setFlash(__('Academic calendar deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Academic calendar was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    /**
+     * index method
+     *
+     * @return void
+     */
+    public function index() {
+        $this->AcademicCalendar->recursive = 0;
+        $this->set('academicCalendars', $this->paginate());
+    }
+
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        if (!$this->AcademicCalendar->exists($id)) {
+            $this->Session->setFlash(__('Invalid academic calendar'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('AcademicCalendar.' . $this->AcademicCalendar->primaryKey => $id));
+        $this->set('academicCalendar', $this->AcademicCalendar->find('first', $options));
+    }
+
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        if ($this->request->is('post')) {
+            $this->AcademicCalendar->create();
+            if ($this->AcademicCalendar->save($this->request->data)) {
+                $this->Session->setFlash(__('The academic calendar has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The academic calendar could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+        $departments = $this->AcademicCalendar->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        if (!$this->AcademicCalendar->exists($id)) {
+            $this->Session->setFlash(__('Invalid academic calendar'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->AcademicCalendar->save($this->request->data)) {
+                $this->Session->setFlash(__('The academic calendar has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The academic calendar could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('AcademicCalendar.' . $this->AcademicCalendar->primaryKey => $id));
+            $this->request->data = $this->AcademicCalendar->find('first', $options);
+        }
+        $departments = $this->AcademicCalendar->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        $this->AcademicCalendar->id = $id;
+        if (!$this->AcademicCalendar->exists()) {
+            $this->Session->setFlash(__('Invalid academic calendar'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->AcademicCalendar->delete()) {
+            $this->Session->setFlash(__('Academic calendar deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Academic calendar was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+}

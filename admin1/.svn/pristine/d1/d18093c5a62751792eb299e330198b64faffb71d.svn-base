@@ -1,0 +1,66 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Events</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active">Event</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="main-container"><!--  Main-container section -->
+    <div class="container event-detail"><!-- event-detail start -->
+        <div class="row">
+            <div class="col-md-8">
+                <h1><?php echo $events['Event']['title']; ?></h1>
+                <div class="pic"> <?php echo $this->Html->image($events['Event']['file'], array('class' => 'img-responsive')); ?> </div>
+
+                <div class="row">
+                    <div class="col-md-12">
+                        <h2><?php echo $events['Event']['description']; ?></h2>
+                        <p><?php echo $events['Event']['detail']; ?></p>
+
+                    </div>
+                </div>
+            </div>
+            <!-- ervent detail close -->
+            <div class="col-md-4 right-sidebar"><!--right sidebar start -->
+                <div class="row"> <!-- Event details info start -->
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+                            <h2>Event details</h2>
+                            <ul class="list-style">
+                                <li><i class="fa fa-clock-o"></i> <?php echo $events['Event']['time']; ?></li>
+                                <li><i class="fa fa-calendar-o"></i> <?php echo $events['Event']['date']; ?></li>
+                                <li><i class="fa fa-map-marker"></i> <?php echo $events['Event']['venue']; ?></li>
+                            </ul>
+
+                        </div>
+                    </div>
+                    <!-- Event details info start -->
+                    <div class="row"> <!-- Speaker start -->
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+                    <!--Speaker close -->
+                    <div class="row"> <!-- contact us start -->
+                        <div class="col-md-12">
+
+                        </div>
+                    </div>
+                    <!-- contact us close --> 
+                </div>
+                <!-- right sidebar close --> 
+            </div>
+        </div>
+        <!-- event-detail close--> 
+    </div>
+    <!--  Main-container  close--> 

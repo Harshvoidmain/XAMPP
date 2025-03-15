@@ -1,0 +1,105 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Gymnasium</h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Amenities', '/amenities') ?></li>
+                        <li class="active">Gymnasium</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <!--  Page Content start -->
+        <div class="row blog">
+            <div class="col-md-7"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row">
+                        <div class="col-md-10">
+                            <h1>Infrastructure - Gymnasium</h1>                            
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Reading Section </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-5 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post"> <br/>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <p>A multi utility high tech gymnasium has been set up to promote physical 
+                                fitness among our students. The facility boasts of state-of-the-art 
+                                equipment for a full body work out after which sauna is available. </p> <br/>
+                            <p> A professional trainer guides the students in the right direction to 
+                                make sure they use the arrangements to their maximum benefits. Aerobics 
+                                with fast pulsating music sets the mood for the evening.</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+        <div class="row blog">
+            <div class="col-md-5"> 
+                <!-- left sidebar start  -->
+                <div class="feature-img"> 
+                    <!-- Feature post start -->
+                    <div class="row"> <br/>
+                        <div class="col-md-12 left-sidebar" style="text-align: justify;">
+                            <p> For the outdoor sports facilities, the campus has international sized, 
+                                well maintained open air courts and grounds. These grounds cover a total 
+                                area of about seven and a half acres of land and are used for football, 
+                                hockey, volleyball and basketball.</p> <br/>
+                            <p> In the open grounds, occasionally running tracks are demarcated for athletes, 
+                                including the facilities for high jump, long jump, discuss throw, javelin throw 
+                                and shot put etc.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- left sidebar close -->
+            <div class="col-md-7 right-sidebar"> 
+
+                <!--right sidebar start -->
+                <div class="recent-post" style="margin-top: 0px;">
+                    <div class="row">
+                        <div class="col-md-10 pull-right">                        
+                            <div class="pic">
+                                <?php echo $this->Html->image('/img/s_pic-1.jpg', array('class' => 'img-responsive')); ?> <br/>
+                                <h4 style="text-align: center;">Library Journal Section </h4>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Recent-post close -->
+
+                <!-- Tag close --> 
+            </div>
+            <!--right sidebar close --> 
+        </div>
+
+    </div>
+    <!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

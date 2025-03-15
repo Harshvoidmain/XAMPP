@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9"> <![endif]-->
+<!--[if !IE]><!--> <html lang="en"> <!--<![endif]-->
+    <!-- BEGIN HEAD -->
+
+    <head>
+        <meta charset="utf-8"/>
+        <title></title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+        <meta content="" name="description"/>
+        <meta content="" name="author"/>
+        <?php echo $this->Html->css(array('/jquery.validationEngine/css/validationEngine.jquery', '/jquery-ui/jquery-ui-1.10.1.custom.min', '/bootstrap/css/bootstrap.min', '/bootstrap/css/bootstrap-responsive.min', '/font-awesome/css/font-awesome', 'style-metro', 'style', 'style-responsive', 'themes/default', '/uniform/css/uniform.default', '/gritter/css/jquery.gritter', '/bootstrap-daterangepicker/daterangepicker', '/bootstrap-datepicker/css/datepicker', '/bootstrap-datetimepicker/css/bootstrap-datetimepicker', '/bootstrap-timepicker/compiled/timepicker', '/fullcalendar/fullcalendar/bootstrap-fullcalendar', '/select2/select2_metro', '/data-tables/DT_bootstrap', '/fancybox/source/jquery.fancybox', '/chosen-bootstrap/chosen/chosen')); ?>
+        <?php echo $this->Html->script(array('jquery-1.8.3.min', '/jquery.validationEngine/js/jquery.validationEngine-en', '/jquery.validationEngine/js/jquery.validationEngine')); ?>
+        <!-- END PAGE LEVEL STYLES -->
+        <link rel="shortcut icon" href="favicon.ico"/>
+    </head>
+    <!-- END HEAD -->
+    <!-- BEGIN BODY -->
+    <body class="fixed-top">
+        <?php
+        echo $this->Form->input('base', array('id' => 'base', 'type' => 'hidden', 'value' => $this->Html->url('/')));
+        echo $this->Form->input('controller', array('id' => 'controller', 'type' => 'hidden', 'value' => $this->name));
+        echo $this->Form->input('action', array('id' => 'action', 'type' => 'hidden', 'value' => $this->action));
+        echo $this->Form->input('model', array('type' => 'model', 'value' => $this->modelName));
+        echo $this->Form->input('userType', array('id' => 'userType', 'type' => 'hidden', 'value' => $this->Session->read('UserType')));
+        ?>
+
+        <!-- BEGIN HEADER -->
+        <div class="header navbar navbar-inverse navbar-fixed-top">
+            <!-- BEGIN TOP NAVIGATION BAR -->
+            <div class="navbar-inner">
+                <div class="container-fluid">
+                    <!-- BEGIN LOGO -->
+                    <?php echo $this->Html->link($this->Html->image('/logo.', array('alt' => 'logo')), '/', array('class' => 'brand', 'escape' => FALSE)); ?>
+                    <!-- END LOGO -->
+                    <!-- BEGIN RESPONSIVE MENU TOGGLER -->
+                    <a href="javascript:;" class="btn-navbar collapsed" data-toggle="collapse" data-target=".nav-collapse">
+                        <?php echo $this->Html->image('menu-toggler.png') ?>
+                    </a>
+                    <!-- END RESPONSIVE MENU TOGGLER -->
+                    <!-- BEGIN TOP NAVIGATION MENU -->
+                    <ul class="nav pull-right">
+                        <!-- BEGIN NOTIFICATION DROPDOWN -->
+                        <!-- END TODO DROPDOWN -->
+                        <!-- BEGIN USER LOGIN DROPDOWN -->
+                        <li class="dropdown user">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                <?php
+                                $user_image = $this->Session->read('Auth.User.profile_picture');
+                                if (!empty($user_image) && file_exists(APP . WEBROOT_DIR . DS . 'files' . DS . 'user' . DS . $user_image)) {
+                                    $user_image = '/files/user' . str_replace('\\', '/', $user_image);
+                                } else {
+                                    $user_image = 'avatar.png';
+                                }
+                                echo $this->Html->image($user_image, array('ALT' => 'User Image'))
+                                ?>
+                                <span class="username"><?php echo ucwords($this->Session->read('Auth.User.full_name')) ?></span>
+                                <i class="icon-angle-down"></i>
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/common/profile/' . $this->Session->read('Auth.User.id')) ?>"><i class="icon-user"></i> My Profile</a></li>
+
+                                <li class="divider"></li>
+                                <li><?php echo $this->Html->link('<i class="icon-key"></i> Log Out', '/admin-logout', array('escape' => FALSE)) ?></li>
+                            </ul>
+                        </li>
+                        <!-- END USER LOGIN DROPDOWN -->
+                    </ul>
+                    <!-- END TOP NAVIGATION MENU -->
+                </div>
+            </div>
+            <!-- END TOP NAVIGATION BAR -->
+        </div>
+        <!-- END HEADER -->
+        <!-- BEGIN CONTAINER -->
+        <div class="page-container row-fluid">
+            <!-- BEGIN SIDEBAR -->
+            <div class="page-sidebar nav-collapse collapse">
+                <!-- BEGIN SIDEBAR MENU -->
+                <ul>
+                    <li>
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                        <div class="sidebar-toggler hidden-phone">
+                        </div>
+                        <!-- BEGIN SIDEBAR TOGGLER BUTTON -->
+                    </li>
+                    <li>
+                        <!-- BEGIN RESPONSIVE QUICK SEARCH FORM -->
+                        <form class="sidebar-search" method="get" action="<?php echo $this->Html->url('/Common/main_search') ?>">
+                            <div class="input-box">
+                                <a href="javascript:;" class="remove"></a>
+                                <input type="text" placeholder="Search..." name="q"/>
+                                <input type="button" class="submit" value=" "/>
+                            </div>
+                        </form>
+                        <!-- END RESPONSIVE QUICK SEARCH FORM -->
+                    </li>
+                    <li class="start active ">
+                        <a href="<?php echo $this->Html->url('/admin/dashboard') ?>">
+                            <i class="icon-home"></i>
+                            <span class="title"> Dashboard </span>
+                            <span class="selected"></span>
+                        </a>
+                    </li>
+                    <!--                    <li class="">
+                                            <a href="<?php echo $this->Html->url('/calendar') ?>">
+                                                <i class="icon-calendar"></i>
+                                                <span class="title">Calendar</span>
+                                            </a>
+                                        </li>-->
+                    <?php
+                    echo $this->Common->nav(array(
+                        'Admin' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-user',
+                            'sub_nav' => array(
+                                array('admin/Admins', 'icon-thumbs-up'),
+                            )
+                        ),
+                        'Home Page' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-home',
+                            'sub_nav' => array(
+                                array('admin/Latest News', ' icon-desktop'),//array('admin/Circulars', 'icon-file'), array('admin/Toppers', 'icon-trophy'), array('admin/Placements', 'icon-plane'), array('admin/Winners', 'icon-certificate'), array('admin/Success Stories', 'icon-gift'), array('admin/Fe Toppers', 'icon-star-empty'),
+                            )
+                        ),
+                        'Partners' => array(
+                            'url' => 'javascript::',
+                            'icon' => 'icon-money',
+                            'sub_nav' => array(
+                                array('admin/Companies', 'icon-play-circle'),
+                            )
+                        ),
+                        'Conference Details' => array(
+                            'url' => 'javascript::',
+                            'icon' => 'icon-zoom-in',
+                            'sub_nav' => array(
+                                array('admin/Important Dates', 'icon-calendar'),
+                                array('admin/Instructions', 'icon-info-sign'),
+                                array('admin/Publications', 'icon-paper'),
+                            )
+                        ),
+                        'Organizing Committee' => array(
+                            'url' => 'javascript::',
+                            'icon' => 'icon-group',
+                            'sub_nav' => array(
+                                array('admin/Organizing Committees', 'icon-certificate'),
+                                array('admin/Committee Members', 'icon-user'),
+                            )
+                        ),
+                        'People' => array(
+                            'url' => 'javascript::',
+                            'icon' => 'icon-tasks',
+                            'sub_nav' => array(
+                                array('admin/Keynotes', 'icon-pencil'),
+                                array('admin/Reviewers', 'icon-check'),
+                                array('admin/Advisory Committees', 'icon-legal'),
+                            )
+                        ),
+                        'Registration' => array(
+                            'url' => 'javascript::',
+                            'icon' => 'icon-folder-open',
+                            'sub_nav' => array(
+                                array('admin/Registration Fees', 'icon-money'),
+                                array('admin/Registration Instructions', 'icon-pencil'),
+                                
+                            )
+                        ),
+                        'Contact' => array(
+                            'url' => 'javascript::',
+                            'icon' => 'icon-info-sign',
+                            'sub_nav' => array(
+                                array('admin/Contacts', 'icon-phone'),
+                                
+                                
+                            )
+                        ),
+                      /*  'About Us' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-lightbulb',
+                            'sub_nav' => array(
+                                array('admin/Visions', 'icon-eye-open'),
+                                array('admin/Committees', 'icon-group'),
+
+//                            array('admin/IWishes', 'icon-bullhorn'), array('admin/Complaints', 'icon-thumbs-down')
+                            )
+                        ),
+                        'Principal' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-user',
+                            'sub_nav' => array (
+                                array('admin/PrincipalPapers', 'icon-file-pdf-o'),
+                                array('admin/PrincipalSpecializations','icon-mortar-board')
+                            )
+                        ),
+                        'Nirf Page' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-user',
+                            'sub_nav' => array(
+                                array('admin/Nirf_pages', 'icon-calendar'),
+                            )
+                        ),
+
+                        'Academics' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-file',
+                            'sub_nav' => array(array('admin/Abouts', 'icon-time'),
+                                array('admin/Faculties', 'icon-user-md'), array('admin/Infrastructures', 'icon-building'),
+                                array('admin/Activities', 'icon-tasks'), array('admin/Rnds', 'icon-cogs'),
+                                array('admin/Dept_Placements', 'icon-bar-chart'), array('admin/Student_associations', 'icon-qrcode'),
+                                array('admin/Achievements', 'icon-share-alt'), array('admin/Academic_calendars', 'icon-calendar'),
+                                array('admin/Affiliations', 'icon-fire')
+                            )
+                        ),
+                        'Faculties' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-group',
+                            'sub_nav' => array(
+                                array('admin/FacultySubjects', 'icon-adjust'), array('admin/FacultySpecializations', 'icon-wrench'),
+                                array('admin/FacultyPapers', 'icon-paste')
+                            )
+                        ),
+                        'Exam Cell' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-bullhorn',
+                            'sub_nav' => array(
+                                array('admin/Notices', 'icon-magic'), array('admin/Results', 'icon-align-center'), array('admin/Schedules', 'icon-magic')
+                            )
+                        ),
+                        'Admission Mgmt' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-file',
+                            'sub_nav' => array(
+                                array('admin/Centralizes', 'icon-circle'),
+                                array('admin/Minorities', 'icon-tags'),
+                                array('admin/Institutes', 'icon-building'),
+                            )
+                        ),
+                        'Alumni Mgmt' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-user-md',
+                            'sub_nav' => array(
+                                array('admin/Alumni_homes', 'icon-heart'),
+                                array('admin/Alumni_teams', 'icon-flag'),
+                                array('admin/Alumni_councils', 'icon-film'),
+                                array('admin/Memories', 'icon-camera'),
+                                array('admin/Alumni_registers', 'icon-asterisk'),
+                                array('admin/Registration', 'icon-zoom-in'),
+                                array('admin/Opinion_contents', 'icon-road'),
+                                array('admin/Opinion_box', 'icon-comments'),
+                            )
+                        ),
+                        'Placement Mgmt' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-user-md',
+                            'sub_nav' => array(
+                                array('admin/Placement_homes', 'icon-play-circle'),
+                                array('admin/Companies', 'icon-play-circle'),
+                                array('admin/PlacementNews', 'icon-pushpin'),
+                                array('admin/Announcements', 'icon-pushpin'),
+                                array('admin/PlacementStatistics', 'icon-lemon'),
+                            )
+                        ),
+                        'Extra Curricular' => array(
+                            'url' => 'javascript:;',
+                            'icon' => 'icon-user-md',
+                            'sub_nav' => array(
+                                array('admin/Professional_items', 'icon-play-circle'),
+                                array('admin/Events', 'icon-play-circle'),
+                            )
+                        ),*/
+                    ));
+                    ?>
+                </ul>
+                <!-- END SIDEBAR MENU -->
+            </div>
+            <!-- END SIDEBAR -->
+            <!-- BEGIN PAGE -->
+            <div class="page-content">
+                <!-- BEGIN SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+                <div id="portlet-config" class="modal hide">
+                    <div class="modal-header">
+                        <button data-dismiss="modal" class="close" type="button"></button>
+                        <h3>Widget Settings</h3>
+                    </div>
+                    <div class="modal-body">
+                        Widget settings form goes here
+                    </div>
+                </div>
+                <!-- END SAMPLE PORTLET CONFIGURATION MODAL FORM-->
+                <!-- BEGIN PAGE CONTAINER-->
+                <div class="container-fluid">
+                    <!-- BEGIN PAGE HEADER-->
+                    <div class="row-fluid">
+                        <div class="span12">
+                            <!-- BEGIN PAGE TITLE & BREADCRUMB-->
+                            <br/>
+                            <?php
+                            $this->BreadCrumb->addCrumbs($this->name, $this->action);
+                            echo $this->Html->getCrumbs();
+                            ?>
+                            <!-- END PAGE TITLE & BREADCRUMB-->
+                        </div>
+                    </div>
+                    <!-- END PAGE HEADER-->
+                    <?php
+                    echo $this->Session->flash();
+                    echo $content_for_layout;
+                    //echo $this->element('sql_dump');
+                    ?>
+                </div>
+                <!-- END PAGE CONTAINER-->
+            </div>
+            <!-- END PAGE -->
+        </div>
+        <!-- END CONTAINER -->
+        <!-- BEGIN FOOTER -->
+        <div class="footer">
+            2014 &copy; Eiosys Inc
+            <div class="span pull-right">
+                <span class="go-top"><i class="icon-angle-up"></i></span>
+            </div>
+        </div>
+        <!-- END FOOTER -->
+        <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+        <!-- BEGIN CORE PLUGINS -->
+        <!-- IMPORTANT! Load jquery-ui-1.10.1.custom.min.js before bootstrap.min.js to fix bootstrap tooltip conflict with jquery ui tooltip -->
+        <?php echo $this->Html->script(array('/jquery-ui/jquery-ui-1.10.1.custom.min', '/bootstrap/js/bootstrap.min')); ?>
+        <!--[if lt IE 9]>
+        <?php echo $this->Html->script(array('/excanvas', '/respond')); ?>
+        <![endif]-->
+        <?php echo $this->Html->script(array('/bootstrap-wizard/jquery.bootstrap.wizard.min', '/breakpoints/breakpoints', '/jquery-slimscroll/jquery.slimscroll.min', 'jquery.blockui', 'jquery.cookie', '/uniform/jquery.uniform.min', 'jquery.pulsate.min', '/bootstrap-daterangepicker/date', '/bootstrap-datepicker/js/bootstrap-datepicker', '/bootstrap-timepicker/js/bootstrap-timepicker', '/bootstrap-daterangepicker/daterangepicker', '/bootstrap-datetimepicker/js/bootstrap-datetimepicker', '/gritter/js/jquery.gritter', '/fullcalendar/fullcalendar/fullcalendar.min', '/jquery.sparkline.min', '/select2/select2.min', '/data-tables/jquery.dataTables', '/data-tables/DT_bootstrap', '/data-tables/table-managed', '/fancybox/source/jquery.fancybox.pack', 'jquery.timeago', '/chosen-bootstrap/chosen/chosen.jquery.min', '/jquery.validationEngine/js/jquery.validationEngine', '/jquery.validationEngine/js/jquery.validationEngine-en', 'app', 'script', 'controller/' . strtolower($this->name))) ?>
+        <!-- END JAVASCRIPTS -->
+    </body>
+    <!-- END BODY -->
+</html>

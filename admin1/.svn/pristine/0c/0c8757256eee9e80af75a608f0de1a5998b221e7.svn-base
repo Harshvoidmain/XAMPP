@@ -1,0 +1,216 @@
+<?php
+
+App::uses('AppController', 'Controller');
+
+/**
+ * Faculties Controller
+ *
+ * @property Faculty $Faculty
+ */
+class FacultiesController extends AppController {
+
+    public function beforeFilter() {
+        $this->Auth->allow('faculty_details');
+        parent::beforeFilter();
+    }
+
+    /**
+     * admin_index method
+     *
+     * @return void
+     */
+    public function admin_index() {
+        $this->Faculty->recursive = 0;
+        $this->set('faculties', $this->paginate());
+    }
+
+    /**
+     * admin_view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_view($id = null) {
+        if (!$this->Faculty->exists($id)) {
+            $this->Session->setFlash(__('Invalid faculty'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Faculty.' . $this->Faculty->primaryKey => $id));
+        $this->set('faculty', $this->Faculty->find('first', $options));
+    }
+
+    /**
+     * admin_add method
+     *
+     * @return void
+     */
+    public function admin_add() {
+        if ($this->request->is('post')) {
+            $this->Faculty->create();
+            if ($this->Faculty->save($this->request->data)) {
+                $this->Session->setFlash(__('The faculty has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The faculty could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+        $departments = $this->Faculty->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * admin_edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function admin_edit($id = null) {
+        if (!$this->Faculty->exists($id)) {
+            $this->Session->setFlash(__('Invalid faculty'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Faculty->save($this->request->data)) {
+                $this->Session->setFlash(__('The faculty has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The faculty could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Faculty.' . $this->Faculty->primaryKey => $id));
+            $this->request->data = $this->Faculty->find('first', $options);
+        }
+        $departments = $this->Faculty->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * admin_delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function admin_delete($id = null) {
+        $this->Faculty->id = $id;
+        if (!$this->Faculty->exists()) {
+            $this->Session->setFlash(__('Invalid faculty'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Faculty->delete()) {
+            $this->Session->setFlash(__('Faculty deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Faculty was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    /**
+     * index method
+     *
+     * @return void
+     */
+    public function index() {
+        $this->Faculty->recursive = 0;
+        $this->set('faculties', $this->paginate());
+    }
+
+    /**
+     * view method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function view($id = null) {
+        if (!$this->Faculty->exists($id)) {
+            $this->Session->setFlash(__('Invalid faculty'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $options = array('conditions' => array('Faculty.' . $this->Faculty->primaryKey => $id));
+        $this->set('faculty', $this->Faculty->find('first', $options));
+    }
+
+    /**
+     * add method
+     *
+     * @return void
+     */
+    public function add() {
+        if ($this->request->is('post')) {
+            $this->Faculty->create();
+            if ($this->Faculty->save($this->request->data)) {
+                $this->Session->setFlash(__('The faculty has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The faculty could not be saved. Please, try again.'), 'flash_error');
+            }
+        }
+        $departments = $this->Faculty->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * edit method
+     *
+     * @throws NotFoundException
+     * @param string $id
+     * @return void
+     */
+    public function edit($id = null) {
+        if (!$this->Faculty->exists($id)) {
+            $this->Session->setFlash(__('Invalid faculty'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        if ($this->request->is('post') || $this->request->is('put')) {
+            if ($this->Faculty->save($this->request->data)) {
+                $this->Session->setFlash(__('The faculty has been saved'), 'flash_success');
+                $this->redirect(array('action' => 'index'));
+            } else {
+                $this->Session->setFlash(__('The faculty could not be saved. Please, try again.'), 'flash_error');
+            }
+        } else {
+            $options = array('conditions' => array('Faculty.' . $this->Faculty->primaryKey => $id));
+            $this->request->data = $this->Faculty->find('first', $options);
+        }
+        $departments = $this->Faculty->Department->find('list');
+        $this->set(compact('departments'));
+    }
+
+    /**
+     * delete method
+     *
+     * @throws NotFoundException
+     * @throws MethodNotAllowedException
+     * @param string $id
+     * @return void
+     */
+    public function delete($id = null) {
+        $this->Faculty->id = $id;
+        if (!$this->Faculty->exists()) {
+            $this->Session->setFlash(__('Invalid faculty'), 'flash_warning');
+            $this->redirect($this->referer());
+        }
+        $this->request->onlyAllow('post', 'delete');
+        if ($this->Faculty->delete()) {
+            $this->Session->setFlash(__('Faculty deleted'), 'flash_success');
+            $this->redirect(array('action' => 'index'));
+        }
+        $this->Session->setFlash(__('Faculty was not deleted'), 'flash_error');
+        $this->redirect(array('action' => 'index'));
+    }
+
+    public function faculty_details($id = '') {
+        $this->layout = 'site';
+        $this->loadModel('FacultySubject');
+        $details = $this->Faculty->find('first', array(
+            'conditions' => array('Faculty.id' => $id)
+                ));
+        $this->set(compact('details'));
+    }
+
+}

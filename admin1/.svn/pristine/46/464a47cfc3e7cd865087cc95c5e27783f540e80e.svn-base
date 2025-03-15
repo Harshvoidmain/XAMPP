@@ -1,0 +1,85 @@
+<script src="http://code.highcharts.com/highcharts.js"></script>
+<script src="http://code.highcharts.com/modules/data.js"></script>
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Notices </h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li><?php echo $this->Html->link('Exam Cell', '/examcells') ?></li>
+                        <li class="active">Result</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="main-container" style="padding-top: 70px;"> 
+    <div class="container">
+        <div id="graph" class="col-md-12" style="height: 350px;"></div> 
+        <table class="table table-hover table-striped table-bordered table-condensed" id="graphTable" style="alignment-adjust: center;">
+            <thead>
+                <tr>
+                    <th style="text-align: center;"></th>
+                    <th style="text-align: center;">Appeared</th>
+                    <th style="text-align: center;">Passed</th>
+                    <th style="text-align: center;">Passing %</th>
+                    <th style="text-align: center;">University Passing %</th>
+                    <th style="text-align: center;">Distinction</th>
+                    <th style="text-align: center;">1st Class</th>
+                    <th style="text-align: center;">2nd Class</th>
+                    <th style="text-align: center;">Pass</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                <?php
+                foreach ($result as $result) {
+                    echo '<tr>
+                            <th>' . $result['Result']['branch'] . '</th>
+                            <td>' . $result['Result']['appeared'] . '</td>
+                            <td>' . $result['Result']['passed'] . '</td>
+                            <td>' . $result['Result']['passing_percentage'] . '</td>
+                            <td>' . $result['Result']['university_pass_percent'] . '</td>
+                            <td>' . $result['Result']['distinction'] . '</td>
+                            <td>' . $result['Result']['first_class'] . '</td>
+                            <td>' . $result['Result']['second_class'] . '</td>
+                            <td>' . $result['Result']['pass'] . '</td>
+                        </tr>';
+                }
+                ?>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+<script>
+    $(function () {
+        $('#graph').highcharts({
+            data: {
+                table: document.getElementById('graphTable')
+            },
+            chart: {
+                type: 'column'
+            },
+            title: {
+                text: '<h1>Welcome to the Results Section</h1>'
+            },
+            yAxis: {
+                allowDecimals: false,
+                title: {
+                    text: 'Passing Percentage'
+                }
+            },
+            tooltip: {
+                formatter: function () {
+                    return '<b>' + this.series.name + '</b><br/>' +
+                        this.point.y + ' ' + this.point.name.toLowerCase();
+                }
+            }
+        });
+    });
+</script>

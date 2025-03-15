@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <!--<meta http-equiv="X-UA-Compatible" content="IE=edge">-->
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="description" content="Fr. C. Rodrigues Institute of Technology. In Pursuit of Excellence.">
+        <title>Fr. C. Rodrigues Institute of Technology.</title>
+        <!-- Bootstrap -->
+        <?php echo $this->Html->css(array('bootstrap', 'sstyle', 'helper', 'pe-icon-line', 'font-awesome.min', 'owl.carousel', 'owl.theme')); ?>
+
+        <?php echo $this->Html->script(array('jquery-1.9.1.min', 'bootstrap', 'scripts', 'owl.carousel')); ?>
+
+        <!-- Include js plugin -->
+        <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+        <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+        <!--[if lt IE 9]>
+              <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+              <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+            <![endif]-->
+        <!--[if IE 9]>
+       <link href="css/ie.css" rel="stylesheet">
+    <![endif]-->
+        <!--[if IE 10]>
+           <link href="css/ie.css" rel="stylesheet">
+        <![endif]-->
+        <!--[if IE 11]>
+           <link href="css/ie.css" rel="stylesheet">
+        <![endif]-->
+    </head>
+    <!-- header section -->
+
+    <div class="header">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container"> 
+
+                <!-- Brand and toggle get grouped for better mobile display -->
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                    <a class="navbar-brand" href="#" style="margin-top: -22px;">
+                    <?php echo $this->Html->image('fcritlogo.png', array('alt' => 'logo', 'margin-top'=> '-22px')); ?>
+                    </a> </div>
+                <!-- Collect the nav links, forms, and other content for toggling -->
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="<?php echo $this->Html->url('/'); ?>" class="active">HOME</a></li>
+                        <li class="dropdown"> <a href="<?php echo $this->Html->url('/about-us'); ?>" class="dropdown-toggle" data-toggle="dropdown">About Us <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/about-us/history'); ?>">History</a></li>
+                                <li><a href="<?php echo $this->Html->url('/about-us/mission_vision'); ?>">Mission & Vision</a></li>
+                                <li><a href="<?php echo $this->Html->url('/about-us/trustee'); ?>">Trustees</a></li>
+                                <li><a href="<?php echo $this->Html->url('/about-us/committee'); ?>">Committees</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Academics <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/academics_under_graduate'); ?>">Under Graduate</a></li>
+                                <li><a href="<?php echo $this->Html->url('/academics_post_graduate'); ?>">Post Graduate</a></li>
+                                <li><a href="<?php echo $this->Html->url('/academics_phd'); ?>">PhD</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Exam Cell<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/exam_cell_under_graduate'); ?>">Under Graduate</a></li>
+                                <li><a href="<?php echo $this->Html->url('/exam_cell_post_graduate'); ?>">Post Graduate</a></li>
+                                <li><a href="<?php echo $this->Html->url('/exam_cell_phd'); ?>">PhD</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Admission<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/admission_under_graduate'); ?>">Under Graduate</a></li>
+                                <li><a href="<?php echo $this->Html->url('/admission_post_graduate'); ?>">Post Graduate</a></li>
+                                <li><a href="<?php echo $this->Html->url('/admission_phd'); ?>">PhD</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Amenities <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/library'); ?>">Library</a></li>
+                                <li><a href="<?php echo $this->Html->url('/gymnasium'); ?>">Gymnasium</a></li>
+                                <li><a href="<?php echo $this->Html->url('/hostel'); ?>">Hostel</a></li>
+                                <li><a href="<?php echo $this->Html->url('/swimming_pool'); ?>">Swimming Pool</a></li>
+                                <li><a href="<?php echo $this->Html->url('/mdeical_centre'); ?>">Medical Centre</a></li>
+                                <li><a href="<?php echo $this->Html->url('/playground'); ?>">Playground</a></li>
+                                <li><a href="<?php echo $this->Html->url('/canteen'); ?>">Canteen</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Alumni <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/alumni_home'); ?>">Home</a></li>
+                                <li><a href="<?php echo $this->Html->url('/memories'); ?>">Memories</a></li>
+                                <li><a href="<?php echo $this->Html->url('/registration'); ?>">Registration</a></li>
+                                <li><a href="<?php echo $this->Html->url('/alumni_news'); ?>">Alumni News</a></li>
+                                <li><a href="<?php echo $this->Html->url('/opinion_box'); ?>">Opinion Box</a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"> <a href="#" class="dropdown-toggle" data-toggle="dropdown">Placement <b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="<?php echo $this->Html->url('/alumni_home'); ?>">News</a></li>
+                                <li><a href="<?php echo $this->Html->url('/memories'); ?>">Placement Calendar</a></li>
+                                <li><a href="<?php echo $this->Html->url('/registration'); ?>">Announcements</a></li>
+                                <li><a href="<?php echo $this->Html->url('/alumni_news'); ?>">Placement Statistics</a></li>
+                            </ul>
+                        </li>
+
+                        <!--                            <li><a href="contact-us.html">Contact us </a></li>-->
+                    </ul>
+                </div>
+                <!-- /.navbar-collapse --> 
+
+            </div>
+        </nav>
+    </div>
+    <!-- header section end --> 
+
+    <!-- banner start -->
+    <?php
+    echo $this->Session->flash();
+    echo $content_for_layout;
+    ?>        
+    <!-- banner end -->
+
+    <!--  footer section -->
+    <div class="footer"  style="padding-bottom: 0px !important;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h2>Fr. C. Rodrigues Institute of Technology</h2>
+                    <p> 
+                        Agnel Technical Education Complex <br/>
+                        Sector 9-A, Vashi, Navi Mumbai,<br/> 
+                        Maharashtra, India <br/>
+                        PIN - 400703
+                    </p>
+                    <ul class="list-style">
+                        <li><i class="fa fa-phone-square"></i> (022) 41611000 , 27661924 <br/> 
+                            &nbsp; &nbsp; (022) 27660618 </li>
+                        <li><i class="fa fa-fax"></i> (022) 41611025</li>
+                        <li><i class="fa fa-envelope"></i> support@fcrit.ac.in</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 help"> <!-- help start -->
+                    <h2> More Information </h2>
+                    <ul class="list-style">
+                        <li><a href="about-us">About Us</a></li>
+                        <li><a href="#">Academics</a></li>
+                        <li><a href="#">Exam Cell</a></li>
+                        <li><a href="#">Admission</a></li>
+                        <li><a href="#">Amenities</a></li>
+                        <li><a href="#">Alumni</a></li>
+                        <li><a href="#">Placements</a></li>
+                    </ul>
+                </div>
+                <!-- help close -->
+                <div class="col-md-4 help"> <!-- help start -->
+                    <h2> Get In Touch </h2>
+                    <ul class="list-style">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Sitemap</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Terms & Conditions</a></li>                            
+                    </ul>
+                </div>
+                <!--                    <div class="col-md-4 news-letter">  news-letter start 
+                                        <h2> Newsletter</h2>
+                                        <p> Nulla facilisi. Vivamus lacus libero, ultrices non ullamcorper ac, tempus sit amet enim. Suspendisse at semper ipsum. </p>
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" placeholder="enter email addess">
+                                            <span class="input-group-btn">
+                                                <button class="btn btn-default btn-yellow" type="button">Go!</button>
+                                            </span> </div>-->
+                <!-- /input-group --> 
+            </div>
+            <!-- news-letter close --> 
+        </div>
+    </div>
+</div>
+<!--  footer section ending --> 
+<!-- sub-footer -->
+<div class="sub-footer">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-10">
+                <p>© 2014 Fr. CRIT, Vashi. All rights reserved. </p>
+            </div>
+            <div class="col-md-2"> <a href="#"><i class="fa fa-facebook-square"></i></a> <a href="#"><i class="fa fa-twitter-square"></i></a> <a href="#"><i class="fa fa-flickr"></i></a> <a href="#"><i class="fa fa-youtube-square"></i></a> </div>
+        </div>
+    </div>
+</div>
+<!-- sub-footer ending --> 
+<!-- section --> 
+<!-- jQuery (necessary for Bootstrap's JavaScript plugins) --> 
+<?php echo $this->Html->script(array('jquery-1.9.1.min', 'bootstrap', 'scripts', 'owl.carousel')); ?>
+<!-- Include all compiled plugins (below), or include individual files as needed --> 
+</body>
+</html>

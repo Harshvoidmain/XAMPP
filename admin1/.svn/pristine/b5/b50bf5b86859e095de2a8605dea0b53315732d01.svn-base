@@ -1,0 +1,105 @@
+<div class="portlet box blue successStories view">
+    <div class="portlet-title">
+        <div class="caption"><i class="icon-reorder"></i><?php echo __('Success Story'); ?></div>
+        <div class="tools">
+            <a href="javascript:;" class="collapse"></a>
+            <a href="javascript:;" class="reload"></a>
+            <a href="javascript:;" class="print"></a>
+            <a href="javascript:;" class="remove"></a>
+        </div>
+    </div>
+    <div class="portlet-body form">
+        <!-- BEGIN FORM-->
+        <div class="form-horizontal form-view">
+            <h3><?php echo $successStory['SuccessStory']['name'] ?></h3>
+            <div class="row-fluid">
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='Id'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'id', $successStory['SuccessStory']['id']) . 'Id'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo h($successStory['SuccessStory']['id']); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='Name'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'name', $successStory['SuccessStory']['id']) . 'Name'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo h($successStory['SuccessStory']['name']); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='Branch'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'branch', $successStory['SuccessStory']['id']) . 'Branch'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo $this->Common->get_button($successStory['SuccessStory']['branch'], array('Computer', 'EXTC', 'Electrical', 'Mechanical', 'IT')); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='Percentile'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'Percentile', $successStory['SuccessStory']['id']) . 'Percentile'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo h($successStory['SuccessStory']['Percentile']); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='Rank'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'Rank', $successStory['SuccessStory']['id']) . 'Rank'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo h($successStory['SuccessStory']['Rank']); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='IsActive'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'is_active', $successStory['SuccessStory']['id']) . 'Is Active'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo $this->Common->get_button($successStory['SuccessStory']['is_active'], NULL); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row-fluid">
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='CreatedBy'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'created_by', $successStory['SuccessStory']['id']) . 'Created By'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo $this->Common->get_button($successStory['SuccessStory']['created_by'], NULL); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+                <div class="span6 ">
+                    <div class="control-group">
+                        <label class='control-label' for='CreatedTimestamp'><?php echo __($this->Common->get_view_chage_log('SuccessStory', 'created_timestamp', $successStory['SuccessStory']['id']) . 'Created Timestamp'); ?></label>
+                        <div class='controls'>
+                            <span class='text'>
+                                <?php echo h($successStory['SuccessStory']['created_timestamp']); ?>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

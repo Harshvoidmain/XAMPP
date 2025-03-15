@@ -1,0 +1,52 @@
+<div class="banner">
+    <!--  page header section -->
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2><?php echo h($department['Department']['name']); ?></h2>
+                    <ol class="breadcrumb">
+                        <li><?php echo $this->Html->link('Home', '/') ?></li>
+                        <li class="active"><?php echo h($department['Department']['name']); ?></li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"> 
+    <!--  Main-container start -->
+    <div class="container "> 
+        <h1 style="margin-left: 30px;"> <?php echo 'Welcome to the Department of' . ' ' . h($department['Department']['name']); ?></h1> <br/>
+        <!--  Page Content start -->
+        <?php echo $this->element('academic_sidebar', array('base' => '/academics/' . $type . '/' . $dept)); ?>
+        <div class="col-md-8">
+            <div class="tab-content">
+                <div class="tab-pane active row" id="about" style="margin: -25px 0px 0px 25px; text-align: justify;"> <br/>
+                    <p> <?php echo h($about['About']['paragraph1']); ?> 
+                    </p>
+                    <div class="col-md-6">
+                        <div class="pic">
+                            <?php echo $this->Html->image($about['About']['image1'], array('class' => 'img-responsive')); ?> <br/>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="pic">
+                            <?php echo $this->Html->image($about['About']['image2'], array('class' => 'img-responsive')); ?> <br/>
+                        </div>
+                    </div>
+                    <p> <?php echo h($about['About']['paragraph2']); ?>
+                    </p>
+                    <p> <?php echo h($about['About']['special_line']); ?>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- Page Content close--> 
+</div>
+<!--  Main-container close --> 

@@ -1,0 +1,65 @@
+$(document).ready(function() {
+    //open searchbar toggle code
+
+    "use strict";
+    // Search field toggle in top bar
+    $('li.search a').click(function(e) {
+        $(this).parent().find('#top-search').toggle().focus();
+        $('#top-links').toggleClass('search-open');
+        e.preventDefault();
+    });
+		
+		
+    // Client logo corousel
+    "use strict";
+    $("#owl-demo").owlCarousel({
+        autoPlay: false, //Set AutoPlay to 3 seconds
+        items : 4,
+        itemsDesktop : [1199,4],
+        itemsDesktopSmall : [979,4]
+ 
+    });
+    // Testimonial  corousel
+    "use strict";
+    $("#owl-demo-testimonial").owlCarousel({
+ 
+        autoPlay: 3000, //Set AutoPlay to 3 seconds
+ 
+        items : 1,
+        itemsDesktop : [1199,3],
+        itemsDesktopSmall : [979,3]
+ 
+    });	
+    countTo($('.donate-box strong'), 6817);
+});
+countTo=function(element, number){
+    var counter=0;
+    var interval=setInterval(function(){
+        if(counter<number){
+            counter+=50;
+            $(element).text(counter);
+        }else{
+            clearInterval(interval);
+        }
+    },50);  
+};
+
+$(document).ready(function() {
+ 
+  $("#owlsuccess").owlCarousel({
+ 
+      navigation : true, // Show next and prev buttons
+      slideSpeed : 300,
+      paginationSpeed : 400,
+      singleItem:true
+ 
+      // "singleItem:true" is a shortcut for:
+      // items : 1, 
+      // itemsDesktop : false,
+      // itemsDesktopSmall : false,
+      // itemsTablet: false,
+      // itemsMobile : false
+ 
+  });
+ 
+});

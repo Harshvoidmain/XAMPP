@@ -1,0 +1,45 @@
+[29-Jun-2013 06:53:45] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 06:54:14] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 06:54:27] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 06:54:45] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 06:54:59] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 07:48:46] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 08:16:43] PHP Parse error:  syntax error, unexpected '.', expecting '(' in /home/eioap5za/public_html/quantumApp/app/Controller/EnquiriesController.php on line 118
+[29-Jun-2013 08:43:19] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 08:47:49] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 08:47:52] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 09:07:13] PHP Fatal error:  Class 'AppModel' not found in /home/eioap5za/public_html/quantumApp/app/Model/FollowupAction.php on line 10
+[29-Jun-2013 09:47:27] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 09:47:35] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 09:47:44] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 09:51:50] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 09:52:28] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 12:10:37] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 12:10:38] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 12:10:38] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 12:40:50] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 13:15:56] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 13:15:56] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 13:15:57] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 13:16:10] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 13:16:12] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 13:38:06] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 13:53:57] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 14:07:13] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 14:33:29] PHP Fatal error:  Class 'Clients' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 14:33:43] PHP Fatal error:  Class 'Clients' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 16:46:18] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 17:23:34] PHP Warning:  Invalid argument supplied for foreach() in /home/eioap5za/public_html/quantumApp/lib/Cake/Utility/Debugger.php on line 585
+[29-Jun-2013 18:05:50] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 22:13:04] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[29-Jun-2013 22:13:22] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[29-Jun-2013 22:13:33] PHP Fatal error:  Wrong parameters for Exception([string $exception [, long $code ]]) in /home/eioap5za/public_html/quantumApp/lib/Cake/Error/exceptions.php on line 153
+[01-Jul-2013 10:43:00] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[01-Jul-2013 10:43:17] PHP Fatal error:  Class 'Diagnostic Center' not found in /home/eioap5za/public_html/quantumApp/app/View/Helper/CommonHelper.php on line 109
+[14-Oct-2014 06:49:42 Etc/GMT] PHP Fatal error:  Call to undefined function file_base_url() in /home/eioap5za/public_html/fcrit/app/Model/Behavior/FileBehavior.php on line 45
+[11-Nov-2014 06:58:45 Etc/GMT] PHP Fatal error:  Call to undefined method Inflector::modelized() in /home/eioap5za/public_html/fcrit/app/Controller/AcademicsController.php on line 90
+[11-Nov-2014 06:58:58 Etc/GMT] PHP Fatal error:  Call to undefined method Inflector::modelized() in /home/eioap5za/public_html/fcrit/app/Controller/AcademicsController.php on line 90
+[11-Nov-2014 06:59:14 Etc/GMT] PHP Fatal error:  Call to undefined method Inflector::modelized() in /home/eioap5za/public_html/fcrit/app/Controller/AcademicsController.php on line 90
+[11-Nov-2014 07:00:05 Etc/GMT] PHP Fatal error:  Call to undefined method Inflector::modelized() in /home/eioap5za/public_html/fcrit/app/Controller/AcademicsController.php on line 90
+[11-Nov-2014 07:01:18 Etc/GMT] PHP Fatal error:  Call to undefined method Inflector::modelized() in /home/eioap5za/public_html/fcrit/app/Controller/AcademicsController.php on line 90
+[24-Nov-2014 13:36:32 Etc/GMT] PHP Fatal error:  Call to undefined function file_base_url() in /home/eioap5za/public_html/fcrit/app/Model/Behavior/FileBehavior.php on line 45

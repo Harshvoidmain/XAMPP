@@ -1,0 +1,126 @@
+<!--  page header section -->
+<div class="banner">
+    <div class="page-title">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 ptn-bg">
+                    <h2>Mission & Vision</h2>
+                    <ol class="breadcrumb">
+                        <li><a href="#">Home</a></li>
+                        <li class="active">Mission & Vision</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!--  banner section ending-->
+<div class="main-container"><!--  Main-container section -->
+
+    <div class="container ">
+        <div class="row"> 
+            <div class="col-md-8"> <!-- progaram detail start -->
+                <h1>Adoption a Child</h1>
+                <div class="pic">
+                    <img src="images/s_pic-1.jpg" class="img-responsive" alt=""><div class="yellow-blk pic-caption"><h2><strong>89%</strong> childrens are freedom <br>
+                            from<strong> child labor</strong></h2> </div>
+                </div>
+                <p class="lead-font">There are many variations of passages of Lorem Ipsum available but the majority have suffered alteration the majority have suffered alteration in some form byinjected humour.</p>
+                <p>Sollicitudin massa non libero egestas eget blandit sem condimentum. There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even slightly believable.</p>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Heading Title Here</h2>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Heading Title Here</h2>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Heading Title Here</h2>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="blk">
+                            <h2>Heading Title Here</h2>
+                            <p>Lorem Ipsum available, but the majority have suffe red by injected humour,  randomised words which don't look even.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="color-blk we-do">
+                    <h2>What we do for adopt a child </h2>
+                    <ul class="list-style">
+                        <li><i class="fa fa-angle-double-right"></i> The standard chunk of Lorem Ipsum used since.</li>
+                        <li><i class="fa fa-angle-double-right"></i> Suspendisse dictum mauris vitae sem consequat, a blandit massa suscipit.</li>
+                        <li><i class="fa fa-angle-double-right"></i> There are many variations of passages of Lorem Ipsum available.</li>
+                        <li><i class="fa fa-angle-double-right"></i> Vamus sollicitudin massa non libero egestas, eget blandit sem condimentum.</li>
+                        <li><i class="fa fa-angle-double-right"></i> By injected humour, or randomised words which don't look even slightly believable.</li>
+                    </ul>
+                </div>
+                <div class="row">
+                    <div class="col-md-12">
+                        <p>Praesent fringilla suscipit mauris, nec ultrices libero rhoncus quis. Suspendisse enim nibh, eleifend sit amet dapibus id, laoreet nec lacus. Mauris id diam eu mi pharetra semper id et sem.  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur tristique felis sit amet magna rhoncus ultrices.</p>
+                        <p>In hac habitasse platea dictumst. Donec condimentum consectetur justo sed cursus. Cras non gravida magna. Nulla facilisi. Donec in placerat lectus. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia.</p>
+                        <a href="#" class="btn btn-yellow">back to service</a>
+                    </div>
+                </div>
+            </div> <!-- progaram detail close -->
+            <div class="col-md-4 right-sidebar"><!--sidebar section -->
+                <div class="row"> <!-- Give Donate box start -->
+                    <div class="col-md-12"> 
+                        <div class="sidebar-blk">
+                            <h2>Give a Donate</h2>
+                            <p>Invest in future cures for some of life’s most devasrating diseases.</p>
+                            <div class=""><label ><input type="radio" name="name" id="radio-0" value="1"> $10 a month</label></div>
+                            <div class=""><label><input type="radio" name="name" id="radio-1" value="2"> One time donation</label></div>
+                            <form class="" role="form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="donate" placeholder="$">
+                                    <button type="submit" class="btn btn-default btn-yellow">Donate now</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- Give Donate box close -->
+                <div class="row"> <!-- How you can help box start -->
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+                            <h2>How you can help</h2>
+                            <ul class="list-style">
+                                <li><i class="fa fa-angle-double-right"></i> <a  href="#">Gift Catalog</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Birthday gift</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Events</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Sposnorship</a></li>
+                                <li><i class="fa fa-angle-double-right"></i> <a href="#">Partnership help</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div> <!-- How you can help box close -->
+                <div class="row"> <!-- Newsletter box start -->
+                    <div class="col-md-12">
+                        <div class="sidebar-blk">
+                            <h2> Newsletter </h2>
+                            <p> Sollicitudin massa non libero egestas eget blandit simple dummy. </p>
+                            <form class="newsletter" role="form">
+                                <div class="form-group">
+                                    <input type="email" class="form-control" id="newsletter" placeholder="Enter email">
+                                    <button type="submit" class="btn btn-default btn-yellow">submit</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div> <!-- Newsletter box close -->
+            </div><!-- sidebar section dending -->
+        </div>
+    </div>
+</div>
+<!--  Main-containre section ending-->
+
