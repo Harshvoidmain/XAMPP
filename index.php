@@ -7,7 +7,7 @@ include 'header.php';
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="relative w-full h-full">
-            <img src="./images/collegepic.jpeg" alt="College Campus" class="w-full h-full object-cover aspect-[31/9]">
+            <img src="./images/collegepic.jpeg" alt="College Campus" class="w-full h-full object-cover aspect-[16/9]">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-left items-start text-left text-white">
                 <div class="container mx-auto px-4 pt-4">
                     <h1 class="text-3xl font-extrabold mb-3 drop-shadow-lg">
@@ -233,7 +233,13 @@ include 'header.php';
 
         .updates-content {
             animation: scroll 20s linear infinite;
+            min-height: 2rem;
+            line-height: 1.5rem;
         }
+        .updates-content:hover {
+            animation-play-state: paused;
+        }
+
 
         @keyframes scroll {
             0% { transform: translateY(0); }
@@ -322,7 +328,7 @@ include 'header.php';
         app.component('register-button', {
             props: ['tooltip'],
             template: `
-            <div class="button" :data-tooltip="tooltip">
+            <div class="button" :data-tooltip="tooltip" @click="register">
                 <div class="button-wrapper">
                     <div class="text">Register now</div>
                     <span class="icon">
@@ -333,6 +339,11 @@ include 'header.php';
                 </div>
             </div>
             `,
+            methods: {
+                register() {
+                    window.location.href = '/register';
+                }
+            }
         });
 
         app.mount('#app');
