@@ -7,82 +7,85 @@ include 'header.php';
     <!-- Hero Section -->
     <section class="hero-section">
         <div class="relative w-full h-full">
-            <img src="./images/collegepic.jpeg" alt="College Campus" class="w-full h-full object-cover aspect-[31/9]">
+            <img src="./images/collegepic.jpeg" alt="College Campus" class="w-full h-full object-cover aspect-[16/9]">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-left items-start text-left text-white">
-                <div class="container mx-auto px-4 pt-4">
-                    <h1 class="text-3xl font-extrabold mb-3 drop-shadow-lg">
-                        <br>IEEE & IAS Technically Co-Sponsored
-                    </h1>
-                    <h1 class="text-4xl font-bold mb-3 drop-shadow-lg">
-                        6th Biennial International Conference on <br>
-                        Nascent Technologies in Engineering
-                    </h1>
-                    <p class="opacity-90 drop-shadow-lg" style="font-size: 1.25rem; font-weight: bold;">
-                        Agnel Charities Fr. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai, India
-                    </p>
-                    <div id="app" class="flex flex-wrap gap-3 mt-4">
-                        <register-button tooltip="Submit papers"></register-button>
-                        <download-button tooltip="Size: 20Mb"></download-button>
-                    </div>
+                <div class="container mx-auto px-4 pt-4 flex flex-col md:flex-row gap-8">
+                    <!-- Main Content -->
+                    <div class="flex-1">
+                        <h1 class="text-3xl font-extrabold mb-3 drop-shadow-lg">
+                            <br>IEEE & IAS Technically Co-Sponsored
+                        </h1>
+                        <h1 class="text-4xl font-bold mb-3 drop-shadow-lg">
+                            6th Biennial International Conference on <br>
+                            Nascent Technologies in Engineering
+                        </h1>
+                        <p class="opacity-90 drop-shadow-lg" style="font-size: 1.25rem; font-weight: bold;">
+                            Agnel Charities Fr. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai, India
+                        </p>
+                        <div id="app" class="flex flex-wrap gap-3 mt-4">
+                            <register-button tooltip="Submit papers"></register-button>
+                            <download-button tooltip="Size: 20Mb"></download-button>
+                        </div>
 
-                    <!-- Keynote Speakers Carousel -->
-                    <div class="mt-8 w-full max-w-3xl">
-                        <h2 class="text-2xl font-bold mb-4 drop-shadow-lg">Keynote Speakers</h2>
-                        <div class="splide" id="speakers-carousel">
-                            <div class="splide__track">
-                                <ul class="splide__list">
-                                    <li class="splide__slide">
-                                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                                            <img src="images/speaker1.jpg" alt="Speaker 1" class="w-24 h-24 rounded-full mx-auto mb-2">
-                                            <h3 class="text-xl font-semibold">Dr. John Doe</h3>
-                                            <p class="text-sm opacity-80">Professor, MIT</p>
-                                            <p class="text-sm opacity-80">Topic: AI in Engineering</p>
-                                        </div>
-                                    </li>
-                                    <li class="splide__slide">
-                                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                                            <img src="images/speaker2.jpg" alt="Speaker 2" class="w-24 h-24 rounded-full mx-auto mb-2">
-                                            <h3 class="text-xl font-semibold">Dr. Jane Smith</h3>
-                                            <p class="text-sm opacity-80">Researcher, Stanford</p>
-                                            <p class="text-sm opacity-80">Topic: Renewable Energy</p>
-                                        </div>
-                                    </li>
-                                    <li class="splide__slide">
-                                        <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                                            <img src="images/speaker3.jpg" alt="Speaker 3" class="w-24 h-24 rounded-full mx-auto mb-2">
-                                            <h3 class="text-xl font-semibold">Dr. Alan Turing</h3>
-                                            <p class="text-sm opacity-80">Scientist, Cambridge</p>
-                                            <p class="text-sm opacity-80">Topic: Quantum Computing</p>
-                                        </div>
-                                    </li>
-                                </ul>
+                        <!-- Keynote Speakers Carousel -->
+                        <div class="mt-8 w-full max-w-3xl">
+                            <h2 class="text-2xl font-bold mb-4 drop-shadow-lg">Keynote Speakers</h2>
+                            <div class="splide" id="speakers-carousel">
+                                <div class="splide__track">
+                                    <ul class="splide__list">
+                                        <li class="splide__slide">
+                                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                                                <img src="images/speaker1.jpg" alt="Speaker 1" class="w-24 h-24 rounded-full mx-auto mb-2">
+                                                <h3 class="text-xl font-semibold">Dr. John Doe</h3>
+                                                <p class="text-sm opacity-80">Professor, MIT</p>
+                                                <p class="text-sm opacity-80">Topic: AI in Engineering</p>
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                                                <img src="images/speaker2.jpg" alt="Speaker 2" class="w-24 h-24 rounded-full mx-auto mb-2">
+                                                <h3 class="text-xl font-semibold">Dr. Jane Smith</h3>
+                                                <p class="text-sm opacity-80">Researcher, Stanford</p>
+                                                <p class="text-sm opacity-80">Topic: Renewable Energy</p>
+                                            </div>
+                                        </li>
+                                        <li class="splide__slide">
+                                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                                                <img src="images/speaker3.jpg" alt="Speaker 3" class="w-24 h-24 rounded-full mx-auto mb-2">
+                                                <h3 class="text-xl font-semibold">Dr. Alan Turing</h3>
+                                                <p class="text-sm opacity-80">Scientist, Cambridge</p>
+                                                <p class="text-sm opacity-80">Topic: Quantum Computing</p>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            
-            <!-- Updates Section -->
-            <div class="absolute top-4 right-4 h-[calc(100%-2rem)] w-96 bg-white rounded-lg shadow-lg p-4 z-50 md:block hidden">
-                <h2 class="text-lg font-bold border-b pb-2">Latest Updates</h2>
-                <div class="updates-scroll mt-2" style="height: calc(100% - 60px);">
-                    <div class="updates-content">
-                        <?php
-                            $updates = [
-                                ["text" => "Download ICNTE-2025 Conference Brochure.", "link" => "#"],
-                                ["text" => "Conference is open for paper submission.", "link" => "#"],
-                                ["text" => "Winners of IEI BLC-FCRIT excellence awards announced soon.", "link" => "#"],
-                                ["text" => "Important dates updated.", "link" => "#"],
-                                ["text" => "Early bird registration deadline approaching!", "link" => "#"],
-                                ["text" => "New keynote speaker announced for ICNTE-2025.", "link" => "#"]
-                            ];
 
-                            foreach ($updates as $update) {
-                                echo '<div class="py-2">
-                                        <a href="' . $update['link'] . '" class="text-blue-600 hover:underline">' . $update['text'] . '</a>
-                                      </div>';
-                            }
-                        ?>
+                    <!-- Updates Section -->
+                    <div class="w-full md:w-96 bg-white rounded-lg shadow-lg p-4">
+                        <h2 class="text-lg font-bold border-b pb-2">Latest Updates</h2>
+                        <div class="updates-scroll mt-2" style="height: calc(100% - 60px);">
+                            <div class="updates-content">
+                                <?php
+                                    $updates = [
+                                        ["text" => "Download ICNTE-2025 Conference Brochure.", "link" => "#"],
+                                        ["text" => "Conference is open for paper submission.", "link" => "#"],
+                                        ["text" => "Winners of IEI BLC-FCRIT excellence awards announced soon.", "link" => "#"],
+                                        ["text" => "Important dates updated.", "link" => "#"],
+                                        ["text" => "Early bird registration deadline approaching!", "link" => "#"],
+                                        ["text" => "New keynote speaker announced for ICNTE-2025.", "link" => "#"]
+                                    ];
+
+                                    foreach ($updates as $update) {
+                                        echo '<div class="py-2">
+                                                <a href="' . $update['link'] . '" class="text-blue-600 hover:underline">' . $update['text'] . '</a>
+                                              </div>';
+                                    }
+                                ?>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -233,7 +236,13 @@ include 'header.php';
 
         .updates-content {
             animation: scroll 20s linear infinite;
+            min-height: 2rem;
+            line-height: 1.5rem;
         }
+        .updates-content:hover {
+            animation-play-state: paused;
+        }
+
 
         @keyframes scroll {
             0% { transform: translateY(0); }
@@ -322,7 +331,7 @@ include 'header.php';
         app.component('register-button', {
             props: ['tooltip'],
             template: `
-            <div class="button" :data-tooltip="tooltip">
+            <div class="button" :data-tooltip="tooltip" @click="register">
                 <div class="button-wrapper">
                     <div class="text">Register now</div>
                     <span class="icon">
@@ -333,6 +342,11 @@ include 'header.php';
                 </div>
             </div>
             `,
+            methods: {
+                register() {
+                    window.location.href = '/register';
+                }
+            }
         });
 
         app.mount('#app');
