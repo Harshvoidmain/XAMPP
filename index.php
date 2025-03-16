@@ -13,7 +13,7 @@ include 'header.php';
                     <h1 class="text-3xl font-extrabold mb-3 drop-shadow-lg">
                         <br>IEEE & IAS Technically Co-Sponsored
                     </h1>
-                    <h1 class="text-5xl font-bold mb-3 drop-shadow-lg">
+                    <h1 class="text-4xl font-bold mb-3 drop-shadow-lg">
                         6th Biennial International Conference on <br>
                         Nascent Technologies in Engineering
                     </h1>
