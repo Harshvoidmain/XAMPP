@@ -29,18 +29,44 @@ body {
     width: 100%;
 }
 
-/* Dropdown styles */
+/* Dropdown styles - Updated for hover functionality */
+.dropdown {
+    position: relative;
+}
+
 .dropdown-menu {
     display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    min-width: 10rem;
     animation: fadeIn 0.2s ease-out;
     border: 1px solid #1e3a8a; /* blue-900 */
-    border-radius: 0.5rem;
+    border-radius: 0 0 0.5rem 0.5rem;
     background: white;
     box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    pointer-events: none;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.2s, transform 0.2s;
+}
+
+/* Important to override any JS click handlers */
+.dropdown:hover .dropdown-menu {
+    display: block !important;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Add a small delay before hiding dropdown to improve user experience */
+.dropdown .dropdown-menu {
+    transition-delay: 0s;
 }
 
 .dropdown:hover .dropdown-menu {
-    display: block;
+    transition-delay: 0.1s;
 }
 
 @keyframes fadeIn {

@@ -12,14 +12,6 @@
   />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
-  <style>
-    /* Remove hover styles for dropdowns */
-    .group-hover\:opacity-100,
-    .group-hover\:translate-y-0,
-    .group-hover\:rotate-180 {
-      transition: none;
-    }
-  </style>
 </head>
 <body class="font-[Inter] min-h-screen bg-white">
   <!-- Navigation -->
@@ -38,116 +30,103 @@
           <li>
             <a href="index.php" class="nav-item transition-all duration-300 hover:text-gray-300">Home</a>
           </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center gap-1 px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Call for Papers
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="tracks_and_sessions.php" class="block px-4 py-2 hover:bg-blue-700">Tracks and Sessions</a></li>
-              </ul>
-            </details>
+          <li class="dropdown relative">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-2 hover:bg-blue-800">
+              Call for Papers
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-blue-800 text-white rounded-b-lg shadow-lg">
+              <li><a href="tracks_and_sessions.php" class="block px-4 py-2 hover:bg-blue-700">Tracks and Sessions</a></li>
+            </ul>
           </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center gap-1 px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Conference Details
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="important_dates.php" class="block px-4 py-2 hover:bg-blue-700">Important Dates</a></li>
-                <li><a href="venue.php" class="block px-4 py-2 hover:bg-blue-700">Venue</a></li>
-                <li><a href="publications.php" class="block px-4 py-2 hover:bg-blue-700">Publications</a></li>
-              </ul>
-            </details>
+          <li class="dropdown relative">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-2 hover:bg-blue-800">
+              Conference Details
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-blue-800 text-white rounded-b-lg shadow-lg">
+              <li><a href="important_dates.php" class="block px-4 py-2 hover:bg-blue-700">Important Dates</a></li>
+              <li><a href="venue.php" class="block px-4 py-2 hover:bg-blue-700">Venue</a></li>
+              <li><a href="publications.php" class="block px-4 py-2 hover:bg-blue-700">Publications</a></li>
+            </ul>
           </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center gap-1 px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                People
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="advisory_committee.php" class="block px-4 py-2 hover:bg-blue-700">Advisory Committee</a></li>
-                <li><a href="organizing_committee.php" class="block px-4 py-2 hover:bg-blue-700">Organizing Committee</a></li>
-                <li><a href="reviewers_panel.php" class="block px-4 py-2 hover:bg-blue-700">Reviewer's Panel</a></li>
-                <li><a href="keynote_speakers.php" class="block px-4 py-2 hover:bg-blue-700">Keynote Speakers</a></li>
-              </ul>
-            </details>
+          <li class="dropdown relative">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-2 hover:bg-blue-800">
+              People
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-blue-800 text-white rounded-b-lg shadow-lg">
+              <li><a href="advisory_committee.php" class="block px-4 py-2 hover:bg-blue-700">Advisory Committee</a></li>
+              <li><a href="organizing_committee.php" class="block px-4 py-2 hover:bg-blue-700">Organizing Committee</a></li>
+              <li><a href="reviewers_panel.php" class="block px-4 py-2 hover:bg-blue-700">Reviewer's Panel</a></li>
+              <li><a href="keynote_speakers.php" class="block px-4 py-2 hover:bg-blue-700">Keynote Speakers</a></li>
+            </ul>
           </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center gap-1 px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Submission
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700">Paper Submission</a></li>
-              </ul>
-            </details>
+          <li class="dropdown relative">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-2 hover:bg-blue-800">
+              Submission
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-blue-800 text-white rounded-b-lg shadow-lg">
+              <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700">Paper Submission</a></li>
+            </ul>
           </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Registration
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700">Instructions</a></li>
-                <li><a href="fees.php" class="block px-4 py-2 hover:bg-blue-700">Registration Fees</a></li>
-              </ul>
-            </details>
+          <li class="dropdown relative">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-2 hover:bg-blue-800">
+              Registration
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-blue-800 text-white rounded-b-lg shadow-lg">
+              <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700">Instructions</a></li>
+              <li><a href="fees.php" class="block px-4 py-2 hover:bg-blue-700">Registration Fees</a></li>
+            </ul>
           </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Archives
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="icnte2023.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2023</a></li>
-                <li><a href="icnte2021.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2021</a></li>
-                <li><a href="icnte2019.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2019</a></li>
-                <li><a href="icnte2017.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2017</a></li>
-                <li><a href="icnte2015.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2015</a></li>
-              </ul>
-            </details>
+          <li class="dropdown relative">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-2 hover:bg-blue-800">
+              Archives
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-blue-800 text-white rounded-b-lg shadow-lg">
+              <li><a href="icnte2023.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2023</a></li>
+              <li><a href="icnte2021.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2021</a></li>
+              <li><a href="icnte2019.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2019</a></li>
+              <li><a href="icnte2017.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2017</a></li>
+              <li><a href="icnte2015.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2015</a></li>
+            </ul>
           </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Downloads
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="download/ICNTE_2025.pdf" class="block px-4 py-2 hover:bg-blue-700" target="_blank">ICNTE 2025 Brochure</a></li>
-                <li><a href="download/IEEE_Paper_Format.docx" class="block px-4 py-2 hover:bg-blue-700" target="_blank">IEEE Paper Template</a></li>
-                <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 hover:bg-blue-700">IEEE Paper Template (LATEX)</a></li>
-                <li><a href="download/IEEE_Copyright_Form.pdf" class="block px-4 py-2 hover:bg-blue-700" target="_blank">IEEE Copyright Form</a></li>
-                <li><a href="download/Sample_IEEE_Copyright_Form.pdf" class="block px-4 py-2 hover:bg-blue-700" target="_blank">Sample Filled IEEE Copyright Form</a></li>
-                <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 hover:bg-blue-700" target="_blank">ICNTE Poster Template</a></li>
-              </ul>
-            </details>
+          <li class="dropdown relative">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-2 hover:bg-blue-800">
+              Downloads
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu absolute left-0 mt-0 w-48 bg-blue-800 text-white rounded-b-lg shadow-lg">
+              <li><a href="download/ICNTE_2025.pdf" class="block px-4 py-2 hover:bg-blue-700" target="_blank">ICNTE 2025 Brochure</a></li>
+              <li><a href="download/IEEE_Paper_Format.docx" class="block px-4 py-2 hover:bg-blue-700" target="_blank">IEEE Paper Template</a></li>
+              <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 hover:bg-blue-700">IEEE Paper Template (LATEX)</a></li>
+              <li><a href="download/IEEE_Copyright_Form.pdf" class="block px-4 py-2 hover:bg-blue-700" target="_blank">IEEE Copyright Form</a></li>
+              <li><a href="download/Sample_IEEE_Copyright_Form.pdf" class="block px-4 py-2 hover:bg-blue-700" target="_blank">Sample Filled IEEE Copyright Form</a></li>
+              <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 hover:bg-blue-700" target="_blank">ICNTE Poster Template</a></li>
+            </ul>
           </li>
         </ul>
       </div>
 
       <!-- Mobile Menu -->
+      <!-- Keep the mobile menu with details/summary for better mobile UX -->
       <div id="mobile-menu" class="hidden md:hidden absolute bg-blue-900 w-full left-0 top-full py-2">
         <ul class="space-y-2 px-4">
           <li>
@@ -191,6 +170,12 @@
               </summary>
               <ul class="pl-6">
                 <li><a href="advisory_committee.php" class="block px-4 py-2 hover:bg-blue-700">Advisory Committee</a></li>
+                <li><a href="organizing_committee.php" class="block px-4 py-2 hover:bg-blue-700">Organizing Committee</a></li>
+                <li><a href="reviewers_panel.php" class="block px-4 py-2 hover:bg-blue-700">Reviewer's Panel</a></li>
+                <li><a href="keynote_speakers.php" class="block px-4 py-2 hover:bg-blue-700">Keynote Speakers</a></li>
+              </ul>
+            </details>
+          </li>
           <li>
             <details class="group">
               <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
@@ -271,6 +256,25 @@
       <img src="images/college_logo1.png" alt="College Logo" class="w-16 h-16 md:w-24 md:h-24 order-first md:order-last" />
     </div>
   </header>
+
+  <style>
+    /* Dropdown hover styles */
+    .dropdown-menu {
+      display: none;
+      z-index: 1000;
+      min-width: 12rem;
+      top: 100%;
+      opacity: 0;
+      transform: translateY(5px);
+      transition: opacity 0.15s ease-in-out, transform 0.15s ease-in-out;
+    }
+    
+    .dropdown:hover .dropdown-menu {
+      display: block;
+      opacity: 1;
+      transform: translateY(0);
+    }
+  </style>
 
   <script>
     // Mobile menu toggle
