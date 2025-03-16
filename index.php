@@ -23,8 +23,8 @@ include 'header.php';
                             Agnel Charities Fr. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai, India
                         </p>
                         <div id="app" class="flex flex-wrap gap-3 mt-4">
-                            <register-button tooltip="Submit papers"></register-button>
-                            <download-button tooltip="Size: 20Mb"></download-button>
+                            <register-button tooltip="Submit papers" ></register-button>
+                            <download-button tooltip="Size: 20Mb" ></download-button>
                         </div>
 
                         <!-- Keynote Speakers Carousel -->
@@ -65,7 +65,7 @@ include 'header.php';
 
                     <!-- Updates Section -->
                     <div class="w-full md:w-96 bg-white rounded-lg shadow-lg p-4">
-                        <h2 class="text-lg font-bold border-b pb-2">Latest Updates</h2>
+                        <h2 class="text-lg font-bold border-b pb-2 text-black">Latest Updates</h2>
                         <div class="updates-scroll mt-2" style="height: calc(100% - 60px);">
                             <div class="updates-content">
                                 <?php
@@ -344,7 +344,7 @@ include 'header.php';
             `,
             methods: {
                 register() {
-                    window.location.href = '/register';
+                    window.location.href = 'instructions.php';
                 }
             }
         });
@@ -358,19 +358,55 @@ include 'header.php';
             <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">About the Institute</h2>
-                    <p class="text-gray-600 leading-relaxed">
+                    <p class="text-gray-600 leading-relaxed about-text" id="institute-text">
                         Agnel charities' Fr. C. Rodrigues Institute of Technology, Vashi, was established in 1994 in the heart of Navi Mumbai, Vashi, as a part of Agnel Technical Education Complex. The aim of the Institute is to provide quality technical education in addition to inculcating moral values in its students.
+                        <span class="hidden-content">Though the reputation of the institute rests mainly on the high quality, value-based technical education that it imparts, it has to its credit an invigorating, well-maintained campus, and comprehensive facilities. An Innovation and Product Development Centre is set up in the institute premises with industry grade infrastructure to encourage and support students and faculty members, to make their ideas and innovations a reality.
+                        The institute is granted autonomy status by UGC from the academic year 2024-2025 onwards. The institute offers 05 undergraduate engineering programs (i.e. Computer, Mechanical, Electronics & Telecommunication, Electrical, and Information Technology) and 02 postgraduate engineering programs (Mechanical and Electrical). The institute is also a Mumbai University approved Research Centre in 03 engineering disciplines (i.e. Mechanical, Electronics & Telecommunication, and Electrical). The religious minority status has been granted to the institute and the institute is accredited by the National Board of Accreditation (NBA) and National Assessment and Accreditation Council (NAAC).
+                        Click here for more details about the institute: www.fcrit.ac.in</span>
                     </p>
+                    <button class="show-more-btn mt-2 text-blue-600 hover:text-blue-800" data-target="institute-text">Show More</button>
                 </div>
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">About the Conference</h2>
-                    <p class="text-gray-600 leading-relaxed">
-                        It is proposed to organize the 6th IEEE & IAS Technically Co-Sponsored Biennial International Conference on Nascent Technologies in Engineering (ICNTE 2025) at Fr. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai (INDIA). The previous conferences were technically co-sponsored by IEEE.
+                    <p class="text-gray-600 leading-relaxed about-text" id="conference-text">
+                        It is proposed to organize the 6th Biennial International Conference on Nascent Technologies in Engineering (ICNTE 2026)at Fr. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai (INDIA). The previous five conferences, ICNTE 2015, ICNTE 2017, ICNTE 2019, ICNTE 2021 and ICNTE 2023, were technically co-sponsored by IEEE.
+                        <span class="hidden-content">ICNTE 2021 and ICNTE 2023 were also sponsored by IAS. The papers presented in the conferences were published in IEEE Xplore which is a Scopus indexed digital library. The deliberations in ICNTE 2025 will emphasize on the thrust areas from the engineering fields of Mechanical, Electronics and Telecommunication, Electrical, Computer, Information Technology and Humanities and Basic Science. Fr. C. Rodrigues Institute of Technology has instituted the Best Paper Award (open to all)in each track of ICNTE 2025 to appreciate the hard work and dedication of the researchers towards carrying out novel research.</span>
                     </p>
+                    <button class="show-more-btn mt-2 text-blue-600 hover:text-blue-800" data-target="conference-text">Show More</button>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+        .about-text .hidden-content {
+            display: none;
+        }
+        .about-text.expanded .hidden-content {
+            display: inline;
+        }
+    </style>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const showMoreButtons = document.querySelectorAll('.show-more-btn');
+            
+            showMoreButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const targetId = this.getAttribute('data-target');
+                    const textElement = document.getElementById(targetId);
+                    
+                    textElement.classList.toggle('expanded');
+                    
+                    if (this.textContent === 'Show More') {
+                        this.textContent = 'Show Less';
+                    } else {
+                        this.textContent = 'Show More';
+                    }
+                });
+            });
+        });
+    </script>
 </main>
 
 <?php include 'footer.php'; ?>
