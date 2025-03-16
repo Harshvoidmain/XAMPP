@@ -11,6 +11,7 @@
     rel="stylesheet"
   />
   <link rel="stylesheet" href="css/styles.css" />
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body class="font-[Inter] min-h-screen bg-white">
   <!-- Header Section -->

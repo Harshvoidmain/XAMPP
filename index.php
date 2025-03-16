@@ -278,34 +278,6 @@ include 'header.php';
             .updates-section {
                 margin-top: 1rem; /* Add space between hero content and updates on mobile */
             }
-
-            /* Adjust Keynote Speakers Carousel for Mobile */
-            .splide__slide {
-                padding: 0 5px; /* Reduce padding for mobile */
-            }
-
-            .splide__track {
-                margin: 0 -5px; /* Adjust track margin for mobile */
-            }
-
-            .splide__list {
-                gap: 0.5rem; /* Reduce gap between slides for mobile */
-            }
-
-            /* Ensure carousel is fully visible on mobile */
-            .splide {
-                margin-bottom: 2rem; /* Add space below the carousel */
-            }
-
-            /* Left-align the carousel on mobile */
-            .splide__track {
-                margin-left: 0; /* Remove left margin */
-            }
-
-            /* Adjust spacing for Keynote Speakers and Updates on mobile */
-            .hero-section .container {
-                padding-bottom: 2rem; /* Add space below the carousel */
-            }
         }
     </style>
 
@@ -324,7 +296,6 @@ include 'header.php';
                 breakpoints: {
                     768: {
                         perPage: 1, // Display 1 speaker on mobile
-                        gap: '0.5rem', // Reduce gap between slides for mobile
                     }
                 }
             }).mount();
