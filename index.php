@@ -10,15 +10,15 @@ include 'header.php';
             <img src="./images/collegepic.jpeg" alt="College Campus" class="w-full h-full object-cover aspect-[31/9]">
             <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-left items-start text-left text-white">
                 <div class="container mx-auto px-4 pt-4">
-                    <h1 class="text-4xl font-extrabold mb-3 drop-shadow-lg">
-                        <br>ICNTE 2025
+                    <h1 class="text-3xl font-extrabold mb-3 drop-shadow-lg">
+                        <br>IEEE & IAS Technically Co-Sponsored
                     </h1>
-                    <h1 class="text-3xl font-bold mb-3 drop-shadow-lg">
+                    <h1 class="text-5xl font-bold mb-3 drop-shadow-lg">
                         6th Biennial International Conference on <br>
                         Nascent Technologies in Engineering
                     </h1>
                     <p class="text-base opacity-90 drop-shadow-lg">
-                        Sector 9A, Vashi, Navi Mumbai, Maharashtra 400703
+                    Agnel Charities Fr. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai, India
                     </p>
                     <div id="app" class="flex flex-wrap gap-3 mt-4">
                         <register-button tooltip="Submit papers"></register-button>
