@@ -14,6 +14,22 @@
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
 <body class="font-[Inter] min-h-screen bg-white">
+  <!-- Header Section -->
+  <header class="bg-white py-6 shadow-md">
+    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
+      <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
+        <img src="images/logo5.png" alt="ICNTE Logo" class="w-16 h-16 md:w-24 md:h-24" />
+        <div class="max-w-2xl text-center sm:text-left">
+          <p class="text-blue-700 font-semibold text-sm md:text-base">IEEE &amp; IAS Technically Co-Sponsored</p>
+          <h1 class="text-xl md:text-2xl font-bold text-gray-900 mt-1">
+            6th Biennial International Conference on Nascent Technologies in Engineering
+          </h1>
+          <p class="text-gray-500 mt-2 text-sm md:text-base">31st January-1st February 2025</p>
+        </div>
+      </div>
+      <img src="images/college_logo1.png" alt="College Logo" class="w-16 h-16 md:w-24 md:h-24 order-first md:order-last" />
+    </div>
+  </header>
   <!-- Navigation -->
   <nav class="nav-gradient text-white shadow-lg sticky top-0 z-50">
     <div class="container mx-auto px-4">
@@ -217,22 +233,7 @@
 
     </div>
   </nav>
-  <!-- Header Section -->
-  <header class="bg-white py-6 shadow-md">
-    <div class="container mx-auto px-4 flex flex-col md:flex-row justify-between items-center gap-4">
-      <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
-        <img src="images/logo5.png" alt="ICNTE Logo" class="w-16 h-16 md:w-24 md:h-24" />
-        <div class="max-w-2xl text-center sm:text-left">
-          <p class="text-blue-700 font-semibold text-sm md:text-base">IEEE &amp; IAS Technically Co-Sponsored</p>
-          <h1 class="text-xl md:text-2xl font-bold text-gray-900 mt-1">
-            6th Biennial International Conference on Nascent Technologies in Engineering
-          </h1>
-          <p class="text-gray-500 mt-2 text-sm md:text-base">31st January-1st February 2025</p>
-        </div>
-      </div>
-      <img src="images/college_logo1.png" alt="College Logo" class="w-16 h-16 md:w-24 md:h-24 order-first md:order-last" />
-    </div>
-  </header>
+  
 
   <style>
     /* Enhanced dropdown styles */
