@@ -70,17 +70,6 @@
           </li>
           <li class="dropdown relative group">
             <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
-              Submission
-              <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
-            <ul class="dropdown-menu absolute left-0 mt-0 w-52 text-white rounded-b-lg nav-dropdown-gradient shadow-lg">
-              <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Paper Submission</a></li>
-            </ul>
-          </li>
-          <li class="dropdown relative group">
-            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
               Registration
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -175,20 +164,7 @@
                 <li><a href="keynote_speakers.php" class="block px-4 py-2 hover:bg-blue-700">Keynote Speakers</a></li>
               </ul>
             </details>
-          </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Submission
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700">Paper Submission</a></li>
-              </ul>
-            </details>
-          </li>
+          </li>        
           <li>
             <details class="group">
               <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
