@@ -19,9 +19,6 @@ include 'header.php';
                             6th Biennial International Conference on <br>
                             Nascent Technologies in Engineering
                         </h1>
-                        <p class="opacity-90 drop-shadow-lg" style="font-size: 1.25rem; font-weight: bold;">
-                            Agnel Charities Fr. C. Rodrigues Institute of Technology, Vashi, Navi Mumbai, India
-                        </p>
                         <div id="app" class="flex flex-wrap gap-3 mt-4">
                             <register-button tooltip="Submit papers" ></register-button>
                             <download-button tooltip="Size: 20Mb" ></download-button>
