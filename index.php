@@ -20,8 +20,8 @@ include 'header.php';
                             Nascent Technologies in Engineering
                         </h1>
                         <div id="app" class="flex flex-wrap gap-3 mt-4">
-                            <register-button tooltip="Submit papers" ></register-button>
-                            <download-button tooltip="Size: 20Mb" ></download-button>
+                            <register-button tooltip="Submit papers"></register-button>
+                            <download-button tooltip="Size: 20Mb"></download-button>
                         </div>
 
                         <!-- Keynote Speakers Carousel -->
@@ -31,15 +31,14 @@ include 'header.php';
                                 <div class="splide__track">
                                     <ul class="splide__list">
                                         <li class="splide__slide">
-                                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                                            <div class="carousel-box bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transition-transform transform hover:scale-105">
                                                 <img src="images/Archana_Sharma.png" alt="Speaker 1" class="w-24 h-24 rounded-full mx-auto mb-2">
-                                                <h3 class="text-xl font-semibold">Dr.Archana Sharma</h3>
-                                                <p class="text-sm opacity-80">OS, Director, 
-                                                    Beam Technology Development Group, BARC</p>
+                                                <h3 class="text-xl font-semibold">Dr. Archana Sharma</h3>
+                                                <p class="text-sm opacity-80">OS, Director, Beam Technology Development Group, BARC</p>
                                             </div>
                                         </li>
                                         <li class="splide__slide">
-                                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                                            <div class="carousel-box bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transition-transform transform hover:scale-105">
                                                 <img src="images/user.jpg" alt="Speaker 2" class="w-24 h-24 rounded-full mx-auto mb-2">
                                                 <h3 class="text-xl font-semibold">Dr. Jane Smith</h3>
                                                 <p class="text-sm opacity-80">Researcher, Stanford</p>
@@ -47,7 +46,7 @@ include 'header.php';
                                             </div>
                                         </li>
                                         <li class="splide__slide">
-                                            <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
+                                            <div class="carousel-box bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transition-transform transform hover:scale-105">
                                                 <img src="images/user.jpg" alt="Speaker 3" class="w-24 h-24 rounded-full mx-auto mb-2">
                                                 <h3 class="text-xl font-semibold">Dr. Alan Turing</h3>
                                                 <p class="text-sm opacity-80">Scientist, Cambridge</p>
@@ -240,7 +239,6 @@ include 'header.php';
             animation-play-state: paused;
         }
 
-
         @keyframes scroll {
             0% { transform: translateY(0); }
             100% { transform: translateY(-50%); }
@@ -265,6 +263,13 @@ include 'header.php';
 
         .splide__arrow:hover {
             background: rgba(255, 255, 255, 1);
+        }
+
+        .carousel-box {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            height: 100%;
         }
 
         /* Responsive Design */
