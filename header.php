@@ -6,10 +6,7 @@
   <title><?php echo isset($page_title) ? $page_title . ' - ICNTE 2025' : 'ICNTE 2025'; ?></title>
   <meta name="description" content="6th Biennial International Conference on Nascent Technologies in Engineering" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
