@@ -55,9 +55,11 @@
           <td class="px-4 py-2"><?php echo htmlspecialchars($designation); ?></td>
           <td class="px-4 py-2"><?php echo htmlspecialchars($institute); ?></td>
         </tr>
+        
         <?php } ?>
       </tbody>
     </table>
+    <br></br>
   </div>
 </div>
 
