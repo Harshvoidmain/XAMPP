@@ -1,70 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <?php include 'header.php'; ?>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+<!-- ✅ Breadcrumb Navigation -->
+<div class="bg-gray-100 py-3">
+  <div class="container mx-auto px-4">
+    <nav aria-label="breadcrumb" class="text-sm">
+      <ol class="list-reset flex text-gray-600">
+        <li>
+          <a href="./index.php" class="text-blue-600 hover:underline">Home</a>
+        </li>
+        <li>
+          <span class="mx-2">/</span>
+        </li>
+        <li>
+          <a href="#" class="text-blue-600 hover:underline">Call For Papers</a>
+        </li>
+        <li>
+          <span class="mx-2">/</span>
+        </li>
+        <li class="font-bold text-gray-800">Tracks and Sessions</li>
+      </ol>
+    </nav>
+  </div>
+</div>
+
+<!-- ✅ Page Heading -->
+<div class="container mx-auto px-4 my-8">
+  <h2 class="text-center text-3xl font-bold text-gray-800">Tracks and Sessions</h2>
+  <hr class="my-4 border-t-2 border-gray-300">
   
-  <div class="container">
-    <h2 style="text-align: center;">Tracks and Sessions</h2>
-    <hr class="style17">
+  <!-- ✅ Center the content -->
+  <p class="text-center text-lg font-medium leading-relaxed">
+    The deliberations in ICNTE 2023 are grouped into 14 Tracks which correspond to a specific research field.
+  </p>
 </div>
-<div class="container" style="padding-bottom: 40px;text-align: justify;padding-left: 80px;padding-right: 80px;">
-    The deliberations in ICNTE 2023 are grouped into 14 Tracks which correspond to a specific research fields. Further, each Track is comprised of four Sessions and each Session corresponds to a thrust area in the respective research field.
+
+<!-- ✅ Tracks and Sessions -->
+<div class="container mx-auto px-4 mb-20">
+  <div class="space-y-4">
+    <?php
+    include 'connection.php';
+    $sql = "SELECT * FROM tracks";
+    $result = mysqli_query($db, $sql);
+
+    while ($row = mysqli_fetch_array($result)) {
+        $tname = $row['trackname'];
+        $tid = $row['tid'];
+        $collapseID = "collapse" . $tid;
+    ?>
+    <div class="border border-gray-200 rounded-lg">
+      <div class="bg-gray-100 px-4 py-2 flex justify-between items-center cursor-pointer toggle-panel" data-target="#<?php echo $collapseID; ?>">
+        <h4 class="font-semibold text-gray-800"><?php echo htmlspecialchars($tname); ?></h4>
+        <span class="toggle-icon transition-transform duration-300">▼</span>
+      </div>
+
+      <!-- ✅ Fix dropdown behavior with smooth animation -->
+      <div id="<?php echo $collapseID; ?>" class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white p-4 rounded-b-lg shadow-md">
+    <ol class="list-decimal ml-6 text-gray-700 space-y-2">
+    <?php
+    $sessionQuery = "SELECT * FROM sessions WHERE tid='$tid'";
+    $sessionResult = mysqli_query($db, $sessionQuery);
+    while ($sessionRow = mysqli_fetch_array($sessionResult)) {
+        $name = trim($sessionRow['sname']); // Trim to remove empty spaces
+        if (!empty($name)) { // Only show non-empty items
+        ?>
+        <li class="py-2 px-3 bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 transition">
+            <?php echo htmlspecialchars($name); ?>
+        </li>
+        <?php }} ?>
+    </ol>
+
+    <?php if ($tid == 2) { ?>
+        <p class="text-red-500 mt-4 text-center font-semibold">
+            Acceptance of papers submitted in the Thermal Engineering and Fluid Control track does not guarantee publication in IEEE Xplore. Only papers within IEEE's scope will be sent for inclusion.
+        </p>
+    <?php } ?>
 </div>
-<div class="container">
-<!--    <button class="btn btn-default openall">open all</button> <button href="#" class="btn btn-default closeall">close all</button>
-    <hr>-->
-    <div class="panel-group" id="accordion">
-	<?php
- include 'connection.php'; 
-$sql="SELECT * FROM tracks ";
-$result=mysqli_query($db,$sql);
-$sql="SELECT * FROM collapse ";
-$result3=mysqli_query($db,$sql);
-				while($row = mysqli_fetch_array($result) )
-					{
-                    $tname=$row['trackname'];
-                    $tid=$row['tid'];	
-                    $row2=mysqli_fetch_array($result3);
-                    $nohash = $row2 ? $row2['nohash'] : '#';
-                    $no = $row2 ? $row2['no'] : 'collapse'.$tid;
-                    $class = $row2 ? $row2['class'] : 'panel-collapse collapse';
-       ?>
-        <div class="panel panel-default" style="margin: 10px">
-            <div class="panel-heading">
-                <h4 class="panel-title">
-                    <a class='accordion-toggle' data-toggle='collapse' data-parent='#accordion' href='<?php echo $nohash; ?>'>
-                    <?php echo "$tname";?> 
-                    <span class="fa fa-arrow-down" style="float:right"></span>
-                    </a>
-                </h4>
-            </div>
-            <?php echo "<div id='$no' class='$class'>"; ?>
-                    <div class="panel-body">
-                        <ol class="alist">
-                        <?php
-                            $sql="SELECT * FROM sessions where tid='$tid' ";
-                            $result1=mysqli_query($db,$sql);
-                      while($row = mysqli_fetch_array($result1))
-                    {
-                             $name=$row['sname']; ?>
-                            <li><?php echo "$name" ;?></li>
-                        
-                <?php	}?></ol>
-                <?php  if($tid==2) {				
-                echo '<p style="color: red; text-align: center">
-      Acceptance of paper submitted in Thermal Engineering and Fluid control track does not guarantee the publication of manuscript in IEEE Xplore. Paper under the scope of IEEE only will be sent for sent for inclusion in IEEE Xplore.
-      </p>';}?>
-                    </div>
-                </div>
-            </div>
-                    <?php } ?>
-        
-               
-           
 
     </div>
+    <?php } ?>
+  </div>
 </div>
 
-  <?php include 'footer.php'; ?>
+<!-- ✅ JavaScript for Toggle Behavior -->
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const panels = document.querySelectorAll('.toggle-panel');
+
+    panels.forEach(panel => {
+      panel.addEventListener('click', () => {
+        const target = document.querySelector(panel.getAttribute('data-target'));
+        const icon = panel.querySelector('.toggle-icon');
+
+        // ✅ Close other open panels
+        document.querySelectorAll('[id^="collapse"]').forEach(openPanel => {
+          if (openPanel !== target) {
+            openPanel.style.maxHeight = '0px';
+            openPanel.previousElementSibling.querySelector('.toggle-icon').classList.remove('rotate-180');
+          }
+        });
+
+        // ✅ Toggle current panel using dynamic height
+        if (target.style.maxHeight && target.style.maxHeight !== '0px') {
+          target.style.maxHeight = '0px';
+          icon.classList.remove('rotate-180');
+        } else {
+          target.style.maxHeight = target.scrollHeight + 'px';
+          icon.classList.add('rotate-180');
+        }
+      });
+    });
+  });
+</script>
+
+<style>
+  .toggle-icon {
+    transition: transform 0.3s ease;
+  }
+  .rotate-180 {
+    transform: rotate(180deg);
+  }
+ /* ✅ Smooth dropdown animation */
+ [id^="collapse"] {
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.2s ease;
+  max-height: 0;
+  padding: 0;
+  box-shadow: none;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+/* ✅ Styling the dropdown box */
+[id^="collapse"].active {
+  background: white;
+  border-top: 1px solid white;
+  padding: 16px;
+  border-radius: 0 0 8px 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+/* ✅ Improve the list items */
+[id^="collapse"] ol li {
+  background: #f3f4f6;
+  padding: 10px;
+  border-radius: 5px;
+  transition: background 0.2s ease-in-out;
+}
+[id^="collapse"] ol li:hover {
+  background: #e5e7eb;
+}
+</style>
+
+<?php include 'footer.php'; ?>
+
 </html>
