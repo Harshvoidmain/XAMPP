@@ -10,9 +10,9 @@
             <div>
                 <h3 class="text-lg font-semibold mb-4">Quick Links</h3>
                 <ul class="space-y-2">
-                    <li><a href="tracks.php" class="text-gray-400 hover:text-white">Tracks and Sessions</a></li>
-                    <li><a href="dates.php" class="text-gray-400 hover:text-white">Important Dates</a></li>
-                    <li><a href="registration.php" class="text-gray-400 hover:text-white">Registration</a></li>
+                    <li><a href="tracks_and_sessions.php" class="text-gray-400 hover:text-white">Tracks and Sessions</a></li>
+                    <li><a href="important_dates.php" class="text-gray-400 hover:text-white">Important Dates</a></li>
+                    <li><a href="instructions.php" class="text-gray-400 hover:text-white">Registration</a></li>
                 </ul>
             </div>
             <div>

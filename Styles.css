@@ -7,7 +7,9 @@ body {
 /* Navigation styles */
 .nav-item {
     position: relative;
-    transition: all 0.2s ease-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    padding-top: 0.375rem;    /* 6px */
+    padding-bottom: 0.375rem; /* 6px */
 }
 
 .nav-item:hover {
@@ -18,40 +20,98 @@ body {
     content: '';
     position: absolute;
     bottom: -2px;
-    left: 0;
+    left: 50%;
     width: 0;
     height: 2px;
     background-color: currentColor;
-    transition: width 0.2s ease-out;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transform: translateX(-50%);
 }
 
 .nav-item:hover::after {
     width: 100%;
 }
 
-/* Dropdown styles */
+/* Enhanced dropdown styles */
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    padding-top: 0.375rem;    /* 6px */
+    padding-bottom: 0.375rem; /* 6px */
+}
+
 .dropdown-menu {
-    display: none;
-    animation: fadeIn 0.2s ease-out;
-    border: 1px solid #1e3a8a; /* blue-900 */
-    border-radius: 0.5rem;
-    background: white;
-    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-}
-
-.dropdown:hover .dropdown-menu {
     display: block;
+    position: absolute;
+    top: calc(100% - 2px); /* Adjust dropdown position to account for smaller nav height */
+    left: 0;
+    z-index: 1000;
+    min-width: 12rem;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    visibility: hidden;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    border-radius: 0 0 0.5rem 0.5rem;
+    overflow: hidden;
 }
 
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(-10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
+.dropdown:hover .dropdown-menu,
+.group:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Ensure all dropdown animations work consistently */
+.dropdown.group:hover .dropdown-menu {
+    visibility: visible;
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
+}
+
+/* Ensure arrow rotation animation works */
+.dropdown.group:hover .group-hover\:rotate-180 {
+    transform: rotate(180deg);
+}
+
+/* Add staggered animation for dropdown menu items */
+.dropdown-menu li {
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s;
+}
+
+.dropdown:hover .dropdown-menu li,
+.group:hover .dropdown-menu li {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: calc(0.05s * var(--item-index, 0));
+}
+
+/* Initialize item index counter for staggered animation */
+.dropdown-menu li:nth-child(1) { --item-index: 1; }
+.dropdown-menu li:nth-child(2) { --item-index: 2; }
+.dropdown-menu li:nth-child(3) { --item-index: 3; }
+.dropdown-menu li:nth-child(4) { --item-index: 4; }
+.dropdown-menu li:nth-child(5) { --item-index: 5; }
+.dropdown-menu li:nth-child(6) { --item-index: 6; }
+
+/* Beautiful scale effect for dropdown menu items on hover */
+.dropdown-menu li a {
+    transition: all 0.2s ease;
+    position: relative;
+    display: block;
+    padding: 0.5rem 1rem;
+}
+
+.dropdown-menu li a:hover {
+    transform: translateX(5px);
 }
 
 /* Hero section styles */

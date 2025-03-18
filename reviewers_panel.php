@@ -59,6 +59,7 @@
         <?php } ?>
       </tbody>
     </table>
+    <br></br>
   </div>
 </div>
 
