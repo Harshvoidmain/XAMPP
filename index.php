@@ -32,15 +32,15 @@ include 'header.php';
                                     <ul class="splide__list">
                                         <li class="splide__slide">
                                             <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                                                <img src="images/speaker1.jpg" alt="Speaker 1" class="w-24 h-24 rounded-full mx-auto mb-2">
-                                                <h3 class="text-xl font-semibold">Dr. John Doe</h3>
-                                                <p class="text-sm opacity-80">Professor, MIT</p>
-                                                <p class="text-sm opacity-80">Topic: AI in Engineering</p>
+                                                <img src="images/Archana_Sharma.png" alt="Speaker 1" class="w-24 h-24 rounded-full mx-auto mb-2">
+                                                <h3 class="text-xl font-semibold">Dr.Archana Sharma</h3>
+                                                <p class="text-sm opacity-80">OS, Director, 
+                                                    Beam Technology Development Group, BARC</p>
                                             </div>
                                         </li>
                                         <li class="splide__slide">
                                             <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                                                <img src="images/speaker2.jpg" alt="Speaker 2" class="w-24 h-24 rounded-full mx-auto mb-2">
+                                                <img src="images/user.jpg" alt="Speaker 2" class="w-24 h-24 rounded-full mx-auto mb-2">
                                                 <h3 class="text-xl font-semibold">Dr. Jane Smith</h3>
                                                 <p class="text-sm opacity-80">Researcher, Stanford</p>
                                                 <p class="text-sm opacity-80">Topic: Renewable Energy</p>
@@ -48,7 +48,7 @@ include 'header.php';
                                         </li>
                                         <li class="splide__slide">
                                             <div class="bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center">
-                                                <img src="images/speaker3.jpg" alt="Speaker 3" class="w-24 h-24 rounded-full mx-auto mb-2">
+                                                <img src="images/user.jpg" alt="Speaker 3" class="w-24 h-24 rounded-full mx-auto mb-2">
                                                 <h3 class="text-xl font-semibold">Dr. Alan Turing</h3>
                                                 <p class="text-sm opacity-80">Scientist, Cambridge</p>
                                                 <p class="text-sm opacity-80">Topic: Quantum Computing</p>
