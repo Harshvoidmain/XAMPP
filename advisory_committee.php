@@ -1,135 +1,50 @@
-<!DOCTYPE html>
+<?php
+$page_title = "Advisory Committee";
+include 'header.php';
+?>
 
-<html lang="en">
+<main class="container mx-auto px-4 py-8">
+    <!-- Breadcrumb Navigation -->
+    <nav class="text-sm mb-6">
+        <ul class="flex space-x-2 text-gray-600">
+            <li><a href="./icnte.php" class="hover:underline">Home</a></li>
+            <li>/</li>
+            <li><span class="text-gray-500">People</span></li>
+            <li>/</li>
+            <li class="text-blue-600 font-semibold">Advisory Committee</li>
+        </ul>
+    </nav>
 
-<?php include 'header.php'; ?>
+    <!-- Page Title -->
+    <h2 class="text-center text-3xl font-bold text-gray-800 mb-4">Advisory Committee</h2>
+    <hr class="border-t-2 border-blue-500 w-32 mx-auto mb-8">
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
- <style>
-
-    th,td{
-
-        padding: 10px;
-
-		text-align: left;
-
-    }
-
-    .nav-tabs > li > a:hover {
-
-        border-color: #57bc90 #57bc90 #57bc90;
-
-    }
-
-</style>
-
-
-
-<div class="banner">
-
-    <div class="">
-
-        <div class="" style="margin-left:0 !important;padding:0 !important;margin-right:0 !important;">
-
-            <div class="row" style="padding:0 !important;">
-
-                <div class="col-md-12" style="padding:0 !important;">
-
-
-
-                    <ol class="breadcrumb">
-
-                        <li><a href="./icnte.php">Home</a></li>
-
-                        <li><a href="javascript::">People</a></li>
-
-                        <li class="active">Advisory Committees</li>
-
-                    </ol>
-
-                </div>
-
-            </div>
-
-        </div>
-
+    <!-- Table Section -->
+    <div class="overflow-x-auto shadow-md rounded-lg">
+        <table class="w-full table-auto border-collapse bg-white shadow-lg">
+            <thead>
+                <tr class="bg-blue-600 text-white text-left">
+                    <th class="py-3 px-4">Name</th>
+                    <th class="py-3 px-4">Designation</th>
+                    <th class="py-3 px-4">Institute</th>
+                </tr>
+            </thead>
+            <tbody class="divide-y divide-gray-200">
+                <?php
+                include 'connection.php'; 
+                $sql = "SELECT * FROM advisory_committees";
+                $result = mysqli_query($db, $sql);
+                while ($row = mysqli_fetch_array($result)) {
+                    echo "<tr class='hover:bg-gray-100'>";
+                    echo "<td class='py-3 px-4'>" . htmlspecialchars($row['name']) . "</td>";
+                    echo "<td class='py-3 px-4'>" . htmlspecialchars($row['designation']) . "</td>";
+                    echo "<td class='py-3 px-4'>" . htmlspecialchars($row['institute']) . "</td>";
+                    echo "</tr>";
+                }
+                ?>
+            </tbody>
+        </table>
     </div>
+</main>
 
-</div>
-
-<div class="container">
-
-    <h2 style="text-align: center;">Advisory Committee</h2>
-
-    <hr class="style17">
-
-</div>
-
-<div class="container-fluid"> 
-
- 
-
-	<div class="col-md-10 col-md-offset-1">
-
-			<div style="margin-bottom:15px;">
-
-	<table class="table table-striped table-responsive table-condensed" >   
-
-		<?php
-
-		include 'connection.php'; 
-
-		$sql="SELECT * FROM advisory_committees";
-
-		$result=mysqli_query($db,$sql);
-
-				while($row = mysqli_fetch_array($result))
-
-					{
-
-						$name=$row['name']; 
-
-						$designation=$row['designation'];
-
-						$institute=$row['institute'];?>
-
-											
-
-
-
-        <tr>
-
-      <td class="col-md-2"><?php echo "$name";?></td>
-
-      <td class="col-md-2"><?php echo "$designation";?></td>
-
-      <td class="col-md-4"><?php echo "$institute";?></td>
-
-    </tr>    
-
-		<?php
-
-		}
-
-		?>	
-
-     
-
-</table>
-
-
-
-</div>
-
-</div>
-
-</div>	
-
-
-
-	   <?php include 'footer.php'; ?>
-
-</html>
+<?php include 'footer.php'; ?>
