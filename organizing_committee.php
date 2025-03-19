@@ -30,7 +30,7 @@
 </div>
 
 <!-- Committees List -->
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 mb-20">
   <div class="max-w-5xl mx-auto space-y-8">
     <?php
       include 'connection.php'; 
