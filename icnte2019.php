@@ -329,7 +329,7 @@ img.hover-shadow {
 <div class="container mx-auto px-4 my-8 text-center animate-fadeIn">
   <h2 class="text-4xl font-bold text-gray-800 mb-2">ICNTE 2019</h2>
   <div class="w-24 h-1 bg-blue-600 mx-auto rounded-full"></div>
-  <p class="text-gray-600 mt-3 italic">International Conference on Nascent Technologies in Engineering</p>
+  <p class="text-gray-600 mt-3 italic">International Conference on Nascent Technologies in Engineering, 2019</p>
   <hr class="my-4 border-t-2 border-gray-300">
 </div>
 
