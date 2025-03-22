@@ -102,6 +102,12 @@
 
 <!-- Vanilla JS Scripts -->
 <script>
+// "Read More" Toggle Functionality
+document.addEventListener("DOMContentLoaded", function(){
+  var showChar = 1500;
+  var ellipsestext = ".......";
+  var moretext = "Show more >";
+  var lesstext = "Show less";
 
 // Modal Gallery Functionality
 var slideIndex = 1;
