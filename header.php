@@ -42,12 +42,11 @@
         </button>
 
         <!-- Desktop Navigation -->
-        <ul class="hidden md:flex space-x-4 lg:space-x-8">
-          <li>
-            <a href="index.php" class="nav-item px-4 py-1.5 block transition-all duration-300 hover:text-blue-200">Home</a>
-          </li>
-          <li class="dropdown relative group">
-            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
+        <div class="hidden md:flex items-center space-x-2 lg:space-x-4 flex-1">
+          <a href="index.php" class="nav-item px-2 py-1.5 block transition-all duration-300 hover:text-blue-200">Home</a>
+          
+          <div class="dropdown relative group">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-2 py-1.5 group-hover:text-blue-200 transition-all duration-300">
               Call for Papers
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -56,9 +55,10 @@
             <ul class="dropdown-menu absolute left-0 mt-0 w-52 text-white rounded-b-lg nav-dropdown-gradient shadow-lg">
               <li><a href="tracks_and_sessions.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Tracks and Sessions</a></li>
             </ul>
-          </li>
-          <li class="dropdown relative group">
-            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
+          </div>
+
+          <div class="dropdown relative group">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-2 py-1.5 group-hover:text-blue-200 transition-all duration-300">
               Conference Details
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -69,9 +69,10 @@
               <li><a href="venue.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Venue</a></li>
               <li><a href="publications.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Publications</a></li>
             </ul>
-          </li>
-          <li class="dropdown relative group">
-            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
+          </div>
+
+          <div class="dropdown relative group">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-2 py-1.5 group-hover:text-blue-200 transition-all duration-300">
               People
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -82,9 +83,10 @@
               <li><a href="organizing_committee.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Organizing Committee</a></li>
               <li><a href="reviewers_panel.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Reviewer's Panel</a></li>
             </ul>
-          </li>
-          <li class="dropdown relative group">
-            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
+          </div>
+
+          <div class="dropdown relative group">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-2 py-1.5 group-hover:text-blue-200 transition-all duration-300">
               Registration
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -94,9 +96,10 @@
               <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Instructions</a></li>
               <li><a href="fees.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Registration Fees</a></li>
             </ul>
-          </li>
-          <li class="dropdown relative group">
-            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
+          </div>
+
+          <div class="dropdown relative group">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-2 py-1.5 group-hover:text-blue-200 transition-all duration-300">
               Archives
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -109,9 +112,10 @@
               <li><a href="icnte2017.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">ICNTE 2017</a></li>
               <li><a href="icnte2015.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">ICNTE 2015</a></li>
             </ul>
-          </li>
-          <li class="dropdown relative group">
-            <a href="#" class="dropdown-toggle flex items-center gap-1 px-4 py-1.5 group-hover:text-blue-200 transition-all duration-300">
+          </div>
+
+          <div class="dropdown relative group">
+            <a href="#" class="dropdown-toggle flex items-center gap-1 px-2 py-1.5 group-hover:text-blue-200 transition-all duration-300">
               Downloads
               <svg class="w-4 h-4 transition-transform duration-300 group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
@@ -119,18 +123,18 @@
             </a>
             <ul class="dropdown-menu absolute left-0 mt-0 w-52 text-white rounded-b-lg nav-dropdown-gradient shadow-lg">
               <li><a href="ieee_paper_template.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Paper Template</a></li>
-              <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Paper Template (LATEX)</a></li>
+              <li><a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Paper Template (LATEX)</a></li>
               <li><a href="ieee_copyright_form.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Copyright Form</a></li>
               <li><a href="sample_ieee_copyright_form.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Sample Filled IEEE Copyright Form</a></li>
             </ul>
-            <li class="ml-4">
-              <a href="admin_login.php" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-lg transition-all duration-300 flex items-center gap-2">
-                <i class="fas fa-sign-in-alt"></i>
-                Login
-              </a>
-            </li>
-          </li>
-        </ul>
+          </div>
+        </div>
+
+        <!-- Login Button -->
+        <a href="admin_login.php" target="_blank" class="hidden md:flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-lg transition-all duration-300 ml-4">
+          <i class="fas fa-sign-in-alt mr-2"></i>
+          Login
+        </a>
       </div>
     </div>
   </nav>
@@ -243,7 +247,7 @@
               <ul class="pl-6 mt-2 space-y-1">
                 <li><a href="download/ICNTE_2025.pdf" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE 2025 Brochure</a></li>
                 <li><a href="download/IEEE_Paper_Format.docx" class="block px-4 py-2 text-white hover:bg-blue-800">IEEE Paper Template</a></li>
-                <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 text-white hover:bg-blue-800">IEEE Paper Template (LATEX)</a></li>
+                <li><a href="https://www.ieee.org/conferences/publishing/templates.html" target="_blank" class="block px-4 py-2 text-white hover:bg-blue-800">IEEE Paper Template (LATEX)</a></li>
                 <li><a href="download/IEEE_Copyright_Form.pdf" class="block px-4 py-2 text-white hover:bg-blue-800">IEEE Copyright Form</a></li>
                 <li><a href="download/Sample_IEEE_Copyright_Form.pdf" class="block px-4 py-2 text-white hover:bg-blue-800">Sample Filled IEEE Copyright Form</a></li>
                 <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE Poster Template</a></li>
@@ -251,7 +255,7 @@
             </details>
           </li>
           <li class="px-4 pt-4">
-            <a href="admin_login.php" class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 text-center">
+            <a href="admin_login.php" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 text-center">
               <i class="fas fa-sign-in-alt mr-2"></i>
               Login
             </a>
