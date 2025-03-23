@@ -35,8 +35,8 @@
     <div class="container mx-auto px-4">
       <div class="flex justify-between items-center py-2">
         <!-- Hamburger Menu for Mobile -->
-        <button id="mobile-menu-button" class="md:hidden p-1.5 hover:bg-blue-800 rounded-lg transition-all duration-300 transform hover:scale-105 active:scale-95">
-          <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button id="mobile-menu-button" class="md:hidden p-1.5 hover:bg-blue-800 rounded-lg transition-all duration-300">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
           </svg>
         </button>
@@ -124,116 +124,130 @@
   <li><a href="sample_ieee_copyright_form.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Sample Filled IEEE Copyright Form</a></li>
 </ul>
 
-      <!-- Mobile Menu -->
-      <!-- Keep the mobile menu with details/summary for better mobile UX -->
-      <div id="mobile-menu" class="hidden md:hidden absolute bg-blue-900 w-full left-0 top-full py-2 mobile-nav-gradient transform origin-top transition-all duration-300 opacity-0 scale-y-0">
-        <ul class="space-y-2 px-4">
-          <li>
-            <a href="index.php" class="block px-4 py-2 hover:bg-blue-800">Home</a>
-          </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Call for Papers
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="tracks_and_sessions.php" class="block px-4 py-2 hover:bg-blue-700">Tracks and Sessions</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Conference Details
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="important_dates.php" class="block px-4 py-2 hover:bg-blue-700">Important Dates</a></li>
-                <li><a href="venue.php" class="block px-4 py-2 hover:bg-blue-700">Venue</a></li>
-                <li><a href="publications.php" class="block px-4 py-2 hover:bg-blue-700">Publications</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                People
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="advisory_committee.php" class="block px-4 py-2 hover:bg-blue-700">Advisory Committee</a></li>
-                <li><a href="organizing_committee.php" class="block px-4 py-2 hover:bg-blue-700">Organizing Committee</a></li>
-                <li><a href="reviewers_panel.php" class="block px-4 py-2 hover:bg-blue-700">Reviewer's Panel</a></li>
-                <li><a href="keynote_speakers.php" class="block px-4 py-2 hover:bg-blue-700">Keynote Speakers</a></li>
-              </ul>
-            </details>
-          </li>        
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Registration
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="instructions.php" class="block px-4 py-2 hover:bg-blue-700">Instructions</a></li>
-                <li><a href="fees.php" class="block px-4 py-2 hover:bg-blue-700">Registration Fees</a></li>
-              </ul>
-            </details>
-          </li>
-          <li>
-            <details class="group">
-              <summary class="flex items-center justify-between px-4 py-2 hover:bg-blue-800 cursor-pointer">
-                Archives
-                <svg class="w-4 h-4 transform group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-                </svg>
-              </summary>
-              <ul class="pl-6">
-                <li><a href="icnte2023.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2023</a></li>
-                <li><a href="icnte2021.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2021</a></li>
-                <li><a href="icnte2019.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2019</a></li>
-                <li><a href="icnte2017.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2017</a></li>
-                <li><a href="icnte2015.php" class="block px-4 py-2 hover:bg-blue-700">ICNTE 2015</a></li>
-              </ul>
-            </details>
-          </li>
-          
-          <li class="relative group">
-            <a href="#" class="nav-item flex items-center gap-1 transition-all duration-300 hover:text-gray-300">
-              Downloads
-              <svg class="w-4 h-4 transition-transform transform group-hover:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
-              </svg>
-            </a>
-            <ul class="absolute left-0 mt-2 w-48 bg-white text-gray-900 rounded-lg shadow-md opacity-0 transform translate-y-4 transition-all duration-300 group-hover:opacity-100 group-hover:translate-y-0">
-              <li><a href="download/ICNTE_2025.pdf" class="block px-4 py-2 hover:bg-blue-100" target="_blank">ICNTE 2025 Brochure</a></li>
-              <li><a href="download/IEEE_Paper_Format.docx" class="block px-4 py-2 hover:bg-blue-100" target="_blank">IEEE Paper Template</a></li>
-              <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 hover:bg-blue-100">IEEE Paper Template (LATEX)</a></li>
-              <li><a href="download/IEEE_Copyright_Form.pdf" class="block px-4 py-2 hover:bg-blue-100" target="_blank">IEEE Copyright Form</a></li>
-              <li><a href="download/Sample_IEEE_Copyright_Form.pdf" class="block px-4 py-2 hover:bg-blue-100" target="_blank">Sample Filled IEEE Copyright Form</a></li>
-              <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 hover:bg-blue-100" target="_blank">ICNTE Poster Template</a></li>
-            </ul>
-          </li>
-          <li>
-            <a href="admin_login.php" class="block px-4 py-2 hover:bg-blue-800">
-              <i class="fas fa-user-lock mr-1"></i> Admin
-            </a>
-          </li>
         </ul>
       </div>
-
     </div>
   </nav>
   
+  <!-- Mobile Menu Overlay -->
+  <div id="mobile-menu" class="fixed inset-0 z-50 hidden md:hidden">
+    <!-- Backdrop -->
+    <div id="mobile-menu-backdrop" class="fixed inset-0 bg-black bg-opacity-50 transition-opacity duration-300 opacity-0"></div>
+    
+    <!-- Menu Content -->
+    <div id="mobile-menu-content" class="fixed left-0 top-0 h-full w-64 bg-blue-900 transform -translate-x-full transition-transform duration-300 ease-in-out overflow-y-auto">
+      <!-- Menu Header -->
+      <div class="p-4 border-b border-blue-800 flex justify-between items-center">
+        <h3 class="text-white font-semibold">Menu</h3>
+        <button id="close-mobile-menu" class="text-white p-2 hover:bg-blue-800 rounded-lg">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+      
+      <!-- Menu Items -->
+      <div class="py-4">
+        <ul class="space-y-2">
+          <li>
+            <a href="index.php" class="block px-4 py-2 text-white hover:bg-blue-800">Home</a>
+          </li>
+          <li>
+            <details class="group">
+              <summary class="flex items-center justify-between px-4 py-2 text-white hover:bg-blue-800 cursor-pointer">
+                <span>Call for Papers</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <ul class="pl-6 mt-2 space-y-1">
+                <li><a href="tracks_and_sessions.php" class="block px-4 py-2 text-white hover:bg-blue-800">Tracks and Sessions</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="group">
+              <summary class="flex items-center justify-between px-4 py-2 text-white hover:bg-blue-800 cursor-pointer">
+                <span>Conference Details</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <ul class="pl-6 mt-2 space-y-1">
+                <li><a href="important_dates.php" class="block px-4 py-2 text-white hover:bg-blue-800">Important Dates</a></li>
+                <li><a href="venue.php" class="block px-4 py-2 text-white hover:bg-blue-800">Venue</a></li>
+                <li><a href="publications.php" class="block px-4 py-2 text-white hover:bg-blue-800">Publications</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="group">
+              <summary class="flex items-center justify-between px-4 py-2 text-white hover:bg-blue-800 cursor-pointer">
+                <span>People</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <ul class="pl-6 mt-2 space-y-1">
+                <li><a href="advisory_committee.php" class="block px-4 py-2 text-white hover:bg-blue-800">Advisory Committee</a></li>
+                <li><a href="organizing_committee.php" class="block px-4 py-2 text-white hover:bg-blue-800">Organizing Committee</a></li>
+                <li><a href="reviewers_panel.php" class="block px-4 py-2 text-white hover:bg-blue-800">Reviewer's Panel</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="group">
+              <summary class="flex items-center justify-between px-4 py-2 text-white hover:bg-blue-800 cursor-pointer">
+                <span>Registration</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <ul class="pl-6 mt-2 space-y-1">
+                <li><a href="instructions.php" class="block px-4 py-2 text-white hover:bg-blue-800">Instructions</a></li>
+                <li><a href="fees.php" class="block px-4 py-2 text-white hover:bg-blue-800">Registration Fees</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="group">
+              <summary class="flex items-center justify-between px-4 py-2 text-white hover:bg-blue-800 cursor-pointer">
+                <span>Archives</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <ul class="pl-6 mt-2 space-y-1">
+                <li><a href="icnte2023.php" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE 2023</a></li>
+                <li><a href="icnte2021.php" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE 2021</a></li>
+                <li><a href="icnte2019.php" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE 2019</a></li>
+                <li><a href="icnte2017.php" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE 2017</a></li>
+                <li><a href="icnte2015.php" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE 2015</a></li>
+              </ul>
+            </details>
+          </li>
+          <li>
+            <details class="group">
+              <summary class="flex items-center justify-between px-4 py-2 text-white hover:bg-blue-800 cursor-pointer">
+                <span>Downloads</span>
+                <svg class="w-4 h-4 transition-transform duration-300 group-open:rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+                </svg>
+              </summary>
+              <ul class="pl-6 mt-2 space-y-1">
+                <li><a href="download/ICNTE_2025.pdf" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE 2025 Brochure</a></li>
+                <li><a href="download/IEEE_Paper_Format.docx" class="block px-4 py-2 text-white hover:bg-blue-800">IEEE Paper Template</a></li>
+                <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 text-white hover:bg-blue-800">IEEE Paper Template (LATEX)</a></li>
+                <li><a href="download/IEEE_Copyright_Form.pdf" class="block px-4 py-2 text-white hover:bg-blue-800">IEEE Copyright Form</a></li>
+                <li><a href="download/Sample_IEEE_Copyright_Form.pdf" class="block px-4 py-2 text-white hover:bg-blue-800">Sample Filled IEEE Copyright Form</a></li>
+                <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE Poster Template</a></li>
+              </ul>
+            </details>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <style>
     /* Enhanced dropdown styles */
@@ -427,42 +441,101 @@
   .fil0 {
     fill: #4c83fa;
   }
+
+    /* Mobile Menu Styles */
+    #mobile-menu {
+      visibility: hidden;
+      transition: visibility 0.3s ease-in-out;
+    }
+
+    #mobile-menu.show {
+      visibility: visible;
+    }
+
+    #mobile-menu-backdrop {
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    #mobile-menu.show #mobile-menu-backdrop {
+      opacity: 1;
+    }
+
+    #mobile-menu-content {
+      transform: translateX(-100%);
+      transition: transform 0.3s ease-in-out;
+    }
+
+    #mobile-menu.show #mobile-menu-content {
+      transform: translateX(0);
+    }
+
+    /* Prevent body scroll when menu is open */
+    body.menu-open {
+      overflow: hidden;
+    }
   </style>
 
   <script>
-    // Mobile menu toggle with animation
-    const mobileMenuButton = document.getElementById('mobile-menu-button');
-    const mobileMenu = document.getElementById('mobile-menu');
+    document.addEventListener('DOMContentLoaded', function() {
+      const mobileMenuButton = document.getElementById('mobile-menu-button');
+      const mobileMenu = document.getElementById('mobile-menu');
+      const mobileMenuContent = document.getElementById('mobile-menu-content');
+      const mobileMenuBackdrop = document.getElementById('mobile-menu-backdrop');
+      const closeMobileMenu = document.getElementById('close-mobile-menu');
 
-    mobileMenuButton.addEventListener('click', () => {
-      mobileMenu.classList.toggle('hidden');
-      // Add a small delay before applying transform to ensure the animation works
-      setTimeout(() => {
-        mobileMenu.classList.toggle('show');
-      }, 10);
-    });
+      function openMobileMenu() {
+        document.body.classList.add('menu-open');
+        mobileMenu.classList.remove('hidden');
+        requestAnimationFrame(() => {
+          mobileMenu.classList.add('show');
+        });
+      }
 
-    // Close mobile menu when clicking outside
-    document.addEventListener('click', (event) => {
-      if (!mobileMenu.contains(event.target) && !mobileMenuButton.contains(event.target)) {
+      function closeMobileMenuFn() {
+        document.body.classList.remove('menu-open');
         mobileMenu.classList.remove('show');
-        // Add a delay before hiding to allow animation to complete
         setTimeout(() => {
           mobileMenu.classList.add('hidden');
         }, 300);
       }
-    });
 
-    // Add active class to current page nav item
-    document.addEventListener('DOMContentLoaded', () => {
-      const currentPath = window.location.pathname;
-      const navItems = document.querySelectorAll('nav a');
-      
-      navItems.forEach(item => {
-        const href = item.getAttribute('href');
-        if (href && currentPath.endsWith(href)) {
-          item.classList.add('nav-active');
+      // Mobile menu button click
+      mobileMenuButton.addEventListener('click', (e) => {
+        e.stopPropagation();
+        openMobileMenu();
+      });
+
+      // Close button click
+      closeMobileMenu.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMobileMenuFn();
+      });
+
+      // Backdrop click
+      mobileMenuBackdrop.addEventListener('click', (e) => {
+        e.stopPropagation();
+        closeMobileMenuFn();
+      });
+
+      // Prevent menu content clicks from closing the menu
+      mobileMenuContent.addEventListener('click', (e) => {
+        e.stopPropagation();
+      });
+
+      // Close menu on window resize (if desktop size)
+      window.addEventListener('resize', () => {
+        if (window.innerWidth >= 768) { // md breakpoint
+          closeMobileMenuFn();
         }
+      });
+
+      // Handle mobile menu details elements
+      const detailsElements = mobileMenuContent.querySelectorAll('details');
+      detailsElements.forEach(details => {
+        details.addEventListener('toggle', (e) => {
+          e.stopPropagation();
+        });
       });
     });
   </script>
