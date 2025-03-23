@@ -118,12 +118,18 @@
               </svg>
             </a>
             <ul class="dropdown-menu absolute left-0 mt-0 w-52 text-white rounded-b-lg nav-dropdown-gradient shadow-lg">
-  <li><a href="ieee_paper_template.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Paper Template</a></li>
-  <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Paper Template (LATEX)</a></li>
-  <li><a href="ieee_copyright_form.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Copyright Form</a></li>
-  <li><a href="sample_ieee_copyright_form.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Sample Filled IEEE Copyright Form</a></li>
-</ul>
-
+              <li><a href="ieee_paper_template.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Paper Template</a></li>
+              <li><a href="https://www.ieee.org/conferences/publishing/templates.html" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Paper Template (LATEX)</a></li>
+              <li><a href="ieee_copyright_form.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">IEEE Copyright Form</a></li>
+              <li><a href="sample_ieee_copyright_form.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Sample Filled IEEE Copyright Form</a></li>
+            </ul>
+            <li class="ml-4">
+              <a href="admin_login.php" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-lg transition-all duration-300 flex items-center gap-2">
+                <i class="fas fa-sign-in-alt"></i>
+                Login
+              </a>
+            </li>
+          </li>
         </ul>
       </div>
     </div>
@@ -243,6 +249,12 @@
                 <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 text-white hover:bg-blue-800">ICNTE Poster Template</a></li>
               </ul>
             </details>
+          </li>
+          <li class="px-4 pt-4">
+            <a href="admin_login.php" class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 text-center">
+              <i class="fas fa-sign-in-alt mr-2"></i>
+              Login
+            </a>
           </li>
         </ul>
       </div>
