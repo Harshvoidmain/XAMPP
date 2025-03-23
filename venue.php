@@ -23,22 +23,25 @@
   </div>
 </div>
 
-<!-- Page Heading -->
+<!-- Page Title -->
 <div class="container mx-auto px-4 my-8">
-  <h2 class="text-center text-3xl font-bold">Venue</h2>
+  <h2 class="text-center text-3xl font-bold">Conference Venue</h2>
   <hr class="my-4 border-t-2 border-gray-300">
 </div>
 
-<!-- Venue Details and Map -->
-<div class="container mx-auto px-4">
+<!-- Venue Information Section -->
+<div class="container mx-auto px-4 mb-12">
   <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-    <!-- Venue Details Box -->
-    <div class="border border-blue-400 rounded-lg p-6 flex flex-col justify-center" style="min-height: 500px;">
-      <h3 class="text-center text-xl font-semibold mb-6">Details</h3>
+    
+    <!-- Venue Details Card -->
+    <div class="bg-white shadow-lg rounded-lg p-6 border border-gray-200">
+      <h3 class="text-center text-xl font-semibold mb-4">Venue Details</h3>
+      <hr class="mb-4 border-t-2 border-blue-400">
+      
       <table class="w-full text-left">
         <tr>
-          <th class="py-3 pr-4 text-right align-top">Address</th>
-          <td class="py-3 pl-4">
+          <th class="py-3 pr-4 text-right align-top text-gray-700">Address</th>
+          <td class="py-3 pl-4 text-gray-800">
             Agnel Charities’<br>
             Fr. C. Rodrigues Institute of Technology<br>
             Agnel Technical Education Complex<br>
@@ -48,36 +51,41 @@
           </td>
         </tr>
         <tr>
-          <th class="py-3 pr-4 text-right">Phone</th>
-          <td class="py-3 pl-4">+91-22-27771000</td>
+          <th class="py-3 pr-4 text-right text-gray-700">Phone</th>
+          <td class="py-3 pl-4 text-blue-600">
+            <a href="tel:+912227771000" class="hover:underline">+91-22-27771000</a>
+          </td>
         </tr>
         <tr>
-          <th class="py-3 pr-4 text-right">Fax</th>
-          <td class="py-3 pl-4">+91-22-27660619</td>
+          <th class="py-3 pr-4 text-right text-gray-700">Fax</th>
+          <td class="py-3 pl-4 text-gray-800">+91-22-27660619</td>
         </tr>
         <tr>
-          <th class="py-3 pr-4 text-right">Website</th>
+          <th class="py-3 pr-4 text-right text-gray-700">Website</th>
           <td class="py-3 pl-4">
             <a href="https://www.fcrit.ac.in" class="text-blue-600 hover:underline" target="_blank">www.fcrit.ac.in</a>
           </td>
         </tr>
       </table>
     </div>
-    <!-- Embedded Map -->
-    <div class="w-full" style="min-height: 500px;">
+
+    <!-- Google Maps Embed -->
+    <div class="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200">
+      <h3 class="text-center text-xl font-semibold py-4">Location Map</h3>
       <iframe 
         width="100%" 
-        height="100%" 
+        height="400px" 
         frameborder="0" 
-        style="border-radius: 20px" 
+        class="rounded-b-lg" 
         src="https://www.google.com/maps/embed/v1/place?q=place_id:ChIJq8XY4MrG5zsR2KIsZh1I9Ls&key=AIzaSyBdsMKM1ESJ0Kc03i9Tnt_mU6KfNWvY5mY" 
         allowfullscreen>
       </iframe>
     </div>
+    
   </div>
 </div>
 
-<!-- Add padding below -->
+<!-- Extra Padding for Better Layout -->
 <div class="pb-12"></div>
 
 <?php include 'footer.php'; ?>

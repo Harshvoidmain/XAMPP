@@ -6,6 +6,8 @@
                 <p class="text-gray-400">Fr. C. Rodrigues Institute of Technology</p>
                 <p class="text-gray-400">Sector 9A, Vashi</p>
                 <p class="text-gray-400">Navi Mumbai, Maharashtra 400703</p>
+                <br>
+                <a href="developers.php" class="text-gray-400 hover:text-white underline">View Developers</a>
             </div>
             <div>
                 <h3 class="text-lg font-semibold mb-4">Quick Links</h3>

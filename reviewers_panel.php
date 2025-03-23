@@ -32,7 +32,7 @@
 <!-- Advisory Committee Table -->
 <div class="container mx-auto px-4">
   <div class="overflow-x-auto">
-    <table class="min-w-full bg-white border border-gray-200">
+    <table id="reviewersTable" class="min-w-full bg-white border border-gray-200">
       <thead class="bg-gray-200">
         <tr>
           <th class="px-4 py-2 text-left">Name</th>
@@ -62,3 +62,18 @@
 </div>
 
 <?php include 'footer.php'; ?>
+
+<!-- JavaScript to Filter Table -->
+<script>
+  function filterTable() {
+    const input = document.getElementById('searchInput');
+    const filter = input.value.toLowerCase();
+    const table = document.getElementById('reviewersTable');
+    const rows = table.getElementsByTagName('tr');
+
+    for (let i = 1; i < rows.length; i++) {
+      let rowText = rows[i].textContent.toLowerCase();
+      rows[i].style.display = rowText.includes(filter) ? '' : 'none';
+    }
+  }
+</script>

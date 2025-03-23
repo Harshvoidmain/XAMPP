@@ -6,10 +6,7 @@
   <title><?php echo isset($page_title) ? $page_title . ' - ICNTE 2025' : 'ICNTE 2025'; ?></title>
   <meta name="description" content="6th Biennial International Conference on Nascent Technologies in Engineering" />
   <script src="https://cdn.tailwindcss.com"></script>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
-    rel="stylesheet"
-  />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
 </head>
@@ -83,7 +80,6 @@
               <li><a href="advisory_committee.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Advisory Committee</a></li>
               <li><a href="organizing_committee.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Organizing Committee</a></li>
               <li><a href="reviewers_panel.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Reviewer's Panel</a></li>
-              <li><a href="keynote_speakers.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Keynote Speakers</a></li>
             </ul>
           </li>
           <li class="dropdown relative group">
@@ -299,6 +295,136 @@
       50% { opacity: 1; }
       100% { opacity: 0.6; }
     }
+      /* Contact Button Styles */
+  .fixed {
+    position: fixed;
+  }
+
+  .bottom-8 {
+    bottom: 2rem;
+  }
+
+  .right-8 {
+    right: 2rem;
+  }
+
+  .z-50 {
+    z-index: 50;
+  }
+
+  #contact-us {
+    position: relative;
+    padding: 12px 35px;
+    background: #4c83fa;
+    font-size: 17px;
+    font-weight: 1000;
+    color: #ffffff;
+    border: 3px solid #4c83fa;
+    border-radius: 8px;
+    box-shadow: 0 0 0 #ffffff;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+  }
+
+  .star-1,
+  .star-2,
+  .star-3,
+  .star-4,
+  .star-5,
+  .star-6 {
+    position: absolute;
+    filter: drop-shadow(0 0 0 #4c83fa);
+    z-index: -5;
+    transition: all 1s cubic-bezier(0.05, 0.83, 0.43, 0.96);
+  }
+
+  .star-1 {
+    top: 20%;
+    left: 20%;
+    width: 25px;
+  }
+
+  .star-2 {
+    top: 45%;
+    left: 45%;
+    width: 15px;
+  }
+
+  .star-3 {
+    top: 40%;
+    left: 40%;
+    width: 5px;
+  }
+
+  .star-4 {
+    top: 20%;
+    left: 40%;
+    width: 8px;
+  }
+
+  .star-5 {
+    top: 25%;
+    left: 45%;
+    width: 15px;
+  }
+
+  .star-6 {
+    top: 5%;
+    left: 50%;
+    width: 5px;
+  }
+
+  #contact-us:hover {
+    background: transparent;
+    color: #4c83fa;
+    box-shadow: 0 0 0px #4c83fa;
+  }
+
+  #contact-us:hover .star-1 {
+    top: -80%;
+    left: -30%;
+    filter: drop-shadow(0 0 0px #4c83fa);
+    z-index: 2;
+  }
+
+  #contact-us:hover .star-2 {
+    top: -0%;
+    left: 10%;
+    filter: drop-shadow(0 0 0px #4c83fa);
+    z-index: 2;
+  }
+
+  #contact-us:hover .star-3 {
+    top: 55%;
+    left: 25%;
+    filter: drop-shadow(0 0 0px #4c83fa);
+    z-index: 2;
+  }
+
+  #contact-us:hover .star-4 {
+    top: 30%;
+    left: 80%;
+    filter: drop-shadow(0 0 0px #4c83fa);
+    z-index: 2;
+  }
+
+  #contact-us:hover .star-5 {
+    top: 25%;
+    left: 115%;
+    filter: drop-shadow(0 0 0px #4c83fa);
+    z-index: 2;
+  }
+
+  #contact-us:hover .star-6 {
+    top: 5%;
+    left: 60%;
+    filter: drop-shadow(0 0 0px #4c83fa);
+    z-index: 2;
+  }
+
+  .fil0 {
+    fill: #4c83fa;
+  }
   </style>
 
   <script>
@@ -338,5 +464,43 @@
       });
     });
   </script>
+<!-- Floating Button -->
+<div class="fixed bottom-8 right-8 z-50">
+  <a href="contact.php">
+    <button id="contact-us" class="relative px-8 py-3 bg-blue-600 text-white font-bold rounded-lg border-2 border-blue-600 hover:bg-transparent hover:text-blue-600 transition-all duration-300 ease-in-out">
+      Contact Us
+      <div class="star-1">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" class="w-6 h-6">
+          <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"/>
+        </svg>
+      </div>
+      <div class="star-2">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" class="w-4 h-4">
+          <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"/>
+        </svg>
+      </div>
+      <div class="star-3">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" class="w-2 h-2">
+          <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"/>
+        </svg>
+      </div>
+      <div class="star-4">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" class="w-3 h-3">
+          <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"/>
+        </svg>
+      </div>
+      <div class="star-5">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" class="w-4 h-4">
+          <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"/>
+        </svg>
+      </div>
+      <div class="star-6">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 784.11 815.53" class="w-2 h-2">
+          <path class="fil0" d="M392.05 0c-20.9,210.08 -184.06,378.41 -392.05,407.78 207.96,29.37 371.12,197.68 392.05,407.74 20.93,-210.06 184.09,-378.37 392.05,-407.74 -207.98,-29.38 -371.16,-197.69 -392.06,-407.78z"/>
+        </svg>
+      </div>
+    </button>
+  </a>
+</div>
 </body>
 </html>

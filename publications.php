@@ -17,7 +17,7 @@
         <li>
           <span class="mx-2">/</span>
         </li>
-        <li class="font-bold text-gray-800">Publication</li>
+        <li class="font-bold text-gray-800">Publications</li>
       </ol>
     </nav>
   </div>
@@ -25,12 +25,12 @@
 
 <!-- Page Heading -->
 <div class="container mx-auto px-4 my-8">
-  <h2 class="text-center text-3xl font-bold">Publication</h2>
+  <h2 class="text-center text-3xl font-bold">Publications</h2>
   <hr class="my-4 border-t-2 border-gray-300">
 </div>
 
 <!-- Publications Content -->
-<div class="container mx-auto px-4">
+<div class="container mx-auto px-4 mb-20">
   <div class="bg-white shadow rounded p-6">
     <?php 
       include 'connection.php'; 
