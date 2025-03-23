@@ -118,6 +118,20 @@
 
 <!-- Vanilla JS Scripts -->
 <script>
+  // Handle "Show more" functionality
+  document.querySelectorAll('.morelink').forEach(link => {
+    link.addEventListener('click', function (e) {
+      e.preventDefault();
+      let content = this.previousElementSibling;
+      if (content.style.maxHeight) {
+        content.style.maxHeight = null;
+        this.innerText = "Show more >";
+      } else {
+        content.style.maxHeight = content.scrollHeight + "px";
+        this.innerText = "Show less";
+      }
+    });
+  });
 
 // Modal Gallery Functionality
 var slideIndex = 1;
