@@ -80,7 +80,6 @@
               <li><a href="advisory_committee.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Advisory Committee</a></li>
               <li><a href="organizing_committee.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Organizing Committee</a></li>
               <li><a href="reviewers_panel.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Reviewer's Panel</a></li>
-              <li><a href="keynote_speakers.php" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white">Keynote Speakers</a></li>
             </ul>
           </li>
           <li class="dropdown relative group">
