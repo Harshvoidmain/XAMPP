@@ -12,6 +12,7 @@
   />
   <link rel="stylesheet" href="css/styles.css" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body class="font-[Inter] min-h-screen bg-white">
   <!-- Header Section -->
@@ -129,6 +130,11 @@
               <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 hover:bg-blue-700 hover:pl-6 transition-all duration-300 border-l-4 border-transparent hover:border-white" target="_blank">ICNTE Poster Template</a></li>
             </ul>
           </li>
+          <li>
+            <a href="admin_login.php" class="nav-item px-4 py-1.5 block transition-all duration-300 hover:text-blue-200">
+              <i class="fas fa-user-lock mr-1"></i> Admin
+            </a>
+          </li>
         </ul>
       </div>
 
@@ -214,6 +220,7 @@
               </ul>
             </details>
           </li>
+          
           <li class="relative group">
             <a href="#" class="nav-item flex items-center gap-1 transition-all duration-300 hover:text-gray-300">
               Downloads
@@ -229,6 +236,11 @@
               <li><a href="download/Sample_IEEE_Copyright_Form.pdf" class="block px-4 py-2 hover:bg-blue-100" target="_blank">Sample Filled IEEE Copyright Form</a></li>
               <li><a href="download/ICNTE 2025-Poster-Template-48x36.pptx" class="block px-4 py-2 hover:bg-blue-100" target="_blank">ICNTE Poster Template</a></li>
             </ul>
+          </li>
+          <li>
+            <a href="admin_login.php" class="block px-4 py-2 hover:bg-blue-800">
+              <i class="fas fa-user-lock mr-1"></i> Admin
+            </a>
           </li>
         </ul>
       </div>

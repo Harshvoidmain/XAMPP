@@ -1,6 +1,28 @@
 <?php
 $page_title = "Home";
+include 'connection.php';
 include 'header.php';
+
+// Get latest updates from database
+$updates_query = "SELECT * FROM site_updates ORDER BY created_at DESC LIMIT 10";
+$updates_result = mysqli_query($db, $updates_query);
+$updates = [];
+
+if($updates_result && mysqli_num_rows($updates_result) > 0) {
+    while($row = mysqli_fetch_assoc($updates_result)) {
+        $updates[] = $row;
+    }
+} else {
+    // Fallback to default updates if database query fails
+    $updates = [
+        ["text" => "Download ICNTE-2025 Conference Brochure.", "link" => "#"],
+        ["text" => "Conference is open for paper submission.", "link" => "#"],
+        ["text" => "Winners of IEI BLC-FCRIT excellence awards announced soon.", "link" => "#"],
+        ["text" => "Important dates updated.", "link" => "#"],
+        ["text" => "Early bird registration deadline approaching!", "link" => "#"],
+        ["text" => "New keynote speaker announced for ICNTE-2025.", "link" => "#"]
+    ];
+}
 ?>
 
 <main>
@@ -65,18 +87,9 @@ include 'header.php';
                         <div class="updates-scroll mt-2" style="height: calc(100% - 60px);">
                             <div class="updates-content">
                                 <?php
-                                    $updates = [
-                                        ["text" => "Download ICNTE-2025 Conference Brochure.", "link" => "#"],
-                                        ["text" => "Conference is open for paper submission.", "link" => "#"],
-                                        ["text" => "Winners of IEI BLC-FCRIT excellence awards announced soon.", "link" => "#"],
-                                        ["text" => "Important dates updated.", "link" => "#"],
-                                        ["text" => "Early bird registration deadline approaching!", "link" => "#"],
-                                        ["text" => "New keynote speaker announced for ICNTE-2025.", "link" => "#"]
-                                    ];
-
                                     foreach ($updates as $update) {
                                         echo '<div class="py-2">
-                                                <a href="' . $update['link'] . '" class="text-blue-600 hover:underline">' . $update['text'] . '</a>
+                                                <a href="' . htmlspecialchars($update['link']) . '" class="text-blue-600 hover:underline">' . htmlspecialchars($update['text']) . '</a>
                                               </div>';
                                     }
                                 ?>
@@ -96,7 +109,7 @@ include 'header.php';
                 <?php
                     foreach ($updates as $update) {
                         echo '<div class="py-2">
-                                <a href="' . $update['link'] . '" class="text-blue-600 hover:underline">' . $update['text'] . '</a>
+                                <a href="' . htmlspecialchars($update['link']) . '" class="text-blue-600 hover:underline">' . htmlspecialchars($update['text']) . '</a>
                               </div>';
                     }
                 ?>
