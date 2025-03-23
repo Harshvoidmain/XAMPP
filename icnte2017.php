@@ -93,15 +93,6 @@
 
 <!-- Vanilla JS Scripts -->
 <script>
-  document.querySelectorAll('a, h2').forEach((el) => {
-    el.addEventListener('mouseenter', () => {
-      el.querySelector('span').style.transform = 'scaleX(1)';
-    });
-    el.addEventListener('mouseleave', () => {
-      el.querySelector('span').style.transform = 'scaleX(0)';
-    });
-  });
-</script>
 
 // Modal Gallery Functionality
 var slideIndex = 1;

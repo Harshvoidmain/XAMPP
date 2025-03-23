@@ -29,8 +29,34 @@
   <hr class="my-4 border-t-2 border-gray-300">
 </div>
 
-<!-- Advisory Committee Table -->
-<div class="container mx-auto px-4">
+<!-- Search Bar -->
+<div class="container mx-auto px-4 mb-4">
+  <div class="relative">
+    <input 
+      type="text" 
+      id="searchInput" 
+      onkeyup="filterTable()" 
+      placeholder="Search" 
+      class="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition duration-200"
+    />
+    <svg 
+      xmlns="http://www.w3.org/2000/svg" 
+      class="absolute right-4 top-3 h-5 w-5 text-gray-400 pointer-events-none" 
+      viewBox="0 0 20 20" 
+      fill="currentColor"
+    >
+      <path 
+        fill-rule="evenodd" 
+        d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.472 4.472l3.504 3.504a1 1 0 01-1.414 1.414l-3.504-3.504A6 6 0 012 8z" 
+        clip-rule="evenodd" 
+      />
+    </svg>
+  </div>
+</div>
+
+
+<!-- Reviewers Table -->
+<div class="container mx-auto px-4 mb-16">
   <div class="overflow-x-auto">
     <table id="reviewersTable" class="min-w-full bg-white border border-gray-200">
       <thead class="bg-gray-200">
