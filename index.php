@@ -62,7 +62,7 @@ if($updates_result && mysqli_num_rows($updates_result) > 0) {
                                         <li class="splide__slide">
                                             <div class="carousel-box bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transition-transform transform hover:scale-105">
                                                 <img src="images/user.jpg" alt="Speaker 2" class="w-24 h-24 rounded-full mx-auto mb-2">
-                                                <h3 class="text-xl font-semibold">Dr. Jane Smith</h3>
+                                                <h3 class="text-xl font-semibold">Dr. ABC </h3>
                                                 <p class="text-sm opacity-80">Researcher, Stanford</p>
                                                 <p class="text-sm opacity-80">Topic: Renewable Energy</p>
                                             </div>
@@ -70,7 +70,7 @@ if($updates_result && mysqli_num_rows($updates_result) > 0) {
                                         <li class="splide__slide">
                                             <div class="carousel-box bg-white/10 backdrop-blur-sm rounded-lg p-4 text-center transition-transform transform hover:scale-105">
                                                 <img src="images/user.jpg" alt="Speaker 3" class="w-24 h-24 rounded-full mx-auto mb-2">
-                                                <h3 class="text-xl font-semibold">Dr. Alan Turing</h3>
+                                                <h3 class="text-xl font-semibold">Dr. DFE</h3>
                                                 <p class="text-sm opacity-80">Scientist, Cambridge</p>
                                                 <p class="text-sm opacity-80">Topic: Quantum Computing</p>
                                             </div>
@@ -374,7 +374,7 @@ if($updates_result && mysqli_num_rows($updates_result) > 0) {
                 <div>
                     <h2 class="text-3xl font-bold text-gray-900 mb-6">About the Institute</h2>
                     <p class="text-gray-600 leading-relaxed about-text" id="institute-text">
-                        Agnel charities' Fr. C. Rodrigues Institute of Technology, Vashi, was established in 1994 in the heart of Navi Mumbai, Vashi, as a part of Agnel Technical Education Complex. The aim of the Institute is to provide quality technical education in addition to inculcating moral values in its students.
+                        Agnel Charities' Fr. C. Rodrigues Institute of Technology, Vashi, was established in 1994 in the heart of Navi Mumbai, Vashi, as a part of Agnel Technical Education Complex. The aim of the Institute is to provide quality technical education in addition to inculcating moral values in its students.
                         <span class="hidden-content">Though the reputation of the institute rests mainly on the high quality, value-based technical education that it imparts, it has to its credit an invigorating, well-maintained campus, and comprehensive facilities. An Innovation and Product Development Centre is set up in the institute premises with industry grade infrastructure to encourage and support students and faculty members, to make their ideas and innovations a reality.
                         The institute is granted autonomy status by UGC from the academic year 2024-2025 onwards. The institute offers 05 undergraduate engineering programs (i.e. Computer, Mechanical, Electronics & Telecommunication, Electrical, and Information Technology) and 02 postgraduate engineering programs (Mechanical and Electrical). The institute is also a Mumbai University approved Research Centre in 03 engineering disciplines (i.e. Mechanical, Electronics & Telecommunication, and Electrical). The religious minority status has been granted to the institute and the institute is accredited by the National Board of Accreditation (NBA) and National Assessment and Accreditation Council (NAAC).
                         Click here for more details about the institute: www.fcrit.ac.in</span>

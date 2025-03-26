@@ -18,13 +18,14 @@
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
         <img src="images/logo5.png" alt="ICNTE Logo" class="w-16 h-16 md:w-24 md:h-24" />
         <div class="max-w-2xl text-center sm:text-left">
-          <h3 class="font-bold text-gray-900 mt-1">
-          Agnel Charities Fr. C. Rodrigues Institute of Technology
+          <h3 class="font-bold text-gray-900 mt-6">
+          Agnel Charities<br>
+          Fr. C. Rodrigues Institute of Technology
           </h3>
-          <p class="text-blue-700 font-semibold text-sm md:text-base">
-                     Sector 9A, Vashi, Navi Mumbai, Maharashtra 400703            
+          <p class="text-blue-700 font-semibold text-sm sm:text-base">
+          Sector 9A, Vashi, Navi Mumbai, Maharashtra 400703            
                           </p>
-          <p class="text-gray-500 mt-1 text-xs md:text-sm">31st January-1st February 2025</p>
+          <h2 class="text-gray-500 mt-1 text-xs md:text-sm">31st January-1st February 2025</h2>
         </div>
       </div>
       <img src="images/college_logo1.png" alt="College Logo" class="w-16 h-16 md:w-24 md:h-24 order-first md:order-last" />
@@ -133,7 +134,7 @@
         <!-- Login Button -->
         <a href="admin_login.php" target="_blank" class="hidden md:flex items-center bg-blue-600 hover:bg-blue-700 text-white px-4 py-1.5 rounded-lg transition-all duration-300 ml-4">
           <i class="fas fa-sign-in-alt mr-2"></i>
-          Login
+          Admin Login
         </a>
       </div>
     </div>
@@ -257,7 +258,7 @@
           <li class="px-4 pt-4">
             <a href="admin_login.php" target="_blank" class="block w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-all duration-300 text-center">
               <i class="fas fa-sign-in-alt mr-2"></i>
-              Login
+              Admin Login
             </a>
           </li>
         </ul>
