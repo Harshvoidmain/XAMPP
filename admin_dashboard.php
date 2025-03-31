@@ -868,8 +868,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                             <thead>
                                 <tr>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Role</th>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Department</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
                                 </tr>
                             </thead>
@@ -880,8 +878,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 ?>
                                 <tr class="border-b hover:bg-gray-50">
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['name']); ?></td>
-                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['role']); ?></td>
-                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['department']); ?></td>
                                     <td class="py-2 px-4">
                                         <div class="flex space-x-2">
                                             <a href="admin_edit.php?type=organizing&id=<?php echo $member['id']; ?>" class="text-blue-600 hover:text-blue-800">
@@ -898,7 +894,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
+                                    <td colspan="2" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
