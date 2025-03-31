@@ -572,11 +572,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                             <input type="text" id="track_name" name="track_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                         </div>
                         
-                        <div class="mb-4">
-                            <label for="track_description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-                            <textarea id="track_description" name="track_description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
-                        </div>
-                        
                         <div class="flex justify-end">
                             <button type="button" id="cancel-track" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
                             <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Track</button>
@@ -592,7 +587,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 <tr>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Track Name</th>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Description</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
                                 </tr>
                             </thead>
@@ -604,7 +598,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 <tr class="border-b hover:bg-gray-50">
                                     <td class="py-2 px-4"><?php echo $track['tid']; ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($track['trackname']); ?></td>
-                                    <td class="py-2 px-4"><?php echo isset($track['description']) ? htmlspecialchars($track['description']) : ''; ?></td>
                                     <td class="py-2 px-4">
                                         <div class="flex space-x-2">
                                             <a href="admin_edit.php?type=track&id=<?php echo $track['tid']; ?>" class="text-blue-600 hover:text-blue-800">
@@ -621,7 +614,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No tracks found</td>
+                                    <td colspan="3" class="py-4 px-4 text-center text-gray-500">No tracks found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -868,6 +861,8 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                             <thead>
                                 <tr>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Role</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Department</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
                                 </tr>
                             </thead>
@@ -878,6 +873,8 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 ?>
                                 <tr class="border-b hover:bg-gray-50">
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['name']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['role']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['department']); ?></td>
                                     <td class="py-2 px-4">
                                         <div class="flex space-x-2">
                                             <a href="admin_edit.php?type=organizing&id=<?php echo $member['id']; ?>" class="text-blue-600 hover:text-blue-800">
@@ -894,7 +891,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="2" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
+                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

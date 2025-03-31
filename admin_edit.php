@@ -226,11 +226,6 @@ switch($type) {
                         <input type="text" id="track_name" name="track_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="<?php echo htmlspecialchars($item['trackname']); ?>" required>
                     </div>
                     
-                    <div class="mb-4">
-                        <label for="track_description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
-                        <textarea id="track_description" name="track_description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><?php echo htmlspecialchars($item['description']); ?></textarea>
-                    </div>
-                    
                     <div class="flex justify-end">
                         <a href="admin_dashboard.php#tracks" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors inline-block">Cancel</a>
                         <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update</button>

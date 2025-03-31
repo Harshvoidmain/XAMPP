@@ -135,11 +135,10 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             
         // Tracks & Sessions actions
         case 'add_track':
-            if(isset($_POST['track_name']) && isset($_POST['track_description'])) {
+            if(isset($_POST['track_name'])) {
                 $name = mysqli_real_escape_string($db, $_POST['track_name']);
-                $description = mysqli_real_escape_string($db, $_POST['track_description']);
                 
-                $query = "INSERT INTO tracks (trackname, description, created_by) VALUES ('$name', '$description', $admin_id)";
+                $query = "INSERT INTO tracks (trackname, created_by) VALUES ('$name', $admin_id)";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Track added successfully!";
                 } else {
@@ -150,10 +149,9 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             break;
             
         case 'edit_track':
-            if(isset($_POST['track_id']) && isset($_POST['track_name']) && isset($_POST['track_description'])) {
+            if(isset($_POST['track_id']) && isset($_POST['track_name'])) {
                 $id = mysqli_real_escape_string($db, $_POST['track_id']);
                 $name = mysqli_real_escape_string($db, $_POST['track_name']);
-                $description = mysqli_real_escape_string($db, $_POST['track_description']);
                 
                 // Check if table exists
                 $table_check_query = "SHOW TABLES LIKE 'tracks'";
@@ -165,7 +163,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                     exit();
                 }
                 
-                $query = "UPDATE tracks SET trackname = '$name', description = '$description' WHERE tid = $id";
+                $query = "UPDATE tracks SET trackname = '$name' WHERE tid = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Track updated successfully!";
                 } else {
