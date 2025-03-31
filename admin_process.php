@@ -155,6 +155,16 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $name = mysqli_real_escape_string($db, $_POST['track_name']);
                 $description = mysqli_real_escape_string($db, $_POST['track_description']);
                 
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'tracks'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    $_SESSION['success_message'] = "Error: Tracks table doesn't exist";
+                    header('Location: admin_dashboard.php#tracks');
+                    exit();
+                }
+                
                 $query = "UPDATE tracks SET trackname = '$name', description = '$description' WHERE tid = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Track updated successfully!";
@@ -203,6 +213,16 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $event_name = mysqli_real_escape_string($db, $_POST['event_name']);
                 $event_date = mysqli_real_escape_string($db, $_POST['event_date']);
                 $is_highlighted = isset($_POST['is_highlighted']) ? intval($_POST['is_highlighted']) : 0;
+                
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'important_dates'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    $_SESSION['success_message'] = "Error: Important dates table doesn't exist";
+                    header('Location: admin_dashboard.php#dates');
+                    exit();
+                }
                 
                 $query = "UPDATE important_dates SET event = '$event_name', date = '$event_date', 
                           is_highlighted = $is_highlighted WHERE id = $id";
@@ -280,6 +300,16 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $designation = mysqli_real_escape_string($db, $_POST['advisory_designation']);
                 $affiliation = mysqli_real_escape_string($db, $_POST['advisory_affiliation']);
                 
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'advisory_committees'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    $_SESSION['success_message'] = "Error: Advisory committees table doesn't exist";
+                    header('Location: admin_dashboard.php#committees');
+                    exit();
+                }
+                
                 $query = "UPDATE advisory_committees SET name = '$name', designation = '$designation', 
                           institute = '$affiliation' WHERE id = $id";
                 if(mysqli_query($db, $query)) {
@@ -330,6 +360,16 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $role = mysqli_real_escape_string($db, $_POST['organizing_role']);
                 $department = mysqli_real_escape_string($db, $_POST['organizing_department']);
                 
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'organizing_committees'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    $_SESSION['success_message'] = "Error: Organizing committees table doesn't exist";
+                    header('Location: admin_dashboard.php#committees');
+                    exit();
+                }
+                
                 $query = "UPDATE organizing_committees SET name = '$name', role = '$role', 
                           department = '$department' WHERE id = $id";
                 if(mysqli_query($db, $query)) {
@@ -379,6 +419,16 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $name = mysqli_real_escape_string($db, $_POST['reviewer_name']);
                 $specialty = mysqli_real_escape_string($db, $_POST['reviewer_specialty']);
                 $institution = mysqli_real_escape_string($db, $_POST['reviewer_institution']);
+                
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'reviewer'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    $_SESSION['success_message'] = "Error: Reviewers table doesn't exist";
+                    header('Location: admin_dashboard.php#reviewers');
+                    exit();
+                }
                 
                 $query = "UPDATE reviewer SET rewname = '$name', post = '$specialty', 
                           organization = '$institution' WHERE id = $id";
