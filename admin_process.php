@@ -139,7 +139,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $name = mysqli_real_escape_string($db, $_POST['track_name']);
                 $description = mysqli_real_escape_string($db, $_POST['track_description']);
                 
-                $query = "INSERT INTO site_tracks (name, description, created_by) VALUES ('$name', '$description', $admin_id)";
+                $query = "INSERT INTO tracks (trackname, description, created_by) VALUES ('$name', '$description', $admin_id)";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Track added successfully!";
                 } else {
@@ -155,7 +155,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $name = mysqli_real_escape_string($db, $_POST['track_name']);
                 $description = mysqli_real_escape_string($db, $_POST['track_description']);
                 
-                $query = "UPDATE site_tracks SET name = '$name', description = '$description' WHERE id = $id";
+                $query = "UPDATE tracks SET trackname = '$name', description = '$description' WHERE tid = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Track updated successfully!";
                 } else {
@@ -169,7 +169,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             if(isset($_GET['id'])) {
                 $id = mysqli_real_escape_string($db, $_GET['id']);
                 
-                $query = "DELETE FROM site_tracks WHERE id = $id";
+                $query = "DELETE FROM tracks WHERE tid = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Track deleted successfully!";
                 } else {
@@ -186,7 +186,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $event_date = mysqli_real_escape_string($db, $_POST['event_date']);
                 $is_highlighted = isset($_POST['is_highlighted']) ? intval($_POST['is_highlighted']) : 0;
                 
-                $query = "INSERT INTO site_dates (event_name, event_date, is_highlighted, created_by) 
+                $query = "INSERT INTO important_dates (event, date, is_highlighted, created_by) 
                           VALUES ('$event_name', '$event_date', $is_highlighted, $admin_id)";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Date added successfully!";
@@ -204,7 +204,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $event_date = mysqli_real_escape_string($db, $_POST['event_date']);
                 $is_highlighted = isset($_POST['is_highlighted']) ? intval($_POST['is_highlighted']) : 0;
                 
-                $query = "UPDATE site_dates SET event_name = '$event_name', event_date = '$event_date', 
+                $query = "UPDATE important_dates SET event = '$event_name', date = '$event_date', 
                           is_highlighted = $is_highlighted WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Date updated successfully!";
@@ -219,7 +219,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             if(isset($_GET['id'])) {
                 $id = mysqli_real_escape_string($db, $_GET['id']);
                 
-                $query = "DELETE FROM site_dates WHERE id = $id";
+                $query = "DELETE FROM important_dates WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Date deleted successfully!";
                 } else {
@@ -235,15 +235,15 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $publication_info = $_POST['publication_info']; // Not escaping to allow HTML
                 
                 // Check if record exists
-                $check_query = "SELECT id FROM site_publications LIMIT 1";
+                $check_query = "SELECT id FROM publications LIMIT 1";
                 $check_result = mysqli_query($db, $check_query);
                 
                 if(mysqli_num_rows($check_result) > 0) {
                     $row = mysqli_fetch_assoc($check_result);
-                    $query = "UPDATE site_publications SET content = '$publication_info', updated_by = $admin_id, 
+                    $query = "UPDATE publications SET content = '$publication_info', updated_by = $admin_id, 
                               updated_at = NOW() WHERE id = " . $row['id'];
                 } else {
-                    $query = "INSERT INTO site_publications (content, created_by) VALUES ('$publication_info', $admin_id)";
+                    $query = "INSERT INTO publications (content, created_by) VALUES ('$publication_info', $admin_id)";
                 }
                 
                 if(mysqli_query($db, $query)) {
@@ -262,7 +262,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $designation = mysqli_real_escape_string($db, $_POST['advisory_designation']);
                 $affiliation = mysqli_real_escape_string($db, $_POST['advisory_affiliation']);
                 
-                $query = "INSERT INTO advisory_committee (name, designation, affiliation, created_by) 
+                $query = "INSERT INTO advisory_committees (name, designation, institute, created_by) 
                           VALUES ('$name', '$designation', '$affiliation', $admin_id)";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Advisory committee member added successfully!";
@@ -280,8 +280,8 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $designation = mysqli_real_escape_string($db, $_POST['advisory_designation']);
                 $affiliation = mysqli_real_escape_string($db, $_POST['advisory_affiliation']);
                 
-                $query = "UPDATE advisory_committee SET name = '$name', designation = '$designation', 
-                          affiliation = '$affiliation' WHERE id = $id";
+                $query = "UPDATE advisory_committees SET name = '$name', designation = '$designation', 
+                          institute = '$affiliation' WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Advisory committee member updated successfully!";
                 } else {
@@ -295,7 +295,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             if(isset($_GET['id'])) {
                 $id = mysqli_real_escape_string($db, $_GET['id']);
                 
-                $query = "DELETE FROM advisory_committee WHERE id = $id";
+                $query = "DELETE FROM advisory_committees WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Advisory committee member deleted successfully!";
                 } else {
@@ -312,7 +312,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $role = mysqli_real_escape_string($db, $_POST['organizing_role']);
                 $department = mysqli_real_escape_string($db, $_POST['organizing_department']);
                 
-                $query = "INSERT INTO organizing_committee (name, role, department, created_by) 
+                $query = "INSERT INTO organizing_committees (name, role, department, created_by) 
                           VALUES ('$name', '$role', '$department', $admin_id)";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Organizing committee member added successfully!";
@@ -330,7 +330,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $role = mysqli_real_escape_string($db, $_POST['organizing_role']);
                 $department = mysqli_real_escape_string($db, $_POST['organizing_department']);
                 
-                $query = "UPDATE organizing_committee SET name = '$name', role = '$role', 
+                $query = "UPDATE organizing_committees SET name = '$name', role = '$role', 
                           department = '$department' WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Organizing committee member updated successfully!";
@@ -345,7 +345,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             if(isset($_GET['id'])) {
                 $id = mysqli_real_escape_string($db, $_GET['id']);
                 
-                $query = "DELETE FROM organizing_committee WHERE id = $id";
+                $query = "DELETE FROM organizing_committees WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Organizing committee member deleted successfully!";
                 } else {
@@ -362,7 +362,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $specialty = mysqli_real_escape_string($db, $_POST['reviewer_specialty']);
                 $institution = mysqli_real_escape_string($db, $_POST['reviewer_institution']);
                 
-                $query = "INSERT INTO reviewers_panel (name, specialty, institution, created_by) 
+                $query = "INSERT INTO reviewer (rewname, post, organization, created_by) 
                           VALUES ('$name', '$specialty', '$institution', $admin_id)";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Reviewer added successfully!";
@@ -380,8 +380,8 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $specialty = mysqli_real_escape_string($db, $_POST['reviewer_specialty']);
                 $institution = mysqli_real_escape_string($db, $_POST['reviewer_institution']);
                 
-                $query = "UPDATE reviewers_panel SET name = '$name', specialty = '$specialty', 
-                          institution = '$institution' WHERE id = $id";
+                $query = "UPDATE reviewer SET rewname = '$name', post = '$specialty', 
+                          organization = '$institution' WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Reviewer updated successfully!";
                 } else {
@@ -395,7 +395,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             if(isset($_GET['id'])) {
                 $id = mysqli_real_escape_string($db, $_GET['id']);
                 
-                $query = "DELETE FROM reviewers_panel WHERE id = $id";
+                $query = "DELETE FROM reviewer WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Reviewer deleted successfully!";
                 } else {
@@ -435,6 +435,29 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             if(isset($_POST['payment_instructions'])) {
                 $payment_instructions = $_POST['payment_instructions']; // Not escaping to allow HTML
                 
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'payment_instructions'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    // Create table if it doesn't exist
+                    $create_table_query = "CREATE TABLE payment_instructions (
+                        id INT(11) NOT NULL AUTO_INCREMENT,
+                        content TEXT,
+                        created_by INT(11),
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        updated_by INT(11),
+                        updated_at TIMESTAMP NULL,
+                        PRIMARY KEY (id)
+                    )";
+                    
+                    if(!mysqli_query($db, $create_table_query)) {
+                        $_SESSION['success_message'] = "Error creating payment_instructions table: " . mysqli_error($db);
+                        header('Location: admin_dashboard.php#fees');
+                        exit();
+                    }
+                }
+                
                 // Check if record exists
                 $check_query = "SELECT id FROM payment_instructions LIMIT 1";
                 $check_result = mysqli_query($db, $check_query);
@@ -462,6 +485,31 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $title = mysqli_real_escape_string($db, $_POST['download_title']);
                 $description = mysqli_real_escape_string($db, $_POST['download_description']);
                 $file = $_FILES['download_file'];
+                
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'site_downloads'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    // Create table if it doesn't exist
+                    $create_table_query = "CREATE TABLE site_downloads (
+                        id INT(11) NOT NULL AUTO_INCREMENT,
+                        title VARCHAR(255) NOT NULL,
+                        description TEXT,
+                        file_path VARCHAR(255) NOT NULL,
+                        created_by INT(11),
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        updated_by INT(11),
+                        updated_at TIMESTAMP NULL,
+                        PRIMARY KEY (id)
+                    )";
+                    
+                    if(!mysqli_query($db, $create_table_query)) {
+                        $_SESSION['success_message'] = "Error creating site_downloads table: " . mysqli_error($db);
+                        header('Location: admin_dashboard.php#downloads');
+                        exit();
+                    }
+                }
                 
                 // Create uploads directory if it doesn't exist
                 $upload_dir = "upload/downloads/";
@@ -495,6 +543,16 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
         case 'delete_download':
             if(isset($_GET['id'])) {
                 $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                // Check if table exists
+                $table_check_query = "SHOW TABLES LIKE 'site_downloads'";
+                $table_check_result = mysqli_query($db, $table_check_query);
+                
+                if(mysqli_num_rows($table_check_result) == 0) {
+                    $_SESSION['success_message'] = "Error: Downloads table doesn't exist";
+                    header('Location: admin_dashboard.php#downloads');
+                    exit();
+                }
                 
                 // Get the file path before deleting the record
                 $query = "SELECT file_path FROM site_downloads WHERE id = $id";

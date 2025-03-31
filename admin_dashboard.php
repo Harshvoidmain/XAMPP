@@ -42,6 +42,59 @@ $updates_result = mysqli_query($db, $updates_query);
 // Get brochures for display
 $brochures_query = "SELECT * FROM site_brochures ORDER BY created_at DESC";
 $brochures_result = mysqli_query($db, $brochures_query);
+
+// Get tracks for display
+$tracks_query = "SELECT * FROM tracks ORDER BY tid DESC";
+$tracks_result = mysqli_query($db, $tracks_query);
+
+// Get important dates for display
+$dates_query = "SELECT * FROM important_dates ORDER BY date ASC";
+$dates_result = mysqli_query($db, $dates_query);
+
+// Get publications information
+$publications_query = "SELECT * FROM publications LIMIT 1";
+$publications_result = mysqli_query($db, $publications_query);
+$publications_data = mysqli_fetch_assoc($publications_result);
+
+// Get advisory committee members
+$advisory_query = "SELECT * FROM advisory_committees ORDER BY name ASC";
+$advisory_result = mysqli_query($db, $advisory_query);
+
+// Get organizing committee members
+$organizing_query = "SELECT * FROM organizing_committees ORDER BY name ASC";
+$organizing_result = mysqli_query($db, $organizing_query);
+
+// Get reviewers panel
+$reviewers_query = "SELECT * FROM reviewer ORDER BY rewname ASC";
+$reviewers_result = mysqli_query($db, $reviewers_query);
+
+// Get registration fees content
+$fees_query = "SELECT * FROM registration_fees LIMIT 1";
+$fees_result = mysqli_query($db, $fees_query);
+$fees_data = mysqli_fetch_assoc($fees_result);
+
+// Check if payment_instructions table exists
+$table_exists_query = "SHOW TABLES LIKE 'payment_instructions'";
+$table_exists_result = mysqli_query($db, $table_exists_query);
+$payment_data = null;
+
+if(mysqli_num_rows($table_exists_result) > 0) {
+    // Get payment instructions if table exists
+    $payment_query = "SELECT * FROM payment_instructions LIMIT 1";
+    $payment_result = mysqli_query($db, $payment_query);
+    $payment_data = mysqli_fetch_assoc($payment_result);
+}
+
+// Check if site_downloads table exists
+$downloads_exists_query = "SHOW TABLES LIKE 'site_downloads'";
+$downloads_exists_result = mysqli_query($db, $downloads_exists_query);
+$downloads_result = null;
+
+if(mysqli_num_rows($downloads_exists_result) > 0) {
+    // Get downloads if table exists
+    $downloads_query = "SELECT * FROM site_downloads ORDER BY created_at DESC";
+    $downloads_result = mysqli_query($db, $downloads_query);
+}
 ?>
 
 <!DOCTYPE html>
@@ -544,10 +597,33 @@ $brochures_result = mysqli_query($db, $brochures_query);
                                 </tr>
                             </thead>
                             <tbody id="tracks-table-body">
-                                <!-- Tracks will be loaded here -->
-                                <tr>
-                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">Loading tracks...</td>
+                                <?php 
+                                if(mysqli_num_rows($tracks_result) > 0) {
+                                    while($track = mysqli_fetch_assoc($tracks_result)) { 
+                                ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-4"><?php echo $track['tid']; ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($track['trackname']); ?></td>
+                                    <td class="py-2 px-4"><?php echo isset($track['description']) ? htmlspecialchars($track['description']) : ''; ?></td>
+                                    <td class="py-2 px-4">
+                                        <div class="flex space-x-2">
+                                            <a href="admin_edit.php?type=track&id=<?php echo $track['tid']; ?>" class="text-blue-600 hover:text-blue-800">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="admin_process.php?action=delete_track&id=<?php echo $track['tid']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this track?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
+                                <?php 
+                                    }
+                                } else { 
+                                ?>
+                                <tr>
+                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No tracks found</td>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -608,10 +684,36 @@ $brochures_result = mysqli_query($db, $brochures_query);
                                 </tr>
                             </thead>
                             <tbody id="dates-table-body">
-                                <!-- Dates will be loaded here -->
-                                <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading dates...</td>
+                                <?php 
+                                if(mysqli_num_rows($dates_result) > 0) {
+                                    while($date = mysqli_fetch_assoc($dates_result)) { 
+                                ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-4"><?php echo isset($date['id']) ? $date['id'] : ''; ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($date['event']); ?></td>
+                                    <td class="py-2 px-4"><?php echo date('M d, Y', strtotime($date['date'])); ?></td>
+                                    <td class="py-2 px-4">
+                                        <?php echo (isset($date['is_highlighted']) && $date['is_highlighted'] == 1) ? '<span class="bg-green-100 text-green-800 text-xs font-medium px-2.5 py-0.5 rounded">Yes</span>' : 'No'; ?>
+                                    </td>
+                                    <td class="py-2 px-4">
+                                        <div class="flex space-x-2">
+                                            <a href="admin_edit.php?type=date&id=<?php echo $date['id']; ?>" class="text-blue-600 hover:text-blue-800">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="admin_process.php?action=delete_date&id=<?php echo $date['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this date?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
+                                <?php 
+                                    }
+                                } else { 
+                                ?>
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">No dates found</td>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -629,7 +731,7 @@ $brochures_result = mysqli_query($db, $brochures_query);
                         
                         <div class="mb-4">
                             <label for="publication_info" class="block text-gray-700 text-sm font-bold mb-2">Publication Information</label>
-                            <textarea id="publication_info" name="publication_info" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            <textarea id="publication_info" name="publication_info" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><?php echo isset($publications_data['content']) ? $publications_data['content'] : ''; ?></textarea>
                             <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting</p>
                         </div>
                         
@@ -693,10 +795,34 @@ $brochures_result = mysqli_query($db, $brochures_query);
                                 </tr>
                             </thead>
                             <tbody id="advisory-table-body">
-                                <!-- Advisory members will be loaded here -->
-                                <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading members...</td>
+                                <?php 
+                                if(mysqli_num_rows($advisory_result) > 0) {
+                                    while($member = mysqli_fetch_assoc($advisory_result)) { 
+                                ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-4"><?php echo $member['id']; ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['name']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['designation']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['institute']); ?></td>
+                                    <td class="py-2 px-4">
+                                        <div class="flex space-x-2">
+                                            <a href="admin_edit.php?type=advisory&id=<?php echo $member['id']; ?>" class="text-blue-600 hover:text-blue-800">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="admin_process.php?action=delete_advisory_member&id=<?php echo $member['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this member?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
+                                <?php 
+                                    }
+                                } else { 
+                                ?>
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">No advisory committee members found</td>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -751,10 +877,34 @@ $brochures_result = mysqli_query($db, $brochures_query);
                                 </tr>
                             </thead>
                             <tbody id="organizing-table-body">
-                                <!-- Organizing members will be loaded here -->
-                                <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading members...</td>
+                                <?php 
+                                if(mysqli_num_rows($organizing_result) > 0) {
+                                    while($member = mysqli_fetch_assoc($organizing_result)) { 
+                                ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-4"><?php echo $member['id']; ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['name']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['role']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['department']); ?></td>
+                                    <td class="py-2 px-4">
+                                        <div class="flex space-x-2">
+                                            <a href="admin_edit.php?type=organizing&id=<?php echo $member['id']; ?>" class="text-blue-600 hover:text-blue-800">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="admin_process.php?action=delete_organizing_member&id=<?php echo $member['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this member?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
+                                <?php 
+                                    }
+                                } else { 
+                                ?>
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -813,10 +963,34 @@ $brochures_result = mysqli_query($db, $brochures_query);
                                 </tr>
                             </thead>
                             <tbody id="reviewers-table-body">
-                                <!-- Reviewers will be loaded here -->
-                                <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading reviewers...</td>
+                                <?php 
+                                if(mysqli_num_rows($reviewers_result) > 0) {
+                                    while($reviewer = mysqli_fetch_assoc($reviewers_result)) { 
+                                ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-4"><?php echo $reviewer['id']; ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($reviewer['rewname']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($reviewer['post']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($reviewer['organization']); ?></td>
+                                    <td class="py-2 px-4">
+                                        <div class="flex space-x-2">
+                                            <a href="admin_edit.php?type=reviewer&id=<?php echo $reviewer['id']; ?>" class="text-blue-600 hover:text-blue-800">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="admin_process.php?action=delete_reviewer&id=<?php echo $reviewer['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this reviewer?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
+                                <?php 
+                                    }
+                                } else { 
+                                ?>
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">No reviewers found</td>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
@@ -834,7 +1008,7 @@ $brochures_result = mysqli_query($db, $brochures_query);
                         
                         <div class="mb-4">
                             <label for="fees_info" class="block text-gray-700 text-sm font-bold mb-2">Fees Structure</label>
-                            <textarea id="fees_info" name="fees_info" rows="15" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            <textarea id="fees_info" name="fees_info" rows="15" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><?php echo isset($fees_data['content']) ? $fees_data['content'] : ''; ?></textarea>
                             <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting tables</p>
                         </div>
                         
@@ -851,8 +1025,11 @@ $brochures_result = mysqli_query($db, $brochures_query);
                         
                         <div class="mb-4">
                             <label for="payment_instructions" class="block text-gray-700 text-sm font-bold mb-2">Payment Instructions</label>
-                            <textarea id="payment_instructions" name="payment_instructions" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            <textarea id="payment_instructions" name="payment_instructions" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><?php echo isset($payment_data['content']) ? $payment_data['content'] : ''; ?></textarea>
                             <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting</p>
+                            <?php if(mysqli_num_rows($table_exists_result) == 0): ?>
+                            <p class="text-sm text-red-500 mt-1">Note: The payment_instructions table doesn't exist yet. It will be created when you save.</p>
+                            <?php endif; ?>
                         </div>
                         
                         <div class="flex justify-end">
@@ -913,10 +1090,42 @@ $brochures_result = mysqli_query($db, $brochures_query);
                                 </tr>
                             </thead>
                             <tbody id="downloads-table-body">
-                                <!-- Downloads will be loaded here -->
-                                <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading downloads...</td>
+                                <?php 
+                                if(isset($downloads_result) && mysqli_num_rows($downloads_result) > 0) {
+                                    while($download = mysqli_fetch_assoc($downloads_result)) { 
+                                ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-4"><?php echo $download['id']; ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($download['title']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($download['description']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($download['file_path']); ?></td>
+                                    <td class="py-2 px-4">
+                                        <div class="flex space-x-2">
+                                            <a href="<?php echo $download['file_path']; ?>" target="_blank" class="text-green-600 hover:text-green-800">
+                                                <i class="fas fa-eye"></i>
+                                            </a>
+                                            <a href="admin_process.php?action=delete_download&id=<?php echo $download['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this download item?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
                                 </tr>
+                                <?php 
+                                    }
+                                } else { 
+                                ?>
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">
+                                        <?php 
+                                        if(mysqli_num_rows($downloads_exists_result) == 0) {
+                                            echo "Downloads table doesn't exist yet. Add an item to create it.";
+                                        } else {
+                                            echo "No download items found";
+                                        }
+                                        ?>
+                                    </td>
+                                </tr>
+                                <?php } ?>
                             </tbody>
                         </table>
                     </div>
