@@ -787,7 +787,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                         <table class="min-w-full bg-white">
                             <thead>
                                 <tr>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Designation</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Affiliation</th>
@@ -800,7 +799,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                     while($member = mysqli_fetch_assoc($advisory_result)) { 
                                 ?>
                                 <tr class="border-b hover:bg-gray-50">
-                                    <td class="py-2 px-4"><?php echo $member['id']; ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['name']); ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['designation']); ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['institute']); ?></td>
@@ -820,7 +818,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">No advisory committee members found</td>
+                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No advisory committee members found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -869,7 +867,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                         <table class="min-w-full bg-white">
                             <thead>
                                 <tr>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Role</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Department</th>
@@ -882,7 +879,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                     while($member = mysqli_fetch_assoc($organizing_result)) { 
                                 ?>
                                 <tr class="border-b hover:bg-gray-50">
-                                    <td class="py-2 px-4"><?php echo $member['id']; ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['name']); ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['role']); ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['department']); ?></td>
@@ -902,7 +898,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
+                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -955,7 +951,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                         <table class="min-w-full bg-white">
                             <thead>
                                 <tr>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Specialty</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Institution</th>
@@ -968,16 +963,15 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                     while($reviewer = mysqli_fetch_assoc($reviewers_result)) { 
                                 ?>
                                 <tr class="border-b hover:bg-gray-50">
-                                    <td class="py-2 px-4"><?php echo $reviewer['id']; ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($reviewer['rewname']); ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($reviewer['post']); ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($reviewer['organization']); ?></td>
                                     <td class="py-2 px-4">
                                         <div class="flex space-x-2">
-                                            <a href="admin_edit.php?type=reviewer&id=<?php echo $reviewer['id']; ?>" class="text-blue-600 hover:text-blue-800">
+                                            <a href="admin_edit.php?type=reviewer&id=<?php echo isset($reviewer['id']) ? $reviewer['id'] : (isset($reviewer['rid']) ? $reviewer['rid'] : '0'); ?>" class="text-blue-600 hover:text-blue-800">
                                                 <i class="fas fa-edit"></i>
                                             </a>
-                                            <a href="admin_process.php?action=delete_reviewer&id=<?php echo $reviewer['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this reviewer?')">
+                                            <a href="admin_process.php?action=delete_reviewer&id=<?php echo isset($reviewer['id']) ? $reviewer['id'] : (isset($reviewer['rid']) ? $reviewer['rid'] : '0'); ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this reviewer?')">
                                                 <i class="fas fa-trash"></i>
                                             </a>
                                         </div>
@@ -988,7 +982,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">No reviewers found</td>
+                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No reviewers found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
