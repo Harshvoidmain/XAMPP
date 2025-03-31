@@ -133,6 +133,391 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             header('Location: admin_dashboard.php#brochures');
             break;
             
+        // Tracks & Sessions actions
+        case 'add_track':
+            if(isset($_POST['track_name']) && isset($_POST['track_description'])) {
+                $name = mysqli_real_escape_string($db, $_POST['track_name']);
+                $description = mysqli_real_escape_string($db, $_POST['track_description']);
+                
+                $query = "INSERT INTO site_tracks (name, description, created_by) VALUES ('$name', '$description', $admin_id)";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Track added successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#tracks');
+            break;
+            
+        case 'edit_track':
+            if(isset($_POST['track_id']) && isset($_POST['track_name']) && isset($_POST['track_description'])) {
+                $id = mysqli_real_escape_string($db, $_POST['track_id']);
+                $name = mysqli_real_escape_string($db, $_POST['track_name']);
+                $description = mysqli_real_escape_string($db, $_POST['track_description']);
+                
+                $query = "UPDATE site_tracks SET name = '$name', description = '$description' WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Track updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#tracks');
+            break;
+            
+        case 'delete_track':
+            if(isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                $query = "DELETE FROM site_tracks WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Track deleted successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#tracks');
+            break;
+            
+        // Important Dates actions
+        case 'add_date':
+            if(isset($_POST['event_name']) && isset($_POST['event_date'])) {
+                $event_name = mysqli_real_escape_string($db, $_POST['event_name']);
+                $event_date = mysqli_real_escape_string($db, $_POST['event_date']);
+                $is_highlighted = isset($_POST['is_highlighted']) ? intval($_POST['is_highlighted']) : 0;
+                
+                $query = "INSERT INTO site_dates (event_name, event_date, is_highlighted, created_by) 
+                          VALUES ('$event_name', '$event_date', $is_highlighted, $admin_id)";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Date added successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#dates');
+            break;
+            
+        case 'edit_date':
+            if(isset($_POST['date_id']) && isset($_POST['event_name']) && isset($_POST['event_date'])) {
+                $id = mysqli_real_escape_string($db, $_POST['date_id']);
+                $event_name = mysqli_real_escape_string($db, $_POST['event_name']);
+                $event_date = mysqli_real_escape_string($db, $_POST['event_date']);
+                $is_highlighted = isset($_POST['is_highlighted']) ? intval($_POST['is_highlighted']) : 0;
+                
+                $query = "UPDATE site_dates SET event_name = '$event_name', event_date = '$event_date', 
+                          is_highlighted = $is_highlighted WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Date updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#dates');
+            break;
+            
+        case 'delete_date':
+            if(isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                $query = "DELETE FROM site_dates WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Date deleted successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#dates');
+            break;
+            
+        // Publications action
+        case 'update_publications':
+            if(isset($_POST['publication_info'])) {
+                $publication_info = $_POST['publication_info']; // Not escaping to allow HTML
+                
+                // Check if record exists
+                $check_query = "SELECT id FROM site_publications LIMIT 1";
+                $check_result = mysqli_query($db, $check_query);
+                
+                if(mysqli_num_rows($check_result) > 0) {
+                    $row = mysqli_fetch_assoc($check_result);
+                    $query = "UPDATE site_publications SET content = '$publication_info', updated_by = $admin_id, 
+                              updated_at = NOW() WHERE id = " . $row['id'];
+                } else {
+                    $query = "INSERT INTO site_publications (content, created_by) VALUES ('$publication_info', $admin_id)";
+                }
+                
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Publications information updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#publications');
+            break;
+            
+        // Advisory Committee actions
+        case 'add_advisory_member':
+            if(isset($_POST['advisory_name']) && isset($_POST['advisory_designation']) && isset($_POST['advisory_affiliation'])) {
+                $name = mysqli_real_escape_string($db, $_POST['advisory_name']);
+                $designation = mysqli_real_escape_string($db, $_POST['advisory_designation']);
+                $affiliation = mysqli_real_escape_string($db, $_POST['advisory_affiliation']);
+                
+                $query = "INSERT INTO advisory_committee (name, designation, affiliation, created_by) 
+                          VALUES ('$name', '$designation', '$affiliation', $admin_id)";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Advisory committee member added successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#committees');
+            break;
+            
+        case 'edit_advisory_member':
+            if(isset($_POST['advisory_id']) && isset($_POST['advisory_name']) && isset($_POST['advisory_designation']) && isset($_POST['advisory_affiliation'])) {
+                $id = mysqli_real_escape_string($db, $_POST['advisory_id']);
+                $name = mysqli_real_escape_string($db, $_POST['advisory_name']);
+                $designation = mysqli_real_escape_string($db, $_POST['advisory_designation']);
+                $affiliation = mysqli_real_escape_string($db, $_POST['advisory_affiliation']);
+                
+                $query = "UPDATE advisory_committee SET name = '$name', designation = '$designation', 
+                          affiliation = '$affiliation' WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Advisory committee member updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#committees');
+            break;
+            
+        case 'delete_advisory_member':
+            if(isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                $query = "DELETE FROM advisory_committee WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Advisory committee member deleted successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#committees');
+            break;
+            
+        // Organizing Committee actions
+        case 'add_organizing_member':
+            if(isset($_POST['organizing_name']) && isset($_POST['organizing_role']) && isset($_POST['organizing_department'])) {
+                $name = mysqli_real_escape_string($db, $_POST['organizing_name']);
+                $role = mysqli_real_escape_string($db, $_POST['organizing_role']);
+                $department = mysqli_real_escape_string($db, $_POST['organizing_department']);
+                
+                $query = "INSERT INTO organizing_committee (name, role, department, created_by) 
+                          VALUES ('$name', '$role', '$department', $admin_id)";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Organizing committee member added successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#committees');
+            break;
+            
+        case 'edit_organizing_member':
+            if(isset($_POST['organizing_id']) && isset($_POST['organizing_name']) && isset($_POST['organizing_role']) && isset($_POST['organizing_department'])) {
+                $id = mysqli_real_escape_string($db, $_POST['organizing_id']);
+                $name = mysqli_real_escape_string($db, $_POST['organizing_name']);
+                $role = mysqli_real_escape_string($db, $_POST['organizing_role']);
+                $department = mysqli_real_escape_string($db, $_POST['organizing_department']);
+                
+                $query = "UPDATE organizing_committee SET name = '$name', role = '$role', 
+                          department = '$department' WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Organizing committee member updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#committees');
+            break;
+            
+        case 'delete_organizing_member':
+            if(isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                $query = "DELETE FROM organizing_committee WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Organizing committee member deleted successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#committees');
+            break;
+            
+        // Reviewers Panel actions
+        case 'add_reviewer':
+            if(isset($_POST['reviewer_name']) && isset($_POST['reviewer_specialty']) && isset($_POST['reviewer_institution'])) {
+                $name = mysqli_real_escape_string($db, $_POST['reviewer_name']);
+                $specialty = mysqli_real_escape_string($db, $_POST['reviewer_specialty']);
+                $institution = mysqli_real_escape_string($db, $_POST['reviewer_institution']);
+                
+                $query = "INSERT INTO reviewers_panel (name, specialty, institution, created_by) 
+                          VALUES ('$name', '$specialty', '$institution', $admin_id)";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Reviewer added successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#reviewers');
+            break;
+            
+        case 'edit_reviewer':
+            if(isset($_POST['reviewer_id']) && isset($_POST['reviewer_name']) && isset($_POST['reviewer_specialty']) && isset($_POST['reviewer_institution'])) {
+                $id = mysqli_real_escape_string($db, $_POST['reviewer_id']);
+                $name = mysqli_real_escape_string($db, $_POST['reviewer_name']);
+                $specialty = mysqli_real_escape_string($db, $_POST['reviewer_specialty']);
+                $institution = mysqli_real_escape_string($db, $_POST['reviewer_institution']);
+                
+                $query = "UPDATE reviewers_panel SET name = '$name', specialty = '$specialty', 
+                          institution = '$institution' WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Reviewer updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#reviewers');
+            break;
+            
+        case 'delete_reviewer':
+            if(isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                $query = "DELETE FROM reviewers_panel WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Reviewer deleted successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#reviewers');
+            break;
+            
+        // Registration Fees actions
+        case 'update_fees':
+            if(isset($_POST['fees_info'])) {
+                $fees_info = $_POST['fees_info']; // Not escaping to allow HTML
+                
+                // Check if record exists
+                $check_query = "SELECT id FROM registration_fees LIMIT 1";
+                $check_result = mysqli_query($db, $check_query);
+                
+                if(mysqli_num_rows($check_result) > 0) {
+                    $row = mysqli_fetch_assoc($check_result);
+                    $query = "UPDATE registration_fees SET content = '$fees_info', updated_by = $admin_id, 
+                              updated_at = NOW() WHERE id = " . $row['id'];
+                } else {
+                    $query = "INSERT INTO registration_fees (content, created_by) VALUES ('$fees_info', $admin_id)";
+                }
+                
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Registration fees information updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#fees');
+            break;
+            
+        case 'update_payment_instructions':
+            if(isset($_POST['payment_instructions'])) {
+                $payment_instructions = $_POST['payment_instructions']; // Not escaping to allow HTML
+                
+                // Check if record exists
+                $check_query = "SELECT id FROM payment_instructions LIMIT 1";
+                $check_result = mysqli_query($db, $check_query);
+                
+                if(mysqli_num_rows($check_result) > 0) {
+                    $row = mysqli_fetch_assoc($check_result);
+                    $query = "UPDATE payment_instructions SET content = '$payment_instructions', updated_by = $admin_id, 
+                              updated_at = NOW() WHERE id = " . $row['id'];
+                } else {
+                    $query = "INSERT INTO payment_instructions (content, created_by) VALUES ('$payment_instructions', $admin_id)";
+                }
+                
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Payment instructions updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#fees');
+            break;
+            
+        // Downloads actions
+        case 'add_download':
+            if(isset($_POST['download_title']) && isset($_POST['download_description']) && isset($_FILES['download_file'])) {
+                $title = mysqli_real_escape_string($db, $_POST['download_title']);
+                $description = mysqli_real_escape_string($db, $_POST['download_description']);
+                $file = $_FILES['download_file'];
+                
+                // Create uploads directory if it doesn't exist
+                $upload_dir = "upload/downloads/";
+                if (!file_exists($upload_dir)) {
+                    mkdir($upload_dir, 0777, true);
+                }
+                
+                // Generate a unique filename
+                $new_filename = uniqid() . '_' . $file['name'];
+                $target_file = $upload_dir . $new_filename;
+                
+                // Upload the file
+                if(move_uploaded_file($file['tmp_name'], $target_file)) {
+                    // Insert into database
+                    $query = "INSERT INTO site_downloads (title, description, file_path, created_by) 
+                              VALUES ('$title', '$description', '$target_file', $admin_id)";
+                    if(mysqli_query($db, $query)) {
+                        $_SESSION['success_message'] = "Download item added successfully!";
+                    } else {
+                        $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                        // Delete the uploaded file if database insert fails
+                        unlink($target_file);
+                    }
+                } else {
+                    $_SESSION['success_message'] = "Error uploading file.";
+                }
+            }
+            header('Location: admin_dashboard.php#downloads');
+            break;
+            
+        case 'delete_download':
+            if(isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                // Get the file path before deleting the record
+                $query = "SELECT file_path FROM site_downloads WHERE id = $id";
+                $result = mysqli_query($db, $query);
+                if($row = mysqli_fetch_assoc($result)) {
+                    $file_path = $row['file_path'];
+                    
+                    // Delete the record from the database
+                    $query = "DELETE FROM site_downloads WHERE id = $id";
+                    if(mysqli_query($db, $query)) {
+                        // Delete the file from the server
+                        if(file_exists($file_path)) {
+                            unlink($file_path);
+                        }
+                        $_SESSION['success_message'] = "Download item deleted successfully!";
+                    } else {
+                        $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                    }
+                }
+            }
+            header('Location: admin_dashboard.php#downloads');
+            break;
+            
         case 'change_password':
             // Change admin password
             if(isset($_POST['current_password']) && isset($_POST['new_password']) && isset($_POST['confirm_password'])) {

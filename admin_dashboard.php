@@ -80,6 +80,41 @@ $brochures_result = mysqli_query($db, $brochures_query);
                         </a>
                     </li>
                     <li class="mb-1">
+                        <a href="#tracks" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="tracks">
+                            <i class="fas fa-project-diagram mr-2"></i> Tracks & Sessions
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#dates" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="dates">
+                            <i class="fas fa-calendar-alt mr-2"></i> Important Dates
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#publications" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="publications">
+                            <i class="fas fa-book mr-2"></i> Publications
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#committees" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="committees">
+                            <i class="fas fa-users mr-2"></i> Committees
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#reviewers" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="reviewers">
+                            <i class="fas fa-user-check mr-2"></i> Reviewers Panel
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#fees" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="fees">
+                            <i class="fas fa-money-bill-wave mr-2"></i> Registration Fees
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#downloads" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="downloads">
+                            <i class="fas fa-download mr-2"></i> Downloads
+                        </a>
+                    </li>
+                    <li class="mb-1">
                         <a href="#settings" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors" data-tab="settings">
                             <i class="fas fa-cog mr-2"></i> Settings
                         </a>
@@ -127,6 +162,41 @@ $brochures_result = mysqli_query($db, $brochures_query);
                     <li class="mb-1">
                         <a href="#brochures" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="brochures">
                             <i class="fas fa-file-pdf mr-2"></i> Brochures
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#tracks" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="tracks">
+                            <i class="fas fa-project-diagram mr-2"></i> Tracks & Sessions
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#dates" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="dates">
+                            <i class="fas fa-calendar-alt mr-2"></i> Important Dates
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#publications" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="publications">
+                            <i class="fas fa-book mr-2"></i> Publications
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#committees" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="committees">
+                            <i class="fas fa-users mr-2"></i> Committees
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#reviewers" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="reviewers">
+                            <i class="fas fa-user-check mr-2"></i> Reviewers Panel
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#fees" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="fees">
+                            <i class="fas fa-money-bill-wave mr-2"></i> Registration Fees
+                        </a>
+                    </li>
+                    <li class="mb-1">
+                        <a href="#downloads" class="block py-3 px-6 text-blue-200 hover:bg-blue-800 hover:text-white transition-colors mobile-nav-link" data-tab="downloads">
+                            <i class="fas fa-download mr-2"></i> Downloads
                         </a>
                     </li>
                     <li class="mb-1">
@@ -428,6 +498,430 @@ $brochures_result = mysqli_query($db, $brochures_query);
                     </form>
                 </div>
             </div>
+
+            <!-- Tracks & Sessions Tab -->
+            <div class="p-6 tab-content hidden" id="tracks-content">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-900">Manage Tracks & Sessions</h1>
+                    <button id="add-track-btn" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Add New Track
+                    </button>
+                </div>
+                
+                <!-- Add Track Form (Hidden by default) -->
+                <div id="add-track-form" class="bg-white rounded-lg shadow-md p-6 mb-6 hidden">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Add New Track</h2>
+                    <form action="admin_process.php" method="POST">
+                        <input type="hidden" name="action" value="add_track">
+                        
+                        <div class="mb-4">
+                            <label for="track_name" class="block text-gray-700 text-sm font-bold mb-2">Track Name</label>
+                            <input type="text" id="track_name" name="track_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="track_description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
+                            <textarea id="track_description" name="track_description" rows="4" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <button type="button" id="cancel-track" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Track</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Tracks List -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Track Name</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Description</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tracks-table-body">
+                                <!-- Tracks will be loaded here -->
+                                <tr>
+                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">Loading tracks...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Important Dates Tab -->
+            <div class="p-6 tab-content hidden" id="dates-content">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-900">Manage Important Dates</h1>
+                    <button id="add-date-btn" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Add New Date
+                    </button>
+                </div>
+                
+                <!-- Add Date Form (Hidden by default) -->
+                <div id="add-date-form" class="bg-white rounded-lg shadow-md p-6 mb-6 hidden">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Add Important Date</h2>
+                    <form action="admin_process.php" method="POST">
+                        <input type="hidden" name="action" value="add_date">
+                        
+                        <div class="mb-4">
+                            <label for="event_name" class="block text-gray-700 text-sm font-bold mb-2">Event Name</label>
+                            <input type="text" id="event_name" name="event_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="event_date" class="block text-gray-700 text-sm font-bold mb-2">Date</label>
+                            <input type="date" id="event_date" name="event_date" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="is_highlighted" class="block text-gray-700 text-sm font-bold mb-2">Highlight</label>
+                            <select id="is_highlighted" name="is_highlighted" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                                <option value="0">No</option>
+                                <option value="1">Yes</option>
+                            </select>
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <button type="button" id="cancel-date" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Date</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Dates List -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Event</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Date</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Highlighted</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="dates-table-body">
+                                <!-- Dates will be loaded here -->
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading dates...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Publications Tab -->
+            <div class="p-6 tab-content hidden" id="publications-content">
+                <h1 class="text-2xl font-bold text-gray-900 mb-6">Manage Publications</h1>
+                
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Publication Information</h2>
+                    <form action="admin_process.php" method="POST">
+                        <input type="hidden" name="action" value="update_publications">
+                        
+                        <div class="mb-4">
+                            <label for="publication_info" class="block text-gray-700 text-sm font-bold mb-2">Publication Information</label>
+                            <textarea id="publication_info" name="publication_info" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting</p>
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update Publication Info</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Committees Tab -->
+            <div class="p-6 tab-content hidden" id="committees-content">
+                <h1 class="text-2xl font-bold text-gray-900 mb-6">Manage Committees</h1>
+                
+                <!-- Advisory Committee Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold text-gray-900">Advisory Committee</h2>
+                        <button id="add-advisory-btn" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                            <i class="fas fa-plus mr-2"></i> Add Member
+                        </button>
+                    </div>
+                    
+                    <!-- Add Advisory Member Form (Hidden by default) -->
+                    <div id="add-advisory-form" class="p-4 bg-gray-50 rounded-md mb-4 hidden">
+                        <form action="admin_process.php" method="POST">
+                            <input type="hidden" name="action" value="add_advisory_member">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="advisory_name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                                    <input type="text" id="advisory_name" name="advisory_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="advisory_designation" class="block text-gray-700 text-sm font-bold mb-2">Designation</label>
+                                    <input type="text" id="advisory_designation" name="advisory_designation" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label for="advisory_affiliation" class="block text-gray-700 text-sm font-bold mb-2">Affiliation</label>
+                                <input type="text" id="advisory_affiliation" name="advisory_affiliation" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            
+                            <div class="flex justify-end mt-4">
+                                <button type="button" id="cancel-advisory" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Member</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Designation</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Affiliation</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="advisory-table-body">
+                                <!-- Advisory members will be loaded here -->
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading members...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                
+                <!-- Organizing Committee Section -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold text-gray-900">Organizing Committee</h2>
+                        <button id="add-organizing-btn" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                            <i class="fas fa-plus mr-2"></i> Add Member
+                        </button>
+                    </div>
+                    
+                    <!-- Add Organizing Member Form (Hidden by default) -->
+                    <div id="add-organizing-form" class="p-4 bg-gray-50 rounded-md mb-4 hidden">
+                        <form action="admin_process.php" method="POST">
+                            <input type="hidden" name="action" value="add_organizing_member">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="organizing_name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                                    <input type="text" id="organizing_name" name="organizing_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="organizing_role" class="block text-gray-700 text-sm font-bold mb-2">Role</label>
+                                    <input type="text" id="organizing_role" name="organizing_role" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                            </div>
+                            
+                            <div class="mt-4">
+                                <label for="organizing_department" class="block text-gray-700 text-sm font-bold mb-2">Department</label>
+                                <input type="text" id="organizing_department" name="organizing_department" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            
+                            <div class="flex justify-end mt-4">
+                                <button type="button" id="cancel-organizing" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Member</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Role</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Department</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="organizing-table-body">
+                                <!-- Organizing members will be loaded here -->
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading members...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reviewers Panel Tab -->
+            <div class="p-6 tab-content hidden" id="reviewers-content">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-900">Manage Reviewers Panel</h1>
+                    <button id="add-reviewer-btn" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Add Reviewer
+                    </button>
+                </div>
+                
+                <!-- Add Reviewer Form (Hidden by default) -->
+                <div id="add-reviewer-form" class="bg-white rounded-lg shadow-md p-6 mb-6 hidden">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Add Reviewer</h2>
+                    <form action="admin_process.php" method="POST">
+                        <input type="hidden" name="action" value="add_reviewer">
+                        
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                            <div>
+                                <label for="reviewer_name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                                <input type="text" id="reviewer_name" name="reviewer_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                            <div>
+                                <label for="reviewer_specialty" class="block text-gray-700 text-sm font-bold mb-2">Specialty</label>
+                                <input type="text" id="reviewer_specialty" name="reviewer_specialty" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-4">
+                            <label for="reviewer_institution" class="block text-gray-700 text-sm font-bold mb-2">Institution</label>
+                            <input type="text" id="reviewer_institution" name="reviewer_institution" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div class="flex justify-end mt-4">
+                            <button type="button" id="cancel-reviewer" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Reviewer</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Reviewers List -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Specialty</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Institution</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="reviewers-table-body">
+                                <!-- Reviewers will be loaded here -->
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading reviewers...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Registration Fees Tab -->
+            <div class="p-6 tab-content hidden" id="fees-content">
+                <h1 class="text-2xl font-bold text-gray-900 mb-6">Manage Registration Fees</h1>
+                
+                <div class="bg-white rounded-lg shadow-md p-6 mb-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Registration Fees Information</h2>
+                    <form action="admin_process.php" method="POST">
+                        <input type="hidden" name="action" value="update_fees">
+                        
+                        <div class="mb-4">
+                            <label for="fees_info" class="block text-gray-700 text-sm font-bold mb-2">Fees Structure</label>
+                            <textarea id="fees_info" name="fees_info" rows="15" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting tables</p>
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update Fees Information</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Payment Instructions</h2>
+                    <form action="admin_process.php" method="POST">
+                        <input type="hidden" name="action" value="update_payment_instructions">
+                        
+                        <div class="mb-4">
+                            <label for="payment_instructions" class="block text-gray-700 text-sm font-bold mb-2">Payment Instructions</label>
+                            <textarea id="payment_instructions" name="payment_instructions" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                            <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting</p>
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update Payment Instructions</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- Downloads Tab -->
+            <div class="p-6 tab-content hidden" id="downloads-content">
+                <div class="flex justify-between items-center mb-6">
+                    <h1 class="text-2xl font-bold text-gray-900">Manage Downloads</h1>
+                    <button id="add-download-btn" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                        <i class="fas fa-plus mr-2"></i> Add Download Item
+                    </button>
+                </div>
+                
+                <!-- Add Download Form (Hidden by default) -->
+                <div id="add-download-form" class="bg-white rounded-lg shadow-md p-6 mb-6 hidden">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Add Download Item</h2>
+                    <form action="admin_process.php" method="POST" enctype="multipart/form-data">
+                        <input type="hidden" name="action" value="add_download">
+                        
+                        <div class="mb-4">
+                            <label for="download_title" class="block text-gray-700 text-sm font-bold mb-2">Title</label>
+                            <input type="text" id="download_title" name="download_title" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="download_description" class="block text-gray-700 text-sm font-bold mb-2">Description</label>
+                            <textarea id="download_description" name="download_description" rows="2" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required></textarea>
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label for="download_file" class="block text-gray-700 text-sm font-bold mb-2">File</label>
+                            <input type="file" id="download_file" name="download_file" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <button type="button" id="cancel-download" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Upload Item</button>
+                        </div>
+                    </form>
+                </div>
+                
+                <!-- Downloads List -->
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Title</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Description</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">File</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody id="downloads-table-body">
+                                <!-- Downloads will be loaded here -->
+                                <tr>
+                                    <td colspan="5" class="py-4 px-4 text-center text-gray-500">Loading downloads...</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
@@ -522,6 +1016,60 @@ $brochures_result = mysqli_query($db, $brochures_query);
         
         document.getElementById('cancel-brochure').addEventListener('click', function() {
             document.getElementById('add-brochure-form').classList.add('hidden');
+        });
+        
+        // Tracks & Sessions Form Toggle
+        document.getElementById('add-track-btn').addEventListener('click', function() {
+            document.getElementById('add-track-form').classList.toggle('hidden');
+        });
+        
+        document.getElementById('cancel-track').addEventListener('click', function() {
+            document.getElementById('add-track-form').classList.add('hidden');
+        });
+        
+        // Important Dates Form Toggle
+        document.getElementById('add-date-btn').addEventListener('click', function() {
+            document.getElementById('add-date-form').classList.toggle('hidden');
+        });
+        
+        document.getElementById('cancel-date').addEventListener('click', function() {
+            document.getElementById('add-date-form').classList.add('hidden');
+        });
+        
+        // Advisory Committee Form Toggle
+        document.getElementById('add-advisory-btn').addEventListener('click', function() {
+            document.getElementById('add-advisory-form').classList.toggle('hidden');
+        });
+        
+        document.getElementById('cancel-advisory').addEventListener('click', function() {
+            document.getElementById('add-advisory-form').classList.add('hidden');
+        });
+        
+        // Organizing Committee Form Toggle
+        document.getElementById('add-organizing-btn').addEventListener('click', function() {
+            document.getElementById('add-organizing-form').classList.toggle('hidden');
+        });
+        
+        document.getElementById('cancel-organizing').addEventListener('click', function() {
+            document.getElementById('add-organizing-form').classList.add('hidden');
+        });
+        
+        // Reviewers Form Toggle
+        document.getElementById('add-reviewer-btn').addEventListener('click', function() {
+            document.getElementById('add-reviewer-form').classList.toggle('hidden');
+        });
+        
+        document.getElementById('cancel-reviewer').addEventListener('click', function() {
+            document.getElementById('add-reviewer-form').classList.add('hidden');
+        });
+        
+        // Downloads Form Toggle
+        document.getElementById('add-download-btn').addEventListener('click', function() {
+            document.getElementById('add-download-form').classList.toggle('hidden');
+        });
+        
+        document.getElementById('cancel-download').addEventListener('click', function() {
+            document.getElementById('add-download-form').classList.add('hidden');
         });
     </script>
 </body>

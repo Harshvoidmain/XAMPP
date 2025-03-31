@@ -68,43 +68,180 @@ if($_SERVER["REQUEST_METHOD"] == "POST" && isset($_POST['setup_admin'])) {
                 if(!mysqli_query($db, $brochures_table)) {
                     $message = "Error creating site_brochures table: " . mysqli_error($db);
                 } else {
-                    // Insert admin user
-                    $admin_insert = "INSERT INTO admin_users (username, password, email) VALUES ('$admin_username', '$hashed_password', '$admin_email')";
+                    // Create tracks table
+                    $tracks_table = "CREATE TABLE IF NOT EXISTS site_tracks (
+                        id INT AUTO_INCREMENT PRIMARY KEY,
+                        name VARCHAR(100) NOT NULL,
+                        description TEXT NOT NULL,
+                        created_by INT NOT NULL,
+                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                        FOREIGN KEY (created_by) REFERENCES admin_users(id)
+                    )";
                     
-                    if(!mysqli_query($db, $admin_insert)) {
-                        $message = "Error creating admin user: " . mysqli_error($db);
+                    if(!mysqli_query($db, $tracks_table)) {
+                        $message = "Error creating site_tracks table: " . mysqli_error($db);
                     } else {
-                        // Get the admin ID
-                        $admin_id = mysqli_insert_id($db);
+                        // Create important dates table
+                        $dates_table = "CREATE TABLE IF NOT EXISTS site_dates (
+                            id INT AUTO_INCREMENT PRIMARY KEY,
+                            event_name VARCHAR(100) NOT NULL,
+                            event_date DATE NOT NULL,
+                            is_highlighted TINYINT(1) DEFAULT 0,
+                            created_by INT NOT NULL,
+                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                            FOREIGN KEY (created_by) REFERENCES admin_users(id)
+                        )";
                         
-                        // Insert default updates
-                        $default_updates = [
-                            ["text" => "Download ICNTE-2025 Conference Brochure.", "link" => "download/ICNTE_2025.pdf"],
-                            ["text" => "Conference is open for paper submission.", "link" => "instructions.php"],
-                            ["text" => "Winners of IEI BLC-FCRIT excellence awards announced soon.", "link" => "#"],
-                            ["text" => "Important dates updated.", "link" => "important_dates.php"],
-                            ["text" => "Early bird registration deadline approaching!", "link" => "fees.php"],
-                            ["text" => "New keynote speaker announced for ICNTE-2025.", "link" => "keynote_speakers.php"]
-                        ];
-                        
-                        foreach($default_updates as $update) {
-                            $update_text = mysqli_real_escape_string($db, $update["text"]);
-                            $update_link = mysqli_real_escape_string($db, $update["link"]);
-                            $update_insert = "INSERT INTO site_updates (text, link, created_by) VALUES ('$update_text', '$update_link', $admin_id)";
-                            mysqli_query($db, $update_insert);
+                        if(!mysqli_query($db, $dates_table)) {
+                            $message = "Error creating site_dates table: " . mysqli_error($db);
+                        } else {
+                            // Create publications table
+                            $publications_table = "CREATE TABLE IF NOT EXISTS site_publications (
+                                id INT AUTO_INCREMENT PRIMARY KEY,
+                                content TEXT NOT NULL,
+                                created_by INT NOT NULL,
+                                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                updated_by INT NULL,
+                                updated_at TIMESTAMP NULL,
+                                FOREIGN KEY (created_by) REFERENCES admin_users(id),
+                                FOREIGN KEY (updated_by) REFERENCES admin_users(id)
+                            )";
+                            
+                            if(!mysqli_query($db, $publications_table)) {
+                                $message = "Error creating site_publications table: " . mysqli_error($db);
+                            } else {
+                                // Create advisory committee table
+                                $advisory_table = "CREATE TABLE IF NOT EXISTS advisory_committee (
+                                    id INT AUTO_INCREMENT PRIMARY KEY,
+                                    name VARCHAR(100) NOT NULL,
+                                    designation VARCHAR(100) NOT NULL,
+                                    affiliation VARCHAR(200) NOT NULL,
+                                    created_by INT NOT NULL,
+                                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                    FOREIGN KEY (created_by) REFERENCES admin_users(id)
+                                )";
+                                
+                                if(!mysqli_query($db, $advisory_table)) {
+                                    $message = "Error creating advisory_committee table: " . mysqli_error($db);
+                                } else {
+                                    // Create organizing committee table
+                                    $organizing_table = "CREATE TABLE IF NOT EXISTS organizing_committee (
+                                        id INT AUTO_INCREMENT PRIMARY KEY,
+                                        name VARCHAR(100) NOT NULL,
+                                        role VARCHAR(100) NOT NULL,
+                                        department VARCHAR(100) NOT NULL,
+                                        created_by INT NOT NULL,
+                                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                        FOREIGN KEY (created_by) REFERENCES admin_users(id)
+                                    )";
+                                    
+                                    if(!mysqli_query($db, $organizing_table)) {
+                                        $message = "Error creating organizing_committee table: " . mysqli_error($db);
+                                    } else {
+                                        // Create reviewers panel table
+                                        $reviewers_table = "CREATE TABLE IF NOT EXISTS reviewers_panel (
+                                            id INT AUTO_INCREMENT PRIMARY KEY,
+                                            name VARCHAR(100) NOT NULL,
+                                            specialty VARCHAR(100) NOT NULL,
+                                            institution VARCHAR(200) NOT NULL,
+                                            created_by INT NOT NULL,
+                                            created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                            FOREIGN KEY (created_by) REFERENCES admin_users(id)
+                                        )";
+                                        
+                                        if(!mysqli_query($db, $reviewers_table)) {
+                                            $message = "Error creating reviewers_panel table: " . mysqli_error($db);
+                                        } else {
+                                            // Create registration fees table
+                                            $fees_table = "CREATE TABLE IF NOT EXISTS registration_fees (
+                                                id INT AUTO_INCREMENT PRIMARY KEY,
+                                                content TEXT NOT NULL,
+                                                created_by INT NOT NULL,
+                                                created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                                updated_by INT NULL,
+                                                updated_at TIMESTAMP NULL,
+                                                FOREIGN KEY (created_by) REFERENCES admin_users(id),
+                                                FOREIGN KEY (updated_by) REFERENCES admin_users(id)
+                                            )";
+                                            
+                                            if(!mysqli_query($db, $fees_table)) {
+                                                $message = "Error creating registration_fees table: " . mysqli_error($db);
+                                            } else {
+                                                // Create payment instructions table
+                                                $payment_table = "CREATE TABLE IF NOT EXISTS payment_instructions (
+                                                    id INT AUTO_INCREMENT PRIMARY KEY,
+                                                    content TEXT NOT NULL,
+                                                    created_by INT NOT NULL,
+                                                    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                                    updated_by INT NULL,
+                                                    updated_at TIMESTAMP NULL,
+                                                    FOREIGN KEY (created_by) REFERENCES admin_users(id),
+                                                    FOREIGN KEY (updated_by) REFERENCES admin_users(id)
+                                                )";
+                                                
+                                                if(!mysqli_query($db, $payment_table)) {
+                                                    $message = "Error creating payment_instructions table: " . mysqli_error($db);
+                                                } else {
+                                                    // Create downloads table
+                                                    $downloads_table = "CREATE TABLE IF NOT EXISTS site_downloads (
+                                                        id INT AUTO_INCREMENT PRIMARY KEY,
+                                                        title VARCHAR(100) NOT NULL,
+                                                        description TEXT NOT NULL,
+                                                        file_path VARCHAR(255) NOT NULL,
+                                                        created_by INT NOT NULL,
+                                                        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+                                                        FOREIGN KEY (created_by) REFERENCES admin_users(id)
+                                                    )";
+                                                    
+                                                    if(!mysqli_query($db, $downloads_table)) {
+                                                        $message = "Error creating site_downloads table: " . mysqli_error($db);
+                                                    } else {
+                                                        // Insert admin user
+                                                        $admin_insert = "INSERT INTO admin_users (username, password, email) VALUES ('$admin_username', '$hashed_password', '$admin_email')";
+                                                        
+                                                        if(!mysqli_query($db, $admin_insert)) {
+                                                            $message = "Error creating admin user: " . mysqli_error($db);
+                                                        } else {
+                                                            // Get the admin ID
+                                                            $admin_id = mysqli_insert_id($db);
+                                                            
+                                                            // Insert default updates
+                                                            $default_updates = [
+                                                                ["text" => "Download ICNTE-2025 Conference Brochure.", "link" => "download/ICNTE_2025.pdf"],
+                                                                ["text" => "Conference is open for paper submission.", "link" => "instructions.php"],
+                                                                ["text" => "Winners of IEI BLC-FCRIT excellence awards announced soon.", "link" => "#"],
+                                                                ["text" => "Important dates updated.", "link" => "important_dates.php"],
+                                                                ["text" => "Early bird registration deadline approaching!", "link" => "fees.php"],
+                                                                ["text" => "New keynote speaker announced for ICNTE-2025.", "link" => "keynote_speakers.php"]
+                                                            ];
+                                                            
+                                                            foreach($default_updates as $update) {
+                                                                $update_text = mysqli_real_escape_string($db, $update["text"]);
+                                                                $update_link = mysqli_real_escape_string($db, $update["link"]);
+                                                                $update_insert = "INSERT INTO site_updates (text, link, created_by) VALUES ('$update_text', '$update_link', $admin_id)";
+                                                                mysqli_query($db, $update_insert);
+                                                            }
+                                                            
+                                                            // Create upload directories
+                                                            if(!file_exists("upload")) {
+                                                                mkdir("upload", 0777);
+                                                            }
+                                                            
+                                                            if(!file_exists("upload/brochures")) {
+                                                                mkdir("upload/brochures", 0777);
+                                                            }
+                                                            
+                                                            $message = "Setup completed successfully! You can now <a href='admin_login.php' class='text-blue-600 hover:underline'>login</a> with your admin account.";
+                                                            $setup_already_done = true;
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
                         }
-                        
-                        // Create upload directories
-                        if(!file_exists("upload")) {
-                            mkdir("upload", 0777);
-                        }
-                        
-                        if(!file_exists("upload/brochures")) {
-                            mkdir("upload/brochures", 0777);
-                        }
-                        
-                        $message = "Setup completed successfully! You can now <a href='admin_login.php' class='text-blue-600 hover:underline'>login</a> with your admin account.";
-                        $setup_already_done = true;
                     }
                 }
             }
