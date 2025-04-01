@@ -98,6 +98,7 @@
         document.querySelectorAll('[id^="collapse"]').forEach(openPanel => {
           if (openPanel !== target) {
             openPanel.style.maxHeight = '0px';
+            openPanel.classList.remove('active');
             openPanel.previousElementSibling.querySelector('.toggle-icon').classList.remove('rotate-180');
           }
         });
@@ -105,52 +106,30 @@
         // ✅ Toggle current panel using dynamic height
         if (target.style.maxHeight && target.style.maxHeight !== '0px') {
           target.style.maxHeight = '0px';
+          target.classList.remove('active');
           icon.classList.remove('rotate-180');
         } else {
           target.style.maxHeight = target.scrollHeight + 'px';
+          target.classList.add('active');
           icon.classList.add('rotate-180');
         }
       });
     });
+    
+    // Open the first panel by default
+    if (panels.length > 0) {
+      const firstPanel = panels[0];
+      const firstTarget = document.querySelector(firstPanel.getAttribute('data-target'));
+      const firstIcon = firstPanel.querySelector('.toggle-icon');
+      
+      if (firstTarget) {
+        firstTarget.style.maxHeight = firstTarget.scrollHeight + 'px';
+        firstTarget.classList.add('active');
+        firstIcon.classList.add('rotate-180');
+      }
+    }
   });
 </script>
-
-<style>
-  .toggle-icon {
-    transition: transform 0.3s ease;
-  }
-  .rotate-180 {
-    transform: rotate(180deg);
-  }
- /* ✅ Smooth dropdown animation */
- [id^="collapse"] {
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.2s ease;
-  max-height: 0;
-  padding: 0;
-  box-shadow: none;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-/* ✅ Styling the dropdown box */
-[id^="collapse"].active {
-  background: white;
-  border-top: 1px solid white;
-  padding: 16px;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-/* ✅ Improve the list items */
-[id^="collapse"] ol li {
-  background: #f3f4f6;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background 0.2s ease-in-out;
-}
-[id^="collapse"] ol li:hover {
-  background: #e5e7eb;
-}
-</style>
 
 <?php include 'footer.php'; ?>
 

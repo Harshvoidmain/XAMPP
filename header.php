@@ -8,6 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="navbar.css" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -291,68 +292,7 @@
   </div>
 
   <style>
-    /* Enhanced dropdown styles */
-    .dropdown-menu {
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      min-width: 12rem;
-      top: 100%;
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    
-    .group:hover .dropdown-menu {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .nav-gradient {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%);
-    }
-    
-    .nav-dropdown-gradient {
-      background: linear-gradient(180deg, #1e3a8a 0%, #1e4baf 100%);
-    }
-    
-    .mobile-nav-gradient {
-      background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    
-    #mobile-menu.show {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-    
-    /* Add a subtle bounce to nav items on hover */
-    .nav-item:hover {
-      transform: translateY(-2px);
-    }
-    
-    /* Subtle pulse animation for active page */
-    .nav-active {
-      position: relative;
-      text-shadow: 0 0 10px rgba(255,255,255,0.5);
-    }
-    
-    .nav-active::before {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #93c5fd; /* blue-300 */
-      animation: pulseAnimation 2s infinite;
-    }
-    
-    @keyframes pulseAnimation {
-      0% { opacity: 0.6; }
-      50% { opacity: 1; }
-      100% { opacity: 0.6; }
-    }
-      /* Contact Button Styles */
+    /* Contact Button Styles */
   .fixed {
     position: fixed;
   }
@@ -482,39 +422,6 @@
   .fil0 {
     fill: #4c83fa;
   }
-
-    /* Mobile Menu Styles */
-    #mobile-menu {
-      visibility: hidden;
-      transition: visibility 0.3s ease-in-out;
-    }
-
-    #mobile-menu.show {
-      visibility: visible;
-    }
-
-    #mobile-menu-backdrop {
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    #mobile-menu.show #mobile-menu-backdrop {
-      opacity: 1;
-    }
-
-    #mobile-menu-content {
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    #mobile-menu.show #mobile-menu-content {
-      transform: translateX(0);
-    }
-
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-      overflow: hidden;
-    }
   </style>
 
   <script>
