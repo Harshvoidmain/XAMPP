@@ -989,22 +989,111 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                 <h1 class="text-2xl font-bold text-gray-900 mb-6">Manage Registration Fees</h1>
                 
                 <div class="bg-white rounded-lg shadow-md p-6 mb-6">
-                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Registration Fees Information</h2>
-                    <form action="admin_process.php" method="POST">
-                        <input type="hidden" name="action" value="update_fees">
-                        
-                        <div class="mb-4">
-                            <label for="fees_info" class="block text-gray-700 text-sm font-bold mb-2">Fees Structure</label>
-                            <textarea id="fees_info" name="fees_info" rows="15" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><?php echo isset($fees_data['content']) ? $fees_data['content'] : ''; ?></textarea>
-                            <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting tables</p>
+                    <div class="flex justify-between items-center mb-4">
+                        <h2 class="text-xl font-semibold text-gray-900">Registration Fees</h2>
+                        <button id="add-fee-btn" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors flex items-center">
+                            <i class="fas fa-plus mr-2"></i> Add Fee Category
+                        </button>
+                    </div>
+                    
+                    <!-- Add Fee Form (Hidden by default) -->
+                    <div id="add-fee-form" class="p-4 bg-gray-50 rounded-md mb-4 hidden">
+                        <form action="admin_process.php" method="POST">
+                            <input type="hidden" name="action" value="add_fee">
+                            
+                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                                <div>
+                                    <label for="fee_category" class="block text-gray-700 text-sm font-bold mb-2">Category</label>
+                                    <input type="text" id="fee_category" name="fee_category" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                <div>
+                                    <label for="fee_amount" class="block text-gray-700 text-sm font-bold mb-2">Fee Amount (Excld. GST)</label>
+                                    <input type="text" id="fee_amount" name="fee_amount" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                            </div>
+                            
+                            <div class="flex justify-end mt-4">
+                                <button type="button" id="cancel-fee" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                                <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Fee</button>
+                            </div>
+                        </form>
+                    </div>
+                    
+                    <!-- Fees List -->
+                    <div class="overflow-x-auto">
+                        <table class="min-w-full bg-white">
+                            <thead>
+                                <tr>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Category</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Fee Amount</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <?php 
+                                $fees_list_query = "SELECT * FROM registration_fees ORDER BY id ASC";
+                                $fees_list_result = mysqli_query($db, $fees_list_query);
+                                
+                                if(mysqli_num_rows($fees_list_result) > 0) {
+                                    while($fee = mysqli_fetch_assoc($fees_list_result)) { 
+                                ?>
+                                <tr class="border-b hover:bg-gray-50">
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($fee['category']); ?></td>
+                                    <td class="py-2 px-4"><?php echo htmlspecialchars($fee['costrs']); ?></td>
+                                    <td class="py-2 px-4">
+                                        <div class="flex space-x-2">
+                                            <a href="#" class="text-blue-600 hover:text-blue-800 edit-fee-btn" 
+                                               data-id="<?php echo $fee['id']; ?>"
+                                               data-category="<?php echo htmlspecialchars($fee['category']); ?>"
+                                               data-amount="<?php echo htmlspecialchars($fee['costrs']); ?>">
+                                                <i class="fas fa-edit"></i>
+                                            </a>
+                                            <a href="admin_process.php?action=delete_fee&id=<?php echo $fee['id']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this fee category?')">
+                                                <i class="fas fa-trash"></i>
+                                            </a>
+                                        </div>
+                                    </td>
+                                </tr>
+                                <?php 
+                                    }
+                                } else { 
+                                ?>
+                                <tr>
+                                    <td colspan="3" class="py-4 px-4 text-center text-gray-500">No fee categories found</td>
+                                </tr>
+                                <?php } ?>
+                            </tbody>
+                        </table>
+                    </div>
+                    
+                    <!-- Edit Fee Modal (Hidden by default) -->
+                    <div id="edit-fee-modal" class="hidden fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+                        <div class="bg-white rounded-lg p-6 w-full max-w-md">
+                            <h3 class="text-xl font-semibold mb-4">Edit Fee</h3>
+                            <form action="admin_process.php" method="POST">
+                                <input type="hidden" name="action" value="edit_fee">
+                                <input type="hidden" id="edit_fee_id" name="fee_id" value="">
+                                
+                                <div class="mb-4">
+                                    <label for="edit_fee_category" class="block text-gray-700 text-sm font-bold mb-2">Category</label>
+                                    <input type="text" id="edit_fee_category" name="fee_category" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                
+                                <div class="mb-4">
+                                    <label for="edit_fee_amount" class="block text-gray-700 text-sm font-bold mb-2">Fee Amount</label>
+                                    <input type="text" id="edit_fee_amount" name="fee_amount" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                </div>
+                                
+                                <div class="flex justify-end">
+                                    <button type="button" id="close-edit-fee" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                                    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update Fee</button>
+                                </div>
+                            </form>
                         </div>
-                        
-                        <div class="flex justify-end">
-                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update Fees Information</button>
-                        </div>
-                    </form>
+                    </div>
                 </div>
                 
+                <!-- Payment Instructions -->
                 <div class="bg-white rounded-lg shadow-md p-6">
                     <h2 class="text-xl font-semibold text-gray-900 mb-4">Payment Instructions</h2>
                     <form action="admin_process.php" method="POST">
@@ -1179,6 +1268,63 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                 const tabName = window.location.hash.substring(1);
                 setActiveTab(tabName);
             }
+            
+            // Fee Management
+            const addFeeBtn = document.getElementById('add-fee-btn');
+            const addFeeForm = document.getElementById('add-fee-form');
+            const cancelFeeBtn = document.getElementById('cancel-fee');
+            
+            if (addFeeBtn) {
+                addFeeBtn.addEventListener('click', function() {
+                    addFeeForm.classList.remove('hidden');
+                });
+            }
+            
+            if (cancelFeeBtn) {
+                cancelFeeBtn.addEventListener('click', function() {
+                    addFeeForm.classList.add('hidden');
+                });
+            }
+            
+            // Fee Edit Modal
+            const editFeeModal = document.getElementById('edit-fee-modal');
+            const editFeeButtons = document.querySelectorAll('.edit-fee-btn');
+            const closeEditFeeBtn = document.getElementById('close-edit-fee');
+            
+            if (editFeeButtons) {
+                editFeeButtons.forEach(button => {
+                    button.addEventListener('click', function(e) {
+                        e.preventDefault();
+                        // Get data from data attributes
+                        const id = this.getAttribute('data-id');
+                        const category = this.getAttribute('data-category');
+                        const amount = this.getAttribute('data-amount');
+                        
+                        // Set values in the form
+                        document.getElementById('edit_fee_id').value = id;
+                        document.getElementById('edit_fee_category').value = category;
+                        document.getElementById('edit_fee_amount').value = amount;
+                        
+                        // Show modal
+                        editFeeModal.classList.remove('hidden');
+                    });
+                });
+            }
+            
+            if (closeEditFeeBtn) {
+                closeEditFeeBtn.addEventListener('click', function() {
+                    editFeeModal.classList.add('hidden');
+                });
+            }
+            
+            // Also close modal when clicking outside of it
+            if (editFeeModal) {
+                editFeeModal.addEventListener('click', function(e) {
+                    if (e.target === this) {
+                        this.classList.add('hidden');
+                    }
+                });
+            }
         });
         
         // Mobile Menu Toggle
@@ -1188,84 +1334,134 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
             sidebar.classList.add('translate-x-0');
         });
         
+        // Close Mobile Menu
         document.getElementById('close-sidebar').addEventListener('click', function() {
             const sidebar = document.getElementById('mobile-sidebar');
             sidebar.classList.remove('translate-x-0');
             sidebar.classList.add('-translate-x-full');
         });
         
-        // Add Update Form Toggle
-        document.getElementById('add-update-btn').addEventListener('click', function() {
-            const form = document.getElementById('add-update-form');
-            form.classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-update').addEventListener('click', function() {
-            document.getElementById('add-update-form').classList.add('hidden');
-        });
-        
-        // Add Brochure Form Toggle
-        document.getElementById('add-brochure-btn').addEventListener('click', function() {
-            const form = document.getElementById('add-brochure-form');
-            form.classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-brochure').addEventListener('click', function() {
-            document.getElementById('add-brochure-form').classList.add('hidden');
-        });
-        
-        // Tracks & Sessions Form Toggle
-        document.getElementById('add-track-btn').addEventListener('click', function() {
-            document.getElementById('add-track-form').classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-track').addEventListener('click', function() {
-            document.getElementById('add-track-form').classList.add('hidden');
-        });
-        
-        // Important Dates Form Toggle
-        document.getElementById('add-date-btn').addEventListener('click', function() {
-            document.getElementById('add-date-form').classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-date').addEventListener('click', function() {
-            document.getElementById('add-date-form').classList.add('hidden');
-        });
-        
-        // Advisory Committee Form Toggle
-        document.getElementById('add-advisory-btn').addEventListener('click', function() {
-            document.getElementById('add-advisory-form').classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-advisory').addEventListener('click', function() {
-            document.getElementById('add-advisory-form').classList.add('hidden');
-        });
-        
-        // Organizing Committee Form Toggle
-        document.getElementById('add-organizing-btn').addEventListener('click', function() {
-            document.getElementById('add-organizing-form').classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-organizing').addEventListener('click', function() {
-            document.getElementById('add-organizing-form').classList.add('hidden');
-        });
-        
-        // Reviewers Form Toggle
-        document.getElementById('add-reviewer-btn').addEventListener('click', function() {
-            document.getElementById('add-reviewer-form').classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-reviewer').addEventListener('click', function() {
-            document.getElementById('add-reviewer-form').classList.add('hidden');
-        });
-        
-        // Downloads Form Toggle
-        document.getElementById('add-download-btn').addEventListener('click', function() {
-            document.getElementById('add-download-form').classList.toggle('hidden');
-        });
-        
-        document.getElementById('cancel-download').addEventListener('click', function() {
-            document.getElementById('add-download-form').classList.add('hidden');
+        // Form Toggles for all sections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Update Form
+            const addUpdateBtn = document.getElementById('add-update-btn');
+            const addUpdateForm = document.getElementById('add-update-form');
+            const cancelUpdateBtn = document.getElementById('cancel-update');
+            
+            if(addUpdateBtn && addUpdateForm && cancelUpdateBtn) {
+                addUpdateBtn.addEventListener('click', function() {
+                    addUpdateForm.classList.remove('hidden');
+                });
+                
+                cancelUpdateBtn.addEventListener('click', function() {
+                    addUpdateForm.classList.add('hidden');
+                });
+            }
+            
+            // Brochure Form
+            const addBrochureBtn = document.getElementById('add-brochure-btn');
+            const addBrochureForm = document.getElementById('add-brochure-form');
+            const cancelBrochureBtn = document.getElementById('cancel-brochure');
+            
+            if(addBrochureBtn && addBrochureForm && cancelBrochureBtn) {
+                addBrochureBtn.addEventListener('click', function() {
+                    addBrochureForm.classList.remove('hidden');
+                });
+                
+                cancelBrochureBtn.addEventListener('click', function() {
+                    addBrochureForm.classList.add('hidden');
+                });
+            }
+            
+            // Tracks & Sessions Form Toggle
+            const addTrackBtn = document.getElementById('add-track-btn');
+            const addTrackForm = document.getElementById('add-track-form');
+            const cancelTrackBtn = document.getElementById('cancel-track');
+            
+            if(addTrackBtn && addTrackForm && cancelTrackBtn) {
+                addTrackBtn.addEventListener('click', function() {
+                    addTrackForm.classList.remove('hidden');
+                });
+                
+                cancelTrackBtn.addEventListener('click', function() {
+                    addTrackForm.classList.add('hidden');
+                });
+            }
+            
+            // Dates Form Toggle
+            const addDateBtn = document.getElementById('add-date-btn');
+            const addDateForm = document.getElementById('add-date-form');
+            const cancelDateBtn = document.getElementById('cancel-date');
+            
+            if(addDateBtn && addDateForm && cancelDateBtn) {
+                addDateBtn.addEventListener('click', function() {
+                    addDateForm.classList.remove('hidden');
+                });
+                
+                cancelDateBtn.addEventListener('click', function() {
+                    addDateForm.classList.add('hidden');
+                });
+            }
+            
+            // Advisory Committee Form Toggle
+            const addAdvisoryBtn = document.getElementById('add-advisory-btn');
+            const addAdvisoryForm = document.getElementById('add-advisory-form');
+            const cancelAdvisoryBtn = document.getElementById('cancel-advisory');
+            
+            if(addAdvisoryBtn && addAdvisoryForm && cancelAdvisoryBtn) {
+                addAdvisoryBtn.addEventListener('click', function() {
+                    addAdvisoryForm.classList.remove('hidden');
+                });
+                
+                cancelAdvisoryBtn.addEventListener('click', function() {
+                    addAdvisoryForm.classList.add('hidden');
+                });
+            }
+            
+            // Organizing Committee Form Toggle
+            const addOrganizingBtn = document.getElementById('add-organizing-btn');
+            const addOrganizingForm = document.getElementById('add-organizing-form');
+            const cancelOrganizingBtn = document.getElementById('cancel-organizing');
+            
+            if(addOrganizingBtn && addOrganizingForm && cancelOrganizingBtn) {
+                addOrganizingBtn.addEventListener('click', function() {
+                    addOrganizingForm.classList.remove('hidden');
+                });
+                
+                cancelOrganizingBtn.addEventListener('click', function() {
+                    addOrganizingForm.classList.add('hidden');
+                });
+            }
+            
+            // Reviewers Form Toggle
+            const addReviewerBtn = document.getElementById('add-reviewer-btn');
+            const addReviewerForm = document.getElementById('add-reviewer-form');
+            const cancelReviewerBtn = document.getElementById('cancel-reviewer');
+            
+            if(addReviewerBtn && addReviewerForm && cancelReviewerBtn) {
+                addReviewerBtn.addEventListener('click', function() {
+                    addReviewerForm.classList.remove('hidden');
+                });
+                
+                cancelReviewerBtn.addEventListener('click', function() {
+                    addReviewerForm.classList.add('hidden');
+                });
+            }
+            
+            // Downloads Form Toggle
+            const addDownloadBtn = document.getElementById('add-download-btn');
+            const addDownloadForm = document.getElementById('add-download-form');
+            const cancelDownloadBtn = document.getElementById('cancel-download');
+            
+            if(addDownloadBtn && addDownloadForm && cancelDownloadBtn) {
+                addDownloadBtn.addEventListener('click', function() {
+                    addDownloadForm.classList.remove('hidden');
+                });
+                
+                cancelDownloadBtn.addEventListener('click', function() {
+                    addDownloadForm.classList.add('hidden');
+                });
+            }
         });
     </script>
 </body>

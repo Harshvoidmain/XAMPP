@@ -454,6 +454,53 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             break;
             
         // Registration Fees actions
+        case 'add_fee':
+            if(isset($_POST['fee_category']) && isset($_POST['fee_amount'])) {
+                $category = mysqli_real_escape_string($db, $_POST['fee_category']);
+                $amount = mysqli_real_escape_string($db, $_POST['fee_amount']);
+                
+                $query = "INSERT INTO registration_fees (category, costrs, created_by) VALUES ('$category', '$amount', $admin_id)";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Fee category added successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#fees');
+            break;
+            
+        case 'edit_fee':
+            if(isset($_POST['fee_id']) && isset($_POST['fee_category']) && isset($_POST['fee_amount'])) {
+                $id = mysqli_real_escape_string($db, $_POST['fee_id']);
+                $category = mysqli_real_escape_string($db, $_POST['fee_category']);
+                $amount = mysqli_real_escape_string($db, $_POST['fee_amount']);
+                
+                $query = "UPDATE registration_fees SET category = '$category', costrs = '$amount', 
+                          updated_by = $admin_id, updated_at = NOW() WHERE id = $id";
+                          
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Fee category updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#fees');
+            break;
+            
+        case 'delete_fee':
+            if(isset($_GET['id'])) {
+                $id = mysqli_real_escape_string($db, $_GET['id']);
+                
+                $query = "DELETE FROM registration_fees WHERE id = $id";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Fee category deleted successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#fees');
+            break;
+            
         case 'update_fees':
             if(isset($_POST['fees_info'])) {
                 $fees_info = $_POST['fees_info']; // Not escaping to allow HTML
