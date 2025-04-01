@@ -43,14 +43,18 @@
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
         <img src="images/logo5.png" alt="ICNTE Logo" class="w-16 h-16 md:w-24 md:h-24" />
         <div class="max-w-2xl text-center sm:text-left">
-          <h3 class="font-bold text-gray-900 mt-6">
-          Agnel Charities<br>
-          Fr. C. Rodrigues Institute of Technology
-          </h3>
-          <p class="text-blue-700 font-semibold text-sm sm:text-base">
-          Sector 9A, Vashi, Navi Mumbai, Maharashtra 400703            
+          <h3 class="font-bold text-gray-900 mt-6 text-xl md:text-1.5xl">
+          Agnel Charities</h3>
+            <h1 class="font-bold text-gray-900 mt-1 text-xl md:text-2xl lg:text-3xl">
+            Fr. C. Rodrigues Institute of Technology
+            </h1>
+          <h2 class="text-gray-700 mt-1 text-xs md:text-sm">Sector 9A, Vashi, Navi Mumbai, Maharashtra 400703<br>
+          (An Autonomous Institute & Permanently Affiliated to University of Mumbai)  </h2>
+          <p class="text-blue-700 font-semibold text-sm sm:text-base md:text-xl">
+          31st January-1st February 2025       
                           </p>
-          <h2 class="text-gray-500 mt-1 text-xs md:text-sm">31st January-1st February 2025</h2>
+          
+         
         </div>
       </div>
       <img src="images/college_logo1.png" alt="College Logo" class="w-16 h-16 md:w-24 md:h-24 order-first md:order-last" />
