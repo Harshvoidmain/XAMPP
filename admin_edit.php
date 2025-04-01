@@ -288,30 +288,23 @@ switch($type) {
                 </form>
                 
             <?php elseif($type === 'organizing'): ?>
-                <form action="<?php echo $form_action; ?>" method="POST">
-                    <input type="hidden" name="action" value="edit_organizing_member">
-                    <input type="hidden" name="organizing_id" value="<?php echo $item['id']; ?>">
-                    
-                    <div class="mb-4">
-                        <label for="organizing_name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                        <input type="text" id="organizing_name" name="organizing_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="<?php echo htmlspecialchars($item['name']); ?>" required>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label for="organizing_role" class="block text-gray-700 text-sm font-bold mb-2">Role</label>
-                        <input type="text" id="organizing_role" name="organizing_role" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="<?php echo htmlspecialchars($item['role']); ?>" required>
-                    </div>
-                    
-                    <div class="mb-4">
-                        <label for="organizing_department" class="block text-gray-700 text-sm font-bold mb-2">Department</label>
-                        <input type="text" id="organizing_department" name="organizing_department" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" value="<?php echo htmlspecialchars($item['department']); ?>" required>
-                    </div>
-                    
-                    <div class="flex justify-end">
-                        <a href="admin_dashboard.php#committees" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors inline-block">Cancel</a>
-                        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update</button>
-                    </div>
-                </form>
+                <div class="bg-white rounded-lg shadow-md p-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Edit Organizing Committee Member</h2>
+                    <form action="<?php echo $form_action; ?>" method="POST">
+                        <input type="hidden" name="action" value="edit_organizing_member">
+                        <input type="hidden" name="organizing_id" value="<?php echo $item['id']; ?>">
+                        
+                        <div class="mb-4">
+                            <label for="organizing_name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                            <input type="text" id="organizing_name" name="organizing_name" value="<?php echo htmlspecialchars($item['name']); ?>" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                        </div>
+                        
+                        <div class="flex justify-end">
+                            <a href="admin_dashboard.php#committees" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</a>
+                            <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update Member</button>
+                        </div>
+                    </form>
+                </div>
                 
             <?php elseif($type === 'reviewer'): ?>
                 <form action="<?php echo $form_action; ?>" method="POST">

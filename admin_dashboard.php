@@ -833,20 +833,9 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                         <form action="admin_process.php" method="POST">
                             <input type="hidden" name="action" value="add_organizing_member">
                             
-                            <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-                                <div>
-                                    <label for="organizing_name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
-                                    <input type="text" id="organizing_name" name="organizing_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                </div>
-                                <div>
-                                    <label for="organizing_role" class="block text-gray-700 text-sm font-bold mb-2">Role</label>
-                                    <input type="text" id="organizing_role" name="organizing_role" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
-                                </div>
-                            </div>
-                            
-                            <div class="mt-4">
-                                <label for="organizing_department" class="block text-gray-700 text-sm font-bold mb-2">Department</label>
-                                <input type="text" id="organizing_department" name="organizing_department" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                            <div>
+                                <label for="organizing_name" class="block text-gray-700 text-sm font-bold mb-2">Name</label>
+                                <input type="text" id="organizing_name" name="organizing_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
                             </div>
                             
                             <div class="flex justify-end mt-4">
@@ -861,8 +850,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                             <thead>
                                 <tr>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Name</th>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Role</th>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Department</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
                                 </tr>
                             </thead>
@@ -873,8 +860,6 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 ?>
                                 <tr class="border-b hover:bg-gray-50">
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($member['name']); ?></td>
-                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['role']); ?></td>
-                                    <td class="py-2 px-4"><?php echo htmlspecialchars($member['department']); ?></td>
                                     <td class="py-2 px-4">
                                         <div class="flex space-x-2">
                                             <a href="admin_edit.php?type=organizing&id=<?php echo $member['id']; ?>" class="text-blue-600 hover:text-blue-800">
@@ -891,7 +876,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
+                                    <td colspan="2" class="py-4 px-4 text-center text-gray-500">No organizing committee members found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>

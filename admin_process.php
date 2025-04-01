@@ -335,13 +335,11 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             
         // Organizing Committee actions
         case 'add_organizing_member':
-            if(isset($_POST['organizing_name']) && isset($_POST['organizing_role']) && isset($_POST['organizing_department'])) {
+            if(isset($_POST['organizing_name'])) {
                 $name = mysqli_real_escape_string($db, $_POST['organizing_name']);
-                $role = mysqli_real_escape_string($db, $_POST['organizing_role']);
-                $department = mysqli_real_escape_string($db, $_POST['organizing_department']);
                 
-                $query = "INSERT INTO organizing_committees (name, role, department, created_by) 
-                          VALUES ('$name', '$role', '$department', $admin_id)";
+                $query = "INSERT INTO organizing_committees (name, created_by) 
+                          VALUES ('$name', $admin_id)";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Organizing committee member added successfully!";
                 } else {
@@ -352,11 +350,9 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             break;
             
         case 'edit_organizing_member':
-            if(isset($_POST['organizing_id']) && isset($_POST['organizing_name']) && isset($_POST['organizing_role']) && isset($_POST['organizing_department'])) {
+            if(isset($_POST['organizing_id']) && isset($_POST['organizing_name'])) {
                 $id = mysqli_real_escape_string($db, $_POST['organizing_id']);
                 $name = mysqli_real_escape_string($db, $_POST['organizing_name']);
-                $role = mysqli_real_escape_string($db, $_POST['organizing_role']);
-                $department = mysqli_real_escape_string($db, $_POST['organizing_department']);
                 
                 // Check if table exists
                 $table_check_query = "SHOW TABLES LIKE 'organizing_committees'";
@@ -368,8 +364,7 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                     exit();
                 }
                 
-                $query = "UPDATE organizing_committees SET name = '$name', role = '$role', 
-                          department = '$department' WHERE id = $id";
+                $query = "UPDATE organizing_committees SET name = '$name' WHERE id = $id";
                 if(mysqli_query($db, $query)) {
                     $_SESSION['success_message'] = "Organizing committee member updated successfully!";
                 } else {
