@@ -57,27 +57,29 @@
       </div>
 
       <!-- ✅ Fix dropdown behavior with smooth animation -->
-      <div id="<?php echo $collapseID; ?>" class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white p-4 rounded-b-lg shadow-md">
-    <ol class="list-decimal ml-6 text-gray-700 space-y-2">
-    <?php
-    $sessionQuery = "SELECT * FROM sessions WHERE tid='$tid'";
-    $sessionResult = mysqli_query($db, $sessionQuery);
-    while ($sessionRow = mysqli_fetch_array($sessionResult)) {
-        $name = trim($sessionRow['sname']); // Trim to remove empty spaces
-        if (!empty($name)) { // Only show non-empty items
-        ?>
-        <li class="py-2 px-3 bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 transition">
-            <?php echo htmlspecialchars($name); ?>
-        </li>
-        <?php }} ?>
-    </ol>
+      <div id="<?php echo $collapseID; ?>" class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white">
+        <div class="p-4 rounded-b-lg shadow-md">
+          <ol class="list-decimal ml-6 text-gray-700 space-y-2">
+          <?php
+          $sessionQuery = "SELECT * FROM sessions WHERE tid='$tid'";
+          $sessionResult = mysqli_query($db, $sessionQuery);
+          while ($sessionRow = mysqli_fetch_array($sessionResult)) {
+              $name = trim($sessionRow['sname']); // Trim to remove empty spaces
+              if (!empty($name)) { // Only show non-empty items
+              ?>
+              <li class="py-2 px-3 bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 transition">
+                  <?php echo htmlspecialchars($name); ?>
+              </li>
+              <?php }} ?>
+          </ol>
 
-    <?php if ($tid == 2) { ?>
-        <p class="text-red-500 mt-4 text-center font-semibold">
-            Acceptance of papers submitted in the Thermal Engineering and Fluid Control track does not guarantee publication in IEEE Xplore. Only papers within IEEE's scope will be sent for inclusion.
-        </p>
-    <?php } ?>
-</div>
+          <?php if ($tid == 2) { ?>
+              <p class="text-red-500 mt-4 text-center font-semibold">
+                  Acceptance of papers submitted in the Thermal Engineering and Fluid Control track does not guarantee publication in IEEE Xplore. Only papers within IEEE's scope will be sent for inclusion.
+              </p>
+          <?php } ?>
+        </div>
+      </div>
 
     </div>
     <?php } ?>
@@ -93,6 +95,7 @@
       panel.addEventListener('click', () => {
         const target = document.querySelector(panel.getAttribute('data-target'));
         const icon = panel.querySelector('.toggle-icon');
+        const content = target.querySelector('div');
 
         // ✅ Close other open panels
         document.querySelectorAll('[id^="collapse"]').forEach(openPanel => {
@@ -109,7 +112,7 @@
           target.classList.remove('active');
           icon.classList.remove('rotate-180');
         } else {
-          target.style.maxHeight = target.scrollHeight + 'px';
+          target.style.maxHeight = content.offsetHeight + 'px';
           target.classList.add('active');
           icon.classList.add('rotate-180');
         }
@@ -121,9 +124,10 @@
       const firstPanel = panels[0];
       const firstTarget = document.querySelector(firstPanel.getAttribute('data-target'));
       const firstIcon = firstPanel.querySelector('.toggle-icon');
+      const firstContent = firstTarget.querySelector('div');
       
       if (firstTarget) {
-        firstTarget.style.maxHeight = firstTarget.scrollHeight + 'px';
+        firstTarget.style.maxHeight = firstContent.offsetHeight + 'px';
         firstTarget.classList.add('active');
         firstIcon.classList.add('rotate-180');
       }
