@@ -587,6 +587,7 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 <tr>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Track Name</th>
+                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Sessions</th>
                                     <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
                                 </tr>
                             </thead>
@@ -594,10 +595,20 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                 <?php 
                                 if(mysqli_num_rows($tracks_result) > 0) {
                                     while($track = mysqli_fetch_assoc($tracks_result)) { 
+                                        // Get sessions for this track
+                                        $track_id = $track['tid'];
+                                        $sessions_query = "SELECT * FROM sessions WHERE tid = $track_id";
+                                        $sessions_result = mysqli_query($db, $sessions_query);
                                 ?>
                                 <tr class="border-b hover:bg-gray-50">
                                     <td class="py-2 px-4"><?php echo $track['tid']; ?></td>
                                     <td class="py-2 px-4"><?php echo htmlspecialchars($track['trackname']); ?></td>
+                                    <td class="py-2 px-4">
+                                        <button onclick="toggleSessions(<?php echo $track['tid']; ?>)" class="text-blue-600 hover:text-blue-800">
+                                            <span id="session-count-<?php echo $track['tid']; ?>"><?php echo mysqli_num_rows($sessions_result); ?></span> Sessions
+                                            <i class="fas fa-chevron-down ml-1" id="session-chevron-<?php echo $track['tid']; ?>"></i>
+                                        </button>
+                                    </td>
                                     <td class="py-2 px-4">
                                         <div class="flex space-x-2">
                                             <a href="admin_edit.php?type=track&id=<?php echo $track['tid']; ?>" class="text-blue-600 hover:text-blue-800">
@@ -609,12 +620,81 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                                         </div>
                                     </td>
                                 </tr>
+                                <!-- Sessions section for this track -->
+                                <tr id="sessions-<?php echo $track['tid']; ?>" class="hidden">
+                                    <td colspan="4" class="py-4 px-6 bg-gray-50">
+                                        <div class="mb-4">
+                                            <button onclick="toggleAddSession(<?php echo $track['tid']; ?>)" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors text-sm">
+                                                <i class="fas fa-plus mr-2"></i> Add Session
+                                            </button>
+                                        </div>
+                                        
+                                        <!-- Add Session Form -->
+                                        <div id="add-session-form-<?php echo $track['tid']; ?>" class="mb-4 hidden">
+                                            <form action="admin_process.php" method="POST" class="bg-white p-4 rounded-md shadow-sm">
+                                                <input type="hidden" name="action" value="add_session">
+                                                <input type="hidden" name="track_id" value="<?php echo $track['tid']; ?>">
+                                                
+                                                <div class="mb-4">
+                                                    <label class="block text-gray-700 text-sm font-bold mb-2">Session Name</label>
+                                                    <input type="text" name="session_name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                                                </div>
+                                                
+                                                <div class="flex justify-end">
+                                                    <button type="button" onclick="toggleAddSession(<?php echo $track['tid']; ?>)" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors text-sm">Cancel</button>
+                                                    <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors text-sm">Save Session</button>
+                                                </div>
+                                            </form>
+                                        </div>
+                                        
+                                        <!-- Sessions Table -->
+                                        <table class="min-w-full bg-white rounded-md shadow-sm">
+                                            <thead>
+                                                <tr>
+                                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">ID</th>
+                                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Session Name</th>
+                                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Actions</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <?php 
+                                                if(mysqli_num_rows($sessions_result) > 0) {
+                                                    while($session = mysqli_fetch_assoc($sessions_result)) { 
+                                                        // Properly escape the session name for JavaScript
+                                                        $escaped_name = str_replace('"', '&quot;', $session['sname']);
+                                                ?>
+                                                <tr class="border-b">
+                                                    <td class="py-2 px-4"><?php echo $session['sid']; ?></td>
+                                                    <td class="py-2 px-4"><?php echo htmlspecialchars($session['sname']); ?></td>
+                                                    <td class="py-2 px-4">
+                                                        <div class="flex space-x-2">
+                                                            <button onclick="editSession('<?php echo $session['sid']; ?>', '<?php echo $escaped_name; ?>', <?php echo $track['tid']; ?>)" class="text-blue-600 hover:text-blue-800">
+                                                                <i class="fas fa-edit"></i>
+                                                            </button>
+                                                            <a href="admin_process.php?action=delete_session&id=<?php echo $session['sid']; ?>&track_id=<?php echo $track['tid']; ?>" class="text-red-600 hover:text-red-800" onclick="return confirm('Are you sure you want to delete this session?')">
+                                                                <i class="fas fa-trash"></i>
+                                                            </a>
+                                                        </div>
+                                                    </td>
+                                                </tr>
+                                                <?php 
+                                                    }
+                                                } else {
+                                                ?>
+                                                <tr>
+                                                    <td colspan="3" class="py-4 px-4 text-center text-gray-500">No sessions found for this track</td>
+                                                </tr>
+                                                <?php } ?>
+                                            </tbody>
+                                        </table>
+                                    </td>
+                                </tr>
                                 <?php 
                                     }
                                 } else { 
                                 ?>
                                 <tr>
-                                    <td colspan="3" class="py-4 px-4 text-center text-gray-500">No tracks found</td>
+                                    <td colspan="4" class="py-4 px-4 text-center text-gray-500">No tracks found</td>
                                 </tr>
                                 <?php } ?>
                             </tbody>
@@ -1195,6 +1275,30 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
         </div>
     </div>
 
+    <!-- Edit Session Modal -->
+    <div id="edit-session-modal" class="fixed inset-0 bg-gray-600 bg-opacity-50 hidden z-50">
+        <div class="flex items-center justify-center min-h-screen">
+            <div class="bg-white rounded-lg shadow-lg p-6 w-full max-w-md">
+                <h3 class="text-xl font-semibold text-gray-900 mb-4">Edit Session</h3>
+                <form action="admin_process.php" method="POST">
+                    <input type="hidden" name="action" value="edit_session">
+                    <input type="hidden" name="session_id" id="edit-session-id">
+                    <input type="hidden" name="track_id" id="edit-session-track-id">
+                    
+                    <div class="mb-4">
+                        <label class="block text-gray-700 text-sm font-bold mb-2">Session Name</label>
+                        <input type="text" name="session_name" id="edit-session-name" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    </div>
+                    
+                    <div class="flex justify-end">
+                        <button type="button" onclick="closeEditSessionModal()" class="mr-2 bg-gray-300 text-gray-800 py-2 px-4 rounded-md hover:bg-gray-400 transition-colors">Cancel</button>
+                        <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Save Changes</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
     <script>
         // Tab Navigation
         document.addEventListener('DOMContentLoaded', function() {
@@ -1446,6 +1550,54 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                 cancelDownloadBtn.addEventListener('click', function() {
                     addDownloadForm.classList.add('hidden');
                 });
+            }
+        });
+
+        function toggleSessions(trackId) {
+            const sessionsRow = document.getElementById(`sessions-${trackId}`);
+            const chevron = document.getElementById(`session-chevron-${trackId}`);
+            
+            if (sessionsRow.classList.contains('hidden')) {
+                sessionsRow.classList.remove('hidden');
+                chevron.classList.remove('fa-chevron-down');
+                chevron.classList.add('fa-chevron-up');
+            } else {
+                sessionsRow.classList.add('hidden');
+                chevron.classList.remove('fa-chevron-up');
+                chevron.classList.add('fa-chevron-down');
+            }
+        }
+
+        function toggleAddSession(trackId) {
+            const form = document.getElementById(`add-session-form-${trackId}`);
+            form.classList.toggle('hidden');
+        }
+
+        function editSession(sessionId, sessionName, trackId) {
+            const modal = document.getElementById('edit-session-modal');
+            const sessionNameInput = document.getElementById('edit-session-name');
+            const sessionIdInput = document.getElementById('edit-session-id');
+            const trackIdInput = document.getElementById('edit-session-track-id');
+            
+            // Decode HTML entities in the session name
+            const decodedName = sessionName.replace(/&quot;/g, '"').replace(/&#039;/g, "'");
+            
+            sessionNameInput.value = decodedName;
+            sessionIdInput.value = sessionId;
+            trackIdInput.value = trackId;
+            
+            modal.classList.remove('hidden');
+        }
+
+        function closeEditSessionModal() {
+            const modal = document.getElementById('edit-session-modal');
+            modal.classList.add('hidden');
+        }
+
+        // Close modal when clicking outside
+        document.getElementById('edit-session-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeEditSessionModal();
             }
         });
     </script>

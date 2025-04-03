@@ -704,6 +704,59 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
             header('Location: admin_dashboard.php#settings');
             break;
             
+        case 'add_session':
+            if(isset($_POST['track_id']) && isset($_POST['session_name'])) {
+                $track_id = mysqli_real_escape_string($db, $_POST['track_id']);
+                $session_name = mysqli_real_escape_string($db, $_POST['session_name']);
+                
+                // Generate a new session ID
+                $sid_query = "SELECT MAX(CAST(SUBSTRING(sid, 2) AS UNSIGNED)) as max_id FROM sessions";
+                $sid_result = mysqli_query($db, $sid_query);
+                $max_id = mysqli_fetch_assoc($sid_result)['max_id'];
+                $new_id = $max_id ? $max_id + 1 : 1;
+                $sid = 'S' . $new_id;
+                
+                $query = "INSERT INTO sessions (sid, tid, sname) VALUES ('$sid', '$track_id', '$session_name')";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Session added successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#tracks');
+            break;
+
+        case 'edit_session':
+            if(isset($_POST['session_id']) && isset($_POST['session_name']) && isset($_POST['track_id'])) {
+                $session_id = mysqli_real_escape_string($db, $_POST['session_id']);
+                $session_name = mysqli_real_escape_string($db, $_POST['session_name']);
+                $track_id = mysqli_real_escape_string($db, $_POST['track_id']);
+                
+                $query = "UPDATE sessions SET sname = '$session_name' WHERE sid = '$session_id' AND tid = '$track_id'";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Session updated successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#tracks');
+            break;
+
+        case 'delete_session':
+            if(isset($_GET['id']) && isset($_GET['track_id'])) {
+                $session_id = mysqli_real_escape_string($db, $_GET['id']);
+                $track_id = mysqli_real_escape_string($db, $_GET['track_id']);
+                
+                $query = "DELETE FROM sessions WHERE sid = '$session_id' AND tid = '$track_id'";
+                if(mysqli_query($db, $query)) {
+                    $_SESSION['success_message'] = "Session deleted successfully!";
+                } else {
+                    $_SESSION['success_message'] = "Error: " . mysqli_error($db);
+                }
+            }
+            header('Location: admin_dashboard.php#tracks');
+            break;
+            
         default:
             // Invalid action, redirect to dashboard
             header('Location: admin_dashboard.php');
