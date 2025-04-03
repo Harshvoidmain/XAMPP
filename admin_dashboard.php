@@ -804,7 +804,14 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                         
                         <div class="mb-4">
                             <label for="publication_info" class="block text-gray-700 text-sm font-bold mb-2">Publication Information</label>
-                            <textarea id="publication_info" name="publication_info" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><?php echo isset($publications_data['content']) ? $publications_data['content'] : ''; ?></textarea>
+                            <textarea id="publication_info" name="publication_info" rows="10" class="w-full px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required><?php 
+                                $pub_query = "SELECT description FROM publications";
+                                $pub_result = mysqli_query($db, $pub_query);
+                                if($pub_result && mysqli_num_rows($pub_result) > 0) {
+                                    $pub_data = mysqli_fetch_assoc($pub_result);
+                                    echo htmlspecialchars($pub_data['description']);
+                                }
+                            ?></textarea>
                             <p class="text-sm text-gray-500 mt-1">You can use HTML tags for formatting</p>
                         </div>
                         
@@ -812,6 +819,23 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                             <button type="submit" class="bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 transition-colors">Update Publication Info</button>
                         </div>
                     </form>
+                </div>
+
+                <!-- Preview Section -->
+                <div class="bg-white rounded-lg shadow-md p-6 mt-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Current Preview</h2>
+                    <div class="prose max-w-none">
+                        <?php 
+                            // Reset the result pointer and display the content again
+                            mysqli_data_seek($pub_result, 0);
+                            if($pub_result && mysqli_num_rows($pub_result) > 0) {
+                                $pub_data = mysqli_fetch_assoc($pub_result);
+                                echo $pub_data['description']; // Don't use htmlspecialchars here to render HTML
+                            } else {
+                                echo "<p class='text-gray-500'>No publication information found.</p>";
+                            }
+                        ?>
+                    </div>
                 </div>
             </div>
 

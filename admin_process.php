@@ -257,11 +257,10 @@ if(isset($_POST['action']) || isset($_GET['action'])) {
                 $check_result = mysqli_query($db, $check_query);
                 
                 if(mysqli_num_rows($check_result) > 0) {
-                    $row = mysqli_fetch_assoc($check_result);
-                    $query = "UPDATE publications SET content = '$publication_info', updated_by = $admin_id, 
-                              updated_at = NOW() WHERE id = " . $row['id'];
+                    $query = "UPDATE publications SET description = '$publication_info', updated_by = $admin_id, 
+                              updated_at = NOW()";
                 } else {
-                    $query = "INSERT INTO publications (content, created_by) VALUES ('$publication_info', $admin_id)";
+                    $query = "INSERT INTO publications (description, created_by) VALUES ('$publication_info', $admin_id)";
                 }
                 
                 if(mysqli_query($db, $query)) {
