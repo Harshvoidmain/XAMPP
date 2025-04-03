@@ -279,9 +279,11 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
 
             <!-- Dashboard Tab -->
             <div class="p-6 tab-content" id="dashboard-content">
-                <h1 class="text-2xl font-bold text-gray-900 mb-6">Dashboard</h1>
+                <h1 class="text-2xl font-bold text-gray-900 mb-6">Dashboard Overview</h1>
                 
+                <!-- Stats Grid -->
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <!-- Updates Stats -->
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <div class="flex items-center">
                             <div class="bg-blue-100 p-3 rounded-full mr-4">
@@ -294,71 +296,200 @@ if(mysqli_num_rows($downloads_exists_result) > 0) {
                         </div>
                     </div>
                     
+                    <!-- Tracks Stats -->
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <div class="flex items-center">
                             <div class="bg-green-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-file-pdf text-green-600 text-xl"></i>
+                                <i class="fas fa-project-diagram text-green-600 text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-700">Brochures</h3>
-                                <p class="text-3xl font-bold text-gray-900"><?php echo mysqli_num_rows($brochures_result); ?></p>
+                                <h3 class="text-lg font-semibold text-gray-700">Tracks</h3>
+                                <p class="text-3xl font-bold text-gray-900"><?php 
+                                    $tracks_count_query = "SELECT COUNT(*) as count FROM tracks";
+                                    $tracks_count_result = mysqli_query($db, $tracks_count_query);
+                                    echo mysqli_fetch_assoc($tracks_count_result)['count'];
+                                ?></p>
                             </div>
                         </div>
                     </div>
                     
+                    <!-- Sessions Stats -->
                     <div class="bg-white rounded-lg shadow-md p-6">
                         <div class="flex items-center">
                             <div class="bg-purple-100 p-3 rounded-full mr-4">
-                                <i class="fas fa-users text-purple-600 text-xl"></i>
+                                <i class="fas fa-list text-purple-600 text-xl"></i>
                             </div>
                             <div>
-                                <h3 class="text-lg font-semibold text-gray-700">Admins</h3>
-                                <p class="text-3xl font-bold text-gray-900">
-                                    <?php 
-                                    $admin_count_query = "SELECT COUNT(*) as count FROM admin_users";
-                                    $admin_count_result = mysqli_query($db, $admin_count_query);
-                                    $admin_count = mysqli_fetch_assoc($admin_count_result)['count'];
-                                    echo $admin_count;
-                                    ?>
-                                </p>
+                                <h3 class="text-lg font-semibold text-gray-700">Sessions</h3>
+                                <p class="text-3xl font-bold text-gray-900"><?php 
+                                    $sessions_count_query = "SELECT COUNT(*) as count FROM sessions";
+                                    $sessions_count_result = mysqli_query($db, $sessions_count_query);
+                                    echo mysqli_fetch_assoc($sessions_count_result)['count'];
+                                ?></p>
                             </div>
                         </div>
                     </div>
                 </div>
-                
-                <div class="bg-white rounded-lg shadow-md p-6">
-                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Recent Updates</h2>
-                    <div class="overflow-x-auto">
-                        <table class="min-w-full bg-white">
-                            <thead>
-                                <tr>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Text</th>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Link</th>
-                                    <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Date Added</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <?php 
-                                // Reset the result pointer
-                                mysqli_data_seek($updates_result, 0);
-                                $count = 0;
-                                while($update = mysqli_fetch_assoc($updates_result)) {
-                                    if($count >= 5) break; // Show only 5 recent updates
-                                    $count++;
-                                ?>
-                                <tr class="border-b">
-                                    <td class="py-2 px-4"><?php echo htmlspecialchars($update['text']); ?></td>
-                                    <td class="py-2 px-4"><?php echo htmlspecialchars($update['link']); ?></td>
-                                    <td class="py-2 px-4"><?php echo date('M d, Y', strtotime($update['created_at'])); ?></td>
-                                </tr>
-                                <?php } ?>
-                                <?php if($count == 0): ?>
-                                <tr>
-                                    <td colspan="3" class="py-4 px-4 text-center text-gray-500">No updates found</td>
-                                </tr>
-                                <?php endif; ?>
-                            </tbody>
-                        </table>
+
+                <!-- Second Row Stats -->
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-6">
+                    <!-- Committee Members Stats -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center">
+                            <div class="bg-yellow-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-users text-yellow-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Committee Members</h3>
+                                <div class="flex items-baseline space-x-4">
+                                    <div>
+                                        <p class="text-sm text-gray-600">Advisory</p>
+                                        <p class="text-2xl font-bold text-gray-900"><?php 
+                                            $advisory_count_query = "SELECT COUNT(*) as count FROM advisory_committees";
+                                            $advisory_count_result = mysqli_query($db, $advisory_count_query);
+                                            echo mysqli_fetch_assoc($advisory_count_result)['count'];
+                                        ?></p>
+                                    </div>
+                                    <div>
+                                        <p class="text-sm text-gray-600">Organizing</p>
+                                        <p class="text-2xl font-bold text-gray-900"><?php 
+                                            $organizing_count_query = "SELECT COUNT(*) as count FROM organizing_committees";
+                                            $organizing_count_result = mysqli_query($db, $organizing_count_query);
+                                            echo mysqli_fetch_assoc($organizing_count_result)['count'];
+                                        ?></p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Reviewers Stats -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center">
+                            <div class="bg-red-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-user-check text-red-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Reviewers</h3>
+                                <p class="text-3xl font-bold text-gray-900"><?php 
+                                    $reviewers_count_query = "SELECT COUNT(*) as count FROM reviewer";
+                                    $reviewers_count_result = mysqli_query($db, $reviewers_count_query);
+                                    echo mysqli_fetch_assoc($reviewers_count_result)['count'];
+                                ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Downloads Stats -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <div class="flex items-center">
+                            <div class="bg-indigo-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-download text-indigo-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-lg font-semibold text-gray-700">Downloads</h3>
+                                <p class="text-3xl font-bold text-gray-900"><?php 
+                                    if(mysqli_num_rows($downloads_exists_result) > 0) {
+                                        $downloads_count_query = "SELECT COUNT(*) as count FROM site_downloads";
+                                        $downloads_count_result = mysqli_query($db, $downloads_count_query);
+                                        echo mysqli_fetch_assoc($downloads_count_result)['count'];
+                                    } else {
+                                        echo "0";
+                                    }
+                                ?></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recent Activities Section -->
+                <div class="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                    <!-- Recent Updates -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-4">Recent Updates</h2>
+                        <div class="overflow-x-auto">
+                            <table class="min-w-full bg-white">
+                                <thead>
+                                    <tr>
+                                        <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Text</th>
+                                        <th class="py-2 px-4 bg-gray-100 text-left text-gray-600 font-semibold text-sm">Date</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php 
+                                    mysqli_data_seek($updates_result, 0);
+                                    $count = 0;
+                                    while($update = mysqli_fetch_assoc($updates_result)) {
+                                        if($count >= 5) break;
+                                        $count++;
+                                    ?>
+                                    <tr class="border-b">
+                                        <td class="py-2 px-4"><?php echo htmlspecialchars($update['text']); ?></td>
+                                        <td class="py-2 px-4"><?php echo date('M d, Y', strtotime($update['created_at'])); ?></td>
+                                    </tr>
+                                    <?php } ?>
+                                    <?php if($count == 0): ?>
+                                    <tr>
+                                        <td colspan="2" class="py-4 px-4 text-center text-gray-500">No updates found</td>
+                                    </tr>
+                                    <?php endif; ?>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Tracks & Sessions -->
+                    <div class="bg-white rounded-lg shadow-md p-6">
+                        <h2 class="text-xl font-semibold text-gray-900 mb-4">Recent Tracks & Sessions</h2>
+                        <div class="space-y-4">
+                            <?php 
+                            mysqli_data_seek($tracks_result, 0);
+                            $track_count = 0;
+                            while($track = mysqli_fetch_assoc($tracks_result)) {
+                                if($track_count >= 3) break;
+                                $track_count++;
+                                
+                                // Get sessions for this track
+                                $track_id = $track['tid'];
+                                $sessions_query = "SELECT * FROM sessions WHERE tid = $track_id LIMIT 3";
+                                $sessions_result = mysqli_query($db, $sessions_query);
+                            ?>
+                            <div class="border rounded-lg p-4">
+                                <h3 class="font-semibold text-gray-800"><?php echo htmlspecialchars($track['trackname']); ?></h3>
+                                <div class="mt-2 space-y-1">
+                                    <?php while($session = mysqli_fetch_assoc($sessions_result)) { ?>
+                                        <p class="text-sm text-gray-600 ml-4">• <?php echo htmlspecialchars($session['sname']); ?></p>
+                                    <?php } ?>
+                                </div>
+                            </div>
+                            <?php } ?>
+                            <?php if($track_count == 0): ?>
+                            <p class="text-center text-gray-500">No tracks found</p>
+                            <?php endif; ?>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Actions -->
+                <div class="mt-6">
+                    <h2 class="text-xl font-semibold text-gray-900 mb-4">Quick Actions</h2>
+                    <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+                        <a href="#updates" data-tab="updates" class="bg-blue-100 hover:bg-blue-200 p-4 rounded-lg text-center transition-colors">
+                            <i class="fas fa-plus-circle text-blue-600 text-2xl mb-2"></i>
+                            <p class="text-sm font-medium text-blue-800">Add Update</p>
+                        </a>
+                        <a href="#tracks" data-tab="tracks" class="bg-green-100 hover:bg-green-200 p-4 rounded-lg text-center transition-colors">
+                            <i class="fas fa-plus-circle text-green-600 text-2xl mb-2"></i>
+                            <p class="text-sm font-medium text-green-800">Add Track</p>
+                        </a>
+                        <a href="#committees" data-tab="committees" class="bg-yellow-100 hover:bg-yellow-200 p-4 rounded-lg text-center transition-colors">
+                            <i class="fas fa-plus-circle text-yellow-600 text-2xl mb-2"></i>
+                            <p class="text-sm font-medium text-yellow-800">Add Committee Member</p>
+                        </a>
+                        <a href="#reviewers" data-tab="reviewers" class="bg-red-100 hover:bg-red-200 p-4 rounded-lg text-center transition-colors">
+                            <i class="fas fa-plus-circle text-red-600 text-2xl mb-2"></i>
+                            <p class="text-sm font-medium text-red-800">Add Reviewer</p>
+                        </a>
                     </div>
                 </div>
             </div>
