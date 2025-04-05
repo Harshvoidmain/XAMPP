@@ -127,7 +127,7 @@ if($updates_result && mysqli_num_rows($updates_result) > 0) {
             --tooltip-height: 35px;
             --tooltip-width: 120px;
             --gap-between-tooltip-to-button: 10px;
-            --button-color:rgb(60, 80, 208); /* Your theme color */
+            --button-color:rgb(48, 62, 150); /* Your theme color */
             --tooltip-color: #fff;
             width: var(--width);
             height: var(--height);
