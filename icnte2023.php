@@ -35,43 +35,25 @@
   <h3 class="text-2xl font-semibold text-gray-800 mb-6 text-center">Conference Gallery</h3>
   <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6 mb-10">
     <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300" onclick="openModal();currentSlide(1)">
-      <img src="./images/ICNTE23_1.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+      <img src="./images/23a.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
       <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
         <span class="text-white text-lg font-medium">View Larger</span>
       </div>
     </div>
     <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300" onclick="openModal();currentSlide(2)">
-      <img src="./images/ICNTE23_2.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+      <img src="./images/23b.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
       <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
         <span class="text-white text-lg font-medium">View Larger</span>
       </div>
     </div>
     <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300" onclick="openModal();currentSlide(3)">
-      <img src="./images/ICNTE23_3.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+      <img src="./images/23c.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
       <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
         <span class="text-white text-lg font-medium">View Larger</span>
       </div>
     </div>
     <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300" onclick="openModal();currentSlide(4)">
-      <img src="./images/ICNTE23_4.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
-      <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-        <span class="text-white text-lg font-medium">View Larger</span>
-      </div>
-    </div>
-    <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300" onclick="openModal();currentSlide(5)">
-      <img src="./images/21f.jpg" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
-      <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-        <span class="text-white text-lg font-medium">View Larger</span>
-      </div>
-    </div>
-    <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300" onclick="openModal();currentSlide(6)">
-      <img src="./images/21d.jpg" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
-      <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
-        <span class="text-white text-lg font-medium">View Larger</span>
-      </div>
-    </div>
-    <div class="group relative overflow-hidden rounded-xl shadow-md hover:shadow-xl transition-all duration-300" onclick="openModal();currentSlide(7)">
-      <img src="./images/21g.jpg" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
+      <img src="./images/23d.png" class="w-full h-64 object-cover transform group-hover:scale-105 transition-transform duration-300 cursor-pointer">
       <div class="absolute inset-0 bg-black bg-opacity-20 opacity-0 group-hover:opacity-100 flex items-center justify-center transition-opacity">
         <span class="text-white text-lg font-medium">View Larger</span>
       </div>
@@ -83,14 +65,10 @@
 <div id="myModal" class="fixed inset-0 bg-black bg-opacity-90 hidden z-50 flex items-center justify-center">
   <div class="relative w-11/12 md:w-3/4 max-w-5xl bg-white p-1 md:p-2 rounded-lg animate-scaleIn">
     <button class="absolute -top-10 right-0 text-white text-3xl hover:text-gray-300 transition" onclick="closeModal()">&times;</button>
-    <div class="mySlides hidden"><img src="./images/19a.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
-    <div class="mySlides hidden"><img src="./images/19b.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
-    <div class="mySlides hidden"><img src="./images/19c.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
-    <div class="mySlides hidden"><img src="./images/19d.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
-    <div class="mySlides hidden"><img src="./images/19e.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
-    <div class="mySlides hidden"><img src="./images/19f.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
-    <div class="mySlides hidden"><img src="./images/19a.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
-    <div class="mySlides hidden"><img src="./images/19b.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
+    <div class="mySlides hidden"><img src="./images/23a.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
+    <div class="mySlides hidden"><img src="./images/23b.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
+    <div class="mySlides hidden"><img src="./images/23c.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
+    <div class="mySlides hidden"><img src="./images/23d.jpg" class="w-full rounded object-contain max-h-[80vh]"></div>
      <!-- Caption Container (Added this) -->
      <div id="caption" class="text-center mt-4 text-lg text-gray-700 font-medium"></div>
 
