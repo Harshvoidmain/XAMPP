@@ -8,6 +8,7 @@
   <script src="https://cdn.tailwindcss.com"></script>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="css/styles.css" />
+  <link rel="stylesheet" href="navbar.css" />
   <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
@@ -42,14 +43,18 @@
       <div class="flex flex-col sm:flex-row items-center gap-4 w-full md:w-auto">
         <img src="images/logo5.png" alt="ICNTE Logo" class="w-16 h-16 md:w-24 md:h-24" />
         <div class="max-w-2xl text-center sm:text-left">
-          <h3 class="font-bold text-gray-900 mt-6">
-          Agnel Charities<br>
-          Fr. C. Rodrigues Institute of Technology
-          </h3>
-          <p class="text-blue-700 font-semibold text-sm sm:text-base">
-          Sector 9A, Vashi, Navi Mumbai, Maharashtra 400703            
+          <h3 class="font-bold text-gray-900 mt-6 text-xl md:text-1.5xl">
+          Agnel Charities</h3>
+            <h1 class="font-bold text-gray-900 mt-1 text-xl md:text-2xl lg:text-3xl">
+            Fr. C. Rodrigues Institute of Technology
+            </h1>
+          <h2 class="text-gray-700 mt-1 text-xs md:text-sm">Sector 9A, Vashi, Navi Mumbai, Maharashtra 400703<br>
+          (An Autonomous Institute & Permanently Affiliated to University of Mumbai)  </h2>
+          <p class="text-blue-700 font-semibold text-sm sm:text-base md:text-xl">
+          31st January-1st February 2025       
                           </p>
-          <h2 class="text-gray-500 mt-1 text-xs md:text-sm">31st January-1st February 2025</h2>
+          
+         
         </div>
       </div>
       <img src="images/college_logo1.png" alt="College Logo" class="w-16 h-16 md:w-24 md:h-24 order-first md:order-last" />
@@ -291,68 +296,7 @@
   </div>
 
   <style>
-    /* Enhanced dropdown styles */
-    .dropdown-menu {
-      clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
-      transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-      min-width: 12rem;
-      top: 100%;
-      opacity: 0;
-      transform: translateY(-10px);
-    }
-    
-    .group:hover .dropdown-menu {
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
-      opacity: 1;
-      transform: translateY(0);
-    }
-    
-    .nav-gradient {
-      background: linear-gradient(135deg, #1e3a8a 0%, #1e40af 50%, #1e3a8a 100%);
-    }
-    
-    .nav-dropdown-gradient {
-      background: linear-gradient(180deg, #1e3a8a 0%, #1e4baf 100%);
-    }
-    
-    .mobile-nav-gradient {
-      background: linear-gradient(180deg, #1e3a8a 0%, #172554 100%);
-      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-    }
-    
-    #mobile-menu.show {
-      opacity: 1;
-      transform: scaleY(1);
-    }
-    
-    /* Add a subtle bounce to nav items on hover */
-    .nav-item:hover {
-      transform: translateY(-2px);
-    }
-    
-    /* Subtle pulse animation for active page */
-    .nav-active {
-      position: relative;
-      text-shadow: 0 0 10px rgba(255,255,255,0.5);
-    }
-    
-    .nav-active::before {
-      content: '';
-      position: absolute;
-      bottom: -2px;
-      left: 0;
-      width: 100%;
-      height: 3px;
-      background-color: #93c5fd; /* blue-300 */
-      animation: pulseAnimation 2s infinite;
-    }
-    
-    @keyframes pulseAnimation {
-      0% { opacity: 0.6; }
-      50% { opacity: 1; }
-      100% { opacity: 0.6; }
-    }
-      /* Contact Button Styles */
+    /* Contact Button Styles */
   .fixed {
     position: fixed;
   }
@@ -482,39 +426,6 @@
   .fil0 {
     fill: #4c83fa;
   }
-
-    /* Mobile Menu Styles */
-    #mobile-menu {
-      visibility: hidden;
-      transition: visibility 0.3s ease-in-out;
-    }
-
-    #mobile-menu.show {
-      visibility: visible;
-    }
-
-    #mobile-menu-backdrop {
-      opacity: 0;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    #mobile-menu.show #mobile-menu-backdrop {
-      opacity: 1;
-    }
-
-    #mobile-menu-content {
-      transform: translateX(-100%);
-      transition: transform 0.3s ease-in-out;
-    }
-
-    #mobile-menu.show #mobile-menu-content {
-      transform: translateX(0);
-    }
-
-    /* Prevent body scroll when menu is open */
-    body.menu-open {
-      overflow: hidden;
-    }
   </style>
 
   <script>

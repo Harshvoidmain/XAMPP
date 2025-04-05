@@ -127,7 +127,7 @@ if($updates_result && mysqli_num_rows($updates_result) > 0) {
             --tooltip-height: 35px;
             --tooltip-width: 120px;
             --gap-between-tooltip-to-button: 10px;
-            --button-color: rgb(30, 55, 101); /* Your theme color */
+            --button-color:rgb(48, 62, 150); /* Your theme color */
             --tooltip-color: #fff;
             width: var(--width);
             height: var(--height);
@@ -135,7 +135,8 @@ if($updates_result && mysqli_num_rows($updates_result) > 0) {
             position: relative;
             text-align: center;
             border-radius: 0.45em;
-            font-family: "Arial", sans-serif;
+            font-family: "Poppins", sans-serif;
+            letter-spacing: 0.04em;
             transition: background 0.3s;
             cursor: pointer;
         }
@@ -212,7 +213,7 @@ if($updates_result && mysqli_num_rows($updates_result) > 0) {
         }
 
         .button:hover {
-            background: rgb(95, 116, 220); /* Hover color */
+            background: rgb(83, 103, 205); /* Hover color */
         }
 
         .button:hover .text {

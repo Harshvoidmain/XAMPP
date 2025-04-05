@@ -57,27 +57,29 @@
       </div>
 
       <!-- ✅ Fix dropdown behavior with smooth animation -->
-      <div id="<?php echo $collapseID; ?>" class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white p-4 rounded-b-lg shadow-md">
-    <ol class="list-decimal ml-6 text-gray-700 space-y-2">
-    <?php
-    $sessionQuery = "SELECT * FROM sessions WHERE tid='$tid'";
-    $sessionResult = mysqli_query($db, $sessionQuery);
-    while ($sessionRow = mysqli_fetch_array($sessionResult)) {
-        $name = trim($sessionRow['sname']); // Trim to remove empty spaces
-        if (!empty($name)) { // Only show non-empty items
-        ?>
-        <li class="py-2 px-3 bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 transition">
-            <?php echo htmlspecialchars($name); ?>
-        </li>
-        <?php }} ?>
-    </ol>
+      <div id="<?php echo $collapseID; ?>" class="overflow-hidden max-h-0 transition-all duration-300 ease-in-out bg-white">
+        <div class="p-4 rounded-b-lg shadow-md">
+          <ol class="list-decimal ml-6 text-gray-700 space-y-2">
+          <?php
+          $sessionQuery = "SELECT * FROM sessions WHERE tid='$tid'";
+          $sessionResult = mysqli_query($db, $sessionQuery);
+          while ($sessionRow = mysqli_fetch_array($sessionResult)) {
+              $name = trim($sessionRow['sname']); // Trim to remove empty spaces
+              if (!empty($name)) { // Only show non-empty items
+              ?>
+              <li class="py-2 px-3 bg-gray-100 rounded-md shadow-sm hover:bg-gray-200 transition">
+                  <?php echo htmlspecialchars($name); ?>
+              </li>
+              <?php }} ?>
+          </ol>
 
-    <?php if ($tid == 2) { ?>
-        <p class="text-red-500 mt-4 text-center font-semibold">
-            Acceptance of papers submitted in the Thermal Engineering and Fluid Control track does not guarantee publication in IEEE Xplore. Only papers within IEEE's scope will be sent for inclusion.
-        </p>
-    <?php } ?>
-</div>
+          <?php if ($tid == 2) { ?>
+              <p class="text-red-500 mt-4 text-center font-semibold">
+                  Acceptance of papers submitted in the Thermal Engineering and Fluid Control track does not guarantee publication in IEEE Xplore. Only papers within IEEE's scope will be sent for inclusion.
+              </p>
+          <?php } ?>
+        </div>
+      </div>
 
     </div>
     <?php } ?>
@@ -93,11 +95,13 @@
       panel.addEventListener('click', () => {
         const target = document.querySelector(panel.getAttribute('data-target'));
         const icon = panel.querySelector('.toggle-icon');
+        const content = target.querySelector('div');
 
         // ✅ Close other open panels
         document.querySelectorAll('[id^="collapse"]').forEach(openPanel => {
           if (openPanel !== target) {
             openPanel.style.maxHeight = '0px';
+            openPanel.classList.remove('active');
             openPanel.previousElementSibling.querySelector('.toggle-icon').classList.remove('rotate-180');
           }
         });
@@ -105,52 +109,31 @@
         // ✅ Toggle current panel using dynamic height
         if (target.style.maxHeight && target.style.maxHeight !== '0px') {
           target.style.maxHeight = '0px';
+          target.classList.remove('active');
           icon.classList.remove('rotate-180');
         } else {
-          target.style.maxHeight = target.scrollHeight + 'px';
+          target.style.maxHeight = content.offsetHeight + 'px';
+          target.classList.add('active');
           icon.classList.add('rotate-180');
         }
       });
     });
+    
+    // Open the first panel by default
+    if (panels.length > 0) {
+      const firstPanel = panels[0];
+      const firstTarget = document.querySelector(firstPanel.getAttribute('data-target'));
+      const firstIcon = firstPanel.querySelector('.toggle-icon');
+      const firstContent = firstTarget.querySelector('div');
+      
+      if (firstTarget) {
+        firstTarget.style.maxHeight = firstContent.offsetHeight + 'px';
+        firstTarget.classList.add('active');
+        firstIcon.classList.add('rotate-180');
+      }
+    }
   });
 </script>
-
-<style>
-  .toggle-icon {
-    transition: transform 0.3s ease;
-  }
-  .rotate-180 {
-    transform: rotate(180deg);
-  }
- /* ✅ Smooth dropdown animation */
- [id^="collapse"] {
-  overflow: hidden;
-  transition: max-height 0.3s ease, padding 0.2s ease;
-  max-height: 0;
-  padding: 0;
-  box-shadow: none;
-  margin-top: 8px;
-  margin-bottom: 8px;
-}
-/* ✅ Styling the dropdown box */
-[id^="collapse"].active {
-  background: white;
-  border-top: 1px solid white;
-  padding: 16px;
-  border-radius: 0 0 8px 8px;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-}
-/* ✅ Improve the list items */
-[id^="collapse"] ol li {
-  background: #f3f4f6;
-  padding: 10px;
-  border-radius: 5px;
-  transition: background 0.2s ease-in-out;
-}
-[id^="collapse"] ol li:hover {
-  background: #e5e7eb;
-}
-</style>
 
 <?php include 'footer.php'; ?>
 
